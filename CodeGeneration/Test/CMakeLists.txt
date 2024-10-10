@@ -1,0 +1,3 @@
+add_executable(TestForCodeGeneration a.cpp)
+target_link_libraries(TestForCodeGeneration gtest gtest_main)
+add_test(NAME TestForCodeGeneration COMMAND TestForCodeGeneration)
