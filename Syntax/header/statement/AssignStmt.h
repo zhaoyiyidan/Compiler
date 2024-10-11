@@ -12,7 +12,6 @@ class AssignStmt : public statement {
 public:
     VarDec* var;
     expression* exp;
-    void assign();
 };
 
 

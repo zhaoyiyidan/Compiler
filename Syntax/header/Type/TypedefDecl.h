@@ -8,7 +8,7 @@
 
 #include "../Declaration.h"
 
-class TypedefDecl: public Decalaration {
+class TypedefDecl: public Declaration {
 
 };
 
