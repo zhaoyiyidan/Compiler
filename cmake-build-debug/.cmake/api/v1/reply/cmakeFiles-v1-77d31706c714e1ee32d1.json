@@ -276,16 +276,16 @@
 			"path" : "Lexical/Test/CMakeLists.txt"
 		},
 		{
-			"path" : "Semantic/CMakeLists.txt"
-		},
-		{
-			"path" : "Semantic/Test/CMakeLists.txt"
-		},
-		{
 			"path" : "Syntax/CMakeLists.txt"
 		},
 		{
 			"path" : "Syntax/Test/CMakeLists.txt"
+		},
+		{
+			"path" : "Semantic/CMakeLists.txt"
+		},
+		{
+			"path" : "Semantic/Test/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

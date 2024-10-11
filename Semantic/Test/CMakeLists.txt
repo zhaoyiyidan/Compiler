@@ -1,3 +1,3 @@
-add_executable(TestForSemantic a.cpp)
-target_link_libraries(TestForSemantic gtest gtest_main)
-add_test(NAME TestForSemantic COMMAND TestForSemantic)
+add_executable(TestForSyntax a.cpp)
+target_link_libraries(TestForSyntax gtest gtest_main)
+add_test(NAME TestForSyntax COMMAND TestForSyntax)

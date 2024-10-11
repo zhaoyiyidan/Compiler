@@ -532,6 +532,39 @@ build Library/googletest-main/googletest/install/strip: phony Library/googletest
 # /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
 # =============================================================================
 
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target CodeGeneration
+
+
+#############################################
+# Order-only phony target for CodeGeneration
+
+build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target CodeGeneration
+
+
+#############################################
+# Link the static library CodeGeneration/libCodeGeneration.a
+
+build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = CodeGeneration/libCodeGeneration.a
+  TARGET_PDB = CodeGeneration.a.dbg
+
 
 #############################################
 # Utility command for test
@@ -728,6 +761,46 @@ build CodeGeneration/Test/install/strip: phony CodeGeneration/Test/CMakeFiles/in
 # Write statements declared in CMakeLists.txt:
 # /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
 # =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Lexical
+
+
+#############################################
+# Order-only phony target for Lexical
+
+build cmake_object_order_depends_target_Lexical: phony || Lexical/CMakeFiles/Lexical.dir
+
+build Lexical/CMakeFiles/Lexical.dir/tem.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/tem.cpp || cmake_object_order_depends_target_Lexical
+  DEP_FILE = Lexical/CMakeFiles/Lexical.dir/tem.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
+  OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
+
+build Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp || cmake_object_order_depends_target_Lexical
+  DEP_FILE = Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
+  OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Lexical
+
+
+#############################################
+# Link the static library Lexical/libLexical.a
+
+build Lexical/libLexical.a: CXX_STATIC_LIBRARY_LINKER__Lexical_Debug Lexical/CMakeFiles/Lexical.dir/tem.cpp.o Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Lexical/libLexical.a
+  TARGET_PDB = Lexical.a.dbg
 
 
 #############################################
@@ -926,202 +999,129 @@ build Lexical/Test/install/strip: phony Lexical/Test/CMakeFiles/install/strip.ut
 # /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
 # =============================================================================
 
-
-#############################################
-# Utility command for test
-
-build Semantic/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/ctest --force-new-ctest-process
-  DESC = Running tests...
-  pool = console
-  restat = 1
-
-build Semantic/test: phony Semantic/CMakeFiles/test.util
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target ASTNode
 
 
 #############################################
-# Utility command for edit_cache
+# Order-only phony target for ASTNode
 
-build Semantic/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
+build cmake_object_order_depends_target_ASTNode: phony || Syntax/CMakeFiles/ASTNode.dir
 
-build Semantic/edit_cache: phony Semantic/CMakeFiles/edit_cache.util
+build Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
-#############################################
-# Utility command for rebuild_cache
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
-build Semantic/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/zhaokunxiang/clion/compiler -B/Users/zhaokunxiang/clion/compiler/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
+build Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
-build Semantic/rebuild_cache: phony Semantic/CMakeFiles/rebuild_cache.util
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
-#############################################
-# Utility command for list_install_components
+build Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
-build Semantic/list_install_components: phony
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDec.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDec.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDec.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
-#############################################
-# Utility command for install
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
-build Semantic/CMakeFiles/install.util: CUSTOM_COMMAND Semantic/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/expression.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/expression.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/expression.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
-build Semantic/install: phony Semantic/CMakeFiles/install.util
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/singlestmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/singlestmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/singlestmt.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/Type/Constvalue.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Constvalue.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/Constvalue.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
-#############################################
-# Utility command for install/local
+build Syntax/CMakeFiles/ASTNode.dir/APIOfSemantic.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/APIOfSemantic.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/APIOfSemantic.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
 
-build Semantic/CMakeFiles/install/local.util: CUSTOM_COMMAND Semantic/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build Semantic/install/local: phony Semantic/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build Semantic/CMakeFiles/install/strip.util: CUSTOM_COMMAND Semantic/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build Semantic/install/strip: phony Semantic/CMakeFiles/install/strip.util
 
 # =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for EXECUTABLE target TestForSemantic
+# Link build statements for STATIC_LIBRARY target ASTNode
 
 
 #############################################
-# Order-only phony target for TestForSemantic
+# Link the static library Syntax/libASTNode.a
 
-build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
-
-build Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
-  DEP_FILE = Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
-  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target TestForSemantic
-
-
-#############################################
-# Link the executable Semantic/Test/TestForSemantic
-
-build Semantic/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
+build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/singlestmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Constvalue.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSemantic.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Semantic/Test/TestForSemantic
-  TARGET_PDB = TestForSemantic.dbg
-
-
-#############################################
-# Utility command for test
-
-build Semantic/Test/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/ctest --force-new-ctest-process
-  DESC = Running tests...
-  pool = console
-  restat = 1
-
-build Semantic/Test/test: phony Semantic/Test/CMakeFiles/test.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build Semantic/Test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build Semantic/Test/edit_cache: phony Semantic/Test/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build Semantic/Test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/zhaokunxiang/clion/compiler -B/Users/zhaokunxiang/clion/compiler/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build Semantic/Test/rebuild_cache: phony Semantic/Test/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build Semantic/Test/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build Semantic/Test/CMakeFiles/install.util: CUSTOM_COMMAND Semantic/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build Semantic/Test/install: phony Semantic/Test/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build Semantic/Test/CMakeFiles/install/local.util: CUSTOM_COMMAND Semantic/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build Semantic/Test/install/local: phony Semantic/Test/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build Semantic/Test/CMakeFiles/install/strip.util: CUSTOM_COMMAND Semantic/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build Semantic/Test/install/strip: phony Semantic/Test/CMakeFiles/install/strip.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
-# =============================================================================
+  TARGET_FILE = Syntax/libASTNode.a
+  TARGET_PDB = ASTNode.a.dbg
 
 
 #############################################
@@ -1206,37 +1206,37 @@ build Syntax/install/strip: phony Syntax/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TestForSyntax
+# Object build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Order-only phony target for TestForSyntax
+# Order-only phony target for TestForSemantic
 
-build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
-  DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
+build Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
+  DEP_FILE = Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
   FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
-  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TestForSyntax
+# Link build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Link the executable Syntax/Test/TestForSyntax
+# Link the executable Syntax/Test/TestForSemantic
 
-build Syntax/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Syntax/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Syntax/Test/TestForSyntax
-  TARGET_PDB = TestForSyntax.dbg
+  TARGET_FILE = Syntax/Test/TestForSemantic
+  TARGET_PDB = TestForSemantic.dbg
 
 
 #############################################
@@ -1316,15 +1316,253 @@ build Syntax/Test/CMakeFiles/install/strip.util: CUSTOM_COMMAND Syntax/Test/all
 build Syntax/Test/install/strip: phony Syntax/Test/CMakeFiles/install/strip.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Semantic
+
+
+#############################################
+# Order-only phony target for Semantic
+
+build cmake_object_order_depends_target_Semantic: phony || Semantic/CMakeFiles/Semantic.dir
+
+build Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/APIOfSemantic.cpp || cmake_object_order_depends_target_Semantic
+  DEP_FILE = Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
+  OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Semantic
+
+
+#############################################
+# Link the static library Semantic/libSemantic.a
+
+build Semantic/libSemantic.a: CXX_STATIC_LIBRARY_LINKER__Semantic_Debug Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Semantic/libSemantic.a
+  TARGET_PDB = Semantic.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build Semantic/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Semantic/test: phony Semantic/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build Semantic/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Semantic/edit_cache: phony Semantic/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Semantic/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/zhaokunxiang/clion/compiler -B/Users/zhaokunxiang/clion/compiler/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Semantic/rebuild_cache: phony Semantic/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Semantic/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Semantic/CMakeFiles/install.util: CUSTOM_COMMAND Semantic/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Semantic/install: phony Semantic/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Semantic/CMakeFiles/install/local.util: CUSTOM_COMMAND Semantic/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Semantic/install/local: phony Semantic/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Semantic/CMakeFiles/install/strip.util: CUSTOM_COMMAND Semantic/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Semantic/install/strip: phony Semantic/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target TestForSyntax
+
+
+#############################################
+# Order-only phony target for TestForSyntax
+
+build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
+  DEP_FILE = Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
+  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target TestForSyntax
+
+
+#############################################
+# Link the executable Semantic/Test/TestForSyntax
+
+build Semantic/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Semantic/Test/TestForSyntax
+  TARGET_PDB = TestForSyntax.dbg
+
+
+#############################################
+# Utility command for test
+
+build Semantic/Test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Semantic/Test/test: phony Semantic/Test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build Semantic/Test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Semantic/Test/edit_cache: phony Semantic/Test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Semantic/Test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/zhaokunxiang/clion/compiler -B/Users/zhaokunxiang/clion/compiler/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Semantic/Test/rebuild_cache: phony Semantic/Test/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Semantic/Test/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Semantic/Test/CMakeFiles/install.util: CUSTOM_COMMAND Semantic/Test/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Semantic/Test/install: phony Semantic/Test/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Semantic/Test/CMakeFiles/install/local.util: CUSTOM_COMMAND Semantic/Test/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Semantic/Test/install/local: phony Semantic/Test/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Semantic/Test/CMakeFiles/install/strip.util: CUSTOM_COMMAND Semantic/Test/all
+  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Semantic/Test/install/strip: phony Semantic/Test/CMakeFiles/install/strip.util
+
+# =============================================================================
 # Target aliases.
+
+build ASTNode: phony Syntax/libASTNode.a
+
+build CodeGeneration: phony CodeGeneration/libCodeGeneration.a
+
+build Lexical: phony Lexical/libLexical.a
+
+build Semantic: phony Semantic/libSemantic.a
 
 build TestForCodeGeneration: phony CodeGeneration/Test/TestForCodeGeneration
 
 build TestForLexical: phony Lexical/Test/TestForLexical
 
-build TestForSemantic: phony Semantic/Test/TestForSemantic
+build TestForSemantic: phony Syntax/Test/TestForSemantic
 
-build TestForSyntax: phony Syntax/Test/TestForSyntax
+build TestForSyntax: phony Semantic/Test/TestForSyntax
 
 build gmock: phony lib/libgmock.a
 
@@ -1333,6 +1571,14 @@ build gmock_main: phony lib/libgmock_main.a
 build gtest: phony lib/libgtest.a
 
 build gtest_main: phony lib/libgtest_main.a
+
+build libASTNode.a: phony Syntax/libASTNode.a
+
+build libCodeGeneration.a: phony CodeGeneration/libCodeGeneration.a
+
+build libLexical.a: phony Lexical/libLexical.a
+
+build libSemantic.a: phony Semantic/libSemantic.a
 
 build libgmock.a: phony lib/libgmock.a
 
@@ -1350,14 +1596,14 @@ build libgtest_main.a: phony lib/libgtest_main.a
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug
 
-build all: phony Compiler Library/googletest-main/all CodeGeneration/all Lexical/all Semantic/all Syntax/all
+build all: phony Compiler Library/googletest-main/all CodeGeneration/all Lexical/all Syntax/all Semantic/all
 
 # =============================================================================
 
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration
 
-build CodeGeneration/all: phony CodeGeneration/Test/all
+build CodeGeneration/all: phony CodeGeneration/libCodeGeneration.a CodeGeneration/Test/all
 
 # =============================================================================
 
@@ -1371,7 +1617,7 @@ build CodeGeneration/Test/all: phony CodeGeneration/Test/TestForCodeGeneration
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical
 
-build Lexical/all: phony Lexical/Test/all
+build Lexical/all: phony Lexical/libLexical.a Lexical/Test/all
 
 # =============================================================================
 
@@ -1406,28 +1652,28 @@ build Library/googletest-main/googletest/all: phony lib/libgtest.a lib/libgtest_
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic
 
-build Semantic/all: phony Semantic/Test/all
+build Semantic/all: phony Semantic/libSemantic.a Semantic/Test/all
 
 # =============================================================================
 
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test
 
-build Semantic/Test/all: phony Semantic/Test/TestForSemantic
+build Semantic/Test/all: phony Semantic/Test/TestForSyntax
 
 # =============================================================================
 
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax
 
-build Syntax/all: phony Syntax/Test/all
+build Syntax/all: phony Syntax/libASTNode.a Syntax/Test/all
 
 # =============================================================================
 
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test
 
-build Syntax/Test/all: phony Syntax/Test/TestForSyntax
+build Syntax/Test/all: phony Syntax/Test/TestForSemantic
 
 # =============================================================================
 # Built-in targets

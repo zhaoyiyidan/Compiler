@@ -8,12 +8,12 @@ int Factorial(int n){
     return n <= 1 ? 1 : n * Factorial(n - 1);
 }
 // Tests factorial of 0.
-TEST(FactorialTest, wHandlesZeroInput) {
+TEST(FactorialTest, qHandlesZeroInput) {
 EXPECT_EQ(Factorial(0), 1);
 }
 
 // Tests factorial of positive numbers.
-TEST(FactorialTest, wHandlesPositiveInput) {
+TEST(FactorialTest, qHandlesPositiveInput) {
 EXPECT_EQ(Factorial(1), 1);
 EXPECT_EQ(Factorial(2), 2);
 EXPECT_EQ(Factorial(3), 6);

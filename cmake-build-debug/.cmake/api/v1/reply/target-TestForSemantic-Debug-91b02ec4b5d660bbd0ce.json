@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Syntax/Test/TestForSyntax"
+			"path" : "Syntax/Test/TestForSemantic"
 		}
 	],
 	"backtrace" : 1,
@@ -95,7 +95,7 @@
 			"id" : "gtest_main::@3cc3302381f3d354a87f"
 		}
 	],
-	"id" : "TestForSyntax::@288cac4ff71626c0d986",
+	"id" : "TestForSemantic::@288cac4ff71626c0d986",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -126,8 +126,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "TestForSyntax",
-	"nameOnDisk" : "TestForSyntax",
+	"name" : "TestForSemantic",
+	"nameOnDisk" : "TestForSemantic",
 	"paths" : 
 	{
 		"build" : "Syntax/Test",

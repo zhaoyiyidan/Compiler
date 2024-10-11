@@ -10,8 +10,9 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 # 添加项目的子目录
 add_subdirectory(CodeGeneration)
 add_subdirectory(Lexical)
-add_subdirectory(Semantic)
 add_subdirectory(Syntax)
+add_subdirectory(Semantic)
 #添加执行文件
-add_executable(Compiler main.cpp)
+add_executable(Compiler main.cpp
+        )
 

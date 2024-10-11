@@ -42,8 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Library/googletest-main/cmake_install.cmake")
   include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/cmake_install.cmake")
   include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/cmake_install.cmake")
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/cmake_install.cmake")
   include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/cmake_install.cmake")
 
 endif()
 

@@ -7,5 +7,5 @@
 subdirs("Library/googletest-main")
 subdirs("CodeGeneration")
 subdirs("Lexical")
-subdirs("Semantic")
 subdirs("Syntax")
+subdirs("Semantic")
