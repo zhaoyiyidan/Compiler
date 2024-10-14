@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//path to the bison executable
+BISON_EXECUTABLE:FILEPATH=/usr/bin/bison
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -306,6 +309,15 @@ DemoForGTest_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 DemoForGTest_SOURCE_DIR:STATIC=/Users/zhaokunxiang/clion/compiler
 
+//path to the flex executable
+FLEX_EXECUTABLE:FILEPATH=/usr/bin/flex
+
+//Path to the flex headers
+FLEX_INCLUDE_DIR:PATH=FLEX_INCLUDE_DIR-NOTFOUND
+
+//Path to the fl library
+FL_LIBRARY:FILEPATH=FL_LIBRARY-NOTFOUND
+
 //Use Abseil and RE2. Requires Abseil and RE2 to be separately
 // added to the build.
 GTEST_HAS_ABSL:BOOL=OFF
@@ -315,13 +327,13 @@ GTEST_HAS_ABSL:BOOL=OFF
 INSTALL_GTEST:BOOL=ON
 
 //Value Computed by CMake
-MyProject_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug
+MyProject_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax
 
 //Value Computed by CMake
-MyProject_IS_TOP_LEVEL:STATIC=ON
+MyProject_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-MyProject_SOURCE_DIR:STATIC=/Users/zhaokunxiang/clion/compiler
+MyProject_SOURCE_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/Syntax
 
 //Value Computed by CMake
 compiler_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug
@@ -383,6 +395,8 @@ gtest_hide_internal_symbols:BOOL=OFF
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BISON_EXECUTABLE
+BISON_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -550,8 +564,18 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding BISON
+FIND_PACKAGE_MESSAGE_DETAILS_BISON:INTERNAL=[/usr/bin/bison][v2.3()]
+//Details about finding FLEX
+FIND_PACKAGE_MESSAGE_DETAILS_FLEX:INTERNAL=[/usr/bin/flex][v2.6.4()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: FLEX_EXECUTABLE
+FLEX_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FLEX_INCLUDE_DIR
+FLEX_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FL_LIBRARY
+FL_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 cmake_package_name:INTERNAL=GTest

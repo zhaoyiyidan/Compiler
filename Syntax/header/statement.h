@@ -5,13 +5,15 @@
 #ifndef COMPILER_STATEMENT_H
 #define COMPILER_STATEMENT_H
 
-
-class statement {
+#include <vector>
+#include <string>
+#include "ASTnode.h"
+class statement:public ASTnode {
 public:
     // search algorithm
     // this function is used to search the tree depending on the order you want to iterate
     // you can search in pre in post order
-    virtual std::vector<std::string> searchStmt(std::string order);
+
 };
 
 

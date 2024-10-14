@@ -1,3 +1,5 @@
+
+##
 add_subdirectory(Test)
 add_library(ASTNode
         Source/Type.cpp
@@ -7,7 +9,6 @@ add_library(ASTNode
         Source/statement.cpp
         "header/statement.h"
         "Source/Type/TypedefDecl.cpp"
-        "header/Type/TypedefDecl.h"
         Source/Declaration/FunctionDec.cpp
         "header/Declaration/FunctionDec.h"
         Source/statement/compoundstmt.cpp
@@ -20,13 +21,22 @@ add_library(ASTNode
         "header/statement/AssignStmt.h"
         "Source/statement/BinaryOperator.cpp"
         "header/statement/BinaryOperator.h"
-        "Source/statement/expression.cpp"
-        "header/statement/expression.h"
-        "Source/statement/singlestmt.cpp"
-        "header/statement/singlestmt.h"
-        "Source/Type/Constvalue.cpp"
-        "header/Type/Constvalue.h"
+        "Source/Type/Valueliteral.cpp"
         APIOfSemantic.cpp
         APIOfSemantic.h
+        Source/ASTnode.cpp
+        header/ASTnode.h
+        Source/Type/IntegerLiteral.cpp
+        header/Type/IntegerLiteral.h
+        Source/Type/CharLiteral.cpp
+        header/Type/CharLiteral.h
+        Source/Type/BoolLiteral.cpp
+        header/Type/BoolLiteral.h
+        Source/Type/FloatLiteral.cpp
+        header/Type/FloatLiteral.h
+        Source/Type/FunctionType.cpp
+        header/Type/FunctionType.h
+        Source/statement/ReturnStmt.cpp
+        header/statement/ReturnStmt.h
 
 )
