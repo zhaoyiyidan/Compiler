@@ -1,4 +1,5 @@
-
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ##
 add_subdirectory(Test)
 add_library(ASTNode
@@ -38,5 +39,29 @@ add_library(ASTNode
         header/Type/FunctionType.h
         Source/statement/ReturnStmt.cpp
         header/statement/ReturnStmt.h
+        Source/ConstructAST.cpp
+        header/ConstructAST.h
+        Source/statement/Expression.cpp
+        header/statement/Expression.h
+        Source/statement/LOrExp.cpp
+        header/statement/LOrExp.h
+        Source/statement/LAndExp.cpp
+        header/statement/LAndExp.h
+        Source/statement/EqExp.cpp
+        header/statement/EqExp.h
+        Source/statement/RelExp.cpp
+        header/statement/RelExp.h
+        Source/statement/AddExp.cpp
+        header/statement/AddExp.h
+        Source/statement/MulExp.cpp
+        header/statement/MulExp.h
+        Source/statement/UnaryExp.cpp
+        header/statement/UnaryExp.h
+        header/statement/UnaryOp.cpp
+        header/statement/UnaryOp.h
+        header/statement/PrimaryExp.cpp
+        header/statement/PrimaryExp.h
+        header/statement/Number.cpp
+        header/statement/Number.h
 
 )

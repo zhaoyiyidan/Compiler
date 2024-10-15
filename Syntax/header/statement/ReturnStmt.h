@@ -5,9 +5,12 @@
 #ifndef COMPILER_RETURNSTMT_H
 #define COMPILER_RETURNSTMT_H
 
-
-class ReturnStmt {
-
+#include "../statement.h"
+class ReturnStmt: public statement{
+public:
+    std::unique_ptr<ASTnode> expression;
+    ReturnStmt(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
+    void getNode() override;
 };
 
 

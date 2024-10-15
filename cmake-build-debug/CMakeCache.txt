@@ -322,9 +322,15 @@ FL_LIBRARY:FILEPATH=FL_LIBRARY-NOTFOUND
 // added to the build.
 GTEST_HAS_ABSL:BOOL=OFF
 
+//directory of includes
+INC_DIR:STRING=
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//directory of libraries
+LIB_DIR:STRING=/native
 
 //Value Computed by CMake
 MyProject_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax
@@ -389,6 +395,15 @@ gtest_force_shared_crt:BOOL=OFF
 
 //Build gtest with internal symbols hidden in shared libraries.
 gtest_hide_internal_symbols:BOOL=OFF
+
+//Value Computed by CMake
+syntax_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax
+
+//Value Computed by CMake
+syntax_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+syntax_SOURCE_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/Syntax
 
 
 ########################

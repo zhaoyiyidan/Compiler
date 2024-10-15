@@ -8,7 +8,9 @@
 #include "string"
 class VarDec: public Declaration {
 public:
-    std::string name;
+    std::string name;// this is the name of the variable
+    std::unique_ptr<ASTnode> type;// this is the type of the variable // temporary not use
+    int typetem;
 };
 
 

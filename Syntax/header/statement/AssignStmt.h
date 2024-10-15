@@ -7,7 +7,6 @@
 
 #include "../statement.h"
 #include "../Declaration/VarDec.h"
-#include "expression.h"
 class AssignStmt : public statement {
 public:
 std::unique_ptr<ASTnode> variable;
