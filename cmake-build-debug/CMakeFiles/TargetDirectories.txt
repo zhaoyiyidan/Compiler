@@ -63,6 +63,7 @@
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/Test/CMakeFiles/install.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/Test/CMakeFiles/install/local.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/Test/CMakeFiles/install/strip.dir
+/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/Tem.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/ASTNode.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/test.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/edit_cache.dir

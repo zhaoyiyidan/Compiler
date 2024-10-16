@@ -2,6 +2,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ##
 add_subdirectory(Test)
+add_executable(Tem tem.cpp
+        tem.cpp
+        tem.h)
 add_library(ASTNode
         Source/Type.cpp
         "header/Type.h"
@@ -57,11 +60,15 @@ add_library(ASTNode
         header/statement/MulExp.h
         Source/statement/UnaryExp.cpp
         header/statement/UnaryExp.h
-        header/statement/UnaryOp.cpp
+        Source/statement/UnaryOp.cpp
         header/statement/UnaryOp.h
-        header/statement/PrimaryExp.cpp
+        Source/statement/PrimaryExp.cpp
         header/statement/PrimaryExp.h
-        header/statement/Number.cpp
+        Source/statement/Number.cpp
         header/statement/Number.h
+        Source/statement/Stmt.cpp
+        header/statement/Stmt.h
+        tem.cpp
+        tem.h
 
 )

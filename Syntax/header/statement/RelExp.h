@@ -9,8 +9,9 @@
 class RelExp:public statement {
 public:
     std::unique_ptr<ASTnode> expression;// AddExp or RelExp
-    char op;// "<" "<=" ">" ">="
+    std::string op;// "<" "<=" ">" ">="
     std::unique_ptr<ASTnode> AddExp;// it must be a AddExp
+    RelExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> AddExp,std::string op):expression(std::move(expression)),op(op),AddExp(std::move(AddExp)){}
 };
 
 

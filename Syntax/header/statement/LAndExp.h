@@ -9,10 +9,10 @@
 class LAndExp :public statement{
 public:
     std::unique_ptr<ASTnode> expression;// LAndExp "&&" EqExp
-    char op='&&';
+    std::string op="&&";
     std::unique_ptr<ASTnode> EqExp;// it must be a EqExp
     // expression && EqExp
-    LAndExp(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
+    LAndExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> EqExp):expression(std::move(expression)),EqExp(std::move(EqExp)){}
 };
 
 

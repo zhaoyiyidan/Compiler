@@ -9,11 +9,10 @@
 class EqExp :public statement{
 public:
     std::unique_ptr<ASTnode> expression;// EqExp or RelExp
-    char op1='==';
-    char op2='!=';
+    std::string op;//"==" or "!="
     std::unique_ptr<ASTnode> RelExp;// it must be a RelExp
     // expression "==" "=!" RelExp
-    EqExp(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
+    EqExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> RelExp,std::string op ):op(op),expression(std::move(expression)),RelExp(std::move(RelExp)){}
 };
 
 

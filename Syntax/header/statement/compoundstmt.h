@@ -9,7 +9,8 @@
 // i use this to represent the set of a statement,view it as a body of a function
 class compoundstmt: public statement {
 public:
-    std::vector<std::unique_ptr<ASTnode> > stmts;// this is a vector of statements,it is either a Decl or a stmt
+    std::unique_ptr<ASTnode>  stmts;// this is a vector of statements,it is either a Decl or a stmt
+    compoundstmt(std::unique_ptr<ASTnode> stmts):stmts(std::move(stmts)){}
 };
 
 

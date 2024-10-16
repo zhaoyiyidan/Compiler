@@ -8,7 +8,7 @@
 
 class ASTnode {
 public:
-    virtual void getNode();
+    // virtual void getNode();
 };
 
 

@@ -7,7 +7,9 @@
 
 #include "../Type.h"
 class FunctionType: public Type {
-
+public:
+    std::string type="int";
+    FunctionType(std::string type): type(type){}
 };
 
 

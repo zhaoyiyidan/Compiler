@@ -9,10 +9,10 @@
 class LOrExp: public statement{
 public:
     std::unique_ptr<ASTnode> expression;// LOrExp "||" LAndExp
-    char op='||';
+    std::string op="||";
     std::unique_ptr<ASTnode> LAndExp;// it must be a LAndExp
     // expression || LAndExp
-    LOrExp(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
+    LOrExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> LAndExp):expression(std::move(expression)),LAndExp(std::move(LAndExp)){}
 };
 
 

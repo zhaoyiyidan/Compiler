@@ -6,11 +6,12 @@
 #define COMPILER_MULEXP_H
 
 #include "../statement.h"
-class MulExp {
+class MulExp: public statement{
 public:
     std::unique_ptr<ASTnode> expression;// MulExp or UnaryExp
-    char op;// "*" "/"
+    std::string op;// "*" "/"
     std::unique_ptr<ASTnode> UnaryExp;// it must be a UnaryExp
+    MulExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> UnaryExp,std::string op):expression(std::move(expression)),op(op),UnaryExp(std::move(UnaryExp)){}
 };
 
 

@@ -8,7 +8,8 @@
 #include "../statement.h"
 class UnaryOp: public statement{
 public:
-    char op;// "+" "-" "!"
+    std::string op;// "+" "-" "!"
+    UnaryOp(std::string op):op(op){}
 };
 
 

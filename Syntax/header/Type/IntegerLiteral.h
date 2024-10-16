@@ -9,8 +9,8 @@
 class IntegerLiteral: public Type{
 public:
     int value;
-    IntegerLiteral(int value): value(value){}
-    void getNode() override;
+    IntegerLiteral(std::string value): value(std::stoi(value)){}
+    // void getNode() override;
 };
 
 

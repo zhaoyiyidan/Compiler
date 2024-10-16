@@ -9,8 +9,9 @@
 class AddExp: public statement{
 public:
     std::unique_ptr<ASTnode> expression;// AddExp or MulExp
-    char op;// "+" "-"
+    std::string op;// "+" "-"
     std::unique_ptr<ASTnode> MulExp;// it must be a MulExp
+    AddExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> MulExp,std::string op):expression(std::move(expression)),op(op),MulExp(std::move(MulExp)){}
 };
 
 
