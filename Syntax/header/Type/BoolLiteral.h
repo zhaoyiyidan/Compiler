@@ -10,7 +10,9 @@ class BoolLiteral: public Type{
 public:
     bool value;
     BoolLiteral(bool value): value(value){}
-    void getNode() override;
+    void getNode() override{
+
+    }
 };
 
 

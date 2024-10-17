@@ -11,6 +11,12 @@ class compoundstmt: public statement {
 public:
     std::unique_ptr<ASTnode>  stmts;// this is a vector of statements,it is either a Decl or a stmt
     compoundstmt(std::unique_ptr<ASTnode> stmts):stmts(std::move(stmts)){}
+    void getNode() override{
+        std::cout<<"{"<<" "<<std::endl;
+        if (stmts)
+        stmts->getNode();
+        std::cout<<std::endl<<"}"<<" "<<std::endl;
+    }
 };
 
 

@@ -31,7 +31,7 @@ public:
     std::unique_ptr<ASTnode> ConstructFuncType(std:: string type);
     std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
     std::unique_ptr<ASTnode> ConstructStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
-    std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string,std::string> > &tokens,int index);
+    std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructLOrExp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructLAndExp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructEqExp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
@@ -44,8 +44,11 @@ public:
 
     // here is some helper function
     std::pair<bool,int> FindExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str);
+    std::pair<bool,int> FindLeftExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str);
     std::pair<std::string ,int> FindMulExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,const std::vector<std::string> &str);
-
+    bool ExistPrimaryOrUnaryOp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    bool ExistUnaryOp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    bool ExistPrimary(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some error function
     std::string LackOf(std::string str);
 

@@ -8,9 +8,14 @@
 #include "../statement.h"
 class Stmt : public statement {
 public:
-    std::string keyword="return";
-    std::unique_ptr<ASTnode> exp;
-    Stmt(std::unique_ptr<ASTnode> exp):exp(std::move(exp)){}
+    std::unique_ptr<ASTnode> Expression;
+    Stmt(std::unique_ptr<ASTnode> exp):Expression(std::move(exp)){}
+    void getNode() override{
+        std::cout<<"return"<<" ";
+        if (Expression)
+        Expression->getNode();
+        std::cout<<";"<<" ";
+    }
 };
 
 

@@ -12,6 +12,13 @@ public:
     std::string op;// "<" "<=" ">" ">="
     std::unique_ptr<ASTnode> AddExp;// it must be a AddExp
     RelExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> AddExp,std::string op):expression(std::move(expression)),op(op),AddExp(std::move(AddExp)){}
+    void getNode(){
+        if (expression)
+        expression->getNode();
+        std::cout<<op;
+        if (AddExp)
+        AddExp->getNode();
+    }
 };
 
 

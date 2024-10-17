@@ -10,7 +10,9 @@
 #include "ASTnode.h"
 class Type: public ASTnode{
 public:
+void getNode(){
 
+}
 };
 
 

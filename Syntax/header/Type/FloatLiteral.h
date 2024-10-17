@@ -10,7 +10,9 @@ class FloatLiteral {
 public:
     float value;
     FloatLiteral(float value): value(value){}
-    void getNode();
+    void getNode()  {
+
+    }
 };
 
 

@@ -12,6 +12,9 @@ public:
 std::unique_ptr<ASTnode> variable;
 std::unique_ptr<ASTnode> expression;
 AssignStmt(std::unique_ptr<ASTnode> variable, std::unique_ptr<ASTnode> expression):variable(std::move(variable)),expression(std::move(expression)){}
+    void getNode() override{
+
+    }
 };
 
 

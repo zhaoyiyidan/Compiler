@@ -10,6 +10,10 @@ class Expression: public statement {
 public:
     std::unique_ptr<ASTnode> expression;// LOrExp
     Expression(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
+    void getNode() override{
+        if (expression)
+        expression->getNode();
+    }
 };
 
 

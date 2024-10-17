@@ -10,7 +10,9 @@ class ReturnStmt: public statement{
 public:
     std::unique_ptr<ASTnode> expression;
     ReturnStmt(std::unique_ptr<ASTnode> expression):expression(std::move(expression)){}
-    void getNode() override;
+    void getNode() override{
+
+    }
 };
 
 

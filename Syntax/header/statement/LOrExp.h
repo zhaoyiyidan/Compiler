@@ -13,6 +13,13 @@ public:
     std::unique_ptr<ASTnode> LAndExp;// it must be a LAndExp
     // expression || LAndExp
     LOrExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> LAndExp):expression(std::move(expression)),LAndExp(std::move(LAndExp)){}
+    void getNode() override{
+        if (expression)
+        expression->getNode();
+        std::cout<<"||";
+        if (LAndExp)
+        LAndExp->getNode();
+    }
 };
 
 

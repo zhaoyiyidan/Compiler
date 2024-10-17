@@ -12,7 +12,9 @@ public:
     std::unique_ptr<ASTnode> left;
     std::unique_ptr<ASTnode> right;
     BinaryOperator(char op, std::unique_ptr<ASTnode> left, std::unique_ptr<ASTnode> right):op(op),left(std::move(left)),right(std::move(right)){}
-    void getNode() override;
+    void getNode() override{
+
+    }
 };
 
 

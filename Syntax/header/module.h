@@ -16,6 +16,11 @@
 class module {
 public:
     std::vector<std::unique_ptr<ASTnode> > Node;
+    void getNode(){
+        for (const auto& node:Node){
+            node->getNode();
+        }
+    }
 };
 
 

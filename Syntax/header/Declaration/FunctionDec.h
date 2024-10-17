@@ -13,7 +13,13 @@ public:
     std::string name;
     std::unique_ptr<ASTnode> body;// this is the body of the function. compoundstmt
     FunctionDec(std::unique_ptr<ASTnode> type, std::string name, std::unique_ptr<ASTnode> body): type(std::move(type)), name(name), body(std::move(body)){}
-
+    void getNode() override {
+        if (type)
+        type->getNode();
+        std::cout << " "<< name << " ( ) ";
+        if(body)
+        body->getNode();
+    }
 };
 
 

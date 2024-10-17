@@ -9,6 +9,8 @@
 class Number : public statement{
 public:
     std::unique_ptr<ASTnode> number;// it is constant value,many be integerLiteral or floatLiteral or charLiteral ...
+    void getNode() override{}
+
 };
 
 

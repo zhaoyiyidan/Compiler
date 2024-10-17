@@ -10,7 +10,9 @@ class CharLiteral : public Type{
 public:
     char value;
     CharLiteral(char value): value(value){}
-    void getNode() override;
+    void getNode() override{
+
+    }
 };
 
 

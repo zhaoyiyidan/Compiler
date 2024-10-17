@@ -13,6 +13,14 @@ public:
     std::unique_ptr<ASTnode> RelExp;// it must be a RelExp
     // expression "==" "=!" RelExp
     EqExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> RelExp,std::string op ):op(op),expression(std::move(expression)),RelExp(std::move(RelExp)){}
+    void getNode() override{
+        if (expression)
+        expression->getNode();
+        std::cout<<op;
+        if(RelExp)
+        RelExp->getNode();
+    }
+
 };
 
 

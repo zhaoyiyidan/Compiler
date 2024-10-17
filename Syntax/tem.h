@@ -23,8 +23,11 @@ int main(){
     tokens.push_back(std::make_pair("}","2"));
     tokens.push_back(std::make_pair("}","*"));
     tokens.push_back(std::make_pair("}","3"));
+    tokens.push_back(std::make_pair("}",";"));
+    tokens.push_back(std::make_pair("}","}"));
     ConstructAST a;
-    a.ConstructMoule(tokens);
+    auto b=a.ConstructMoule(tokens);
+    b.getNode();
     return 0;
 }
 

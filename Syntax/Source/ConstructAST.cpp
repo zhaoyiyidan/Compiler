@@ -13,12 +13,12 @@ module ConstructAST::ConstructMoule(const std::vector<std::pair<std::string, std
     module root;
     auto Node=ConstructFuncDel(tokens, index);
     root.Node.push_back(std::move(Node));
-    std::cout<<"moule"<<std::endl;
+    // std::cout<<"moule"<<std::endl;
     return root;
 }
 // to construct  module ,you need following fucntion
 std::unique_ptr<ASTnode> ConstructAST::ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
-    std::cout<<"funcdel"<<std::endl;
+    // std::cout<<"funcdel"<<std::endl;
     auto type=ConstructFuncType(tokens[index].second);// index here is the type of the function
     index++;
     auto name=tokens[index].second;// get the name of the function
@@ -37,7 +37,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructFuncDel(const std::vector<std::p
 }
 // to construct function declaration,you need following function
 std::unique_ptr<ASTnode> ConstructAST::ConstructFuncType(std:: string type) {
-    std::cout<<"functype"<<std::endl;
+    // std::cout<<"functype"<<std::endl;
     return std::make_unique<FunctionType>(type);
 }
 std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
@@ -58,7 +58,8 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructStmt(const std::vector<std::pair
         LackOf("return");
     }
     index++;
-    auto exp=ConstructExp(tokens, index);
+    auto pair= FindLeftExisted(tokens, index, tokens.size()-1,";");
+    auto exp=ConstructExp(tokens, index,pair.second-1);
     index++;
     if (tokens[index].second != ";") {
         LackOf(";");
@@ -66,10 +67,9 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructStmt(const std::vector<std::pair
 
     return std::make_unique<Stmt>(std::move(exp));
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int index) {
-    int Lpos=index;
-    int RPos=tokens.size()-1;
-    auto lorExp=ConstructLOrExp(tokens, Lpos, RPos);
+std::unique_ptr<ASTnode> ConstructAST::ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+
+    auto lorExp=ConstructLOrExp(tokens, Lindex, Rindex);
     return std::make_unique<Expression>(std::move(lorExp));
 }
 // here we need to consider recursion
@@ -203,17 +203,19 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructMulExp(const std::vector<std::pa
         else{
             auto UnaryExp=std::move(ConstructUnaryExp(tokens,Lindex,pair.second-1));
             auto UnaryExp2=std::move(ConstructMulExp(tokens,pair.second+1,Rindex));
-            return std::make_unique<MulExp>(std::move(UnaryExp),std::move(UnaryExp),pair.first);
+            return std::make_unique<MulExp>(std::move(UnaryExp),std::move(UnaryExp2),pair.first);
         }
     }
     else{
         return std::move(ConstructUnaryExp(tokens,Lindex,Rindex));
     }
 }
+// consider the boundary of the recursion
 std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
-    if (Lindex>=Rindex){
-        return nullptr;
-    }
+
+    if (Lindex==Rindex){
+        return std::move(ConstructPrimaryExp(tokens,Lindex,Rindex));
+    } // here is the problem of the recursion
     auto vector=std::vector<std::string>{"-","!","+",")"};
     auto pair=FindMulExisted(tokens,Lindex,Rindex,vector);
     vector.clear();
@@ -229,17 +231,20 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::
         return std::make_unique<UnaryExp>(std::move(expreesion),std::move(unaryExp));
     }
     return nullptr;
+
 }
 std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryOp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     return std::make_unique<UnaryOp>(tokens[Lindex].second);
 }
 std::unique_ptr<ASTnode> ConstructAST::ConstructPrimaryExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
-    std::cout<<"primaryexp"<<std::endl;
+    // std::cout<<"primaryexp"<<std::endl;
     if (Lindex==Rindex){
         return std::make_unique<IntegerLiteral>(tokens[Lindex].second);
     }
     if (tokens[Lindex].second=="("){
-        return ConstructExp(tokens,Lindex+1);
+        // find ")"
+        auto pair= FindExisted(tokens,Lindex,Rindex,")");
+        return ConstructExp(tokens,Lindex+1,pair.second-1);
     }
     return nullptr;
 }
@@ -255,6 +260,18 @@ std::pair<bool,int> ConstructAST::FindExisted(const std::vector<std::pair<std::s
     }
     return a;
 }
+std::pair<bool,int> ConstructAST::FindLeftExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str) {
+    auto a=std::make_pair(false,-1);
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second==str){
+            a.first=true;
+            a.second=i;
+            return a;
+        }
+    }
+    return a;
+}
+
 // find the rightest one
 std::pair<std::string,int> ConstructAST::FindMulExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,const std::vector<std::string> &str) {
     std::pair<std::string ,int> a=std::make_pair("null",-1);
@@ -268,7 +285,31 @@ std::pair<std::string,int> ConstructAST::FindMulExisted(const std::vector<std::p
     }
     return a;
 }
-
+bool ConstructAST::ExistPrimaryOrUnaryOp (const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex) {
+    if (ExistPrimary(tokens,Lindex,Rindex)||ExistUnaryOp(tokens,Lindex,Rindex)){
+        return true;
+    }
+    return false;
+}
+bool ConstructAST::ExistUnaryOp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex) {
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second=="-"||tokens[i].second=="!"||tokens[i].second=="+"){
+            return true;
+        }
+    }
+    return false;
+}
+bool ConstructAST::ExistPrimary(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex) {
+    if (Lindex==Rindex&&tokens[Lindex].first=="IntegerLiteral"){
+        return true;
+    }
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second=="("){
+            return true;
+        }
+    }
+    return false;
+}
 
 // here is the implementation of error function
 std::string ConstructAST::LackOf(std::string str) {
