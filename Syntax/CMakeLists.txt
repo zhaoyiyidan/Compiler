@@ -40,8 +40,6 @@ add_library(ASTNode
         header/Type/FloatLiteral.h
         Source/Type/FunctionType.cpp
         header/Type/FunctionType.h
-        Source/statement/ReturnStmt.cpp
-        header/statement/ReturnStmt.h
         Source/ConstructAST.cpp
         header/ConstructAST.h
         Source/statement/Expression.cpp
@@ -66,8 +64,8 @@ add_library(ASTNode
         header/statement/PrimaryExp.h
         Source/statement/Number.cpp
         header/statement/Number.h
-        Source/statement/Stmt.cpp
-        header/statement/Stmt.h
+        Source/statement/ReturnStmt.cpp
+        header/statement/ReturnStmt.h
         tem.cpp
         tem.h
         Source/Declaration/Decl.cpp

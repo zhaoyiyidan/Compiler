@@ -9,12 +9,14 @@
 // use this to represent the set of a statement,view it as a body of a function
 class compoundstmt: public statement {
 public:
-    std::unique_ptr<ASTnode>  stmts;//
-    compoundstmt(std::unique_ptr<ASTnode> stmts):stmts(std::move(stmts)){}
+    std::vector<std::unique_ptr<ASTnode> >  stmts;//the stmt can be a Decl or a statement
+    compoundstmt(std::vector<std::unique_ptr<ASTnode> > stmts):stmts(std::move(stmts)){}
     void getNode() override{
         std::cout<<"{"<<" "<<std::endl;
-        if (stmts)
-        stmts->getNode();
+        for (auto &stmt : stmts) {
+            if (stmt)
+            stmt->getNode();
+        }
         std::cout<<std::endl<<"}"<<" "<<std::endl;
     }
 };

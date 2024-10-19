@@ -65,7 +65,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructStmt(const std::vector<std::pair
         LackOf(";");
     }
 
-    return std::make_unique<Stmt>(std::move(exp));
+    return std::make_unique<ReturnStmt>(std::move(exp));
 }
 std::unique_ptr<ASTnode> ConstructAST::ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 

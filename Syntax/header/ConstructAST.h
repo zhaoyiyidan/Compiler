@@ -9,7 +9,7 @@
 // the class need to  construct AST
 #include "Declaration/FunctionDec.h"
 #include "statement/compoundstmt.h"
-#include "statement/Stmt.h"
+#include "statement/ReturnStmt.h"
 #include "statement/Expression.h"
 #include "statement/LOrExp.h"
 #include "statement/LAndExp.h"
