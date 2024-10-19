@@ -8,7 +8,7 @@
 #include "../statement.h"
 class LOrExp: public statement{
 public:
-    std::unique_ptr<ASTnode> expression;// LOrExp "||" LAndExp
+    std::unique_ptr<ASTnode> expression;// LOrExp may exist
     std::string op="||";
     std::unique_ptr<ASTnode> LAndExp;// it must be a LAndExp
     // expression || LAndExp

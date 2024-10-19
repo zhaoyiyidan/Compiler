@@ -8,7 +8,7 @@
 #include "../statement.h"
 class EqExp :public statement{
 public:
-    std::unique_ptr<ASTnode> expression;// EqExp or RelExp
+    std::unique_ptr<ASTnode> expression;// EqExp
     std::string op;//"==" or "!="
     std::unique_ptr<ASTnode> RelExp;// it must be a RelExp
     // expression "==" "=!" RelExp

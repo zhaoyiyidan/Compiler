@@ -8,7 +8,7 @@
 #include "../statement.h"
 class UnaryExp: public statement{
 public:
-    std::unique_ptr<ASTnode> expression;// UnaryOp or PrimaryExp
+    std::unique_ptr<ASTnode> expression;// UnaryOp
     std::unique_ptr<ASTnode> unaryExp;// it must be a UnaryExp
     UnaryExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> unaryExp):expression(std::move(expression)),unaryExp(std::move(unaryExp)){}
     void getNode() override{

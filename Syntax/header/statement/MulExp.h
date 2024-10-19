@@ -8,8 +8,8 @@
 #include "../statement.h"
 class MulExp: public statement{
 public:
-    std::unique_ptr<ASTnode> expression;// MulExp or UnaryExp
-    std::string op;// "*" "/"
+    std::unique_ptr<ASTnode> expression;// MulExp
+    std::string op;// "*" "/" "%"
     std::unique_ptr<ASTnode> UnaryExp;// it must be a UnaryExp
     MulExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> UnaryExp,std::string op):expression(std::move(expression)),op(op),UnaryExp(std::move(UnaryExp)){}
     void getNode() override{

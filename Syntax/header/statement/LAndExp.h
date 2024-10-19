@@ -8,7 +8,7 @@
 #include "../statement.h"
 class LAndExp :public statement{
 public:
-    std::unique_ptr<ASTnode> expression;// LAndExp "&&" EqExp
+    std::unique_ptr<ASTnode> expression;// LAndExp
     std::string op="&&";
     std::unique_ptr<ASTnode> EqExp;// it must be a EqExp
     // expression && EqExp

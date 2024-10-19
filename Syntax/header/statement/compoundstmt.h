@@ -6,10 +6,10 @@
 #define COMPILER_COMPOUNDSTMT_H
 
 #include "../statement.h"
-// i use this to represent the set of a statement,view it as a body of a function
+// use this to represent the set of a statement,view it as a body of a function
 class compoundstmt: public statement {
 public:
-    std::unique_ptr<ASTnode>  stmts;// this is a vector of statements,it is either a Decl or a stmt
+    std::unique_ptr<ASTnode>  stmts;//
     compoundstmt(std::unique_ptr<ASTnode> stmts):stmts(std::move(stmts)){}
     void getNode() override{
         std::cout<<"{"<<" "<<std::endl;
