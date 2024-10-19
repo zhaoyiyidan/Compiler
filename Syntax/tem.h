@@ -12,12 +12,12 @@ int main(){
     cout << "Hello, World!" << endl;
 
     std::vector<std::pair<std::string,std::string>> tokens;
-    tokens.push_back(std::make_pair("int","int"));
-    tokens.push_back(std::make_pair("main","main"));
+    tokens.push_back(std::make_pair("keyword","int"));
+    tokens.push_back(std::make_pair("keyword","main"));
     tokens.push_back(std::make_pair("(","("));
-    tokens.push_back(std::make_pair(")",""));
+    tokens.push_back(std::make_pair(")",")"));
     tokens.push_back(std::make_pair("{","{"));
-    tokens.push_back(std::make_pair("int","return"));
+    tokens.push_back(std::make_pair("keyword","return"));
     tokens.push_back(std::make_pair("0","1"));
     tokens.push_back(std::make_pair(";","+"));
     tokens.push_back(std::make_pair("}","2"));
@@ -26,8 +26,31 @@ int main(){
     tokens.push_back(std::make_pair("}",";"));
     tokens.push_back(std::make_pair("}","}"));
     ConstructAST a;
-    auto b=a.ConstructMoule(tokens);
-    b.getNode();
+    // auto b=a.ConstructMoule(tokens);
+    // b.getNode();
+    std::vector<std::pair<std::string,std::string>> tokens1;
+    tokens1.push_back(std::make_pair("keyword","int"));
+    tokens1.push_back(std::make_pair("main","main"));
+    tokens1.push_back(std::make_pair("(","("));
+    tokens1.push_back(std::make_pair(")",")"));
+    tokens1.push_back(std::make_pair("{","{"));
+    tokens1.push_back(std::make_pair("keyword","const"));
+    tokens1.push_back(std::make_pair("int","int"));
+    tokens1.push_back(std::make_pair("IDENT","x"));
+    tokens1.push_back(std::make_pair("=","="));
+    tokens1.push_back(std::make_pair("Integer","233"));
+    tokens1.push_back(std::make_pair(";","*"));
+    tokens1.push_back(std::make_pair("keyword","4"));
+    tokens1.push_back(std::make_pair("k",";"));
+    tokens1.push_back(std::make_pair("keyword","return"));
+    tokens1.push_back(std::make_pair("0","1"));
+    tokens1.push_back(std::make_pair(";","+"));
+    tokens1.push_back(std::make_pair("}","2"));
+    tokens1.push_back(std::make_pair("}","*"));
+    tokens1.push_back(std::make_pair("}","3"));
+    tokens1.push_back(std::make_pair("}",";"));
+    auto c=a.ConstructMoule(tokens1);
+    c.getNode();
     return 0;
 }
 
