@@ -6,7 +6,7 @@
 #define COMPILER_ASSIGNSTMT_H
 
 #include "../statement.h"
-#include "../Declaration/VarDec.h"
+#include "../Declaration/VarDecl.h"
 class AssignStmt : public statement {
 public:
 std::unique_ptr<ASTnode> variable;

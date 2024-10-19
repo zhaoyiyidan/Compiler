@@ -19,8 +19,8 @@ add_library(ASTNode
         "header/statement/compoundstmt.h"
         "Source/module.cpp"
         "header/module.h"
-        "Source/Declaration/VarDec.cpp"
-        "header/Declaration/VarDec.h"
+        "Source/Declaration/VarDecl.cpp"
+        "header/Declaration/VarDecl.h"
         "Source/statement/AssignStmt.cpp"
         "header/statement/AssignStmt.h"
         "Source/statement/BinaryOperator.cpp"
@@ -70,5 +70,13 @@ add_library(ASTNode
         header/statement/Stmt.h
         tem.cpp
         tem.h
+        Source/Declaration/Decl.cpp
+        header/Declaration/Decl.h
+        Source/Declaration/ConstDecl.cpp
+        header/Declaration/ConstDecl.h
+        Source/Declaration/ConstDef.cpp
+        header/Declaration/ConstDef.h
+        Source/Declaration/VarDef.cpp
+        header/Declaration/VarDef.h
 
 )
