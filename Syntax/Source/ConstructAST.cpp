@@ -216,19 +216,17 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::
     if (Lindex==Rindex){
         return std::move(ConstructPrimaryExp(tokens,Lindex,Rindex));
     } // here is the problem of the recursion
-    auto vector=std::vector<std::string>{"-","!","+",")"};
+    auto vector=std::vector<std::string>{"-","!","+"};
     auto pair=FindMulExisted(tokens,Lindex,Rindex,vector);
     vector.clear();
     vector.shrink_to_fit();
     if (pair.first!="null"){
         auto unaryExp=std::move(ConstructUnaryExp(tokens,pair.second+1,Rindex));
-        std::unique_ptr<ASTnode> expreesion= nullptr;
-        if (pair.first==")"){
-            expreesion=std::move(ConstructPrimaryExp(tokens,Lindex,pair.second));
-        } else{
-            expreesion=std::move(ConstructUnaryOp(tokens,Lindex,pair.second));
-        }
+        auto expreesion=std::move(ConstructUnaryOp(tokens,Lindex,pair.second));
         return std::make_unique<UnaryExp>(std::move(expreesion),std::move(unaryExp));
+    }
+    else{
+        return std::move(ConstructPrimaryExp(tokens,Lindex,Rindex));
     }
     return nullptr;
 
@@ -236,6 +234,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::
 std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryOp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     return std::make_unique<UnaryOp>(tokens[Lindex].second);
 }
+// temporary solution
 std::unique_ptr<ASTnode> ConstructAST::ConstructPrimaryExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     // std::cout<<"primaryexp"<<std::endl;
     if (Lindex==Rindex){
