@@ -5,7 +5,7 @@
 #include "../header/ConstructAST.h"
 // include necessary header filr
 #include "../header/Type/IntegerLiteral.h"
-#include "../header/Declaration/FunctionDec.h"
+
 
 // pair<"标注的信息",“token" >
 module ConstructAST::ConstructMoule(const std::vector<std::pair<std::string, std::string>> &tokens) {
@@ -41,32 +41,109 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructFuncType(std:: string type) {
     return std::make_unique<FunctionType>(type);
 }
 std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
-    if (tokens[index].second != "{") {
-        LackOf("{");
+    // tokens[index] is "{"
+    auto Lindex=index+1;
+    auto vector=FindAllExisted(tokens,Lindex,tokens.size()-1,";");
+    vector.insert(vector.begin(),Lindex-1);
+    std::vector<std::unique_ptr<ASTnode>> Items;
+    for (int i=0;i<vector.size()-1;i++){
+        auto item=ConstructItems(tokens,vector[i]+1,vector[i+1]);
+        Items.push_back(std::move(item));
     }
-    index++;
-    auto stmt=ConstructStmt(tokens, index);
-    auto body = std::make_unique<compoundstmt>(std::move(stmt));
-    if (tokens[index].second != "}") {
-        LackOf("}");
-    }
-    index++;
-    return body;
+    return std::make_unique<compoundstmt>(std::move(Items));
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
-    if (tokens[index].second != "return") {
+std::unique_ptr<ASTnode> ConstructAST::ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+    auto string=DeclOrStmt(tokens,Lindex,Rindex);
+    if (string=="ConstDecl"){
+        return ConstructConstDecl(tokens,Lindex,Rindex);
+    }
+    if (string=="VarDecl"){
+        return ConstructVarDecl(tokens,Lindex,Rindex);
+    }
+    if (string=="ReturnStmt"){
+        return ConstructReturnStmt(tokens,Lindex,Rindex);
+    }
+    if (string=="AssignStmt"){
+        return ConstructAssignStmt(tokens,Lindex,Rindex);
+    }
+    return nullptr;
+}
+std::unique_ptr<ASTnode> ConstructAST::ConstructConstDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+    if (tokens[Lindex].second!="const"){
+        LackOf("const");
+    }
+    // construct type
+    auto type=ConstructFuncType(tokens[Lindex+1].second);
+    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    if (vector.size()==0){
+        return std::make_unique<ConstDecl>(std::move(type),std::move(ConstructConstDef(tokens,Lindex+2,Rindex-1)));
+    }
+    else{
+        vector.push_back(Rindex);
+        std::vector<std::unique_ptr<ASTnode>> ConstDefs;
+        ConstDefs.push_back(ConstructConstDef(tokens,Lindex+2,vector[0]-1));
+        // problem here
+        for (int i=0;i<vector.size()-2;i++){
+            auto ConstDef=ConstructConstDef(tokens,vector[i]+1,vector[i+1]-1);
+            ConstDefs.push_back(std::move(ConstDef));
+        }
+        return std::make_unique<ConstDecl>(std::move(type),std::move(ConstructConstDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(ConstDefs));
+    }
+}
+std::unique_ptr<ASTnode> ConstructAST::ConstructConstDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+    if (tokens[Lindex].first!="IDENT"){
+        LackOf("IDENT");
+    }
+    if (tokens[Lindex+1].second!="="){
+        LackOf("=");
+    }
+    return std::make_unique<ConstDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
+}
+std::unique_ptr<ASTnode> ConstructAST::ConstructVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+    auto type=ConstructFuncType(tokens[Lindex].second);
+    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    if (vector.size()==0){
+        return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,Lindex+1,Rindex-1)));
+    }
+    else{
+        vector.push_back(Rindex);
+        std::vector<std::unique_ptr<ASTnode>> VarDefs;
+        VarDefs.push_back(ConstructVarDef(tokens,Lindex+1,vector[0]-1));
+        for (int i=0;i<vector.size()-2;i++){
+            auto VarDef=ConstructVarDef(tokens,vector[i]+1,vector[i+1]-1);
+            VarDefs.push_back(std::move(VarDef));
+        }
+        return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(VarDefs));
+    }
+}
+std::unique_ptr<ASTnode> ConstructAST::ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+    if (tokens[Lindex].first!="IDENT"){
+        LackOf("IDENT");
+    }
+    if (tokens[Lindex+1].second!="="){
+    LackOf("=");
+    }
+    return std::make_unique<VarDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
+}
+
+std::unique_ptr<ASTnode> ConstructAST::ConstructReturnStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    if (tokens[Lindex].second!="return"){
         LackOf("return");
     }
-    index++;
-    auto pair= FindLeftExisted(tokens, index, tokens.size()-1,";");
-    auto exp=ConstructExp(tokens, index,pair.second-1);
-    index++;
-    if (tokens[index].second != ";") {
-        LackOf(";");
-    }
-
-    return std::make_unique<ReturnStmt>(std::move(exp));
+    return std::make_unique<ReturnStmt>(ConstructExp(tokens,Lindex+1,Rindex-1));
 }
+
+std::unique_ptr<ASTnode> ConstructAST::ConstructAssignStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+if (tokens[Lindex].first!="IDENT"){
+LackOf("IDENT");
+}
+if (tokens[Lindex+1].second!="="){
+LackOf("=");
+}
+return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, Lindex+2, Rindex-1));
+}
+// exp
+
 std::unique_ptr<ASTnode> ConstructAST::ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 
     auto lorExp=ConstructLOrExp(tokens, Lindex, Rindex);
@@ -210,7 +287,6 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructMulExp(const std::vector<std::pa
         return std::move(ConstructUnaryExp(tokens,Lindex,Rindex));
     }
 }
-// consider the boundary of the recursion
 std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
 
     if (Lindex==Rindex){
@@ -247,6 +323,9 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructPrimaryExp(const std::vector<std
     }
     return nullptr;
 }
+// end of exp
+
+
 // here is some helper function
 // find the rightest one
 std::pair<bool,int> ConstructAST::FindExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str) {
@@ -271,7 +350,16 @@ std::pair<bool,int> ConstructAST::FindLeftExisted(const std::vector<std::pair<st
     }
     return a;
 }
-
+// find all the existed one
+std::vector<int> ConstructAST::FindAllExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str) {
+    std::vector<int> a;
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second==str){
+            a.push_back(i);
+        }
+    }
+    return a;
+}
 // find the rightest one
 std::pair<std::string,int> ConstructAST::FindMulExisted(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,const std::vector<std::string> &str) {
     std::pair<std::string ,int> a=std::make_pair("null",-1);
@@ -285,6 +373,7 @@ std::pair<std::string,int> ConstructAST::FindMulExisted(const std::vector<std::p
     }
     return a;
 }
+
 bool ConstructAST::ExistPrimaryOrUnaryOp (const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex) {
     if (ExistPrimary(tokens,Lindex,Rindex)||ExistUnaryOp(tokens,Lindex,Rindex)){
         return true;
@@ -310,7 +399,42 @@ bool ConstructAST::ExistPrimary(const std::vector<std::pair<std::string,std::str
     }
     return false;
 }
+// need to be refractor
+//
+std::string ConstructAST::ReturnOrAssign(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 
+    if(tokens[Lindex].second=="return"){
+            return "ReturnStmt";
+    }
+    if (tokens[Lindex].first=="IDENT"&&tokens[Lindex+1].second=="="){
+        return "AssignStmt";
+    }
+    return "null";
+}
+//
+std::string ConstructAST::ConstDeclOrVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    if (tokens[Lindex].second=="const"){
+        return "ConstDecl";
+    }
+    // temporary solution
+    if (tokens[Lindex].first=="keyword"&&tokens[Lindex+1].second=="IDENT"){
+        return "VarDecl";
+    }
+    return "null";
+}
+std::string ConstructAST::DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+    auto string=ConstDeclOrVarDecl(tokens,Lindex,Rindex);
+    if (string!="null"){
+        return string;
+    }
+    else{
+        auto string2=ReturnOrAssign(tokens,Lindex,Rindex);
+        if (string2!="null"){
+            return string2;
+        }
+    }
+    return "null";
+}
 // here is the implementation of error function
 std::string ConstructAST::LackOf(std::string str) {
     return "str";

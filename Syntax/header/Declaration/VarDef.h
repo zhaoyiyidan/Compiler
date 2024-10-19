@@ -5,9 +5,20 @@
 #ifndef COMPILER_VARDEF_H
 #define COMPILER_VARDEF_H
 
-
-class VarDef {
-
+#include "../Declaration.h"
+#include "iostream"
+#include "string"
+class VarDef: public Declaration {
+public:
+    std::string identifier;
+    std::unique_ptr<ASTnode> expression;
+    VarDef(std::string identifier, std::unique_ptr<ASTnode> expression): identifier(std::move(identifier)), expression(std::move(expression)){}
+    void getNode() override{
+        std::cout<< "VarDef: {";
+        std::cout<< identifier;
+        expression->getNode();
+        std::cout << "}";
+    }
 };
 
 

@@ -5,9 +5,13 @@
 #ifndef COMPILER_DECL_H
 #define COMPILER_DECL_H
 
+#include "../Declaration.h"
+#include "iostream"
+class Decl: public Declaration {
+public:
+    void getNode() override{
 
-class Decl {
-
+    }
 };
 
 

@@ -8,10 +8,10 @@
 #include "../Type.h"
 class FunctionType: public Type {
 public:
-    std::string type="int";
+    std::string type;
     FunctionType(std::string type): type(type){}
     void getNode() override{
-        std::cout<<"int";
+        std::cout<<type;
     }
 };
 

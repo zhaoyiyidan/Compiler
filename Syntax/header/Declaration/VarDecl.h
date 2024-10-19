@@ -6,12 +6,23 @@
 #define COMPILER_VARDECL_H
 #include "../Declaration.h"
 #include "string"
+#include "iostream"
 class VarDecl: public Declaration {
 public:
-    std::string name;// this is the name of the variable
-    std::unique_ptr<ASTnode> type;// this is the type of the variable // temporary not use
+    std::unique_ptr<ASTnode> type;
+    std::unique_ptr<ASTnode> VarDef;
+    std::vector<std::unique_ptr<ASTnode>> VarDefs;
+    VarDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> VarDef): type(std::move(type)), VarDef(std::move(VarDef)){}
+    VarDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> VarDef, std::vector<std::unique_ptr<ASTnode> > VarDefs): type(std::move(type)), VarDef(std::move(VarDef)), VarDefs(std::move(VarDefs)){}
     void getNode() override{
-
+        std::cout<< "VarDecl: {";
+        type->getNode();
+        VarDef->getNode();
+        for(auto &i: VarDefs){
+            if (i)
+            i->getNode();
+        }
+        std::cout << "}";
     }
 };
 

@@ -66,6 +66,7 @@ build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug
 
 build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   OBJECT_DIR = CMakeFiles/Compiler.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -673,6 +674,7 @@ build CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o: CXX_COMP
 
 build CodeGeneration/Test/TestForCodeGeneration: CXX_EXECUTABLE_LINKER__TestForCodeGeneration_Debug CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
   POST_BUILD = :
@@ -910,6 +912,7 @@ build Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: CXX_COMPILER__TestForL
 
 build Lexical/Test/TestForLexical: CXX_EXECUTABLE_LINKER__TestForLexical_Debug Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   POST_BUILD = :
@@ -1025,6 +1028,7 @@ build Syntax/CMakeFiles/Tem.dir/tem.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Us
 
 build Syntax/Tem: CXX_EXECUTABLE_LINKER__Tem_Debug Syntax/CMakeFiles/Tem.dir/tem.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -1166,13 +1170,6 @@ build Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o: CXX_COMPILER
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
-build Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
-  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
-
 build Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
@@ -1257,8 +1254,8 @@ build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o: CXX_COMPILER_
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
-build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Stmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Stmt.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/Stmt.cpp.o.d
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
@@ -1271,33 +1268,33 @@ build Syntax/CMakeFiles/ASTNode.dir/tem.cpp.o: CXX_COMPILER__ASTNode_unscanned_D
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
 
-build Syntax/CMakeFiles/ASTNode.dir/header/Declaration/Decl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/header/Declaration/Decl.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/header/Declaration/Decl.cpp.o.d
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
-  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/header/Declaration
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
-build Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/header/Declaration/ConstDecl.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDecl.cpp.o.d
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
-  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/header/Declaration
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
-build Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/header/Declaration/ConstDef.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDef.cpp.o.d
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
-  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/header/Declaration
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
-build Syntax/CMakeFiles/ASTNode.dir/header/Declaration/VarDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/header/Declaration/VarDef.cpp || cmake_object_order_depends_target_ASTNode
-  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/header/Declaration/VarDef.cpp.o.d
+build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
-  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/header/Declaration
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 
 # =============================================================================
@@ -1307,7 +1304,7 @@ build Syntax/CMakeFiles/ASTNode.dir/header/Declaration/VarDef.cpp.o: CXX_COMPILE
 #############################################
 # Link the static library Syntax/libASTNode.a
 
-build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSemantic.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Stmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/tem.cpp.o Syntax/CMakeFiles/ASTNode.dir/header/Declaration/Decl.cpp.o Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/header/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/header/Declaration/VarDef.cpp.o
+build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSemantic.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/tem.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
@@ -1424,6 +1421,7 @@ build Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForS
 
 build Syntax/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
   POST_BUILD = :
@@ -1654,6 +1652,7 @@ build Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForS
 
 build Semantic/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
   POST_BUILD = :

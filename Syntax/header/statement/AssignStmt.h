@@ -9,11 +9,14 @@
 #include "../Declaration/VarDecl.h"
 class AssignStmt : public statement {
 public:
-std::unique_ptr<ASTnode> variable;
+std::string identifier;
 std::unique_ptr<ASTnode> expression;
-AssignStmt(std::unique_ptr<ASTnode> variable, std::unique_ptr<ASTnode> expression):variable(std::move(variable)),expression(std::move(expression)){}
+AssignStmt(std::string variable, std::unique_ptr<ASTnode> expression):identifier(std::move(variable)),expression(std::move(expression)){}
     void getNode() override{
-
+        std::cout<< "AssignStmt: {";
+        std::cout<< identifier;
+        expression->getNode();
+        std::cout << "}";
     }
 };
 
