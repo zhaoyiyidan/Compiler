@@ -17,7 +17,7 @@ TEST(gettokenTest, HandlesInput) {
     EXPECT_EQ(tokens[3].second, ")");
     EXPECT_EQ(tokens[4].first, "SEP");
     EXPECT_EQ(tokens[4].second, "{");
-    EXPECT_EQ(tokens[5].first, "keyWord");
+    EXPECT_EQ(tokens[5].first, "KeyWord");
     EXPECT_EQ(tokens[5].second, "return");
     EXPECT_EQ(tokens[6].first, "NUM");
     EXPECT_EQ(tokens[6].second, "0");

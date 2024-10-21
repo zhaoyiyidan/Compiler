@@ -1,12 +1,23 @@
 //
-// Created by 赵鲲翔 on 2024/10/11.
+// Created by 马宸泽 on 2024/10/21.
 //
 
 #include "APIOfLexical.h"
 #include <iostream>
-#include <set>
+#include <fstream>
 #include <string>
+#include <set>
+#include <vector>
+#include <utility>
 using namespace std;
+
+vector<std::pair<std::string,std::string> > output;
+void getpair(string first, string second) {
+    pair<string, string> answer;
+    answer.first = first;
+    answer.second = second;
+    output.push_back(answer);
+}
 
 string keyWord[25]= {"void", "int", "char", "float", "double", "bool", \
                    "long", "short", "signed", "unsigned",\
@@ -93,9 +104,9 @@ void dealWithLetter(string& input, int& pos, char peek) {
     }
 
     if (isKeyWord(str)) {
-        cout << "Keyword " << str << endl;
+        getpair("Keyword", str);
     } else {
-        cout << "Identifier " << str << endl;
+        getpair("IDEN", str);
     }
 
 }
@@ -108,33 +119,34 @@ void dealWithDigit(string& input, int& pos, char peek) {
             pos += 1;
             break;
         } else {
-            if (peek == '.') {
-                type = "double";
-            }
             str += peek;
             pos += 1;
             peek = input[pos];
         }
     }
-    cout << "double " << str << endl;
+    getpair("NUM", str);
 }
 
 void dealWithOperator(string& input, int& pos, char peek) {
+    string str = "";
+    str += peek;
     if (peek == '~' || pos >= input.length()) {
-        cout << "Operator ~" << endl;
+        getpair("OP", "~");
         return;
     }
 
     //Deal with the double operator
     char next = input[pos + 1];
     if (next == '=') {
-        cout << "Operator" << peek << "=" << endl;
+        str += "=";
+        getpair("OP", str);
         pos ++;
     } else if (next == peek) {
-        cout << "Operator" << peek << peek << endl;
+        str += peek;
+        getpair("OP", str);
         pos ++;
     } else {
-        cout << "Operator" << peek << endl;
+        getpair("OP", str);
     }
     pos ++;
     return;
@@ -142,12 +154,14 @@ void dealWithOperator(string& input, int& pos, char peek) {
 
 void dealWithDelimiter(int& pos, char peek) {
     pos += 1;
-    cout << "Delimiter " << peek << endl;
+    string str = "";
+    str += peek;
+    getpair("SEP", str);
 }
 
 
 void words(string input) {
-    int pos;
+    int pos = 0;
     char peek;
     while (pos <= input.length() - 1) {
         peek = input[pos];
@@ -164,24 +178,24 @@ void words(string input) {
     }
 }
 
+vector<pair<string,string> > gettoken(string filename) {
+    fstream file;
+    string line;
+    file.open(filename.c_str());
+    if (!file.is_open()) {
+        cerr << "Error opening file: " << filename << endl;
+        return {};
+    }
+    while (getline(file, line)) {
+        words(line);
+    }
+    file.close();
+    return output;
+}
+
+
+
 int main() {
-    // string filename;
-    // ifstream file;
-    // file.open(filename.c_str())
-
-    // int ch;
-    // while (ch = infile.get() != EOF) {
-    //     words();
-    // }
-
-    string input;
-    cout << "Please input the string: ";
-
-    cin >> input;
-
-    words(input);
-        // file.close();
-
-
+    gettoken("source.cpp");
     return 0;
 }
