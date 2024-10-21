@@ -11,6 +11,9 @@ int Factorial(int n){
 TEST(FactorialTest, wHandlesZeroInput) {
 EXPECT_EQ(Factorial(0), 1);
 }
+TEST(FactorialTest, wHandlesZeroInput1) {
+EXPECT_EQ(Factorial(0), 1);
+}
 
 // Tests factorial of positive numbers.
 TEST(FactorialTest, wHandlesPositiveInput) {

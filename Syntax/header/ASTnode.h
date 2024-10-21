@@ -5,7 +5,7 @@
 #ifndef COMPILER_ASTNODE_H
 #define COMPILER_ASTNODE_H
 #include <memory>
-
+#include <iostream>
 class ASTnode {
 public:
       virtual void getNode()=0;// print the node

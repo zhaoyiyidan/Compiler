@@ -6,9 +6,7 @@
 #define COMPILER_A_H
 
 
-class a {
-
-};
+int Factorial(int n);
 
 
 #endif //COMPILER_A_H

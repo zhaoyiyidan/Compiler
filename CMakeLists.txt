@@ -12,6 +12,7 @@ add_subdirectory(CodeGeneration)
 add_subdirectory(Lexical)
 add_subdirectory(Syntax)
 add_subdirectory(Semantic)
+
 #添加执行文件
 add_executable(Compiler main.cpp
         )
