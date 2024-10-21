@@ -15,8 +15,9 @@ public:
     VarDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> VarDef): type(std::move(type)), VarDef(std::move(VarDef)){}
     VarDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> VarDef, std::vector<std::unique_ptr<ASTnode> > VarDefs): type(std::move(type)), VarDef(std::move(VarDef)), VarDefs(std::move(VarDefs)){}
     void getNode() override{
-        std::cout<< "VarDecl: {";
+        std::cout<< "VarDecl: {"<<std::endl;
         type->getNode();
+        std::cout << std::endl;
         VarDef->getNode();
         for(auto &i: VarDefs){
             if (i)

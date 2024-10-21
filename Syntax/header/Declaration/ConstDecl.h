@@ -25,7 +25,7 @@ public:
                 std::cout<<std::endl;
             i->getNode();
         }
-        std::cout << "}";
+        std::cout << "}"<<std::endl;
     }
 };
 

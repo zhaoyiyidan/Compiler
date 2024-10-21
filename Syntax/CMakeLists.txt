@@ -26,8 +26,8 @@ add_library(ASTNode
         "Source/statement/BinaryOperator.cpp"
         "header/statement/BinaryOperator.h"
         "Source/Type/Valueliteral.cpp"
-        APIOfSemantic.cpp
-        APIOfSemantic.h
+        APIOfSyntax.cpp
+        APIOfSyntax.h
         Source/ASTnode.cpp
         header/ASTnode.h
         Source/Type/IntegerLiteral.cpp

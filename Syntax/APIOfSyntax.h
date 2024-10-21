@@ -2,8 +2,8 @@
 // Created by 赵鲲翔 on 2024/10/11.
 //
 
-#ifndef COMPILER_APIOFSEMANTIC_H
-#define COMPILER_APIOFSEMANTIC_H
+#ifndef COMPILER_APIOFSYNTAX_H
+#define COMPILER_APIOFSYNTAX_H
 
 #include "./header/module.h"
 #include <vector>
@@ -16,4 +16,4 @@ module getASTTree();
 // you can iterate the AST tree by calling this function
 std::string iterateASTTree(module node);
 
-#endif //COMPILER_APIOFSEMANTIC_H
+#endif //COMPILER_APIOFSYNTAX_H
