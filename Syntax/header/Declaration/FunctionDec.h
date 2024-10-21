@@ -9,6 +9,7 @@
 #include "../Type/FunctionType.h"
 class FunctionDec: public Declaration {
 public:
+    std::string NodeType="FunctionDec";
     std::unique_ptr<ASTnode> type;// functiontype
     std::string name;
     std::unique_ptr<ASTnode> body;// this is the body of the function. compoundstmt

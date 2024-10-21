@@ -9,6 +9,7 @@
 #include "iostream"
 class Decl: public Declaration {
 public:
+
     void getNode() override{
 
     }

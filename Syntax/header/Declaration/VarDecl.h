@@ -9,6 +9,7 @@
 #include "iostream"
 class VarDecl: public Declaration {
 public:
+    std::string NodeType="VarDecl";
     std::unique_ptr<ASTnode> type;
     std::unique_ptr<ASTnode> VarDef;
     std::vector<std::unique_ptr<ASTnode>> VarDefs;

@@ -9,6 +9,7 @@
 #include "iostream"
 class ConstDef: public Declaration {
 public:
+    std::string NodeType="ConstDef";
     std::string identifier;
     std::unique_ptr<ASTnode> expression;// which is a const value
     ConstDef(std::string identifier, std::unique_ptr<ASTnode> expression): identifier(std::move(identifier)), expression(std::move(expression)){}
