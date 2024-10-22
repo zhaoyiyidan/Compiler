@@ -16,6 +16,9 @@ public:
 void getNode(){
 
     }
+    std::string GetNodeType(){
+        return "statement";
+    }
 };
 
 

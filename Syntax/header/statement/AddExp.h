@@ -19,6 +19,9 @@ public:
         if (MulExp)
         MulExp->getNode();
     }
+    std::string GetNodeType(){
+        return "AddExp";
+    }
 };
 
 

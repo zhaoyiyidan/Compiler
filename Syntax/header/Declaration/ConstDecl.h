@@ -9,6 +9,7 @@
 #include "iostream"
 class ConstDecl: public Declaration {
 public:
+    std::string NodeType="ConstDecl";
     std::unique_ptr<ASTnode> type;
     std::unique_ptr<ASTnode> ConstDef;
     std::vector<std::unique_ptr<ASTnode>> ConstDefs;
@@ -25,7 +26,10 @@ public:
                 std::cout<<std::endl;
             i->getNode();
         }
-        std::cout << "}";
+        std::cout << "}"<<std::endl;
+    }
+    std::string GetNodeType() override{
+        return NodeType;
     }
 };
 

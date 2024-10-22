@@ -16,6 +16,9 @@ public:
         Expression->getNode();
         std::cout<<";"<<" ";
     }
+    std::string GetNodeType() override{
+        return "ReturnStmt";
+    }
 };
 
 

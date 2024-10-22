@@ -14,9 +14,12 @@ std::unique_ptr<ASTnode> expression;
 AssignStmt(std::string variable, std::unique_ptr<ASTnode> expression):identifier(std::move(variable)),expression(std::move(expression)){}
     void getNode() override{
         std::cout<< "AssignStmt: {";
-        std::cout<< identifier;
+        std::cout<< identifier<<"=";
         expression->getNode();
         std::cout << "}";
+    }
+    std::string GetNodeType() override{
+        return "AssignStmt";
     }
 };
 

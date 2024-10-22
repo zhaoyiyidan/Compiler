@@ -13,6 +13,9 @@ public:
      void getNode() override{
         std::cout<<value;
     }
+    std::string GetNodeType() override{
+        return "IntegerLiteral";
+    }
 };
 
 

@@ -19,6 +19,9 @@ public:
         if (UnaryExp)
         UnaryExp->getNode();
     }
+    std::string GetNodeType() override{
+        return "MulExp";
+    }
 };
 
 

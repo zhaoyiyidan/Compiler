@@ -19,6 +19,9 @@ public:
         if (AddExp)
         AddExp->getNode();
     }
+    std::string GetNodeType() override{
+        return "RelExp";
+    }
 };
 
 

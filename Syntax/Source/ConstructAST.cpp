@@ -406,7 +406,7 @@ std::string ConstructAST::ReturnOrAssign(const std::vector<std::pair<std::string
     if(tokens[Lindex].second=="return"){
             return "ReturnStmt";
     }
-    if (tokens[Lindex].first=="IDENT"&&tokens[Lindex+1].second=="="){
+    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="="){
         return "AssignStmt";
     }
     return "null";
@@ -417,7 +417,7 @@ std::string ConstructAST::ConstDeclOrVarDecl(const std::vector<std::pair<std::st
         return "ConstDecl";
     }
     // temporary solution
-    if (tokens[Lindex].first=="keyword"&&tokens[Lindex+1].second=="IDENT"){
+    if (tokens[Lindex].first=="KeyWord"&&tokens[Lindex+1].first=="IDEN"){
         return "VarDecl";
     }
     return "null";
@@ -437,5 +437,5 @@ std::string ConstructAST::DeclOrStmt(const std::vector<std::pair<std::string, st
 }
 // here is the implementation of error function
 std::string ConstructAST::LackOf(std::string str) {
-    return "str";
+    return str;
 }

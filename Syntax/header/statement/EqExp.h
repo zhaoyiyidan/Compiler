@@ -20,6 +20,9 @@ public:
         if(RelExp)
         RelExp->getNode();
     }
+    std::string GetNodeType() override{
+        return "EqExp";
+    }
 
 };
 

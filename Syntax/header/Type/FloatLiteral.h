@@ -13,6 +13,9 @@ public:
     void getNode()  {
 
     }
+    std::string GetNodeType() {
+        return "FloatLiteral";
+    }
 };
 
 
