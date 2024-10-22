@@ -18,6 +18,9 @@ public:
         expression->getNode();
 
     }
+    std::string GetNodeType() override{
+        return NodeType;
+    }
 };
 
 

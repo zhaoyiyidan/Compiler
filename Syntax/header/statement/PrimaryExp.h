@@ -14,6 +14,9 @@ public:
         if (expression)
         expression->getNode();
     }
+    std::string GetNodeType() override{
+        return "PrimaryExp";
+    }
 };
 
 

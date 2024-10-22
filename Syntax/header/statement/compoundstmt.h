@@ -19,6 +19,9 @@ public:
         }
         std::cout<<std::endl<<"}"<<" "<<std::endl;
     }
+    std::string GetNodeType() override{
+        return "compoundstmt";
+    }
 };
 
 

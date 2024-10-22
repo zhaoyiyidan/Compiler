@@ -10,11 +10,12 @@
 #include "ASTnode.h"
 class Declaration :public ASTnode{
 public:
-    // search algorithm
-    // this function is used to search the tree depending on the order you want to iterate
-    // you can search in pre in post order
+
 void getNode(){
 
+    }
+    std::string GetNodeType(){
+        return "Declaration";
     }
 };
 

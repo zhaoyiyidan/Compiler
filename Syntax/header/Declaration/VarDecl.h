@@ -26,6 +26,9 @@ public:
         }
         std::cout << "}";
     }
+    std::string GetNodeType() override{
+        return NodeType;
+    }
 };
 
 

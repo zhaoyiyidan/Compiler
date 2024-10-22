@@ -25,6 +25,9 @@ public:
         if(body)
         body->getNode();
     }
+    std::string GetNodeType() override{
+        return NodeType;
+    }
 };
 
 

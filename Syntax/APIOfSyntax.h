@@ -11,9 +11,12 @@
 #include <utility>
 // you can use this to build the AST tree
 module buildASTTree(std::vector<std::pair<std::string,std::string> > tokens);
-// you can get the whole AST tree by calling this function
-module getASTTree();
-// you can iterate the AST tree by calling this function
-std::string iterateASTTree(module node);
-
+// you are expected to combine following two functions to get the node
+std::string GetNodeType(const std::unique_ptr<ASTnode> &node){
+    return node->GetNodeType();
+};
+template <typename NodeType>
+NodeType* GetNode(const std::unique_ptr<ASTnode> &node){
+    return dynamic_cast<NodeType*>(node.get());
+}
 #endif //COMPILER_APIOFSYNTAX_H

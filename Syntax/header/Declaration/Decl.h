@@ -13,6 +13,9 @@ public:
     void getNode() override{
 
     }
+    std::string GetNodeType() override{
+        return "Decl";
+    }
 };
 
 

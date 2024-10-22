@@ -17,6 +17,9 @@ public:
         if (unaryExp)
         unaryExp->getNode();
     }
+    std::string GetNodeType() override{
+        return "UnaryExp";
+    }
 };
 
 

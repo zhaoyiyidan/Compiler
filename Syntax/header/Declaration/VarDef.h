@@ -18,6 +18,9 @@ public:
         std::cout<< identifier<<" : ";
         expression->getNode();
     }
+    std::string GetNodeType() override{
+        return "VarDef";
+    }
 };
 
 

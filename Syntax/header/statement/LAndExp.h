@@ -20,6 +20,9 @@ public:
         if (EqExp)
         EqExp->getNode();
     }
+    std::string GetNodeType() override{
+        return "LAndExp";
+    }
 };
 
 

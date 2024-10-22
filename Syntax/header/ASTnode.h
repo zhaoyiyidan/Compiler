@@ -9,6 +9,7 @@
 class ASTnode {
 public:
     virtual void getNode()=0;// print the node
+    virtual std::string GetNodeType()=0;// get the type of the node
      // virtual ~ASTnode() = default;
 };
 

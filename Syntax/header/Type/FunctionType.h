@@ -13,6 +13,9 @@ public:
     void getNode() override{
         std::cout<<type;
     }
+    std::string GetNodeType() override{
+        return "FunctionType";
+    }
 };
 
 

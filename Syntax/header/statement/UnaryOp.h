@@ -13,6 +13,9 @@ public:
     void getNode() override{
         std::cout<<op;
     }
+    std::string GetNodeType() override{
+        return "UnaryOp";
+    }
 };
 
 
