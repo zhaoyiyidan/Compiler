@@ -5,13 +5,13 @@
 #include "APIOfLexical.h"
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <set>
+#include <string>
 #include <vector>
 #include <utility>
 using namespace std;
 
-vector<std::pair<std::string,std::string> > output;
+vector<pair<string,string> > output;
 void getpair(string first, string second) {
     pair<string, string> answer;
     answer.first = first;
@@ -19,27 +19,28 @@ void getpair(string first, string second) {
     output.push_back(answer);
 }
 
-string keyWord[25]= {"void", "int", "char", "float", "double", "bool", \
+string keyWord[26]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
                    "const", "inline",\
                    "for", "while", "if", "else",\
                    "switch", "case", "default", "break", "continue", "return",\
                    "main", "include",\
-                   "struct"};
+                   "struct",\
+                   "std"};
 char whitespace[] = {' ', '\t', '\n', '\r'};
 
 //There is only one single operator, '~'
 char doubleOperator[] = {'+', '-', '*', '/', '%', '=', '!', '>', '<', '&', '|', '^'};
 
 //There are two others: ' and ", cannot be written in the array
-char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#'};
+char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#', ':'};
 
 // set<pair<int, string> > output;
 
 
 // Declare the position and peek of the dealing input
 bool isKeyWord(string word) {
-    for (int i = 0; i < 25; i ++) {
+    for (int i = 0; i < 26; i ++) {
         if (word == keyWord[i]) {
             return true;
         }
@@ -88,6 +89,13 @@ bool isDelimiter(char ch) {
     return false;
 }
 
+bool isString(char ch) {
+    return (ch == '"');
+}
+
+bool isChar(char ch) {
+    return (ch == '\'');
+}
 
 
 void dealWithLetter(string& input, int& pos, char peek) {
@@ -104,7 +112,7 @@ void dealWithLetter(string& input, int& pos, char peek) {
     }
 
     if (isKeyWord(str)) {
-        getpair("Keyword", str);
+        getpair("KeyWord", str);
     } else {
         getpair("IDEN", str);
     }
@@ -132,6 +140,7 @@ void dealWithOperator(string& input, int& pos, char peek) {
     str += peek;
     if (peek == '~' || pos >= input.length()) {
         getpair("OP", "~");
+        pos += 1;
         return;
     }
 
@@ -159,8 +168,31 @@ void dealWithDelimiter(int& pos, char peek) {
     getpair("SEP", str);
 }
 
+void dealWithString(string&input, int&pos, char peek) {
+    string str = "";
+    pos++;
+    peek = input[pos];
+    while (peek != '"') {
+        str += peek;
+        pos += 1;
+        peek = input[pos];
+    }
+    pos += 1;
+    getpair("STR", str);
+}
+
+void dealWithChar(string&input, int&pos, char peek) {
+    string str = "";
+    str += input[pos + 1];
+    pos += 3;
+    getpair("CHAR", str);
+}
+
 
 void words(string input) {
+    if (input.length() == 0) {
+        return;
+    }
     int pos = 0;
     char peek;
     while (pos <= input.length() - 1) {
@@ -174,6 +206,10 @@ void words(string input) {
             dealWithOperator(input, pos, peek);
         } else if (isDelimiter(peek)) {
             dealWithDelimiter(pos, peek);
+        } else if (isString(peek)) {
+            dealWithString(input, pos, peek);
+        } else if (isChar(peek)) {
+            dealWithChar(input, pos, peek);
         }
     }
 }
@@ -193,9 +229,3 @@ vector<pair<string,string> > gettoken(string filename) {
     return output;
 }
 
-
-
-int main() {
-    gettoken("source.cpp");
-    return 0;
-}
