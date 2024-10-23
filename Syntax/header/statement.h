@@ -13,10 +13,10 @@ public:
     // search algorithm
     // this function is used to search the tree depending on the order you want to iterate
     // you can search in pre in post order
-void getNode(){
+void getNode() override{
 
     }
-    std::string GetNodeType(){
+    std::string GetNodeType() override{
         return "statement";
     }
 };

@@ -1,10 +1,17 @@
 #include "../APIOfLexical.h"
+#include"../APIOfLexical.cpp"
 #include "gtest/gtest.h"
 #include "a.h"
+#include "../tem.h"
 //  need to write the test for the function gettoken
 TEST(FactorialTest, kkk) {
     EXPECT_EQ(Factorial(0), 1);
 }
+
+TEST(Factorials,qqqq){
+    EXPECT_EQ(Factorials(3),6);
+}
+
 TEST(gettokenTest, HandlesInput) {
     std::vector<std::pair<std::string,std::string> > tokens = gettoken("source1.cpp");
     EXPECT_EQ(tokens[0].first, "KeyWord");

@@ -76,5 +76,7 @@ add_library(ASTNode
         header/Declaration/ConstDef.h
         Source/Declaration/VarDef.cpp
         header/Declaration/VarDef.h
+        Source/HelperFunction.cpp
+        header/HelperFunction.h
 
 )
