@@ -9,8 +9,12 @@
 #include <vector>
 #include <string>
 #include <utility>
+#include "header/ConstructAST.h"
 // you can use this to build the AST tree
-module buildASTTree(std::vector<std::pair<std::string,std::string> > tokens);
+module buildASTTree(std::vector<std::pair<std::string,std::string> > tokens){
+    ConstructAST a;
+    return a.ConstructMoule(tokens);
+}
 // you are expected to combine following two functions to get the node
 std::string GetNodeType(const std::unique_ptr<ASTnode> &node){
     return node->GetNodeType();

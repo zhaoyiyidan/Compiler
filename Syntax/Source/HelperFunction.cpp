@@ -50,18 +50,9 @@ std::pair<std::string,int> FindMulExisted(const std::vector<std::pair<std::strin
 }
 // need to be refractor
 //
-std::string ReturnOrAssign(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 
-    if(tokens[Lindex].second=="return"){
-        return "ReturnStmt";
-    }
-    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="="){
-        return "AssignStmt";
-    }
-    return "null";
-}
-//
-std::string ConstDeclOrVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+    //
     if (tokens[Lindex].second=="const"){
         return "ConstDecl";
     }
@@ -69,20 +60,20 @@ std::string ConstDeclOrVarDecl(const std::vector<std::pair<std::string, std::str
     if (tokens[Lindex].first=="KeyWord"&&tokens[Lindex+1].first=="IDEN"){
         return "VarDecl";
     }
-    return "null";
-}
-std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
-    auto string=ConstDeclOrVarDecl(tokens,Lindex,Rindex);
-    if (string!="null"){
-        return string;
+    if(tokens[Lindex].second=="return"){
+        return "ReturnStmt";
     }
-    else{
-        auto string2=ReturnOrAssign(tokens,Lindex,Rindex);
-        if (string2!="null"){
-            return string2;
-        }
+    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="="){
+        return "AssignStmt";
+    }
+    if (tokens[Lindex].first=="NUM"){
+        return "EXP";
+    }
+    if (tokens[Lindex].second=="if"){
+        return "IfStmt";
     }
     return "null";
+
 }
 // here is the implementation of error function
 std::string LackOf(std::string str) {

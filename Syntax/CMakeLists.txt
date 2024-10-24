@@ -2,8 +2,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ##
 add_subdirectory(Test)
-add_executable(Tem tem.cpp
-        tem.cpp
+add_executable(Tem  tem.cpp
         tem.h)
 add_library(ASTNode
         Source/Type.cpp
@@ -26,7 +25,6 @@ add_library(ASTNode
         "Source/statement/BinaryOperator.cpp"
         "header/statement/BinaryOperator.h"
         "Source/Type/Valueliteral.cpp"
-        APIOfSyntax.cpp
         APIOfSyntax.h
         Source/ASTnode.cpp
         header/ASTnode.h
