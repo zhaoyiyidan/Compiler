@@ -31,7 +31,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructFuncDel(const std::vector<std::p
         LackOf(")");
     }
     index++;
-    auto body=ConstructCompoundStmt(tokens,index);// get the body of the function
+    auto body=ConstructCompoundStmt(tokens,index,tokens.size()-1);// get the body of the function
     auto functionDec = std::make_unique<FunctionDec>(std::move(type), name, std::move(body));
     return functionDec;
 }
@@ -40,19 +40,51 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructFuncType(std:: string type) {
     // std::cout<<"functype"<<std::endl;
     return std::make_unique<FunctionType>(type);
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
-    // tokens[index] is "{"
-    auto Lindex=index+1;
-    auto vector=FindAllExisted(tokens,Lindex,tokens.size()-1,";");
-    vector.insert(vector.begin(),Lindex-1);
-    std::vector<std::unique_ptr<ASTnode>> Items;
-    for (int i=0;i<vector.size()-1;i++){
-        auto item=ConstructItems(tokens,vector[i]+1,vector[i+1]);
-        Items.push_back(std::move(item));
+std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    if (Lindex==Rindex) return nullptr;
+    auto vector= FindPrimary(tokens,Lindex+1,Rindex-1,"{","}");
+    if (vector.size()==0){
+        auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
+        vector2.insert(vector2.begin(),Lindex);
+        std::vector<std::unique_ptr<ASTnode> > stmts;
+        // problem here
+        for (int i=0;i<vector2.size()-1;i++){
+            auto stmt= ConstructItem(tokens,vector2[i]+1,vector2[i+1]);
+            stmts.push_back(std::move(stmt));
+        }
+        return std::make_unique<compoundstmt>(std::move(stmts));
     }
-    return std::make_unique<compoundstmt>(std::move(Items));
+    else{
+        vector.insert(vector.begin(),Lindex);
+        vector.push_back(Rindex);
+        std::vector<std::unique_ptr<ASTnode> > stmts;
+        for (int i=0;i<vector.size()-1;i++){
+            if (i%2==1){
+                stmts.push_back(std::move(ConstructCompoundStmt(tokens,vector[i],vector[i+1])));
+            }
+            else{
+                auto vector2= FindAllExisted(tokens,vector[i],vector[i+1],";");
+                vector2.insert(vector2.begin(),Lindex);
+                for (int j=0;j<vector2.size()-2;j++){
+                    stmts.push_back(ConstructItem(tokens,vector2[j]+1,vector2[j+1]));
+                }
+            }
+        }
+        return std::make_unique<compoundstmt>(std::move(stmts));
+    }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+// 暂时弃用
+std::unique_ptr<ASTnode> ConstructAST::ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
+    vector2.insert(vector2.begin(),Lindex);
+    std::vector<std::unique_ptr<ASTnode> > stmts;
+    for (int i=0;i<vector2.size()-2;i++){
+        auto stmt= ConstructItem(tokens,vector2[i]+1,vector2[i+1]);
+        stmts.push_back(std::move(stmt));
+    }
+    return std::make_unique<compoundstmt>(std::move(stmts));
+}
+std::unique_ptr<ASTnode> ConstructAST::ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
         return ConstructConstDecl(tokens,Lindex,Rindex);

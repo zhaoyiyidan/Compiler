@@ -88,3 +88,27 @@ std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &t
 std::string LackOf(std::string str) {
     return str;
 }
+std::vector<int> FindPrimary(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str,std::string str2) {
+    std::vector<int> res;
+    int a=0,b=0,c=0;
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second==str){
+            a++;
+        }
+        if(tokens[i].second==str2){
+            b++;
+        }
+        if (a==b&&a!=0){
+            res.push_back(i);
+            a=0;
+            b=0;
+            c=0;
+        }
+        if (a==1&&c==0) {
+            c=1;
+            res.push_back(i);
+        }
+    }
+    return res;
+
+}

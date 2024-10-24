@@ -34,7 +34,8 @@ public:
     std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
     // construct function declaration,you need following function
     std::unique_ptr<ASTnode> ConstructFuncType(std:: string type);
-    std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
+    std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructItems(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // stmt
     std::unique_ptr<ASTnode> ConstructStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
