@@ -5,7 +5,7 @@
 #ifndef COMPILER_FLOATLITERAL_H
 #define COMPILER_FLOATLITERAL_H
 
-
+#include <iostream>
 class FloatLiteral {
 public:
     float value;

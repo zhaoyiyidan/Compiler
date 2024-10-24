@@ -2,7 +2,7 @@
 // Created by 赵鲲翔 on 2024/10/11.
 //
 
-#ifndef COMPILER_APIOFSYNTAX_H
+#ifndef COMPILER_APIOFSYNTAX_CPP
 #define COMPILER_APIOFSEMANTIC_H
 
 #include "../Syntax/header/module.h"
@@ -12,4 +12,4 @@ module getEnhacedASTTree();
 symbolTable getSymbolTable();
 
 
-#endif //COMPILER_APIOFSYNTAX_H
+#endif //COMPILER_APIOFSYNTAX_CPP

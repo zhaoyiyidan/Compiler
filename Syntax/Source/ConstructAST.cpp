@@ -4,11 +4,9 @@
 #include <iostream>
 #include "../header/ConstructAST.h"
 // include necessary header filr
-#include "../header/Type/IntegerLiteral.h"
-#include "HelperFunction.cpp"
 
 // pair<"标注的信息",“token" >
-module ConstructAST::ConstructMoule(const std::vector<std::pair<std::string, std::string>> &tokens) {
+module ConstructMoule(const std::vector<std::pair<std::string, std::string>> &tokens) {
     int index = 0;
     module root;
     auto Node=ConstructFuncDel(tokens, index);
@@ -17,7 +15,7 @@ module ConstructAST::ConstructMoule(const std::vector<std::pair<std::string, std
     return root;
 }
 // to construct  module ,you need following fucntion
-std::unique_ptr<ASTnode> ConstructAST::ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
+std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
     // std::cout<<"funcdel"<<std::endl;
     auto type=ConstructFuncType(tokens[index].second);// index here is the type of the function
     index++;
@@ -36,11 +34,11 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructFuncDel(const std::vector<std::p
     return functionDec;
 }
 // to construct function declaration,you need following function
-std::unique_ptr<ASTnode> ConstructAST::ConstructFuncType(std:: string type) {
+std::unique_ptr<ASTnode> ConstructFuncType(std:: string type) {
     // std::cout<<"functype"<<std::endl;
     return std::make_unique<FunctionType>(type);
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     if (Lindex==Rindex) return nullptr;
     auto vector= FindPrimary(tokens,Lindex+1,Rindex-1,"{","}");
     if (vector.size()==0){
@@ -74,7 +72,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructCompoundStmt(const std::vector<s
     }
 }
 // 暂时弃用
-std::unique_ptr<ASTnode> ConstructAST::ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::unique_ptr<ASTnode> ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
     vector2.insert(vector2.begin(),Lindex);
     std::vector<std::unique_ptr<ASTnode> > stmts;
@@ -84,7 +82,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructItems(const std::vector<std::pai
     }
     return std::make_unique<compoundstmt>(std::move(stmts));
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
         return ConstructConstDecl(tokens,Lindex,Rindex);
@@ -100,7 +98,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructItem(const std::vector<std::pair
     }
     return nullptr;
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructConstDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructConstDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     if (tokens[Lindex].second!="const"){
         LackOf("const");
     }
@@ -122,7 +120,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructConstDecl(const std::vector<std:
         return std::make_unique<ConstDecl>(std::move(type),std::move(ConstructConstDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(ConstDefs));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructConstDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructConstDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     if (tokens[Lindex].first!="IDENT"){
         LackOf("IDENT");
     }
@@ -131,7 +129,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructConstDef(const std::vector<std::
     }
     return std::make_unique<ConstDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     auto type=ConstructFuncType(tokens[Lindex].second);
     auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
     if (vector.size()==0){
@@ -148,7 +146,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructVarDecl(const std::vector<std::p
         return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(VarDefs));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     if (tokens[Lindex].first!="IDENT"){
         LackOf("IDENT");
     }
@@ -158,14 +156,14 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructVarDef(const std::vector<std::pa
     return std::make_unique<VarDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
 }
 
-std::unique_ptr<ASTnode> ConstructAST::ConstructReturnStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::unique_ptr<ASTnode> ConstructReturnStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     if (tokens[Lindex].second!="return"){
         LackOf("return");
     }
     return std::make_unique<ReturnStmt>(ConstructExp(tokens,Lindex+1,Rindex-1));
 }
 
-std::unique_ptr<ASTnode> ConstructAST::ConstructAssignStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::unique_ptr<ASTnode> ConstructAssignStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 if (tokens[Lindex].first!="IDENT"){
 LackOf("IDENT");
 }
@@ -176,13 +174,13 @@ return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, 
 }
 // exp
 
-std::unique_ptr<ASTnode> ConstructAST::ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
 
     auto lorExp=ConstructLOrExp(tokens, Lindex, Rindex);
     return std::make_unique<Expression>(std::move(lorExp));
 }
 // here we need to consider recursion
-std::unique_ptr<ASTnode> ConstructAST::ConstructLOrExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
+std::unique_ptr<ASTnode> ConstructLOrExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
     auto pair= FindExisted(tokens,LeftIndex,RightIndex,"||");// to check if there is a "||"
     // if there is a "||"
     if (pair.first){
@@ -201,7 +199,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructLOrExp(const std::vector<std::pa
         return ConstructLAndExp(tokens,LeftIndex,RightIndex);
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructLAndExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
+std::unique_ptr<ASTnode> ConstructLAndExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
     auto pair= FindExisted(tokens,LeftIndex,RightIndex,"&&");// to check if there is a "&&"
     // if there is a "&&"
     if (pair.first){
@@ -220,7 +218,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructLAndExp(const std::vector<std::p
         return std::move(ConstructEqExp(tokens,LeftIndex,RightIndex));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructEqExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
+std::unique_ptr<ASTnode> ConstructEqExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
     auto pair1= FindExisted(tokens,LeftIndex,RightIndex,"==");// to check if there is a "=="
     auto pair2= FindExisted(tokens,LeftIndex,RightIndex,"!=");// to check if there is a "!="
     if (pair1.first || pair2.first){
@@ -250,7 +248,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructEqExp(const std::vector<std::pai
         return std::move(ConstructRelExp(tokens,LeftIndex,RightIndex));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructRelExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructRelExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     // similar to the above
     auto vector=std::vector<std::string>{"<",">","<=",">="};
     auto pair=FindMulExisted(tokens,Lindex,Rindex,vector);
@@ -274,7 +272,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructRelExp(const std::vector<std::pa
         return std::move(ConstructAddExp(tokens,Lindex,Rindex));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructAddExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructAddExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto vector=std::vector<std::string>{"+","-"};
     auto pair=FindMulExisted(tokens,Lindex,Rindex,vector);
     vector.clear();
@@ -296,7 +294,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructAddExp(const std::vector<std::pa
         return std::move(ConstructMulExp(tokens,Lindex,Rindex));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructMulExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructMulExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     // similar to the above
     auto vector=std::vector<std::string>{"*","/","%"};
     auto pair=FindMulExisted(tokens,Lindex,Rindex,vector);
@@ -319,7 +317,7 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructMulExp(const std::vector<std::pa
         return std::move(ConstructUnaryExp(tokens,Lindex,Rindex));
     }
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructUnaryExp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
 
     if (Lindex==Rindex){
         return std::move(ConstructPrimaryExp(tokens,Lindex,Rindex));
@@ -339,11 +337,11 @@ std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryExp(const std::vector<std::
     return nullptr;
 
 }
-std::unique_ptr<ASTnode> ConstructAST::ConstructUnaryOp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructUnaryOp(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     return std::make_unique<UnaryOp>(tokens[Lindex].second);
 }
 // temporary solution
-std::unique_ptr<ASTnode> ConstructAST::ConstructPrimaryExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     // std::cout<<"primaryexp"<<std::endl;
     if (Lindex==Rindex){
         return std::make_unique<IntegerLiteral>(tokens[Lindex].second);

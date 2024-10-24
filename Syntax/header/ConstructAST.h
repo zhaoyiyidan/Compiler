@@ -25,10 +25,11 @@
 #include "Declaration/VarDecl.h"
 #include "Declaration/ConstDef.h"
 #include "Declaration/VarDef.h"
+#include "Type/IntegerLiteral.h"
+
+#include "HelperFunction.h"
 
 // you can use this class to read and construct a AST
-class ConstructAST {
-public:
     module ConstructMoule(const std::vector<std::pair<std::string,std::string> > &tokens);// it is the root of the whole AST
     // construct module ,you need  following function
     std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
@@ -65,7 +66,7 @@ public:
 
 
 
-};
+
 
 
 #endif //COMPILER_CONSTRUCTAST_H

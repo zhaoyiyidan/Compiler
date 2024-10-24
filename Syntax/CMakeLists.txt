@@ -2,9 +2,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ##
 add_subdirectory(Test)
+file(GLOB_RECURSE SOURCE_FILES "Source/*.cpp")
 add_executable(Tem  tem.cpp
-        tem.h)
+        ${SOURCE_FILES}
+        )
 add_library(ASTNode
+        header/ConstructAST.h
+        Source/ConstructAST.cpp
         Source/Type.cpp
         "header/Type.h"
         Source/Declaration.cpp
@@ -25,7 +29,7 @@ add_library(ASTNode
         "Source/statement/BinaryOperator.cpp"
         "header/statement/BinaryOperator.h"
         "Source/Type/Valueliteral.cpp"
-        APIOfSyntax.h
+        APIOfSyntax.cpp
         Source/ASTnode.cpp
         header/ASTnode.h
         Source/Type/IntegerLiteral.cpp
@@ -64,8 +68,6 @@ add_library(ASTNode
         header/statement/Number.h
         Source/statement/ReturnStmt.cpp
         header/statement/ReturnStmt.h
-        tem.cpp
-        tem.h
         Source/Declaration/Decl.cpp
         header/Declaration/Decl.h
         Source/Declaration/ConstDecl.cpp
@@ -76,5 +78,6 @@ add_library(ASTNode
         header/Declaration/VarDef.h
         Source/HelperFunction.cpp
         header/HelperFunction.h
+        APIOfSyntax.h
 
 )
