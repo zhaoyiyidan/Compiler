@@ -3,81 +3,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ##
 add_subdirectory(Test)
 file(GLOB_RECURSE SOURCE_FILES "Source/*.cpp")
+file(GLOB_RECURSE HEADER_FILES "header/*.h")
 add_executable(Tem  tem.cpp
         ${SOURCE_FILES}
         )
 add_library(ASTNode
-        header/ConstructAST.h
-        Source/ConstructAST.cpp
-        Source/Type.cpp
-        "header/Type.h"
-        Source/Declaration.cpp
-        "header/Declaration.h"
-        Source/statement.cpp
-        "header/statement.h"
-        "Source/Type/TypedefDecl.cpp"
-        Source/Declaration/FunctionDec.cpp
-        "header/Declaration/FunctionDec.h"
-        Source/statement/compoundstmt.cpp
-        "header/statement/compoundstmt.h"
-        "Source/module.cpp"
-        "header/module.h"
-        "Source/Declaration/VarDecl.cpp"
-        "header/Declaration/VarDecl.h"
-        "Source/statement/AssignStmt.cpp"
-        "header/statement/AssignStmt.h"
-        "Source/statement/BinaryOperator.cpp"
-        "header/statement/BinaryOperator.h"
-        "Source/Type/Valueliteral.cpp"
-        APIOfSyntax.cpp
-        Source/ASTnode.cpp
-        header/ASTnode.h
-        Source/Type/IntegerLiteral.cpp
-        header/Type/IntegerLiteral.h
-        Source/Type/CharLiteral.cpp
-        header/Type/CharLiteral.h
-        Source/Type/BoolLiteral.cpp
-        header/Type/BoolLiteral.h
-        Source/Type/FloatLiteral.cpp
-        header/Type/FloatLiteral.h
-        Source/Type/FunctionType.cpp
-        header/Type/FunctionType.h
-        Source/ConstructAST.cpp
-        header/ConstructAST.h
-        Source/statement/Expression.cpp
-        header/statement/Expression.h
-        Source/statement/LOrExp.cpp
-        header/statement/LOrExp.h
-        Source/statement/LAndExp.cpp
-        header/statement/LAndExp.h
-        Source/statement/EqExp.cpp
-        header/statement/EqExp.h
-        Source/statement/RelExp.cpp
-        header/statement/RelExp.h
-        Source/statement/AddExp.cpp
-        header/statement/AddExp.h
-        Source/statement/MulExp.cpp
-        header/statement/MulExp.h
-        Source/statement/UnaryExp.cpp
-        header/statement/UnaryExp.h
-        Source/statement/UnaryOp.cpp
-        header/statement/UnaryOp.h
-        Source/statement/PrimaryExp.cpp
-        header/statement/PrimaryExp.h
-        Source/statement/Number.cpp
-        header/statement/Number.h
-        Source/statement/ReturnStmt.cpp
-        header/statement/ReturnStmt.h
-        Source/Declaration/Decl.cpp
-        header/Declaration/Decl.h
-        Source/Declaration/ConstDecl.cpp
-        header/Declaration/ConstDecl.h
-        Source/Declaration/ConstDef.cpp
-        header/Declaration/ConstDef.h
-        Source/Declaration/VarDef.cpp
-        header/Declaration/VarDef.h
-        Source/HelperFunction.cpp
-        header/HelperFunction.h
-        APIOfSyntax.h
-
+        ${SOURCE_FILES} ${HEADER_FILES} APIOfSyntax.cpp APIOfSyntax.h
 )
