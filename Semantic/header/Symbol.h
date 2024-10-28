@@ -7,8 +7,8 @@
 
 #include <string>
 class Symbol {
-    std::string name;
-    std::string type;
+    std::string name;// temporary not use
+    std::string type;// the type of this IDEN
     int memoryLocation;
 public:
     Symbol(const std::string& name, const std::string& type, int memoryLocation) : name(name), type(type), memoryLocation(memoryLocation) {}
