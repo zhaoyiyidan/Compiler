@@ -1800,6 +1800,20 @@ build Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: CXX_COMPILER__S
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
 
+build Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/Symbol.cpp || cmake_object_order_depends_target_Semantic
+  DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
+  OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
+
+build Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/Scope.cpp || cmake_object_order_depends_target_Semantic
+  DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
+  OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target Semantic
@@ -1808,7 +1822,7 @@ build Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: CXX_COMPILER__S
 #############################################
 # Link the static library Semantic/libSemantic.a
 
-build Semantic/libSemantic.a: CXX_STATIC_LIBRARY_LINKER__Semantic_Debug Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o
+build Semantic/libSemantic.a: CXX_STATIC_LIBRARY_LINKER__Semantic_Debug Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
