@@ -16,6 +16,9 @@ public:
     std::string GetNodeType() override{
         return "CharLiteral";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

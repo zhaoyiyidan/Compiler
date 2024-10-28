@@ -18,6 +18,9 @@ public:
     std::string GetNodeType() override{
         return "BinaryOperator";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

@@ -16,6 +16,9 @@ void getNode(){
     std::string GetNodeType(){
         return "Type";
     }
+    void accept(VistorAST &vistor) override {
+
+    }
 };
 
 

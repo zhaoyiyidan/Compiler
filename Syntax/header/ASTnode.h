@@ -6,10 +6,12 @@
 #define COMPILER_ASTNODE_H
 #include <memory>
 #include <iostream>
+#include "../VistorAST.h"
 class ASTnode {
 public:
     virtual void getNode()=0;// print the node
     virtual std::string GetNodeType()=0;// get the type of the node
+    virtual void accept(VistorAST &vistor)=0;
      // virtual ~ASTnode() = default;
 };
 

@@ -21,6 +21,9 @@ public:
     std::string GetNodeType() override{
         return "VarDef";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

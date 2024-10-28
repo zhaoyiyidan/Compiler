@@ -19,6 +19,9 @@ public:
     std::string GetNodeType() override{
         return "ReturnStmt";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

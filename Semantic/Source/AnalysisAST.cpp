@@ -3,6 +3,7 @@
 //
 
 #include "../header/AnalysisAST.h"
+#include "../../Syntax/APIOfSyntax.h"
 static SymbolTable AnalysisAST(const module &node) {
     SymbolTable table;
     for (const auto &i : node.Node) {
@@ -10,5 +11,5 @@ static SymbolTable AnalysisAST(const module &node) {
     }
 }
 static void AnalysisFuncDef(const std::unique_ptr<ASTnode> &node, SymbolTable &table) {
-;
+
 }

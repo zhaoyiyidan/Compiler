@@ -17,6 +17,9 @@ public:
     std::string GetNodeType() override{
         return "Expression";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

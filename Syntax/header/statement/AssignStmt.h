@@ -21,6 +21,9 @@ AssignStmt(std::string variable, std::unique_ptr<ASTnode> expression):identifier
     std::string GetNodeType() override{
         return "AssignStmt";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

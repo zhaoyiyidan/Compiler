@@ -16,6 +16,9 @@ public:
     std::string GetNodeType() override{
         return "Decl";
     }
+    void accept(VistorAST &vistor) override {
+
+    }
 };
 
 

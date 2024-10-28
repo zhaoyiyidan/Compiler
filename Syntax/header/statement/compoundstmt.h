@@ -22,6 +22,9 @@ public:
     std::string GetNodeType() override{
         return "compoundstmt";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

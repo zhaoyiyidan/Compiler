@@ -20,6 +20,9 @@ public:
     std::string GetNodeType() override{
         return "UnaryExp";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 

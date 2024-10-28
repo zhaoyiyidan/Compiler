@@ -22,6 +22,9 @@ public:
     std::string GetNodeType() override{
         return "MulExp";
     }
+    void accept(VistorAST &vistor) override {
+        vistor.visit(*this);
+    }
 };
 
 
