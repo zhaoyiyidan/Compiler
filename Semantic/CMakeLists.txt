@@ -13,6 +13,8 @@ add_library(Semantic
         header/Scope.h
         Analysis.cpp
         Analysis.h
+        APIOfSemantic.cpp
+        APIOfSemantic.h
 )
 
 

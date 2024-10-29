@@ -7,6 +7,7 @@ void Analysis::visit(const FunctionDec &node) {
     node.body->accept(*this);
 }
 void Analysis::visit(const compoundstmt &node) {
+    symbolTable.EnterScope();
     for (auto &stmt: node.stmts) {
        if (stmt->GetNodeType()=="compoundstmt"){
         symbolTable.EnterScope();
@@ -56,4 +57,91 @@ void Analysis::visit(const ConstDecl &node) {
             std::cerr<<"Error: Variable "<<VarDef_->identifier<<" has been declared before"<<std::endl;
         }
     }
+}
+void Analysis::visit(const AssignStmt &node) {
+    // Implementation
+}
+
+void Analysis::visit(const Expression &node) {
+    // Implementation
+}
+
+void Analysis::visit(const PrimaryExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const ReturnStmt &node) {
+    // Implementation
+}
+
+void Analysis::visit(const BoolLiteral &node) {
+    // Implementation
+}
+
+void Analysis::visit(const CharLiteral &node) {
+    // Implementation
+}
+
+void Analysis::visit(const FloatLiteral &node) {
+    // Implementation
+}
+
+void Analysis::visit(const FunctionType &node) {
+    // Implementation
+}
+
+void Analysis::visit(const BinaryOperator &node) {
+    // Implementation
+}
+
+void Analysis::visit(const IntegerLiteral &node) {
+    // Implementation
+}
+
+void Analysis::visit(const Decl &node) {
+    // Implementation
+}
+
+void Analysis::visit(const EqExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const AddExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const LOrExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const MulExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const Number &node) {
+    // Implementation
+}
+
+void Analysis::visit(const RelExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const VarDef &node) {
+    // Implementation
+}
+
+void Analysis::visit(const LAndExp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const UnaryOp &node) {
+    // Implementation
+}
+
+void Analysis::visit(const ConstDef &node) {
+    // Implementation
+}
+
+void Analysis::visit(const UnaryExp &node) {
+    // Implementation
 }
