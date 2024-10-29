@@ -5,7 +5,6 @@
 #ifndef COMPILER_VISTORAST_H
 #define COMPILER_VISTORAST_H
 
-
 class VistorAST {
 public:
     virtual void visit(const class ConstDecl &node) = 0;

@@ -7,8 +7,9 @@
 #include <memory>
 #include <iostream>
 #include "../VistorAST.h"
-class ASTnode {
+class ASTnode{
 public:
+    virtual ~ASTnode() = default;
     virtual void getNode()=0;// print the node
     virtual std::string GetNodeType()=0;// get the type of the node
     virtual void accept(VistorAST &vistor)=0;

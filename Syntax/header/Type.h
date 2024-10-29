@@ -10,10 +10,10 @@
 #include "ASTnode.h"
 class Type: public ASTnode{
 public:
-void getNode(){
+void getNode() override{
 
 }
-    std::string GetNodeType(){
+    std::string GetNodeType() override{
         return "Type";
     }
     void accept(VistorAST &vistor) override {

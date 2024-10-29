@@ -12,14 +12,14 @@ public:
     std::string op;// "+" "-"
     std::unique_ptr<ASTnode> MulExp;// it must be a MulExp
     AddExp(std::unique_ptr<ASTnode> expression,std::unique_ptr<ASTnode> MulExp,std::string op):expression(std::move(expression)),op(op),MulExp(std::move(MulExp)){}
-    void getNode(){
+    void getNode() override{
         if (expression)
         expression->getNode();
         std::cout<<op;
         if (MulExp)
         MulExp->getNode();
     }
-    std::string GetNodeType(){
+    std::string GetNodeType() override{
         return "AddExp";
     }
     void accept(VistorAST &vistor) override {

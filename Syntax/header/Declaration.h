@@ -11,10 +11,10 @@
 class Declaration :public ASTnode{
 public:
 
-void getNode(){
+void getNode() override{
 
     }
-    std::string GetNodeType(){
+    std::string GetNodeType() override{
         return "Declaration";
     }
     void accept(VistorAST &vistor) override {

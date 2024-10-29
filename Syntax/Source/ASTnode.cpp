@@ -3,7 +3,3 @@
 //
 
 #include "../header/ASTnode.h"
-
-
-// Define the destructor if needed
-// ASTnode:: ~ASTnode() = default;

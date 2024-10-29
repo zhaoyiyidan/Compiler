@@ -10,7 +10,6 @@
 #include "string"
 class VarDef: public Declaration {
 public:
-
     std::string identifier;
     std::unique_ptr<ASTnode> expression;
     VarDef(std::string identifier, std::unique_ptr<ASTnode> expression): identifier(std::move(identifier)), expression(std::move(expression)){}
