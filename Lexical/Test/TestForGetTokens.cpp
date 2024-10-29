@@ -13,7 +13,11 @@ TEST(Factorials,qqqq){
 }
 
 TEST(gettokenTest, HandlesInput) {
+<<<<<<< HEAD
     std::vector<std::pair<std::string,std::string> > tokens = gettoken("test/source1.cpp");
+=======
+    std::vector<std::pair<std::string,std::string> > tokens = gettoken("/Users/zhaokunxiang/clion/compiler/Lexical/Test/source1.cpp");
+>>>>>>> ecd946f83090f67272d0e39e9dc477624521d30d
     EXPECT_EQ(tokens[0].first, "KeyWord");
     EXPECT_EQ(tokens[0].second, "int");
     EXPECT_EQ(tokens[1].first, "KeyWord");
