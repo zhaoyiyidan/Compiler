@@ -33,7 +33,9 @@ public:
     virtual void visit(const class CharLiteral &node) = 0;
     virtual void visit(const class FloatLiteral &node) = 0;
     virtual void visit(const class FunctionType &node) = 0;
-
+    virtual void visit(const class IFStmt &node) = 0;
+    virtual void visit(const class WhileStmt &node) = 0;
+    virtual void visit(const class ForStmt &node) = 0;
 };
 
 

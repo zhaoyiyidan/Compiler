@@ -39,6 +39,7 @@ std::unique_ptr<ASTnode> ConstructFuncType(std:: string type) {
     return std::make_unique<FunctionType>(type);
 }
 std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    /*
     if (Lindex==Rindex) return nullptr;
     auto vector= FindPrimary(tokens,Lindex+1,Rindex-1,"{","}");
     if (vector.size()==0){
@@ -70,6 +71,41 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
         }
         return std::make_unique<compoundstmt>(std::move(stmts));
     }
+    */
+    std::vector<std::unique_ptr<ASTnode> > stmts;
+    int index=Lindex+1;
+    while (index<Rindex){
+        std::string a=tokens[index].second;
+        if(a=="while"){
+            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            stmts.push_back(ConstructWhileStmt(tokens,index,tem.second));
+            index=tem.second+1;
+        }
+        else if (a=="for"){
+            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            stmts.push_back(ConstructForStmt(tokens,index,tem.second));
+            index=tem.second+1;
+        }
+        else if (a=="if"){
+            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            stmts.push_back(ConstructIFStmt(tokens,index,tem.second));
+            index=tem.second+1;
+        }
+        else if (a=="else"){
+
+        }
+        else if (a=="{"){
+            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            stmts.push_back(ConstructCompoundStmt(tokens,index,tem.second));
+            index=tem.second+1;
+        }
+        else{
+            auto tem= FindLeftExisted(tokens,index,Rindex,";");
+            stmts.push_back(ConstructItem(tokens,index,tem.second));
+            index=tem.second+1;
+        }
+    }
+     return std::make_unique<compoundstmt>(std::move(stmts));
 }
 // 暂时弃用
 std::unique_ptr<ASTnode> ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
@@ -354,3 +390,37 @@ std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::st
     return nullptr;
 }
 // end of exp
+
+// control node
+std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    if (tokens[Lindex].second!="while"){
+        LackOf("while");
+    }
+    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
+    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
+    auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
+    return std::make_unique<WhileStmt>(std::move(condition),std::move(body));
+}
+// the increment part should be considered in ConstructItem
+std::unique_ptr<ASTnode> ConstructForStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    // the tokens[Lindex] should be for
+    auto pair=FindLeftExisted(tokens,Lindex,Rindex,";");
+    auto init=ConstructItem(tokens,Lindex+2,pair.second);
+    auto pair2=FindLeftExisted(tokens,pair.second+1,Rindex,";");
+    auto condition=ConstructExp(tokens,pair.second+1,pair2.second);
+    auto pair3=FindLeftExisted(tokens,pair2.second+1,Rindex,")");
+    auto update=ConstructItem(tokens,pair2.second+1,pair3.second);
+    auto body=ConstructCompoundStmt(tokens,pair3.second+1,Rindex);
+    return std::make_unique<ForStmt>(std::move(init),std::move(condition),std::move(update),std::move(body));
+}
+// do not consider the else part now
+std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    // Lindex should be if
+    if (tokens[Lindex].second!="if"){
+        LackOf("if");
+    }
+    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
+    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
+    auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
+    return std::make_unique<IFStmt>(std::move(condition),std::move(body), nullptr);
+}

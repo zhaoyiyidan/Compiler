@@ -11,5 +11,11 @@ add_library(ASTNode
         ${SOURCE_FILES} ${HEADER_FILES} APIOfSyntax.cpp APIOfSyntax.h
         VistorAST.cpp
         VistorAST.h
+        Source/IFStmt.cpp
+        header/statement/IFStmt.h
+        Source/WhileStmt.cpp
+        header/statement/WhileStmt.h
+        Source/ForStmt.cpp
+        header/statement/ForStmt.h
 )
 target_include_directories(ASTNode PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header)
