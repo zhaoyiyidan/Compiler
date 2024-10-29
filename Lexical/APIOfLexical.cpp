@@ -10,7 +10,6 @@
 #include <vector>
 #include <utility>
 using namespace std;
-
 vector<pair<string,string> > output;
 void getpair(string first, string second) {
     pair<string, string> answer;

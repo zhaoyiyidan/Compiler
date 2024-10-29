@@ -13,7 +13,7 @@ TEST(Factorials,qqqq){
 }
 
 TEST(gettokenTest, HandlesInput) {
-    std::vector<std::pair<std::string,std::string> > tokens = gettoken("source1.cpp");
+    std::vector<std::pair<std::string,std::string> > tokens = gettoken("test/source1.cpp");
     EXPECT_EQ(tokens[0].first, "KeyWord");
     EXPECT_EQ(tokens[0].second, "int");
     EXPECT_EQ(tokens[1].first, "KeyWord");
@@ -32,5 +32,4 @@ TEST(gettokenTest, HandlesInput) {
     EXPECT_EQ(tokens[7].second, ";");
     EXPECT_EQ(tokens[8].first, "SEP");
     EXPECT_EQ(tokens[8].second, "}");
-
 }
