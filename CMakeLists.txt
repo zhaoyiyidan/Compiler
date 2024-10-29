@@ -1,5 +1,7 @@
 
 cmake_minimum_required(VERSION 3.9)
+# C++ version
+set(CMAKE_CXX_STANDARD 17)
 project(Compiler)
 
 # Enable testing functionality in CMake
@@ -12,8 +14,9 @@ add_subdirectory(CodeGeneration)
 add_subdirectory(Lexical)
 add_subdirectory(Syntax)
 add_subdirectory(Semantic)
-
 #添加执行文件
 add_executable(Compiler main.cpp
         )
+# 添加链接库
+target_link_libraries(Compiler ASTNode CodeGeneration Lexical  Semantic)
 

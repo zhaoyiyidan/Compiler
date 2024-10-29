@@ -47,12 +47,12 @@ cmake_ninja_workdir = /Users/zhaokunxiang/clion/compiler/cmake-build-debug/
 #############################################
 # Order-only phony target for Compiler
 
-build cmake_object_order_depends_target_Compiler: phony || CMakeFiles/Compiler.dir
+build cmake_object_order_depends_target_Compiler: phony || cmake_object_order_depends_target_ASTNode cmake_object_order_depends_target_CodeGeneration cmake_object_order_depends_target_Lexical cmake_object_order_depends_target_Semantic
 
 build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug /Users/zhaokunxiang/clion/compiler/main.cpp || cmake_object_order_depends_target_Compiler
   DEP_FILE = CMakeFiles/Compiler.dir/main.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = CMakeFiles/Compiler.dir
   OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
 
@@ -64,9 +64,10 @@ build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug
 #############################################
 # Link the executable Compiler
 
-build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o
+build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
+  LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a
   OBJECT_DIR = CMakeFiles/Compiler.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -248,7 +249,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 
 build Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src
@@ -281,7 +282,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 
 build Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src
@@ -396,7 +397,7 @@ build cmake_object_order_depends_target_gtest: phony || Library/googletest-main/
 
 build Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = Library/googletest-main/googletest/CMakeFiles/gtest.dir/src
@@ -429,7 +430,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 
 build Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -std=c++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src
@@ -544,7 +545,7 @@ build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/
 
 build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
   DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
@@ -659,7 +660,7 @@ build cmake_object_order_depends_target_TestForCodeGeneration: phony || cmake_ob
 
 build CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o: CXX_COMPILER__TestForCodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/a.cpp || cmake_object_order_depends_target_TestForCodeGeneration
   DEP_FILE = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
   OBJECT_FILE_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
@@ -775,14 +776,14 @@ build cmake_object_order_depends_target_Lexical: phony || Lexical/CMakeFiles/Lex
 
 build Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp || cmake_object_order_depends_target_Lexical
   DEP_FILE = Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
 
 build Lexical/CMakeFiles/Lexical.dir/tem.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/tem.cpp || cmake_object_order_depends_target_Lexical
   DEP_FILE = Lexical/CMakeFiles/Lexical.dir/tem.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
@@ -897,14 +898,14 @@ build cmake_object_order_depends_target_TestForLexical: phony || cmake_object_or
 
 build Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp || cmake_object_order_depends_target_TestForLexical
   DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
 
 build Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp || cmake_object_order_depends_target_TestForLexical
   DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d
-  FLAGS = -g -std=gnu++14 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
@@ -1299,259 +1300,259 @@ build cmake_object_order_depends_target_ASTNode: phony || Syntax/CMakeFiles/ASTN
 build Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/APIOfSyntax.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
 
 build Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/VistorAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
 
