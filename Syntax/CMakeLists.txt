@@ -11,4 +11,5 @@ add_library(ASTNode
         ${SOURCE_FILES} ${HEADER_FILES} APIOfSyntax.cpp APIOfSyntax.h
         VistorAST.cpp
         VistorAST.h
+        header/ALLHEADER.h
 )
