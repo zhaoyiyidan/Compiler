@@ -17,6 +17,7 @@ public:
         std::cout<<"ForStmt {"<<std::endl;
         if (init)
             init->getNode();
+        std::cout<<std::endl;
         if (condition)
             condition->getNode();
         if (increment)

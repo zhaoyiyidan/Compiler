@@ -133,6 +133,30 @@ std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, 
     if (string=="AssignStmt"){
         return ConstructAssignStmt(tokens,Lindex,Rindex);
     }
+    if (string=="increment"){
+        // i++ same as i=i+1;
+        std::vector<std::pair<std::string ,std::string > >tem;
+        std::string IDEN=tokens[Lindex].second;
+        tem.push_back({"IDEN",IDEN});
+        tem.push_back({"OP","="});
+        tem.push_back({"IDEN",IDEN});
+        tem.push_back({"OP","+"});
+        tem.push_back({"NUM","1"});
+        tem.push_back({"SEP",";"});
+        return ConstructAssignStmt(tem,0,6);
+    }
+    if (string=="decrement"){
+        // i++ same as i=i+1;
+        std::vector<std::pair<std::string ,std::string > >tem;
+        std::string IDEN=tokens[Lindex].second;
+        tem.push_back({"IDEN",IDEN});
+        tem.push_back({"OP","="});
+        tem.push_back({"IDEN",IDEN});
+        tem.push_back({"OP","-"});
+        tem.push_back({"NUM","1"});
+        tem.push_back({"SEP",";"});
+        return ConstructAssignStmt(tem,0,6);
+    }
     return nullptr;
 }
 std::unique_ptr<ASTnode> ConstructConstDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
