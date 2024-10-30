@@ -72,6 +72,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
         return std::make_unique<compoundstmt>(std::move(stmts));
     }
     */
+    // Lindex should be {
     std::vector<std::unique_ptr<ASTnode> > stmts;
     int index=Lindex+1;
     while (index<Rindex){

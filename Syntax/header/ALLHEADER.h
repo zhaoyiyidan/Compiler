@@ -23,5 +23,8 @@
 #include "Declaration/ConstDef.h"
 #include "Declaration/VarDef.h"
 #include "Type/IntegerLiteral.h"
+#include "statement/IFStmt.h"
+#include "statement/WhileStmt.h"
+#include "statement/ForStmt.h"
 
 #endif //COMPILER_ALLHEADER_H

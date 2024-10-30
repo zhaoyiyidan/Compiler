@@ -16,6 +16,10 @@ public:
   void visit(const class VarDecl &node) override;
   void visit(const class ConstDecl &node) override;
 
+     void visit(const class Number &node) override;
+     void visit(const class BoolLiteral &node) override;
+     void visit(const class CharLiteral &node) override;
+     void visit(const class FloatLiteral &node) override;
      void visit(const class ConstDef &node) override ;
      void visit(const class Decl &node) override;
      void visit(const class VarDef &node) override;
@@ -33,11 +37,10 @@ public:
      void visit(const class UnaryExp &node) override;
      void visit(const class UnaryOp &node) override;
      void visit(const class IntegerLiteral &node) override;
-     void visit(const class Number &node) override;
-     void visit(const class BoolLiteral &node) override;
-     void visit(const class CharLiteral &node)   override;
-     void visit(const class FloatLiteral &node) override;
      void visit(const class FunctionType &node) override;
+      void visit(const class IFStmt &node) override;
+     void visit(const class WhileStmt &node) override;
+     void visit(const class ForStmt &node) override;
 };
 
 
