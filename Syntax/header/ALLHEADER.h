@@ -26,5 +26,5 @@
 #include "statement/IFStmt.h"
 #include "statement/WhileStmt.h"
 #include "statement/ForStmt.h"
-
+#include "Type/LValue.h"
 #endif //COMPILER_ALLHEADER_H

@@ -381,6 +381,9 @@ std::unique_ptr<ASTnode> ConstructUnaryOp(const std::vector<std::pair<std::strin
 std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     // std::cout<<"primaryexp"<<std::endl;
     if (Lindex==Rindex){
+        if (tokens[Lindex].first=="IDEN"){
+            return std::make_unique<LValue>(tokens[Lindex].second);
+        }
         return std::make_unique<IntegerLiteral>(tokens[Lindex].second);
     }
     if (tokens[Lindex].second=="("){

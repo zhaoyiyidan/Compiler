@@ -17,5 +17,7 @@ add_library(ASTNode
         header/statement/WhileStmt.h
         Source/ForStmt.cpp
         header/statement/ForStmt.h
+        Source/LValue.cpp
+        header/Type/LValue.h
 )
 target_include_directories(ASTNode PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header)

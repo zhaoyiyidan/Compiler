@@ -13,6 +13,7 @@ public:
     std::unique_ptr<ASTnode> else_body;// which may not exist, "else if " see it as a new if statement "else" see it as a compound statement
     IFStmt(std::unique_ptr<ASTnode> condition,std::unique_ptr<ASTnode> body,std::unique_ptr<ASTnode> else_body):condition(std::move(condition)),body(std::move(body)),else_body(std::move(else_body)){}
     void getNode() override{
+        std::cout<<"IFStmt {"<<std::endl;
         if (condition)
             condition->getNode();
         if (body)

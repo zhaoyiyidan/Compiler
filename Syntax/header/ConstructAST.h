@@ -30,6 +30,8 @@
 #include "statement/IFStmt.h"
 #include "statement/WhileStmt.h"
 #include "statement/ForStmt.h"
+
+#include "Type/LValue.h"
 #include "HelperFunction.h"
 
 // you can use this class to read and construct a AST

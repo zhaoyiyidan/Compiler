@@ -36,6 +36,7 @@ public:
     virtual void visit(const class IFStmt &node) = 0;
     virtual void visit(const class WhileStmt &node) = 0;
     virtual void visit(const class ForStmt &node) = 0;
+    virtual void visit(const class LValue &node) = 0;
 };
 
 

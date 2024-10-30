@@ -14,6 +14,7 @@ public:
     std::unique_ptr<ASTnode> body;// the body of the for loop which is a compound statement
     ForStmt(std::unique_ptr<ASTnode> init,std::unique_ptr<ASTnode> condition,std::unique_ptr<ASTnode> increment,std::unique_ptr<ASTnode> body):init(std::move(init)),condition(std::move(condition)),increment(std::move(increment)),body(std::move(body)){}
     void getNode() override{
+        std::cout<<"ForStmt {"<<std::endl;
         if (init)
             init->getNode();
         if (condition)
