@@ -31,6 +31,8 @@
 #include "statement/WhileStmt.h"
 #include "statement/ForStmt.h"
 
+#include "statement/BreakStmt.h"
+#include "statement/ContinueStmt.h"
 #include "Type/LValue.h"
 #include "HelperFunction.h"
 
@@ -69,6 +71,9 @@
     std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructForStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    //
+    std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some helper function
 
 

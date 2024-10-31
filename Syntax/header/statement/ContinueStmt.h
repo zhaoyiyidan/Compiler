@@ -17,6 +17,7 @@ public:
     void getNode() override {
         std::cout << "ContinueStmt" << std::endl;
     }
+    ContinueStmt() = default;
 };
 
 

@@ -78,6 +78,12 @@ std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &t
     if (tokens[Lindex].first=="IDEN"&&(tokens[Lindex+1].second=="--")){
         return "decrement";
     }
+    if (tokens[Lindex].second=="break"){
+        return "break";
+    }
+    if (tokens[Lindex].second=="continue"){
+        return "continue";
+    }
     return "null";
 
 }

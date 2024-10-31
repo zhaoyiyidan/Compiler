@@ -109,16 +109,6 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
      return std::make_unique<compoundstmt>(std::move(stmts));
 }
 // 暂时弃用
-std::unique_ptr<ASTnode> ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-    auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
-    vector2.insert(vector2.begin(),Lindex);
-    std::vector<std::unique_ptr<ASTnode> > stmts;
-    for (int i=0;i<vector2.size()-2;i++){
-        auto stmt= ConstructItem(tokens,vector2[i]+1,vector2[i+1]);
-        stmts.push_back(std::move(stmt));
-    }
-    return std::make_unique<compoundstmt>(std::move(stmts));
-}
 std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
@@ -156,6 +146,12 @@ std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, 
         tem.push_back({"NUM","1"});
         tem.push_back({"SEP",";"});
         return ConstructAssignStmt(tem,0,6);
+    }
+    if (string=="continue"){
+        return ConstructContinueStmt(tokens,Lindex,Rindex);
+    }
+    if (string=="break"){
+        return ConstructBreakStmt(tokens,Lindex,Rindex);
     }
     return nullptr;
 }
@@ -451,4 +447,17 @@ std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string
     auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
     auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
     return std::make_unique<IFStmt>(std::move(condition),std::move(body), nullptr);
+}
+
+std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    if (tokens[Lindex].second!="break"){
+        LackOf("break");
+    }
+    return std::make_unique<BreakStmt>();
+}
+std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    if (tokens[Lindex].second!="continue"){
+        LackOf("continue");
+    }
+    return std::make_unique<ContinueStmt>();
 }

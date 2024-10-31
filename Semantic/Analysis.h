@@ -42,6 +42,8 @@ public:
      void visit(const class WhileStmt &node) override;
      void visit(const class ForStmt &node) override;
      void visit(const class LValue &node) override;
+     void visit(const class BreakStmt &node) override;
+     void visit(const class ContinueStmt &node) override;
 };
 
 

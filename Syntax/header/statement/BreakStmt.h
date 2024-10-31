@@ -17,6 +17,7 @@ public:
     void getNode() override {
         std::cout << "BreakStmt" << std::endl;
     }
+    BreakStmt() = default;
 
 };
 
