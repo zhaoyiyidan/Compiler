@@ -14,16 +14,23 @@ public:
     std::unique_ptr<ASTnode> body;// the body of the for loop which is a compound statement
     ForStmt(std::unique_ptr<ASTnode> init,std::unique_ptr<ASTnode> condition,std::unique_ptr<ASTnode> increment,std::unique_ptr<ASTnode> body):init(std::move(init)),condition(std::move(condition)),increment(std::move(increment)),body(std::move(body)){}
     void getNode() override{
-        std::cout<<"ForStmt {"<<std::endl;
-        if (init)
+        std::cout<<"For"<<" ";
+        if (init){
+            std::cout<<"(";
             init->getNode();
-        std::cout<<std::endl;
-        if (condition)
+       std::cout<<";";
+        }
+        if (condition){
             condition->getNode();
-        if (increment)
+            std::cout<<";";
+        }
+        if (increment){
             increment->getNode();
-        if (body)
+            std::cout<<")";
+        }
+        if (body){
             body->getNode();
+        }
     }
     std::string GetNodeType() override{
         return "ForStmt";

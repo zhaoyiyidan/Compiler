@@ -24,7 +24,6 @@ public:
                 std::cout<<"";
             i->getNode();
         }
-        std::cout << "}"<<std::endl;
     }
     std::string GetNodeType() override{
         return NodeType;
