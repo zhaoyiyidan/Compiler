@@ -27,4 +27,6 @@
 #include "statement/WhileStmt.h"
 #include "statement/ForStmt.h"
 #include "Type/LValue.h"
+#include "statement/BreakStmt.h"
+#include "statement/ContinueStmt.h"
 #endif //COMPILER_ALLHEADER_H
