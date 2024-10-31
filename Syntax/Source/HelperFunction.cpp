@@ -115,3 +115,18 @@ std::vector<int> FindPrimary(const std::vector<std::pair<std::string,std::string
     return res;
 
 }
+std::pair<bool,int> FindCorrsponding(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str,std::string str2) {
+    int a=0,b=0;
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second==str){
+            a++;
+        }
+        if(tokens[i].second==str2){
+            b++;
+        }
+        if (a==b&&a!=0){
+            return std::make_pair(true,i);
+        }
+    }
+    return std::make_pair(false,-1);
+}

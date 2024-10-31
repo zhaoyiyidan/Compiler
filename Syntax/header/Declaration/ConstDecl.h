@@ -16,14 +16,12 @@ public:
     ConstDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> ConstDef): type(std::move(type)), ConstDef(std::move(ConstDef)){}
     ConstDecl(std::unique_ptr<ASTnode> type,std::unique_ptr<ASTnode> ConstDef, std::vector<std::unique_ptr<ASTnode>> ConstDefs): type(std::move(type)),ConstDef(std::move(ConstDef)), ConstDefs(std::move(ConstDefs)){}
     void getNode() override{
-        std::cout<< "ConstDecl: {"<<std::endl;
-        std::cout << "   type: ";
         type->getNode();
-        std::cout << std::endl;
+        std::cout << " ";
         ConstDef->getNode();
         for(auto &i: ConstDefs){
             if (i)
-                std::cout<<std::endl;
+                std::cout<<"";
             i->getNode();
         }
         std::cout << "}"<<std::endl;

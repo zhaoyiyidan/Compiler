@@ -19,5 +19,6 @@ std::string ReturnOrAssign(const std::vector<std::pair<std::string,std::string> 
 std::string ConstDeclOrVarDecl(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
 // here is some error function
 std::string LackOf(std::string str);
+std::pair<bool,int> FindCorrsponding(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str,std::string str2);
 
 #endif //COMPILER_HELPERFUNCTION_H

@@ -78,17 +78,17 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
     while (index<Rindex){
         std::string a=tokens[index].second;
         if(a=="while"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructWhileStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
         else if (a=="for"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructForStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
         else if (a=="if"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructIFStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
@@ -96,7 +96,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
 
         }
         else if (a=="{"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructCompoundStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
@@ -108,7 +108,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
     }
      return std::make_unique<compoundstmt>(std::move(stmts));
 }
-// 暂时弃用
+
 std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
@@ -420,7 +420,7 @@ std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::str
     if (tokens[Lindex].second!="while"){
         LackOf("while");
     }
-    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
+    auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
     auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
     auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
     return std::make_unique<WhileStmt>(std::move(condition),std::move(body));
@@ -443,8 +443,8 @@ std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string
     if (tokens[Lindex].second!="if"){
         LackOf("if");
     }
-    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
-    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
+    auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
+    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);// the condition
     auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
     return std::make_unique<IFStmt>(std::move(condition),std::move(body), nullptr);
 }
