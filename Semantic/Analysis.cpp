@@ -175,3 +175,4 @@ void Analysis::visit(const class ForStmt &node) {}
 void Analysis::visit(const class LValue &node) {}
 void Analysis::visit(const class BreakStmt &node) {}
 void Analysis::visit(const class ContinueStmt &node) {}
+void Analysis::visit(const class EXP &node) {}

@@ -18,6 +18,7 @@ TEST(evaluateExpression, ArithmeticOperations) {
     EXPECT_EQ(evaluateExpression("2+3*4.0").first, 14.0);
     EXPECT_EQ(evaluateExpression("2.0+3*4").first, 14.0);
     EXPECT_EQ(evaluateExpression("2.0+((3.0*4.0)+3%2)*4").first,54.0 );
+    EXPECT_EQ(evaluateExpression("!true+0+2").first,2);
 }
 
 // 测试算术结果类型

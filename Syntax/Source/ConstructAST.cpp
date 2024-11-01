@@ -212,7 +212,8 @@ std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string
     }
     auto exp=ConstructExp(tokens,Lindex+2,Rindex);
     if (exp){
-    return std::make_unique<VarDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));}
+    return std::make_unique<VarDef>(tokens[Lindex].second,std::move(exp));
+    }
     return std::make_unique<VarDef>(tokens[Lindex].second,nullptr);
 }
 
@@ -235,7 +236,9 @@ return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, 
 // exp
 
 std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-        // to imporve time
+    auto token= infixToPostfix(tokens,Lindex,Rindex);
+    return ConstructEXP(token);
+    // to imporve time
         if (Lindex==Rindex){
             return ConstructPrimaryExp(tokens,Lindex,Rindex);
         }
@@ -419,7 +422,32 @@ std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::st
     return nullptr;
 }
 // end of exp
-
+// antoher way to construct exp
+std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string> &tokens) {
+    std::stack<std::unique_ptr<ASTnode>> stack;
+    for(auto &token:tokens){
+        if (isdigit(token[0])){
+            stack.push(std::make_unique<EXP>(nullptr,token, nullptr));
+        }
+        else if (token.substr(0,4)=="IDEN"){
+            stack.push(std::make_unique<EXP>(token.substr(4)));
+        }
+        else if (token=="!"){
+            auto operand=std::move(stack.top());
+            stack.pop();
+            stack.push(std::make_unique<EXP>(nullptr,"!",std::move(operand)));
+        }
+        else {
+            auto right = std::move(stack.top());
+            stack.pop();
+            auto left = std::move(stack.top());
+            stack.pop();
+            auto node = std::make_unique<EXP>(std::move(left),token,std::move(right));
+            stack.push(std::move(node));
+        }
+    }
+    return std::move(stack.top());
+}
 // control node
 std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     if (tokens[Lindex].second!="while"){

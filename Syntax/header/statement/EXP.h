@@ -12,12 +12,17 @@ public:
     std::string value;
     std::unique_ptr<ASTnode> Right;
     EXP(std::unique_ptr<ASTnode> Left,std::string value,std::unique_ptr<ASTnode> Right):Left(std::move(Left)),value(value),Right(std::move(Right)){}
+    EXP(std::string value):value(value){Left=nullptr;Right=nullptr;}
     void getNode() override{
-        if (Left);
+        if (Left){
+            std::cout<<std::endl;
         Left->getNode();
+        }
         std::cout<<value;
-        if (Right)
+        if (Right){
+            std::cout<<std::endl;
         Right->getNode();
+        }
     }
     std::string GetNodeType() override{
         return "EXP";

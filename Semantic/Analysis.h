@@ -44,6 +44,7 @@ public:
      void visit(const class LValue &node) override;
      void visit(const class BreakStmt &node) override;
      void visit(const class ContinueStmt &node) override;
+        void visit(const class EXP &node) override;
 };
 
 
