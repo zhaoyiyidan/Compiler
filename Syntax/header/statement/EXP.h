@@ -15,12 +15,12 @@ public:
     EXP(std::string value):value(value){Left=nullptr;Right=nullptr;}
     void getNode() override{
         if (Left){
-            std::cout<<std::endl;
+            // std::cout<<std::endl;
         Left->getNode();
         }
         std::cout<<value;
         if (Right){
-            std::cout<<std::endl;
+           //  std::cout<<std::endl;
         Right->getNode();
         }
     }

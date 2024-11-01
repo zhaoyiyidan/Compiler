@@ -204,11 +204,8 @@ std::unique_ptr<ASTnode> ConstructVarDecl(const std::vector<std::pair<std::strin
     }
 }
 std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
-    if (tokens[Lindex].first!="IDENT"){
+    if (tokens[Lindex].first!="IDEN"){
         LackOf("IDENT");
-    }
-    if (tokens[Lindex+1].second!="="){
-    LackOf("=");
     }
     auto exp=ConstructExp(tokens,Lindex+2,Rindex);
     if (exp){
@@ -236,6 +233,9 @@ return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, 
 // exp
 
 std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    if (Lindex>Rindex){
+        return nullptr;
+    }
     auto token= infixToPostfix(tokens,Lindex,Rindex);
     return ConstructEXP(token);
     // to imporve time
