@@ -1740,45 +1740,45 @@ build Syntax/install/strip: phony Syntax/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TestForSemantic
+# Object build statements for EXECUTABLE target TestForSyntax
 
 
 #############################################
-# Order-only phony target for TestForSemantic
+# Order-only phony target for TestForSyntax
 
-build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
-  DEP_FILE = Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
+build Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
+  DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
-  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
 
-build Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp || cmake_object_order_depends_target_TestForSemantic
-  DEP_FILE = Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o.d
+build Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp || cmake_object_order_depends_target_TestForSyntax
+  DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
-  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TestForSemantic
+# Link build statements for EXECUTABLE target TestForSyntax
 
 
 #############################################
-# Link the executable Syntax/Test/TestForSemantic
+# Link the executable Syntax/Test/TestForSyntax
 
-build Syntax/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Syntax/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Syntax/Test/TestForSemantic
-  TARGET_PDB = TestForSemantic.dbg
+  TARGET_FILE = Syntax/Test/TestForSyntax
+  TARGET_PDB = TestForSyntax.dbg
 
 
 #############################################
@@ -2013,38 +2013,38 @@ build Semantic/install/strip: phony Semantic/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TestForSyntax
+# Object build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Order-only phony target for TestForSyntax
+# Order-only phony target for TestForSemantic
 
-build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
-  DEP_FILE = Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
+build Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
+  DEP_FILE = Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
-  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TestForSyntax
+# Link build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Link the executable Semantic/Test/TestForSyntax
+# Link the executable Semantic/Test/TestForSemantic
 
-build Semantic/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Semantic/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Semantic/Test/TestForSyntax
-  TARGET_PDB = TestForSyntax.dbg
+  TARGET_FILE = Semantic/Test/TestForSemantic
+  TARGET_PDB = TestForSemantic.dbg
 
 
 #############################################
@@ -2140,9 +2140,9 @@ build TestForCodeGeneration: phony CodeGeneration/Test/TestForCodeGeneration
 
 build TestForLexical: phony Lexical/Test/TestForLexical
 
-build TestForSemantic: phony Syntax/Test/TestForSemantic
+build TestForSemantic: phony Semantic/Test/TestForSemantic
 
-build TestForSyntax: phony Semantic/Test/TestForSyntax
+build TestForSyntax: phony Syntax/Test/TestForSyntax
 
 build gmock: phony lib/libgmock.a
 
@@ -2239,7 +2239,7 @@ build Semantic/all: phony Semantic/libSemantic.a Semantic/Test/all
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test
 
-build Semantic/Test/all: phony Semantic/Test/TestForSyntax
+build Semantic/Test/all: phony Semantic/Test/TestForSemantic
 
 # =============================================================================
 
@@ -2253,7 +2253,7 @@ build Syntax/all: phony Syntax/Tem Syntax/libASTNode.a Syntax/Test/all
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test
 
-build Syntax/Test/all: phony Syntax/Test/TestForSemantic
+build Syntax/Test/all: phony Syntax/Test/TestForSyntax
 
 # =============================================================================
 # Built-in targets

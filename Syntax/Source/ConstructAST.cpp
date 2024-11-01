@@ -109,8 +109,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
      return std::make_unique<compoundstmt>(std::move(stmts));
 }
 
-std::unique_ptr<ASTnode>
-        ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
+std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
         return ConstructConstDecl(tokens,Lindex,Rindex);

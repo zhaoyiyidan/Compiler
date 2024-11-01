@@ -72,7 +72,7 @@
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/install.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/install/local.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/CMakeFiles/install/strip.dir
-/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/CMakeFiles/TestForSemantic.dir
+/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/CMakeFiles/TestForSyntax.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/CMakeFiles/test.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/CMakeFiles/edit_cache.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/CMakeFiles/rebuild_cache.dir
@@ -88,7 +88,7 @@
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/CMakeFiles/install.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/CMakeFiles/install/local.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/CMakeFiles/install/strip.dir
-/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test/CMakeFiles/TestForSyntax.dir
+/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test/CMakeFiles/TestForSemantic.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test/CMakeFiles/test.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test/CMakeFiles/edit_cache.dir
 /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test/CMakeFiles/rebuild_cache.dir
