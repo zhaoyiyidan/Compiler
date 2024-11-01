@@ -23,5 +23,7 @@ add_library(ASTNode
         header/statement/BreakStmt.h
         Source/ContinueStmt.cpp
         header/statement/ContinueStmt.h
+        Source/EXP.cpp
+        header/statement/EXP.h
 )
 target_include_directories(ASTNode PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header)
