@@ -1,5 +1,5 @@
-add_executable(TestForSemantic a.cpp
+add_executable(TestForSyntax a.cpp
         TestHelper.cpp
-        TestHelper.h)
-target_link_libraries(TestForSemantic gtest gtest_main)
-add_test(NAME TestForSemantic COMMAND TestForSemantic)
+)
+target_link_libraries(TestForSyntax gtest gtest_main)
+add_test(NAME TestForSyntax COMMAND TestForSemantic)
