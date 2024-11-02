@@ -426,3 +426,70 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake:59 (check_c_source_compiles)"
+      - "/usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake:258 (find_package)"
+      - "CodeGeneration/CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_FFI_CALL"
+    directories:
+      source: "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-q1oc59"
+      binary: "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-q1oc59"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/usr/local/opt/llvm/lib/cmake/llvm"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "HAVE_FFI_CALL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-q1oc59'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/x64/ninja -v cmTC_3f1fb
+        [1/2] /Library/Developer/CommandLineTools/usr/bin/cc -DHAVE_FFI_CALL  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_3f1fb.dir/src.c.o -MF CMakeFiles/cmTC_3f1fb.dir/src.c.o.d -o CMakeFiles/cmTC_3f1fb.dir/src.c.o -c /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-q1oc59/src.c
+        [2/2] : && /Library/Developer/CommandLineTools/usr/bin/cc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/llvm/lib CMakeFiles/cmTC_3f1fb.dir/src.c.o -o cmTC_3f1fb  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libffi.tbd && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake:28 (check_include_file)"
+      - "/usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake:265 (find_package)"
+      - "CodeGeneration/CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Looking for histedit.h"
+    directories:
+      source: "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-t6wyU0"
+      binary: "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-t6wyU0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/usr/local/opt/llvm/lib"
+      CMAKE_MODULE_PATH: "/usr/local/opt/llvm/lib/cmake/llvm"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "HAVE_HISTEDIT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-t6wyU0'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/x64/ninja -v cmTC_5be25
+        [1/2] /Library/Developer/CommandLineTools/usr/bin/cc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_5be25.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_5be25.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_5be25.dir/CheckIncludeFile.c.o -c /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-t6wyU0/CheckIncludeFile.c
+        [2/2] : && /Library/Developer/CommandLineTools/usr/bin/cc -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/llvm/lib CMakeFiles/cmTC_5be25.dir/CheckIncludeFile.c.o -o cmTC_5be25   && :
+        
+      exitCode: 0
+...
