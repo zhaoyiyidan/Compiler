@@ -149,3 +149,15 @@
 267	366	1730203769002205641	Lexical/CMakeFiles/Lexical.dir/tem.cpp.o	23adf63caa30644d
 1	3350	1730546490146150693	CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o	b289520a05f12776
 3351	3726	1730546490523139529	CodeGeneration/my_project	f4927b481c641778
+69	3317	1730556384443958638	Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o	ff73de14bc90b8b4
+75	3716	1730556384848208983	Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o	d56e582ca3f3844d
+3716	4015	1730556385165045000	Semantic/libSemantic.a	b807f986f31cc40c
+79	4920	1730556386055206670	Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o	d0d2da4b1a8ff6d8
+3318	4978	1730556386115269385	Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o	a2cc8c6820498b2c
+4978	5083	1730556386224717210	CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o	ed4dccdd8d9eb799
+4015	5945	1730556387082737701	Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o	b0fce487376823ac
+5945	6230	1730556387380332000	Syntax/libASTNode.a	b2625de3a5419c95
+4920	7199	1730556388339448020	CMakeFiles/Compiler.dir/main.cpp.o	96c6a2670abf5739
+5084	8470	1730556389609440434	CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o	d793bc32df697635
+8471	8569	1730556389719390000	CodeGeneration/libCodeGeneration.a	60f08dc64574a4b
+8569	8878	1730556390016912924	Compiler	7484018b40db6f94
