@@ -23,7 +23,14 @@ void Analysis::visit(const VarDecl &node) {
     auto type=node.type->GetNodeType();
     auto VarDef=dynamic_cast<class VarDef*>(node.VarDef.get());
    if (!symbolTable.ExistSymbol(VarDef->identifier)){
+       if (!VarDef->expression){
        symbolTable.InsertSymbol(VarDef->identifier, type,1);
+       }
+       else{
+           auto expression=dynamic_cast<class EXP*>(VarDef->expression.get());
+           double value=calculate(*expression);
+           symbolTable.InsertSymbol(VarDef->identifier, type,value,1);
+       }
    }
    else{
        std::cerr<<"Error: Variable "<<VarDef->identifier<<" has been declared before"<<std::endl;
@@ -31,7 +38,14 @@ void Analysis::visit(const VarDecl &node) {
     for (auto &VarDef: node.VarDefs) {
         auto VarDef_=dynamic_cast<class VarDef*>(VarDef.get());
         if (!symbolTable.ExistSymbol(VarDef_->identifier)){
+            if (!VarDef_->expression){
             symbolTable.InsertSymbol(VarDef_->identifier, type,1);
+            }
+            else {
+                auto expression=dynamic_cast<class EXP*>(VarDef_->expression.get());
+                double value=calculate(*expression);
+                symbolTable.InsertSymbol(VarDef_->identifier, type,value,1);
+            }
         }
         else{
             std::cerr<<"Error: Variable "<<VarDef_->identifier<<" has been declared before"<<std::endl;
@@ -43,7 +57,9 @@ void Analysis::visit(const ConstDecl &node) {
     auto type=node.type->GetNodeType();
     auto VarDef=dynamic_cast<class ConstDef*>(node.ConstDef.get());
     if (!symbolTable.ExistSymbol(VarDef->identifier)){
-        symbolTable.InsertSymbol(VarDef->identifier, type,0);
+        auto expression=dynamic_cast<class EXP*>(VarDef->expression.get());
+        double value=calculate(*expression);
+        symbolTable.InsertSymbol(VarDef->identifier, type,value,0);
     }
     else{
         std::cerr<<"Error: Variable "<<VarDef->identifier<<" has been declared before"<<std::endl;
@@ -175,4 +191,44 @@ void Analysis::visit(const class ForStmt &node) {}
 void Analysis::visit(const class LValue &node) {}
 void Analysis::visit(const class BreakStmt &node) {}
 void Analysis::visit(const class ContinueStmt &node) {}
-void Analysis::visit(const class EXP &node) {}
+void Analysis::visit(const class EXP &node) {
+
+}
+double Analysis::calculate(const class EXP &node) {
+    auto Left=dynamic_cast<class EXP*>(node.Left.get());
+    auto Right=dynamic_cast<class EXP*>(node.Right.get());
+    double left_value=0,right_value=0;
+    if (Left){
+        left_value= calculate(*Left);
+    }
+    if (Right){
+        right_value= calculate(*Right);
+    }
+    if (Left&&Right)
+    return applyOp(node.value,left_value,right_value);
+
+    if (symbolTable.ExistSymbol(node.value)){
+        return symbolTable.GetSymbol(node.value).second;
+    } else{
+        return std::stod(node.value);
+    }
+
+
+}
+double Analysis::applyOp(const std::string& op, double a, double b) {
+    if (op == "+") return a + b;
+    else if (op == "-") return a - b;
+    else if (op == "*") return a * b;
+    else if (op == "/") return a / b;
+    else if (op == "%") return static_cast<int>(a) % static_cast<int>(b);
+    else if (op == "&&") return static_cast<bool>(a) && static_cast<bool>(b);
+    else if (op == "||") return static_cast<bool>(a) || static_cast<bool>(b);
+    else if (op == ">") return a > b;
+    else if (op == "<") return a < b;
+    else if (op == ">=") return a >= b;
+    else if (op == "<=") return a <= b;
+    else if (op == "==") return a == b;
+    else if (op == "!=") return a != b;
+    else if (op == "!") return !static_cast<bool>(a);
+    throw std::runtime_error("Unknown operator");
+}
