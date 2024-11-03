@@ -30,6 +30,14 @@ public:
             throw std::runtime_error("No scope to insert symbol");
         }
     }
+    void InsertSymbol(const std::string &name,const std::string &type,double value,int memoryLocation){
+        if (!scopeStack.empty()){
+            scopeStack.back().InsertSymbol(name,type,value,memoryLocation);
+        }
+        else{
+            throw std::runtime_error("No scope to insert symbol");
+        }
+    }
     bool ExistSymbol(const std::string &name){
         for (auto it=scopeStack.rbegin();it!=scopeStack.rend();it++){
             if (it->ExistSymbol(name)){
@@ -37,6 +45,15 @@ public:
             }
         }
         return false;
+    }
+    // first is type, second is value
+    std::pair<std::string ,double> GetSymbol(const std::string &name){
+        for (auto it=scopeStack.rbegin();it!=scopeStack.rend();it++){
+            if (it->ExistSymbol(name)){
+                return it->GetSymbol(name);
+            }
+        }
+        throw std::runtime_error("No such symbol");
     }
 };
 

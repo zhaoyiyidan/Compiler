@@ -136,6 +136,25 @@ rule CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug
 #############################################
 # Rule for compiling CXX files.
 
+rule CXX_COMPILER__my_project_unscanned_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ${LAUNCHER}${CODE_CHECK}/Library/Developer/CommandLineTools/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX executable.
+
+rule CXX_EXECUTABLE_LINKER__my_project_Debug
+  command = $PRE_LINK && /Library/Developer/CommandLineTools/usr/bin/c++ $FLAGS -Wl,-search_paths_first -Wl,-headerpad_max_install_names $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  description = Linking CXX executable $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
 rule CXX_COMPILER__TestForCodeGeneration_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
@@ -231,7 +250,7 @@ rule CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__TestForSemantic_unscanned_Debug
+rule CXX_COMPILER__TestForSyntax_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/Library/Developer/CommandLineTools/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -241,7 +260,7 @@ rule CXX_COMPILER__TestForSemantic_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__TestForSemantic_Debug
+rule CXX_EXECUTABLE_LINKER__TestForSyntax_Debug
   command = $PRE_LINK && /Library/Developer/CommandLineTools/usr/bin/c++ $FLAGS -Wl,-search_paths_first -Wl,-headerpad_max_install_names $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
@@ -269,7 +288,7 @@ rule CXX_STATIC_LIBRARY_LINKER__Semantic_Debug
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER__TestForSyntax_unscanned_Debug
+rule CXX_COMPILER__TestForSemantic_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/Library/Developer/CommandLineTools/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -279,7 +298,7 @@ rule CXX_COMPILER__TestForSyntax_unscanned_Debug
 #############################################
 # Rule for linking CXX executable.
 
-rule CXX_EXECUTABLE_LINKER__TestForSyntax_Debug
+rule CXX_EXECUTABLE_LINKER__TestForSemantic_Debug
   command = $PRE_LINK && /Library/Developer/CommandLineTools/usr/bin/c++ $FLAGS -Wl,-search_paths_first -Wl,-headerpad_max_install_names $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT

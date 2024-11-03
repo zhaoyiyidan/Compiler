@@ -4,6 +4,10 @@
 
 #ifndef COMPILER_CONSTRUCTAST_H
 #define COMPILER_CONSTRUCTAST_H
+// std
+#include <stack>
+#include <cctype>
+//
 #include "module.h"
 #include "ASTnode.h"
 // the class need to  construct AST
@@ -31,8 +35,11 @@
 #include "statement/WhileStmt.h"
 #include "statement/ForStmt.h"
 
+#include "statement/BreakStmt.h"
+#include "statement/ContinueStmt.h"
 #include "Type/LValue.h"
 #include "HelperFunction.h"
+#include "statement/EXP.h"
 
 // you can use this class to read and construct a AST
     module ConstructMoule(const std::vector<std::pair<std::string,std::string> > &tokens);// it is the root of the whole AST
@@ -65,10 +72,15 @@
     std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructUnaryOp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // end of exp
+    // another way to build exp
+    std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string>  &tokens);
     // contruct node
     std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructForStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    //
+    std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some helper function
 
 

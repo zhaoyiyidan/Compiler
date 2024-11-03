@@ -78,17 +78,17 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
     while (index<Rindex){
         std::string a=tokens[index].second;
         if(a=="while"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructWhileStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
         else if (a=="for"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructForStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
         else if (a=="if"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructIFStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
@@ -96,7 +96,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
 
         }
         else if (a=="{"){
-            auto tem= FindLeftExisted(tokens,index,Rindex,"}");
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
             stmts.push_back(ConstructCompoundStmt(tokens,index,tem.second));
             index=tem.second+1;
         }
@@ -108,17 +108,7 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
     }
      return std::make_unique<compoundstmt>(std::move(stmts));
 }
-// 暂时弃用
-std::unique_ptr<ASTnode> ConstructItems(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-    auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
-    vector2.insert(vector2.begin(),Lindex);
-    std::vector<std::unique_ptr<ASTnode> > stmts;
-    for (int i=0;i<vector2.size()-2;i++){
-        auto stmt= ConstructItem(tokens,vector2[i]+1,vector2[i+1]);
-        stmts.push_back(std::move(stmt));
-    }
-    return std::make_unique<compoundstmt>(std::move(stmts));
-}
+
 std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
     auto string=DeclOrStmt(tokens,Lindex,Rindex);
     if (string=="ConstDecl"){
@@ -143,7 +133,7 @@ std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, 
         tem.push_back({"OP","+"});
         tem.push_back({"NUM","1"});
         tem.push_back({"SEP",";"});
-        return ConstructAssignStmt(tem,0,6);
+        return ConstructAssignStmt(tem,0,5);
     }
     if (string=="decrement"){
         // i++ same as i=i+1;
@@ -155,7 +145,13 @@ std::unique_ptr<ASTnode> ConstructItem(const std::vector<std::pair<std::string, 
         tem.push_back({"OP","-"});
         tem.push_back({"NUM","1"});
         tem.push_back({"SEP",";"});
-        return ConstructAssignStmt(tem,0,6);
+        return ConstructAssignStmt(tem,0,5);
+    }
+    if (string=="continue"){
+        return ConstructContinueStmt(tokens,Lindex,Rindex);
+    }
+    if (string=="break"){
+        return ConstructBreakStmt(tokens,Lindex,Rindex);
     }
     return nullptr;
 }
@@ -208,13 +204,14 @@ std::unique_ptr<ASTnode> ConstructVarDecl(const std::vector<std::pair<std::strin
     }
 }
 std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
-    if (tokens[Lindex].first!="IDENT"){
+    if (tokens[Lindex].first!="IDEN"){
         LackOf("IDENT");
     }
-    if (tokens[Lindex+1].second!="="){
-    LackOf("=");
+    auto exp=ConstructExp(tokens,Lindex+2,Rindex);
+    if (exp){
+    return std::make_unique<VarDef>(tokens[Lindex].second,std::move(exp));
     }
-    return std::make_unique<VarDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
+    return std::make_unique<VarDef>(tokens[Lindex].second,nullptr);
 }
 
 std::unique_ptr<ASTnode> ConstructReturnStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
@@ -236,9 +233,16 @@ return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, 
 // exp
 
 std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-
-    auto lorExp=ConstructLOrExp(tokens, Lindex, Rindex);
-    return std::make_unique<Expression>(std::move(lorExp));
+    if (Lindex>Rindex){
+        return nullptr;
+    }
+    auto token= infixToPostfix(tokens,Lindex,Rindex);
+    return ConstructEXP(token);
+    // to imporve time
+        if (Lindex==Rindex){
+            return ConstructPrimaryExp(tokens,Lindex,Rindex);
+        }
+    return ConstructLOrExp(tokens,Lindex,Rindex);
 }
 // here we need to consider recursion
 std::unique_ptr<ASTnode> ConstructLOrExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {
@@ -418,13 +422,38 @@ std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::st
     return nullptr;
 }
 // end of exp
-
+// antoher way to construct exp
+std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string> &tokens) {
+    std::stack<std::unique_ptr<ASTnode>> stack;
+    for(auto &token:tokens){
+        if (isdigit(token[0])){
+            stack.push(std::make_unique<EXP>(nullptr,token, nullptr));
+        }
+        else if (token.substr(0,4)=="IDEN"){
+            stack.push(std::make_unique<EXP>(token.substr(4)));
+        }
+        else if (token=="!"){
+            auto operand=std::move(stack.top());
+            stack.pop();
+            stack.push(std::make_unique<EXP>(nullptr,"!",std::move(operand)));
+        }
+        else {
+            auto right = std::move(stack.top());
+            stack.pop();
+            auto left = std::move(stack.top());
+            stack.pop();
+            auto node = std::make_unique<EXP>(std::move(left),token,std::move(right));
+            stack.push(std::move(node));
+        }
+    }
+    return std::move(stack.top());
+}
 // control node
 std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     if (tokens[Lindex].second!="while"){
         LackOf("while");
     }
-    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
+    auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
     auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
     auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
     return std::make_unique<WhileStmt>(std::move(condition),std::move(body));
@@ -435,7 +464,7 @@ std::unique_ptr<ASTnode> ConstructForStmt(const std::vector<std::pair<std::strin
     auto pair=FindLeftExisted(tokens,Lindex,Rindex,";");
     auto init=ConstructItem(tokens,Lindex+2,pair.second);
     auto pair2=FindLeftExisted(tokens,pair.second+1,Rindex,";");
-    auto condition=ConstructExp(tokens,pair.second+1,pair2.second);
+    auto condition=ConstructExp(tokens,pair.second+1,pair2.second-1);//
     auto pair3=FindLeftExisted(tokens,pair2.second+1,Rindex,")");
     auto update=ConstructItem(tokens,pair2.second+1,pair3.second);
     auto body=ConstructCompoundStmt(tokens,pair3.second+1,Rindex);
@@ -447,8 +476,21 @@ std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string
     if (tokens[Lindex].second!="if"){
         LackOf("if");
     }
-    auto pair= FindLeftExisted(tokens,Lindex,Rindex,")");
-    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);
+    auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
+    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);// the condition
     auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
     return std::make_unique<IFStmt>(std::move(condition),std::move(body), nullptr);
+}
+
+std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    if (tokens[Lindex].second!="break"){
+        LackOf("break");
+    }
+    return std::make_unique<BreakStmt>();
+}
+std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    if (tokens[Lindex].second!="continue"){
+        LackOf("continue");
+    }
+    return std::make_unique<ContinueStmt>();
 }

@@ -9,6 +9,7 @@ static SymbolTable AnalysisAST(const module &node) {
     for (const auto &i : node.Node) {
         AnalysisFuncDef(i, table);
     }
+    return table;
 }
 static void AnalysisFuncDef(const std::unique_ptr<ASTnode> &node, SymbolTable &table) {
 

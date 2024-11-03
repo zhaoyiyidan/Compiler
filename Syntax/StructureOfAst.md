@@ -8,3 +8,31 @@
 # Expression
 # Statement
 # the acess to the AST-> module ast
+## this is the structure of AST ,may be changed in the future
+对照这个和header文件中的class定义，可以理解AST的结构
+
+CompUnit      ::= FuncDef;
+Decl          ::= ConstDecl | VarDecl;
+ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";
+BType         ::= "int";
+ConstDef      ::= IDENT "=" ConstInitVal;
+ConstInitVal  ::= ConstExp;
+VarDecl       ::= BType VarDef {"," VarDef} ";";
+VarDef        ::= IDENT | IDENT "=" InitVal;
+InitVal       ::= Exp;
+
+FuncDef       ::= FuncType IDENT "(" ")" Block;
+FuncType      ::= "int";
+
+Block         ::= "{" {BlockItem} "}";
+BlockItem     ::= Decl | Stmt;
+Stmt          ::= LVal "=" Exp ";"
+| [Exp] ";"
+| Block
+| "if" "(" Exp ")" Stmt ["else" Stmt]
+| "while" "(" Exp ")" Stmt
+| "break" ";"
+| "continue" ";"
+| "return" [Exp] ";";
+EXP= EXP Value EXP;
+Value= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ">" | ">=" | "<" | "<=" | "&&" | "||" | "!" | IDEN | Number;

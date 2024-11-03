@@ -14,8 +14,11 @@ public:
     std::unique_ptr<ASTnode> expression;
     VarDef(std::string identifier, std::unique_ptr<ASTnode> expression): identifier(std::move(identifier)), expression(std::move(expression)){}
     void getNode() override{
-        std::cout<< identifier<<" : ";
-        expression->getNode();
+        std::cout<< identifier;
+        if (expression) {
+            std::cout << " = ";
+            expression->getNode();
+        }
     }
     std::string GetNodeType() override{
         return "VarDef";

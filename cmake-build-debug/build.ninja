@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_Compiler: phony || cmake_object_order_de
 build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug /Users/zhaokunxiang/clion/compiler/main.cpp || cmake_object_order_depends_target_Compiler
   DEP_FILE = CMakeFiles/Compiler.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header -isystem /usr/local/include
   OBJECT_DIR = CMakeFiles/Compiler.dir
   OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
 
@@ -64,10 +64,10 @@ build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug
 #############################################
 # Link the executable Compiler
 
-build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
+build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
-  LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a
+  LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a  /usr/local/opt/llvm/lib/libLLVMIRReader.a  /usr/local/opt/llvm/lib/libLLVMAsmParser.a  /usr/local/opt/llvm/lib/libLLVMBitReader.a  /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a  /usr/local/opt/llvm/lib/libLLVMRemarks.a  /usr/local/opt/llvm/lib/libLLVMTargetParser.a  /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMDemangle.a  -lm  /usr/local/lib/libz3.dylib  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd  /usr/local/lib/libzstd.dylib
   OBJECT_DIR = CMakeFiles/Compiler.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -545,8 +545,15 @@ build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/
 
 build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
   DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
 
@@ -558,7 +565,7 @@ build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CX
 #############################################
 # Link the static library CodeGeneration/libCodeGeneration.a
 
-build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o
+build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o || /usr/local/lib/libzstd.dylib
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
@@ -566,6 +573,76 @@ build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGenerat
   PRE_LINK = :
   TARGET_FILE = CodeGeneration/libCodeGeneration.a
   TARGET_PDB = CodeGeneration.a.dbg
+
+
+#############################################
+# Utility command for intrinsics_gen
+
+build CodeGeneration/intrinsics_gen: phony
+
+
+#############################################
+# Utility command for omp_gen
+
+build CodeGeneration/omp_gen: phony
+
+
+#############################################
+# Utility command for acc_gen
+
+build CodeGeneration/acc_gen: phony
+
+
+#############################################
+# Utility command for ARMTargetParserTableGen
+
+build CodeGeneration/ARMTargetParserTableGen: phony
+
+
+#############################################
+# Utility command for AArch64TargetParserTableGen
+
+build CodeGeneration/AArch64TargetParserTableGen: phony
+
+
+#############################################
+# Utility command for RISCVTargetParserTableGen
+
+build CodeGeneration/RISCVTargetParserTableGen: phony
+
+# =============================================================================
+# Object build statements for EXECUTABLE target my_project
+
+
+#############################################
+# Order-only phony target for my_project
+
+build cmake_object_order_depends_target_my_project: phony || CodeGeneration/CMakeFiles/my_project.dir
+
+build CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o: CXX_COMPILER__my_project_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_my_project
+  DEP_FILE = CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/my_project.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/my_project.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target my_project
+
+
+#############################################
+# Link the executable CodeGeneration/my_project
+
+build CodeGeneration/my_project: CXX_EXECUTABLE_LINKER__my_project_Debug CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o | /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_FLAGS = -L/usr/local/opt/llvm/lib
+  LINK_LIBRARIES = /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMIRReader.a  /usr/local/opt/llvm/lib/libLLVMAsmParser.a  /usr/local/opt/llvm/lib/libLLVMBitReader.a  /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a  /usr/local/opt/llvm/lib/libLLVMRemarks.a  /usr/local/opt/llvm/lib/libLLVMTargetParser.a  /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMDemangle.a  -lm  /usr/local/lib/libz3.dylib  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd  /usr/local/lib/libzstd.dylib
+  OBJECT_DIR = CodeGeneration/CMakeFiles/my_project.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = CodeGeneration/my_project
+  TARGET_PDB = my_project.dbg
 
 
 #############################################
@@ -1033,8 +1110,22 @@ build Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: CXX_COMPILER__Tem_unscanne
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
+build Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp || cmake_object_order_depends_target_Tem
+  DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
+
 build Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
+
+build Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp || cmake_object_order_depends_target_Tem
+  DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
@@ -1215,6 +1306,13 @@ build Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: CXX_COMPI
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
+build Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp || cmake_object_order_depends_target_Tem
+  DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
+
 build Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
@@ -1307,7 +1405,7 @@ build Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable Syntax/Tem
 
-build Syntax/Tem: CXX_EXECUTABLE_LINKER__Tem_Debug Syntax/CMakeFiles/Tem.dir/tem.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
+build Syntax/Tem: CXX_EXECUTABLE_LINKER__Tem_Debug Syntax/CMakeFiles/Tem.dir/tem.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
@@ -1332,8 +1430,22 @@ build Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o: CXX_COMPILER__ASTNode_
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
+
 build Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
+
+build Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
@@ -1514,6 +1626,13 @@ build Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o: CXX_C
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
+build Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp || cmake_object_order_depends_target_ASTNode
+  DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
+  OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
+  OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
+
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
@@ -1620,7 +1739,7 @@ build Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o: CXX_COMPILER__ASTNode_unsca
 #############################################
 # Link the static library Syntax/libASTNode.a
 
-build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o
+build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
@@ -1712,45 +1831,45 @@ build Syntax/install/strip: phony Syntax/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TestForSemantic
+# Object build statements for EXECUTABLE target TestForSyntax
 
 
 #############################################
-# Order-only phony target for TestForSemantic
+# Order-only phony target for TestForSyntax
 
-build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
-  DEP_FILE = Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
+build Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
+  DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
-  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
 
-build Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp || cmake_object_order_depends_target_TestForSemantic
-  DEP_FILE = Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o.d
+build Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp || cmake_object_order_depends_target_TestForSyntax
+  DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
-  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TestForSemantic
+# Link build statements for EXECUTABLE target TestForSyntax
 
 
 #############################################
-# Link the executable Syntax/Test/TestForSemantic
+# Link the executable Syntax/Test/TestForSyntax
 
-build Syntax/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Syntax/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o Syntax/Test/CMakeFiles/TestForSemantic.dir/TestHelper.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Syntax/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Syntax/Test/TestForSemantic
-  TARGET_PDB = TestForSemantic.dbg
+  TARGET_FILE = Syntax/Test/TestForSyntax
+  TARGET_PDB = TestForSyntax.dbg
 
 
 #############################################
@@ -1985,38 +2104,38 @@ build Semantic/install/strip: phony Semantic/CMakeFiles/install/strip.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TestForSyntax
+# Object build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Order-only phony target for TestForSyntax
+# Order-only phony target for TestForSemantic
 
-build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
-  DEP_FILE = Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
+build Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
+  DEP_FILE = Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
-  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
+  OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TestForSyntax
+# Link build statements for EXECUTABLE target TestForSemantic
 
 
 #############################################
-# Link the executable Semantic/Test/TestForSyntax
+# Link the executable Semantic/Test/TestForSemantic
 
-build Semantic/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Semantic/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Semantic/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSyntax.dir
+  OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Semantic/Test/TestForSyntax
-  TARGET_PDB = TestForSyntax.dbg
+  TARGET_FILE = Semantic/Test/TestForSemantic
+  TARGET_PDB = TestForSemantic.dbg
 
 
 #############################################
@@ -2098,11 +2217,17 @@ build Semantic/Test/install/strip: phony Semantic/Test/CMakeFiles/install/strip.
 # =============================================================================
 # Target aliases.
 
+build AArch64TargetParserTableGen: phony CodeGeneration/AArch64TargetParserTableGen
+
+build ARMTargetParserTableGen: phony CodeGeneration/ARMTargetParserTableGen
+
 build ASTNode: phony Syntax/libASTNode.a
 
 build CodeGeneration: phony CodeGeneration/libCodeGeneration.a
 
 build Lexical: phony Lexical/libLexical.a
+
+build RISCVTargetParserTableGen: phony CodeGeneration/RISCVTargetParserTableGen
 
 build Semantic: phony Semantic/libSemantic.a
 
@@ -2112,9 +2237,11 @@ build TestForCodeGeneration: phony CodeGeneration/Test/TestForCodeGeneration
 
 build TestForLexical: phony Lexical/Test/TestForLexical
 
-build TestForSemantic: phony Syntax/Test/TestForSemantic
+build TestForSemantic: phony Semantic/Test/TestForSemantic
 
-build TestForSyntax: phony Semantic/Test/TestForSyntax
+build TestForSyntax: phony Syntax/Test/TestForSyntax
+
+build acc_gen: phony CodeGeneration/acc_gen
 
 build gmock: phony lib/libgmock.a
 
@@ -2123,6 +2250,8 @@ build gmock_main: phony lib/libgmock_main.a
 build gtest: phony lib/libgtest.a
 
 build gtest_main: phony lib/libgtest_main.a
+
+build intrinsics_gen: phony CodeGeneration/intrinsics_gen
 
 build libASTNode.a: phony Syntax/libASTNode.a
 
@@ -2140,6 +2269,10 @@ build libgtest.a: phony lib/libgtest.a
 
 build libgtest_main.a: phony lib/libgtest_main.a
 
+build my_project: phony CodeGeneration/my_project
+
+build omp_gen: phony CodeGeneration/omp_gen
+
 # =============================================================================
 # Folder targets.
 
@@ -2155,7 +2288,7 @@ build all: phony Compiler Library/googletest-main/all CodeGeneration/all Lexical
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration
 
-build CodeGeneration/all: phony CodeGeneration/libCodeGeneration.a CodeGeneration/Test/all
+build CodeGeneration/all: phony CodeGeneration/libCodeGeneration.a CodeGeneration/my_project CodeGeneration/Test/all
 
 # =============================================================================
 
@@ -2211,7 +2344,7 @@ build Semantic/all: phony Semantic/libSemantic.a Semantic/Test/all
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test
 
-build Semantic/Test/all: phony Semantic/Test/TestForSyntax
+build Semantic/Test/all: phony Semantic/Test/TestForSemantic
 
 # =============================================================================
 
@@ -2225,7 +2358,7 @@ build Syntax/all: phony Syntax/Tem Syntax/libASTNode.a Syntax/Test/all
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test
 
-build Syntax/Test/all: phony Syntax/Test/TestForSemantic
+build Syntax/Test/all: phony Syntax/Test/TestForSyntax
 
 # =============================================================================
 # Built-in targets
@@ -2234,14 +2367,14 @@ build Syntax/Test/all: phony Syntax/Test/TestForSemantic
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################

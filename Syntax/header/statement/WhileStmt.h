@@ -12,9 +12,11 @@ public:
     std::unique_ptr<ASTnode> body;// the body of the while loop which is a compound statement
     WhileStmt(std::unique_ptr<ASTnode> condition,std::unique_ptr<ASTnode> body):condition(std::move(condition)),body(std::move(body)){}
     void getNode() override{
-        std::cout<<"WhileStmt {"<<std::endl;
+        std::cout<<"While";
         if (condition)
+            std::cout<<"(";
             condition->getNode();
+            std::cout<<")";
         if (body)
             body->getNode();
     }
