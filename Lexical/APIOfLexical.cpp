@@ -10,7 +10,10 @@
 #include <vector>
 #include <utility>
 using namespace std;
+
+bool hasBeenComment = false;
 vector<pair<string,string> > output;
+
 void getpair(string first, string second) {
     pair<string, string> answer;
     answer.first = first;
@@ -34,7 +37,6 @@ char doubleOperator[] = {'+', '-', '*', '/', '%', '=', '!', '>', '<', '&', '|', 
 //There are two others: ' and ", cannot be written in the array
 char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#', ':'};
 
-// set<pair<int, string> > output;
 
 
 // Declare the position and peek of the dealing input
@@ -43,6 +45,28 @@ bool isKeyWord(string word) {
         if (word == keyWord[i]) {
             return true;
         }
+    }
+
+    return false;
+}
+
+bool isComment(string& input, int pos, char peek,bool& hasBeenComment) {
+    char next = input[pos + 1];
+    char last = input[input.size() - 1];
+    char ll = input[input.size() - 2];
+    if (peek == '/' && next == '/') {
+        return true;
+    } else if (peek == '/' && next == '*') {
+
+        if (!(last == '/' && ll == '*')) {
+            hasBeenComment == true;
+        }
+        return true;
+    } else if (hasBeenComment) {
+        if (last == '/' && ll == '*') {
+            hasBeenComment = false;
+        }
+        return true;
     }
 
     return false;
@@ -95,6 +119,7 @@ bool isString(char ch) {
 bool isChar(char ch) {
     return (ch == '\'');
 }
+
 
 
 void dealWithLetter(string& input, int& pos, char peek) {
@@ -188,16 +213,20 @@ void dealWithChar(string&input, int&pos, char peek) {
 }
 
 
-void words(string input) {
+void words(string input, bool& hasBeenComment) {
     if (input.length() == 0) {
         return;
     }
+
+
     int pos = 0;
     char peek;
     while (pos <= input.length() - 1) {
         peek = input[pos];
         if (isWhiteSpace(peek)) {pos += 1;}
-        else if (isLetter(peek)) {
+        else if (isComment(input, pos, peek, hasBeenComment)) {
+            return;
+        } else if (isLetter(peek)) {
             dealWithLetter(input, pos, peek);
         } else if (isDigit(peek)) {
             dealWithDigit(input, pos, peek);
@@ -219,12 +248,11 @@ vector<pair<string,string> > gettoken(string filename) {
     file.open(filename.c_str());
     if (!file.is_open()) {
         cerr << "Error opening file: " << filename << endl;
-
+        return {};
     }
     while (getline(file, line)) {
-        words(line);
+        words(line, hasBeenComment);
     }
     file.close();
     return output;
 }
-
