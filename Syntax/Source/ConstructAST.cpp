@@ -7,31 +7,33 @@
 
 // pair<"标注的信息",“token" >
 module ConstructMoule(const std::vector<std::pair<std::string, std::string>> &tokens) {
-    int index = 0;
-    module root;
-    auto Node=ConstructFuncDel(tokens, index);
-    root.Node.push_back(std::move(Node));
-    // std::cout<<"moule"<<std::endl;
-    return root;
+   int index=0;
+   module the_module;
+   while(index<tokens.size()-1){
+       auto first=tokens[index].first;
+       auto second=tokens[index+1].first;
+       auto third=tokens[index+2].second;
+       if (first=="KeyWord"&&second=="IDEN"&&third=="("){
+           auto pair=FindCorrsponding(tokens,index,tokens.size()-1,"{","}");
+           the_module.Node.push_back(ConstructFuncDel(tokens,index,pair.second));
+           index=pair.second+1;
+       } else{
+           auto pair= FindLeftExisted(tokens,index,tokens.size()-1,";");
+           the_module.Node.push_back(ConstructItem(tokens,index,pair.second));
+           index=pair.second+1;
+       }
+   }
+    return the_module;
 }
 // to construct  module ,you need following fucntion
-std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int &index) {
-    // std::cout<<"funcdel"<<std::endl;
-    auto type=ConstructFuncType(tokens[index].second);// index here is the type of the function
-    index++;
-    auto name=tokens[index].second;// get the name of the function
-    index++;
-    if (tokens[index].second != "(") {
-        LackOf("(");
-    }
-    index++;
-    if (tokens[index].second != ")") {
-        LackOf(")");
-    }
-    index++;
-    auto body=ConstructCompoundStmt(tokens,index,tokens.size()-1);// get the body of the function
-    auto functionDec = std::make_unique<FunctionDec>(std::move(type), name, std::move(body));
-    return functionDec;
+std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
+    // index should be function type
+    auto type=ConstructFuncType(tokens[Lindex].second);// index here is the type of the function
+    auto name=tokens[Lindex+1].second;// get the name of the function
+    auto pair= FindCorrsponding(tokens,Lindex+2,Rindex,"(",")");// find the parameters
+    auto parameters=ConstructFunctionParameters(tokens,Lindex+2,pair.second);// get the parameters of the function
+    auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);// get the body of the function
+    return std::make_unique<FunctionDec>(std::move(type),name,std::move(parameters),std::move(body));
 }
 // to construct function declaration,you need following function
 std::unique_ptr<ASTnode> ConstructFuncType(std:: string type) {
@@ -502,4 +504,30 @@ std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::
         LackOf("continue");
     }
     return std::make_unique<ContinueStmt>();
+}
+std::vector<std::unique_ptr<ASTnode> > ConstructFunctionParameters(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
+    // (-------)
+    std::vector<std::unique_ptr<ASTnode>> parameters;
+    if (tokens[Lindex].second!="("){
+        LackOf("(");
+    }
+    if (tokens[Rindex].second!=")"){
+        LackOf(")");
+    }
+    if (Lindex+1==Rindex){
+        return parameters;// which mean no paramenters
+    }
+    auto vector= FindAllExisted(tokens,Lindex+1,Rindex,",");
+    vector.insert(vector.begin(),Lindex);
+    vector.push_back(Rindex);
+    for (int i=0;i<vector.size()-1;i++){
+        auto parameter=ConstructParameter(tokens,vector[i]+1,vector[i+1]);
+        parameters.push_back(std::move(parameter));
+    }
+    return parameters;
+}
+std::unique_ptr<ASTnode> ConstructParameter(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex){
+   auto type=ConstructFuncType(tokens[Lindex].second);
+   auto var=std::make_unique<VarDef>(tokens[Lindex+1].second,nullptr);
+   return std::make_unique<VarDecl>(std::move(type),std::move(var));
 }

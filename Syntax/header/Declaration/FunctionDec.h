@@ -12,13 +12,19 @@ public:
     std::string NodeType="FunctionDec";
     std::unique_ptr<ASTnode> type;// functiontype
     std::string name;
+    std::vector<std::unique_ptr<ASTnode>> parameters;
     std::unique_ptr<ASTnode> body;// this is the body of the function. compoundstmt
     FunctionDec(std::unique_ptr<ASTnode> type, std::string name, std::unique_ptr<ASTnode> body): type(std::move(type)), name(name), body(std::move(body)){};
+    FunctionDec(std::unique_ptr<ASTnode> type, std::string name, std::vector<std::unique_ptr<ASTnode>> parameters, std::unique_ptr<ASTnode> body): type(std::move(type)), name(name), parameters(std::move(parameters)), body(std::move(body)){};
     void getNode() override {
         if (type)
             type->getNode();
-        std::cout<<" "<<name<<"(";
-        std::cout<<")";
+        std::cout<<" "<<name<<"("<<" ";
+        if (!parameters.empty()){
+            for (auto &parameter:parameters)
+                parameter->getNode();
+        }
+        std::cout<<")"<<" ";
         if(body)
         body->getNode();
     }

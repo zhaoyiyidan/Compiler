@@ -40,6 +40,7 @@ public:
     virtual void visit(const class BreakStmt &node) = 0;
     virtual void visit(const class ContinueStmt &node) = 0;
     virtual void visit(const class EXP &node) = 0;
+    virtual void visit(const class FunctionParameters &node) = 0;
 };
 
 

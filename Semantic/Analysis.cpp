@@ -239,3 +239,7 @@ double Analysis::applyOp(const std::string& op, double a, double b) {
     throw std::runtime_error("Unknown operator");
 
 }
+void Analysis::visit(const FunctionParameters &node) {
+    // Implementation
+    int a=1;
+}
