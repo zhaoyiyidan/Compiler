@@ -14,25 +14,24 @@
 CompUnit      ::= FuncDef;
 Decl          ::= ConstDecl | VarDecl;
 ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";
-BType         ::= "int";
+BType         ::= "int";// const int a=3,b=4,c=4;
 ConstDef      ::= IDENT "=" ConstInitVal;
 ConstInitVal  ::= ConstExp;
 VarDecl       ::= BType VarDef {"," VarDef} ";";
 VarDef        ::= IDENT | IDENT "=" InitVal;
 InitVal       ::= Exp;
-
-FuncDef       ::= FuncType IDENT "(" ")" Block;
+FuncDef       ::= FuncType IDEN "(" ")" Block;
 FuncType      ::= "int";
 
 Block         ::= "{" {BlockItem} "}";
 BlockItem     ::= Decl | Stmt;
 Stmt          ::= LVal "=" Exp ";"
-| [Exp] ";"
-| Block
+| [Exp] ";" // 3+4;
+| Block {3+4}
 | "if" "(" Exp ")" Stmt ["else" Stmt]
 | "while" "(" Exp ")" Stmt
 | "break" ";"
 | "continue" ";"
 | "return" [Exp] ";";
-EXP= EXP Value EXP;
+EXP= EXP Value EXP;// 3+4 // 3 4 +
 Value= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ">" | ">=" | "<" | "<=" | "&&" | "||" | "!" | IDEN | Number;

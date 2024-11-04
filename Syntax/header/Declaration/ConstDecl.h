@@ -1,7 +1,6 @@
 //
 // Created by 赵鲲翔 on 2024/10/19.
 //
-
 #ifndef COMPILER_CONSTDECL_H
 #define COMPILER_CONSTDECL_H
 
@@ -10,7 +9,7 @@
 class ConstDecl: public Declaration {
 public:
     std::string NodeType="ConstDecl";
-    std::unique_ptr<ASTnode> type;
+    std::unique_ptr<ASTnode> type;//
     std::unique_ptr<ASTnode> ConstDef;
     std::vector<std::unique_ptr<ASTnode>> ConstDefs;
     ConstDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> ConstDef): type(std::move(type)), ConstDef(std::move(ConstDef)){}

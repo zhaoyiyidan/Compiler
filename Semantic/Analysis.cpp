@@ -4,8 +4,8 @@
 #include "Analysis.h"
 #include "../Syntax/header/ALLHEADER.h"
 void Analysis::visit(const FunctionDec &node) {
-    node.body->accept(*this);
-}
+     node.body->accept(*this);// it is equaivalent to visit(const compoundstmt &node)
+} //
 void Analysis::visit(const compoundstmt &node) {
     symbolTable.EnterScope();
     for (auto &stmt: node.stmts) {
@@ -19,6 +19,7 @@ void Analysis::visit(const compoundstmt &node) {
        }
     }
 }
+//// /   node->accept(*this);  调用vsist方法，调用是那个根据node实际存储的类型
 void Analysis::visit(const VarDecl &node) {
     auto type=node.type->GetNodeType();
     auto VarDef=dynamic_cast<class VarDef*>(node.VarDef.get());
@@ -51,7 +52,6 @@ void Analysis::visit(const VarDecl &node) {
             std::cerr<<"Error: Variable "<<VarDef_->identifier<<" has been declared before"<<std::endl;
         }
     }
-
 }
 void Analysis::visit(const ConstDecl &node) {
     auto type=node.type->GetNodeType();
@@ -231,4 +231,5 @@ double Analysis::applyOp(const std::string& op, double a, double b) {
     else if (op == "!=") return a != b;
     else if (op == "!") return !static_cast<bool>(a);
     throw std::runtime_error("Unknown operator");
+
 }

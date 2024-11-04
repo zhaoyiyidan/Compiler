@@ -1,5 +1,4 @@
 #include "../APIOfLexical.h"
-#include"../APIOfLexical.cpp"
 #include "gtest/gtest.h"
 #include "a.h"
 #include "../tem.h"

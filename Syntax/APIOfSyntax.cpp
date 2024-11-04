@@ -8,6 +8,8 @@
 module buildASTTree(std::vector<std::pair<std::string,std::string> > tokens){
     return ConstructMoule(tokens);
 }
+
+// not use
 // you are expected to combine following two functions to get the node
 std::string GetNodeType(const std::unique_ptr<ASTnode> &node){
     return node->GetNodeType();

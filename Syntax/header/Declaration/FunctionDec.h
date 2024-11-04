@@ -29,6 +29,7 @@ public:
         vistor.visit(*this);
     }
 };
+// node->accept();
 
 
 #endif //COMPILER_FUNCTIONDEC_H

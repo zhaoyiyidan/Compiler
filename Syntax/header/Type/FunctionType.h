@@ -17,9 +17,10 @@ public:
         return "FunctionType";
     }
     void accept(VistorAST &vistor) override {
-        vistor.visit(*this);
-    }
+        vistor.visit(*this);// vistor class
+    }// vist class Fucntinon
 };
+//
 
 
 #endif //COMPILER_FUNCTIONTYPE_H
