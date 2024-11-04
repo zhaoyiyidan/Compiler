@@ -3,6 +3,9 @@ int main(){
     int a=1;
     int b;
     b=3;
+    double h;
+    bool  e;
+    char k;
     for (int i=0;i<10;i++){
         a=a+1;
     }

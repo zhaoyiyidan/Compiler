@@ -231,12 +231,12 @@ LackOf("=");
 return std::make_unique<AssignStmt>(tokens[Lindex].second, ConstructExp(tokens, Lindex+2, Rindex-1));
 }
 // exp
-
+// not use the exp below
 std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
     if (Lindex>Rindex){
         return nullptr;
     }
-    auto token= infixToPostfix(tokens,Lindex,Rindex);
+    auto token= infixToPostfixs(tokens,Lindex,Rindex);
     return ConstructEXP(token);
     // to imporve time
         if (Lindex==Rindex){
@@ -422,17 +422,26 @@ std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::st
     return nullptr;
 }
 // end of exp
+
 // antoher way to construct exp
-std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string> &tokens) {
+std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::pair<std::string,std::string> > &tokens) {
     std::stack<std::unique_ptr<ASTnode>> stack;
+    if (tokens.size()==1){
+        if (tokens[0].first=="IDEN"){
+            return std::make_unique<EXP>(tokens[0].second,true);
+        }
+        else{
+        return std::make_unique<EXP>(tokens[0].second, false);
+        }
+    }
     for(auto &token:tokens){
-        if (isdigit(token[0])){
-            stack.push(std::make_unique<EXP>(nullptr,token, nullptr));
+        if (isdigit(token.second[0])){
+            stack.push(std::make_unique<EXP>(nullptr,token.second, nullptr));
         }
-        else if (token.substr(0,4)=="IDEN"){
-            stack.push(std::make_unique<EXP>(token.substr(4)));
+        else if (token.first=="IDEN"){
+            stack.push(std::make_unique<EXP>(token.second,true));
         }
-        else if (token=="!"){
+        else if (token.second=="!"){
             auto operand=std::move(stack.top());
             stack.pop();
             stack.push(std::make_unique<EXP>(nullptr,"!",std::move(operand)));
@@ -442,7 +451,7 @@ std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string> &tokens) {
             stack.pop();
             auto left = std::move(stack.top());
             stack.pop();
-            auto node = std::make_unique<EXP>(std::move(left),token,std::move(right));
+            auto node = std::make_unique<EXP>(std::move(left),token.second,std::move(right));
             stack.push(std::move(node));
         }
     }

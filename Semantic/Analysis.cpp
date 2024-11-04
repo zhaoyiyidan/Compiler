@@ -207,10 +207,16 @@ double Analysis::calculate(const class EXP &node) {
     if (Left&&Right)
     return applyOp(node.value,left_value,right_value);
 
-    if (symbolTable.ExistSymbol(node.value)){
+    if (symbolTable.ExistSymbol(node.value)||node.IDEN){
         return symbolTable.GetSymbol(node.value).second;
-    } else{
-        return std::stod(node.value);
+    }
+    else{
+        try{
+        return std::stod(node.value);}
+        catch (std::exception &e){
+            char ch=node.value[1];
+            return ch;
+        }
     }
 
 

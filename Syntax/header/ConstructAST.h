@@ -73,7 +73,7 @@
     std::unique_ptr<ASTnode> ConstructUnaryOp(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // end of exp
     // another way to build exp
-    std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::string>  &tokens);
+    std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::pair<std::string,std::string> >  &tokens);
     // contruct node
     std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructWhileStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);

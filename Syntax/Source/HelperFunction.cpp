@@ -209,33 +209,33 @@ std::vector<std::string> infixToPostfix(const std::vector<std::string>& tokens) 
     }
     return postfix;
 }
-std::vector<std::string> infixToPostfix(const std::vector<std::pair<std::string,std::string> >& tokens, int Lindex ,int Rindex) {
-    std::stack<std::string> ops;
-    std::vector<std::string> postfix;
+std::vector<std::pair<std::string,std::string> > infixToPostfixs(const std::vector<std::pair<std::string,std::string> >& tokens, int Lindex ,int Rindex) {
+    std::stack<std::pair<std::string,std::string> > ops;
+    std::vector<std::pair<std::string,std::string> > postfix;
     for (int i=Lindex;i<Rindex+1;i++){
         auto token=tokens[i];
         if (token.first=="IDEN"){
-            postfix.push_back(("IDEN"+token.second));
+            postfix.push_back({"IDEN",token.second});
         }
         else if (isdigit(token.second[0]) || token.second == "true" || token.second == "false" || (token.second.size() == 1 && isalpha(token.second[0]))) {
-            postfix.push_back(token.second);
+            postfix.push_back({token.first,token.second});
         }
         else if (token.second == "(") {
-            ops.push(token.second);
+            ops.push({token.first,token.second});
         }
         else if (token.second == ")") {
-            while (!ops.empty() && ops.top() != "(") {
+            while (!ops.empty() && ops.top().second != "(") {
                 postfix.push_back(ops.top());
                 ops.pop();
             }
             ops.pop();
         }
         else {
-            while (!ops.empty() && precedence(ops.top()) >= precedence(token.second)) {
+            while (!ops.empty() && precedence(ops.top().second) >= precedence(token.second)) {
                 postfix.push_back(ops.top());
                 ops.pop();
             }
-            ops.push(token.second);
+            ops.push({token.first,token.second});
         }
     }
     while (!ops.empty()) {

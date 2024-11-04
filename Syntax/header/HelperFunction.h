@@ -18,7 +18,7 @@ std::pair<double, std::string> evaluateExpression(const std::string& expr);
 std::pair<double, std::string> evaluateExpression(const std::vector<std::string>& tokens);
 // 辅助函数，用于将中缀表达式转换为后缀表达式
 std::vector<std::string > infixToPostfix(const std::vector<std::string>& tokens);
-std::vector<std::string > infixToPostfix(const std::vector<std::pair<std::string,std::string> >& tokens,int Lindex,int Rindex);
+std::vector<std::pair<std::string,std::string> > infixToPostfixs(const std::vector<std::pair<std::string,std::string> >& tokens,int Lindex,int Rindex);
 
 // 辅助函数，用于计算后缀表达式
 double evaluatePostfix(const std::vector<std::string>& postfix);

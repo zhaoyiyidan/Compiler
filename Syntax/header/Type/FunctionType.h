@@ -14,7 +14,7 @@ public:
         std::cout<<type;
     }
     std::string GetNodeType() override{
-        return "FunctionType";
+        return type;
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);// vistor class
