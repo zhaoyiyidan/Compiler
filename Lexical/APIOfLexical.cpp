@@ -21,12 +21,12 @@ void getpair(string first, string second) {
     output.push_back(answer);
 }
 
-string keyWord[26]= {"void", "int", "char", "float", "double", "bool", "string" \
+string keyWord[25]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
                    "const", "inline",\
                    "for", "while", "if", "else",\
                    "switch", "case", "default", "break", "continue", "return",\
-                   "main", "include",\
+                   "include",\
                    "struct",\
                    "std"};
 char whitespace[] = {' ', '\t', '\n', '\r'};
@@ -41,7 +41,7 @@ char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#', ':'};
 
 // Declare the position and peek of the dealing input
 bool isKeyWord(string word) {
-    for (int i = 0; i < 26; i ++) {
+    for (int i = 0; i < 25; i ++) {
         if (word == keyWord[i]) {
             return true;
         }
