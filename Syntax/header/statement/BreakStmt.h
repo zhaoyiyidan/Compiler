@@ -15,7 +15,7 @@ public:
         vistor.visit(*this);
     }
     void getNode() override {
-        std::cout << "BreakStmt" << std::endl;
+        std::cout << "break;" << std::endl;
     }
     BreakStmt() = default;
 

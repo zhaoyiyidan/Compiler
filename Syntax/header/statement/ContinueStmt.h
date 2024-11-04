@@ -15,7 +15,7 @@ public:
         vistor.visit(*this);
     }
     void getNode() override {
-        std::cout << "ContinueStmt" << std::endl;
+        std::cout << "continue;" << std::endl;
     }
     ContinueStmt() = default;
 };
