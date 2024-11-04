@@ -144,6 +144,8 @@ void dealWithLetter(string& input, int& pos, char peek) {
 
     if (isKeyWord(str)) {
         getpair("KeyWord", str);
+    } else if (str == "true" || str == "false") {
+        getpair("BoolLiteral", str);
     } else {
         getpair("IDEN", str);
     }
@@ -263,12 +265,3 @@ vector<pair<string,string> > gettoken(string filename) {
     file.close();
     return output;
 }
-/*
-int main() {
-    vector<pair<string,string> > token = gettoken("source.cpp");
-    int length = token.size();
-    for (int i = 0; i < length; i++) {
-        pair<string, string> tmp = token[i];
-        cout << tmp.first << ": " << tmp.second << endl;
-    }
-}*/
