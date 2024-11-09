@@ -45,6 +45,7 @@ public:
      void visit(const class BreakStmt &node) override;
      void visit(const class ContinueStmt &node) override;
      void visit(const class EXP &node) override;
+     void visit(const class FunctionParameters &node) override;
     double applyOp(const std::string& op, double a, double b);
     double calculate(const class EXP &node);
 

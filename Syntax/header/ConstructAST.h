@@ -44,7 +44,7 @@
 // you can use this class to read and construct a AST
     module ConstructMoule(const std::vector<std::pair<std::string,std::string> > &tokens);// it is the root of the whole AST
     // construct module ,you need  following function
-    std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string,std::string> > &tokens,int &index);
+    std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // construct function declaration,you need following function
     std::unique_ptr<ASTnode> ConstructFuncType(std:: string type);
     std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
@@ -81,6 +81,8 @@
     //
     std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::vector<std::unique_ptr<ASTnode>> ConstructFunctionParameters(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructParameter(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some helper function
 
 
