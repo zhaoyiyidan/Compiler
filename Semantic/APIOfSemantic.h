@@ -9,6 +9,7 @@
 #include "../Syntax/header/module.h"
 SymbolTable analysis(const module &node){
     Analysis analysis;
+    analysis.symbolTable.EnterScope();
     for (auto &node:node.Node){
         node->accept(analysis);
     }
