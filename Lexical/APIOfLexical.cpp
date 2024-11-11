@@ -13,6 +13,22 @@ using namespace std;
 
 bool hasBeenComment = false;
 vector<pair<string,string> > output;
+bool hasError = false;
+int row = 1;
+
+struct Error {
+    int row;       //The row of the error
+    string message;     //Report what is the kind of the error
+};
+
+void error(bool& hasError, string errorMessage, int row) {
+    Error error1;
+    hasError = true;
+    error1.message = errorMessage;
+    error1.row = row;
+}
+
+
 
 void getpair(string first, string second) {
     pair<string, string> answer;
@@ -29,6 +45,7 @@ string keyWord[26]= {"void", "int", "char", "float", "double", "bool", "string" 
                    "main", "include",\
                    "struct",\
                    "std"};
+
 char whitespace[] = {' ', '\t', '\n', '\r'};
 
 //There is only one single operator, '~'
@@ -51,15 +68,23 @@ bool isKeyWord(string word) {
 }
 
 bool isComment(string& input, int pos, char peek,bool& hasBeenComment) {
+    int length = input.size();
+    if (length == 1) {
+        if (hasBeenComment) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     char next = input[pos + 1];
-    char last = input[input.size() - 1];
-    char ll = input[input.size() - 2];
+    char last = input[length - 1];
+    char ll = input[length - 2];
     if (peek == '/' && next == '/') {
         return true;
     } else if (peek == '/' && next == '*') {
 
         if (!(last == '/' && ll == '*')) {
-            hasBeenComment == true;
+            hasBeenComment = true;
         }
         return true;
     } else if (hasBeenComment) {
@@ -179,11 +204,11 @@ void dealWithOperator(string& input, int& pos, char peek) {
 
     //Deal with the double operator
     char next = input[pos + 1];
-    if (next == '=') {
+    if (next == '=' && pos != input.size()) {
         str += "=";
         getpair("OP", str);
         pos ++;
-    } else if (next == peek) {
+    } else if (next == peek && pos != input.size()) {
         str += peek;
         getpair("OP", str);
         pos ++;
@@ -203,6 +228,11 @@ void dealWithDelimiter(int& pos, char peek) {
 
 void dealWithString(string&input, int&pos, char peek) {
     string str = "";
+    if (pos == input.size() - 1) {
+        string message = "You can't put \" at the end of the line.";
+        error(hasError, message, row);
+        return;
+    }
     pos++;
     peek = input[pos];
     while (peek != '"') {
@@ -217,12 +247,17 @@ void dealWithString(string&input, int&pos, char peek) {
 void dealWithChar(string&input, int&pos, char peek) {
     string str = "";
     str += input[pos + 1];
+    if (pos == input.size() || input[pos + 2] != '\'') {
+        string message = "There cannot be two characters in a char. ";
+        error(hasError, message, row);
+        return;
+    }
     pos += 3;
     getpair("CHAR", str);
 }
 
 
-void words(string input, bool& hasBeenComment) {
+void words(string input, bool& hasBeenComment, bool& hasError, int row) {
     if (input.length() == 0) {
         return;
     }
@@ -248,6 +283,9 @@ void words(string input, bool& hasBeenComment) {
         } else if (isChar(peek)) {
             dealWithChar(input, pos, peek);
         }
+        if (hasError) {
+            break;
+        }
     }
 }
 
@@ -260,8 +298,19 @@ vector<pair<string,string> > gettoken(string filename) {
         return {};
     }
     while (getline(file, line)) {
-        words(line, hasBeenComment);
+        words(line, hasBeenComment, hasError, row);
+        if (hasError) {break;}
+        row++;
     }
     file.close();
     return output;
+}
+
+int main() {
+    vector<pair<string,string> > token = gettoken("source.cpp");
+    int length = token.size();
+    for (int i = 0; i < length; i++) {
+        pair<string, string> tmp = token[i];
+        cout << tmp.first << ": " << tmp.second << endl;
+    }
 }
