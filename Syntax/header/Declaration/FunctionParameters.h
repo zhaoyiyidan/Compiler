@@ -6,6 +6,7 @@
 #define COMPILER_FUNCTIONPARAMETERS_H
 
 #include "../Declaration.h"
+// not used
 class FunctionParameters :public Declaration{
 public:
     std::unique_ptr<ASTnode> type;

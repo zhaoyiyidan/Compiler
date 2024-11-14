@@ -11,7 +11,8 @@
 ## this is the structure of AST ,may be changed in the future
 对照这个和header文件中的class定义，可以理解AST的结构
 
-CompUnit      ::= FuncDef;
+CompUnit      ::= {Decl | FuncDef |Strcut};
+Struct        ::= "struct" IDENT "{" {Decl | FuncDef} "}";
 Decl          ::= ConstDecl | VarDecl;
 ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";
 BType         ::= "int";// const int a=3,b=4,c=4;
@@ -33,5 +34,6 @@ Stmt          ::= LVal "=" Exp ";"
 | "break" ";"
 | "continue" ";"
 | "return" [Exp] ";";
-EXP= EXP Value EXP;// 3+4 // 3 4 +
+EXP= EXP Value EXP;
 Value= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ">" | ">=" | "<" | "<=" | "&&" | "||" | "!" | IDEN | Number;
+Number= BOOL | INTEGER | FLOAT | CHAR ;

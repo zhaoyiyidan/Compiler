@@ -305,12 +305,3 @@ vector<pair<string,string> > gettoken(string filename) {
     file.close();
     return output;
 }
-
-int main() {
-    vector<pair<string,string> > token = gettoken("source.cpp");
-    int length = token.size();
-    for (int i = 0; i < length; i++) {
-        pair<string, string> tmp = token[i];
-        cout << tmp.first << ": " << tmp.second << endl;
-    }
-}

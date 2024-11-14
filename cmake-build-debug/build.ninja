@@ -987,6 +987,13 @@ build Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: CXX_COM
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
 
+build Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp || cmake_object_order_depends_target_TestForLexical
+  DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
+  OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
+  OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir/__
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TestForLexical
@@ -995,7 +1002,7 @@ build Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: CXX_COM
 #############################################
 # Link the executable Lexical/Test/TestForLexical
 
-build Lexical/Test/TestForLexical: CXX_EXECUTABLE_LINKER__TestForLexical_Debug Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Lexical/Test/TestForLexical: CXX_EXECUTABLE_LINKER__TestForLexical_Debug Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a

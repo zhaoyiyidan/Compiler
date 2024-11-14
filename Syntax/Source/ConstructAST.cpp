@@ -14,10 +14,18 @@ module ConstructMoule(const std::vector<std::pair<std::string, std::string>> &to
        auto second=tokens[index+1].first;
        auto third=tokens[index+2].second;
        if (first=="KeyWord"&&second=="IDEN"&&third=="("){
+           // construct FunctionDecl
            auto pair=FindCorrsponding(tokens,index,tokens.size()-1,"{","}");
            the_module.Node.push_back(ConstructFuncDel(tokens,index,pair.second));
            index=pair.second+1;
-       } else{
+       }
+       else if (first=="KeyWord"&&second=="IDEN"&&third=="{"){
+           auto pair= FindCorrsponding(tokens,index,tokens.size()-1,"{","}");
+           the_module.Node.push_back(ConstructStructDecl(tokens,index,pair.second));
+           index=pair.second+2;
+       }
+       else{
+           // construct global Variable
            auto pair= FindLeftExisted(tokens,index,tokens.size()-1,";");
            the_module.Node.push_back(ConstructItem(tokens,index,pair.second));
            index=pair.second+1;
@@ -530,4 +538,30 @@ std::unique_ptr<ASTnode> ConstructParameter(const std::vector<std::pair<std::str
    auto type=ConstructFuncType(tokens[Lindex].second);
    auto var=std::make_unique<VarDef>(tokens[Lindex+1].second,nullptr);
    return std::make_unique<VarDecl>(std::move(type),std::move(var));
+}
+std::unique_ptr<ASTnode> ConstructStructDecl(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex){
+    if (tokens[Lindex].second!="struct"){
+        LackOf("struct");
+    }
+    auto name=tokens[Lindex+1].second;
+    auto body=ConstructStructBody(tokens,Lindex+2,Rindex);
+    return std::make_unique<StructDecl>(name,std::move(body));
+}
+std::unique_ptr<ASTnode> ConstructStructBody(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex){
+    // lindex is {
+    std::vector<std::unique_ptr<ASTnode>> members;
+    int index=Lindex+1;
+    while (index<Rindex){
+        if (tokens[index].first=="KeyWord"&&tokens[index+1].first=="IDEN"&&tokens[index+2].second=="("){
+            auto pair= FindCorrsponding(tokens,index,Rindex,"{","}");
+            members.push_back(ConstructFuncDel(tokens,index,pair.second));
+            index=pair.second+1;
+        }
+        else{
+        auto pair= FindLeftExisted(tokens,index,Rindex,";");
+        members.push_back(ConstructVarDecl(tokens,index,pair.second));
+        index=pair.second+1;
+        }
+    }
+    return std::make_unique<StructBody>(std::move(members));
 }

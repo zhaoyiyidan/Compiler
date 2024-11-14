@@ -26,5 +26,7 @@ add_library(ASTNode
         Source/statement/EXP.cpp
         header/statement/EXP.h
         header/Declaration/FunctionParameters.h
+        header/Declaration/StructDecl.h
+        header/Declaration/StructBody.h
 )
 target_include_directories(ASTNode PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header)
