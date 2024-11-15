@@ -171,7 +171,7 @@ std::unique_ptr<ASTnode> ConstructConstDecl(const std::vector<std::pair<std::str
     }
     // construct type
     auto type=ConstructFuncType(tokens[Lindex+1].second);
-    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    auto vector= FindAllExistedIgnoreBracket(tokens,Lindex,Rindex,",");
     if (vector.size()==0){
         return std::make_unique<ConstDecl>(std::move(type),std::move(ConstructConstDef(tokens,Lindex+2,Rindex-1)));
     }
@@ -207,19 +207,19 @@ std::unique_ptr<ASTnode> ConstructConstDef(const std::vector<std::pair<std::stri
 }
 std::unique_ptr<ASTnode> ConstructVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     auto type=ConstructFuncType(tokens[Lindex].second);
-    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    auto vector= FindAllExistedIgnoreBracket(tokens,Lindex,Rindex,",");
     if (vector.size()==0){
         return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,Lindex+1,Rindex-1)));
     }
     else{
         vector.push_back(Rindex);
+        vector.insert(vector.begin(),Lindex);
         std::vector<std::unique_ptr<ASTnode>> VarDefs;
-        VarDefs.push_back(ConstructVarDef(tokens,Lindex+1,vector[0]-1));
-        for (int i=0;i<vector.size()-2;i++){
+        for (int i=0;i<vector.size()-1;i++){
             auto VarDef=ConstructVarDef(tokens,vector[i]+1,vector[i+1]-1);
             VarDefs.push_back(std::move(VarDef));
         }
-        return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(VarDefs));
+        return std::make_unique<VarDecl>(std::move(type), nullptr,std::move(VarDefs));
     }
 }
 std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {

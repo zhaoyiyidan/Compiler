@@ -46,4 +46,6 @@ std::string ConstDeclOrVarDecl(const std::vector<std::pair<std::string,std::stri
 std::string LackOf(std::string str);
 std::pair<bool,int> FindCorrsponding(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str,std::string str2);
 std::pair<int ,int> FindCorrspondingPair(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str,std::string str2);
+// we need to find the pos of all cetain token,but we need to ignore the token in the bracket
+std::vector<int> FindAllExistedIgnoreBracket(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str);
 #endif //COMPILER_HELPERFUNCTION_H

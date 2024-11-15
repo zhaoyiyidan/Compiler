@@ -380,5 +380,22 @@ std::pair<double, std::string> evaluateExpression(const std::string& expr) {
     }
     return std::make_pair(result, type);
 }
+// we need to find the pos of all cetain token,but we need to ignore the token in the bracket
+std::vector<int> FindAllExistedIgnoreBracket(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex,std::string str) {
+    std::vector<int> a;
+    int bracket=0;
+    for(int i=Lindex;i<Rindex+1;i++){
+        if(tokens[i].second=="{"){
+            bracket++;
+        }
+        if(tokens[i].second=="}"){
+            bracket--;
+        }
+        if(tokens[i].second==str&&bracket==0){
+            a.push_back(i);
+        }
+    }
+    return a;
+}
 
 

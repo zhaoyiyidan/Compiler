@@ -21,7 +21,21 @@ public:
     void getNode() override{
         std::cout<<identifier<<" : ";
         expression->getNode();
-
+        if (array_size) {
+            std::cout << " [";
+            array_size->getNode();
+            std::cout << "]";
+        }
+        if (!array.empty()) {
+            std::cout << " = {";
+            for (int i = 0; i < array.size(); i++) {
+                array[i]->getNode();
+                if (i != array.size() - 1) {
+                    std::cout << ", ";
+                }
+            }
+            std::cout << "}";
+        }
     }
     std::string GetNodeType() override{
         return NodeType;
