@@ -37,14 +37,15 @@ void getpair(string first, string second) {
     output.push_back(answer);
 }
 
-string keyWord[26]= {"void", "int", "char", "float", "double", "bool", "string" \
+string keyWord[29]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
                    "const", "inline",\
                    "for", "while", "if", "else",\
                    "switch", "case", "default", "break", "continue", "return",\
                    "main", "include",\
                    "struct",\
-                   "std"};
+                   "std", \
+                   "using", "namespace", "std"};
 
 char whitespace[] = {' ', '\t', '\n', '\r'};
 
@@ -58,7 +59,7 @@ char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#', ':'};
 
 // Declare the position and peek of the dealing input
 bool isKeyWord(string word) {
-    for (int i = 0; i < 26; i ++) {
+    for (int i = 0; i < 29; i ++) {
         if (word == keyWord[i]) {
             return true;
         }
@@ -171,7 +172,11 @@ void dealWithLetter(string& input, int& pos, char peek) {
         getpair("KeyWord", str);
     } else if (str == "true" || str == "false") {
         getpair("BoolLiteral", str);
-    } else {
+    } else if (str == "cout") {
+        getpair("Output", str);
+    } else if (str == "cin") {
+        getpair("Input", str);
+    } else {   
         getpair("IDEN", str);
     }
 
@@ -305,3 +310,4 @@ vector<pair<string,string> > gettoken(string filename) {
     file.close();
     return output;
 }
+

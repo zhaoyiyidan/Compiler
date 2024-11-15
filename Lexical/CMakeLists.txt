@@ -4,4 +4,5 @@ add_library(Lexical
         APIOfLexical.h
         tem.cpp
         tem.h
+        Test/a.cpp
 )
