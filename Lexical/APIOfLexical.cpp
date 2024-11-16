@@ -13,7 +13,6 @@ using namespace std;
 
 // Global variable for lexical
 vector<pair<string,string> > output;
-vector<string> filenames;
 
 // Global variable for comment
 bool hasBeenComment = false;
@@ -40,8 +39,6 @@ void getpair(string first, string second) {
     answer.second = second;
     output.push_back(answer);
 }
-
-vector<pair<string,string> > gettoken(const string& filename);
 
 string keyWord[28]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
@@ -161,7 +158,7 @@ bool isChar(char ch) {
 
 
 
-void dealWithInclude(string& input, int& pos) {
+void dealWithInclude(string& input, int& pos, vector<string>& filenames) {
     char peek = input[pos];
     while (peek != '\"') {
         pos++;
@@ -187,7 +184,7 @@ void dealWithInclude(string& input, int& pos) {
     filenames.push_back(str);
 }
 
-void dealWithLetter(string& input, int& pos, char peek, bool& isInclude) {
+void dealWithLetter(string& input, int& pos, char peek, bool& isInclude, vector<string>& filenames) {
     string str;
     while (isLetter(peek) || isDigit(peek)) {
         if (pos >= input.length()) {
@@ -201,7 +198,7 @@ void dealWithLetter(string& input, int& pos, char peek, bool& isInclude) {
 
     if (str == "include") {
         isInclude = true;
-        dealWithInclude(input, pos);
+        dealWithInclude(input, pos, filenames);
     }
 
     if (isKeyWord(str)) {
@@ -296,7 +293,7 @@ void dealWithChar(string&input, int&pos, char peek) {
 }
 
 
-void words(string input, bool& hasBeenComment, bool& hasError, int row) {
+void words(string input, bool& hasBeenComment, bool& hasError, int row, vector<string>& filenames) {
     if (input.length() == 0) {
         return;
     }
@@ -309,7 +306,7 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row) {
         else if (isComment(input, pos, peek, hasBeenComment)) {
             return;
         } else if (isLetter(peek)) {
-            dealWithLetter(input, pos, peek, isInclude);
+            dealWithLetter(input, pos, peek, isInclude, filenames);
         } else if (isDigit(peek)) {
             dealWithDigit(input, pos, peek);
         } else if (isOperator(peek)) {
@@ -327,24 +324,28 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row) {
     }
 }
 
+void multipleGetToken(vector<std::string>& filenames);
 
 void singleGetToken(const string& absolutePath) {
     string line;
+    vector<string> filenames;
     ifstream file(absolutePath);
     if (!file.is_open()) {
         std::cerr << "Have error opening:  " << absolutePath << std::endl;
         return;
     }
     while (getline(file, line)) {
-        words(line, hasBeenComment, hasError, row);
+        words(line, hasBeenComment, hasError, row, filenames);
         if (hasError) {break;}
         row++;
     }
     file.close();
+
+    multipleGetToken(filenames);
 }
 
 
-void multipleGetToken(vector<std::string> filenames) {
+void multipleGetToken(vector<std::string>& filenames) {
     int size = filenames.size();
     for (int i = 0; i < size; i++) {
         singleGetToken(filenames[i]);
@@ -362,7 +363,7 @@ string findFileInParentDirectory(const std::string& fileName) {
 
         if (filesystem::exists(targetFilePath) && filesystem::is_regular_file(targetFilePath)) {
             return filesystem::absolute(targetFilePath).string();
-        } 
+        }
 
         filesystem::path targetFileInCurrent = currentPath / fileName;
         if (filesystem::exists(targetFileInCurrent) && filesystem::is_regular_file(targetFileInCurrent)) {
@@ -381,6 +382,5 @@ string findFileInParentDirectory(const std::string& fileName) {
 vector<pair<string,string> > gettoken(const string& filename) {
     string absolutePath = findFileInParentDirectory(filename);
     singleGetToken(absolutePath);
-    multipleGetToken(filenames);
     return output;
 }
