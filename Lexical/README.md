@@ -13,6 +13,7 @@ if the token is a string the pair should be {"STR", "hello"}
 if the token is a char the pair should be {"CHAR", "a"}
 if the token is an operator the pair should be {"OP", "+"}
 if the token is a separator the pair should be {"SEP", ";"} , {"SEP", "{"} , {"SEP", "}"} , {"SEP", "("} , {"SEP", ")"}
+if the token is "cout" or "cin“, the pair should be {"Input", "cin"}, {"Output", "cout"}
 # Test
 your function should pass the test in the TestDirectory
 

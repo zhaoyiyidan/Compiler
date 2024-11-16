@@ -40,6 +40,8 @@
 #include "Type/LValue.h"
 #include "HelperFunction.h"
 #include "statement/EXP.h"
+#include "Declaration/StructDecl.h"
+#include "Declaration/StructBody.h"
 
 // you can use this class to read and construct a AST
     module ConstructMoule(const std::vector<std::pair<std::string,std::string> > &tokens);// it is the root of the whole AST
@@ -83,6 +85,8 @@
     std::unique_ptr<ASTnode> ConstructContinueStmt(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::vector<std::unique_ptr<ASTnode>> ConstructFunctionParameters(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructParameter(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructStructDecl(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
+    std::unique_ptr<ASTnode> ConstructStructBody(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some helper function
 
 

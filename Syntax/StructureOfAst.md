@@ -11,27 +11,32 @@
 ## this is the structure of AST ,may be changed in the future
 对照这个和header文件中的class定义，可以理解AST的结构
 
-CompUnit      ::= FuncDef;
+CompUnit      ::= {Decl | FuncDef |Strcut};
+Struct        ::= "struct" IDENT "{" {Decl | FuncDef} "}";
 Decl          ::= ConstDecl | VarDecl;
 ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";
-BType         ::= "int";// const int a=3,b=4,c=4;
-ConstDef      ::= IDENT "=" ConstInitVal;
-ConstInitVal  ::= ConstExp;
+BType         ::= "int" | "char" | "float" | "double" | "void";
+ConstDef      ::= IDENT [" [" constEXP "]" ] "=" ConstInitVal;
+ConstInitVal  ::= ConstExp | "{" [ConstInitVal {"," ConstInitVal}] "}";
+
+constEXP      ::= EXP;
 VarDecl       ::= BType VarDef {"," VarDef} ";";
-VarDef        ::= IDENT | IDENT "=" InitVal;
-InitVal       ::= Exp;
+VarDef        ::= IDENT | IDENT "=" InitVal | IDENT "[" constEXP "]" | IDENT "[" constEXP "]" "=" InitVal;
+InitVal       ::= EXP |"{" [EXP {"," EXP}] "}";
 FuncDef       ::= FuncType IDEN "(" ")" Block;
-FuncType      ::= "int";
+FuncType      ::= "int" | "char" | "float" | "double" | "void";
 
 Block         ::= "{" {BlockItem} "}";
 BlockItem     ::= Decl | Stmt;
-Stmt          ::= LVal "=" Exp ";"
-| [Exp] ";" // 3+4;
+Stmt          ::= LVal "=" EXP ";"
+| [EXP] ";" // 3+4;
 | Block {3+4}
 | "if" "(" Exp ")" Stmt ["else" Stmt]
 | "while" "(" Exp ")" Stmt
 | "break" ";"
 | "continue" ";"
 | "return" [Exp] ";";
-EXP= EXP Value EXP;// 3+4 // 3 4 +
+
+EXP= EXP Value EXP;
 Value= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | ">" | ">=" | "<" | "<=" | "&&" | "||" | "!" | IDEN | Number;
+Number= BOOL | INTEGER | FLOAT | CHAR ;

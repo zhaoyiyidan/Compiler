@@ -41,6 +41,8 @@ public:
     virtual void visit(const class ContinueStmt &node) = 0;
     virtual void visit(const class EXP &node) = 0;
     virtual void visit(const class FunctionParameters &node) = 0;
+    virtual void visit(const class StructDecl &node) = 0;
+    virtual void visit(const class StructBody &node) = 0;
 };
 
 

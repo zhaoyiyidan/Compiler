@@ -30,4 +30,6 @@
 #include "statement/BreakStmt.h"
 #include "statement/ContinueStmt.h"
 #include "statement/EXP.h"
+#include "Declaration/StructDecl.h"
+#include "Declaration/StructBody.h"
 #endif //COMPILER_ALLHEADER_H

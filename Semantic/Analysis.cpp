@@ -194,6 +194,8 @@ void Analysis::visit(const class ContinueStmt &node) {}
 void Analysis::visit(const class EXP &node) {
 
 }
+void Analysis::visit(const StructDecl &node) {}
+void Analysis::visit(const StructBody &node) {}
 double Analysis::calculate(const class EXP &node) {
     auto Left=dynamic_cast<class EXP*>(node.Left.get());
     auto Right=dynamic_cast<class EXP*>(node.Right.get());
