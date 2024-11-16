@@ -5,14 +5,20 @@
 #include "APIOfLexical.h"
 #include <iostream>
 #include <fstream>
-#include <set>
 #include <string>
 #include <vector>
 #include <utility>
+#include <filesystem>
 using namespace std;
 
-bool hasBeenComment = false;
+// Global variable for lexical
 vector<pair<string,string> > output;
+vector<string> filenames;
+
+// Global variable for comment
+bool hasBeenComment = false;
+
+// Global variable for error
 bool hasError = false;
 int row = 1;
 
@@ -28,8 +34,6 @@ void error(bool& hasError, string errorMessage, int row) {
     error1.row = row;
 }
 
-
-
 void getpair(string first, string second) {
     pair<string, string> answer;
     answer.first = first;
@@ -37,13 +41,14 @@ void getpair(string first, string second) {
     output.push_back(answer);
 }
 
+vector<pair<string,string> > gettoken(const string& filename);
 
-string keyWord[29]= {"void", "int", "char", "float", "double", "bool", "string" \
+string keyWord[28]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
                    "const", "inline",\
                    "for", "while", "if", "else",\
                    "switch", "case", "default", "break", "continue", "return",\
-                   "include",\
+                   "main",\
                    "struct",\
                    "std", \
                    "using", "namespace", "std"};
@@ -60,8 +65,8 @@ char delimiter[] = {'(', ')', '[', ']', '{', '}', '.', ',', ';', '?', '#', ':'};
 
 // Declare the position and peek of the dealing input
 bool isKeyWord(string word) {
-    for (int i = 0; i < 29; i ++) {
-        if (word == keyWord[i]) {
+    for (const auto & i : keyWord) {
+        if (word == i) {
             return true;
         }
     }
@@ -156,8 +161,17 @@ bool isChar(char ch) {
 
 
 
-void dealWithLetter(string& input, int& pos, char peek) {
-    string str = "";
+void dealWithInclude(string& input, int& pos) {
+    char peek = input[pos];
+    while (peek != '\"') {
+        pos++;
+        peek = input[pos];
+    }
+
+    pos++;
+    peek = input[pos];
+
+    string str;
     while (isLetter(peek) || isDigit(peek)) {
         if (pos >= input.length()) {
             pos += 1;
@@ -169,6 +183,27 @@ void dealWithLetter(string& input, int& pos, char peek) {
         }
     }
 
+    str += ".cpp";
+    filenames.push_back(str);
+}
+
+void dealWithLetter(string& input, int& pos, char peek, bool& isInclude) {
+    string str;
+    while (isLetter(peek) || isDigit(peek)) {
+        if (pos >= input.length()) {
+            pos += 1;
+            break;
+        }
+        str += peek;
+        pos += 1;
+        peek = input[pos];
+    }
+
+    if (str == "include") {
+        isInclude = true;
+        dealWithInclude(input, pos);
+    }
+
     if (isKeyWord(str)) {
         getpair("KeyWord", str);
     } else if (str == "true" || str == "false") {
@@ -177,10 +212,9 @@ void dealWithLetter(string& input, int& pos, char peek) {
         getpair("Output", str);
     } else if (str == "cin") {
         getpair("Input", str);
-    } else {   
+    } else {
         getpair("IDEN", str);
     }
-
 }
 
 void dealWithDigit(string& input, int& pos, char peek) {
@@ -200,7 +234,7 @@ void dealWithDigit(string& input, int& pos, char peek) {
 }
 
 void dealWithOperator(string& input, int& pos, char peek) {
-    string str = "";
+    string str;
     str += peek;
     if (peek == '~' || pos >= input.length()) {
         getpair("OP", "~");
@@ -222,7 +256,6 @@ void dealWithOperator(string& input, int& pos, char peek) {
         getpair("OP", str);
     }
     pos ++;
-    return;
 }
 
 void dealWithDelimiter(int& pos, char peek) {
@@ -267,8 +300,7 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row) {
     if (input.length() == 0) {
         return;
     }
-
-
+    bool isInclude;
     int pos = 0;
     char peek;
     while (pos <= input.length() - 1) {
@@ -277,7 +309,7 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row) {
         else if (isComment(input, pos, peek, hasBeenComment)) {
             return;
         } else if (isLetter(peek)) {
-            dealWithLetter(input, pos, peek);
+            dealWithLetter(input, pos, peek, isInclude);
         } else if (isDigit(peek)) {
             dealWithDigit(input, pos, peek);
         } else if (isOperator(peek)) {
@@ -289,19 +321,19 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row) {
         } else if (isChar(peek)) {
             dealWithChar(input, pos, peek);
         }
-        if (hasError) {
+        if (hasError || isInclude) {
             break;
         }
     }
 }
 
-vector<pair<string,string> > gettoken(string filename) {
-    fstream file;
+
+void singleGetToken(const string& absolutePath) {
     string line;
-    file.open(filename.c_str());
+    ifstream file(absolutePath);
     if (!file.is_open()) {
-        cerr << "Error opening file: " << filename << endl;
-        return {};
+        std::cerr << "Have error opening:  " << absolutePath << std::endl;
+        return;
     }
     while (getline(file, line)) {
         words(line, hasBeenComment, hasError, row);
@@ -309,6 +341,46 @@ vector<pair<string,string> > gettoken(string filename) {
         row++;
     }
     file.close();
-    return output;
 }
 
+
+void multipleGetToken(vector<std::string> filenames) {
+    int size = filenames.size();
+    for (int i = 0; i < size; i++) {
+        singleGetToken(filenames[i]);
+    }
+}
+
+
+string findFileInParentDirectory(const std::string& fileName) {
+    try {
+        filesystem::path currentPath = filesystem::current_path();
+        filesystem::path parentPath = currentPath.parent_path();
+        filesystem::current_path(parentPath);
+
+        filesystem::path targetFilePath = parentPath / fileName;
+
+        if (filesystem::exists(targetFilePath) && filesystem::is_regular_file(targetFilePath)) {
+            return filesystem::absolute(targetFilePath).string();
+        } 
+
+        filesystem::path targetFileInCurrent = currentPath / fileName;
+        if (filesystem::exists(targetFileInCurrent) && filesystem::is_regular_file(targetFileInCurrent)) {
+            return filesystem::absolute(targetFileInCurrent).string();
+        }
+
+        throw std::runtime_error("File not found in both current and parent directories");
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return "";
+    }
+}
+
+
+vector<pair<string,string> > gettoken(const string& filename) {
+    string absolutePath = findFileInParentDirectory(filename);
+    singleGetToken(absolutePath);
+    multipleGetToken(filenames);
+    return output;
+}
