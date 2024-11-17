@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libCodeGeneration.a CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CMakeFiles/CodeGeneration.dir/A.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libCodeGeneration.a

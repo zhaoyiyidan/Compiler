@@ -1,0 +1,47 @@
+{
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"find_package"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake",
+			"CodeGeneration/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 369,
+				"parent" : 2
+			}
+		]
+	},
+	"id" : "AArch64TargetParserTableGen::@5ac8a1a50604842b712e",
+	"name" : "AArch64TargetParserTableGen",
+	"paths" : 
+	{
+		"build" : "CodeGeneration",
+		"source" : "CodeGeneration"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

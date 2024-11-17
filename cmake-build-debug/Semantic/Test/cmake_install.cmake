@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhaokunxiang/clion/compiler/Semantic/Test
+# Install script for directory: /Users/atri/CLionProjects/Compiler/Semantic/Test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

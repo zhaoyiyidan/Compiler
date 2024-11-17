@@ -3,7 +3,7 @@ add_library(CodeGeneration APIOfcodegeneration.cpp APIOfcodegeneration.h
         A.cpp
         A.h)
 ##
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.10)
 project(Code)
 
 # 设置C++标准

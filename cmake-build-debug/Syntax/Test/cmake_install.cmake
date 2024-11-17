@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhaokunxiang/clion/compiler/Syntax/Test
+# Install script for directory: /Users/atri/CLionProjects/Compiler/Syntax/Test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -4,6 +4,11 @@
 #include "Analysis.h"
 #include "../Syntax/header/ALLHEADER.h"
 void Analysis::visit(const FunctionDec &node) {
+    auto type=node.type->GetNodeType();
+    auto name=node.name;
+    if (!symbolTable.ExistSymbol(name)){
+        symbolTable.InsertSymbol(name, type,1);
+    }
      node.body->accept(*this);// it is equaivalent to visit(const compoundstmt &node)
 } //
 void Analysis::visit(const compoundstmt &node) {
@@ -194,8 +199,21 @@ void Analysis::visit(const class ContinueStmt &node) {}
 void Analysis::visit(const class EXP &node) {
 
 }
-void Analysis::visit(const StructDecl &node) {}
-void Analysis::visit(const StructBody &node) {}
+void Analysis::visit(const StructDecl &node) {
+    symbolTable.structFlag=true;
+    symbolTable.structName=node.name;
+    symbolTable.InsertSymbol(node.name);
+    node.body->accept(*this);
+    symbolTable.structFlag=false;
+    symbolTable.structName="null";
+}
+void Analysis::visit(const StructBody &node) {
+   symbolTable.EnterScope();
+   for (auto &stmt: node.body) {
+       stmt->accept(*this);
+   }
+   symbolTable.ExitScope();
+}
 double Analysis::calculate(const class EXP &node) {
     auto Left=dynamic_cast<class EXP*>(node.Left.get());
     auto Right=dynamic_cast<class EXP*>(node.Right.get());

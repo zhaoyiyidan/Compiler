@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test
+# Install script for directory: /Users/atri/CLionProjects/Compiler/CodeGeneration/Test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

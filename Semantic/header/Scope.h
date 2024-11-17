@@ -18,11 +18,24 @@ public:
         auto symbol=Symbol(name,type,value,memoryLocation);
         symbols.insert(std::make_pair(name,symbol));
     }
+    void InsertSymbol(const Symbol theSymbol){
+        symbols.insert(std::make_pair(theSymbol.getName(),theSymbol));
+    }
+    void InsertSymbol(const std::string &name){
+        auto symbol=Symbol(name,"Struct",0);
+        symbols.insert(std::make_pair(name,symbol));
+    }
     bool ExistSymbol(const std::string &name){
         if(symbols.find(name)!=symbols.end()){
             return true;
         }
         return false;
+    }
+    Symbol GetTheSymbol(std::string name){
+        if (ExistSymbol(name)){
+            return symbols.at(name);
+        }
+        throw std::runtime_error("No such symbol");
     }
     std::pair<std::string ,double> GetSymbol(const std::string &name){
         if (ExistSymbol(name)){

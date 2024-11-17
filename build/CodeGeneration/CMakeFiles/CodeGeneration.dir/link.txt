@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCodeGeneration.a CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CMakeFiles/CodeGeneration.dir/A.cpp.o
+/opt/homebrew/opt/llvm/bin/llvm-ranlib libCodeGeneration.a

@@ -1,0 +1,6 @@
+TestForCodeGeneration 1 0.570705
+TestForLexical 0 0
+TestForSyntax 1 0.291301
+TestForSemantic 0 0
+---
+TestForSemantic

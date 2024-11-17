@@ -1,9 +1,13 @@
 
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.10)
 # C++ version
 set(CMAKE_CXX_STANDARD 17)
 project(Compiler)
-
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+endif()
 # Enable testing functionality in CMake
 enable_testing()
 # 添加 Google Test

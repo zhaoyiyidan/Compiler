@@ -6,13 +6,17 @@
 #define COMPILER_SYMBOL_H
 
 #include <string>
+#include <vector>
 class Symbol {
+    public:
     std::string name;// temporary not use
     std::string type;// the type of this IDEN
     double value;// the value of this IDEN
     int memoryLocation;
-public:
+    std::vector<Symbol> ManySymbol;// it is used to store the symbol of the struct and array
+
     Symbol(const std::string& name, const std::string& type, int memoryLocation) : name(name), type(type), memoryLocation(memoryLocation) {}
+    Symbol(const std::string& name, const std::string& type, int memoryLocation, std::vector<Symbol> symbols) : name(name), type(type), memoryLocation(memoryLocation), ManySymbol(symbols) {}
     const std::string& getName() const {
         return name;
     }

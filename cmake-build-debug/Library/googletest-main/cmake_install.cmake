@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhaokunxiang/clion/compiler/Library/googletest-main
+# Install script for directory: /Users/atri/CLionProjects/Compiler/Library/googletest-main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Library/googletest-main/googlemock/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Library/googletest-main/googlemock/cmake_install.cmake")
 
 endif()
 

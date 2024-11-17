@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhaokunxiang/clion/compiler
+# Install script for directory: /Users/atri/CLionProjects/Compiler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Library/googletest-main/cmake_install.cmake")
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/cmake_install.cmake")
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/cmake_install.cmake")
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/cmake_install.cmake")
-  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Library/googletest-main/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/CodeGeneration/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Lexical/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Syntax/cmake_install.cmake")
+  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Semantic/cmake_install.cmake")
 
 endif()
 
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/atri/CLionProjects/Compiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

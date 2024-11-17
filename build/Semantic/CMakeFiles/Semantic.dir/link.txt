@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSemantic.a CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o CMakeFiles/Semantic.dir/Source/Symbol.cpp.o CMakeFiles/Semantic.dir/Source/Scope.cpp.o CMakeFiles/Semantic.dir/Analysis.cpp.o CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o
+/opt/homebrew/opt/llvm/bin/llvm-ranlib libSemantic.a
