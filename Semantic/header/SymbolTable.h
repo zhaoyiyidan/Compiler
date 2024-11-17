@@ -35,7 +35,7 @@ public:
         }
         }
         else {
-            auto thesymbol=GetTheSymbol(structName);
+            Symbol& thesymbol=GetTheSymbol(structName);
             auto symbolinvector=Symbol(name,type,memoryLocation);
             thesymbol.ManySymbol.push_back(symbolinvector);
         }
@@ -51,7 +51,7 @@ public:
         }
         }
         else{
-            auto thesymbol=GetTheSymbol(structName);
+            auto& thesymbol=GetTheSymbol(structName);
             auto symbolinvector=Symbol(name,type,value,memoryLocation);
             thesymbol.ManySymbol.push_back(symbolinvector);
         }
@@ -80,7 +80,7 @@ public:
         }
         return false;
     }
-    Symbol GetTheSymbol(std::string name){
+    Symbol& GetTheSymbol(std::string name){
         for (auto it=scopeStack.rbegin();it!=scopeStack.rend();it++){
             if (it->ExistSymbol(name)){
                 return it->GetTheSymbol(name);

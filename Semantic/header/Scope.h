@@ -31,7 +31,7 @@ public:
         }
         return false;
     }
-    Symbol GetTheSymbol(std::string name){
+    Symbol& GetTheSymbol(std::string name){
         if (ExistSymbol(name)){
             return symbols.at(name);
         }

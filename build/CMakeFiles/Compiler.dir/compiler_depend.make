@@ -174,7 +174,36 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale/_wctype.h \
   /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.h \
   /Users/atri/CLionProjects/Compiler/Syntax/VistorAST.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/ALLHEADER.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDef.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Type/IntegerLiteral.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/module.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/AddExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/AssignStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/BreakStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ContinueStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/EXP.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/EqExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/Expression.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ForStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/IFStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/LAndExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/LOrExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/MulExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/PrimaryExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/RelExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ReturnStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryExp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryOp.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/WhileStmt.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/statement/compoundstmt.h \
   /Users/atri/CLionProjects/Compiler/Semantic/APIOfSemantic.h \
   /Users/atri/CLionProjects/Compiler/Semantic/Analysis.h \
   /Users/atri/CLionProjects/Compiler/Semantic/header/Scope.h \
@@ -894,6 +923,8 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdio.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdint.h:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stack:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/ostream:
@@ -1056,10 +1087,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_fundamental.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_base_of.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_equality_comparable.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_destructible.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_core_convertible.h:
@@ -1083,6 +1110,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/underlying_type.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_callable.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_equality_comparable.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_base_of.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/unreachable_sentinel.h:
 
@@ -1384,9 +1415,9 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/lib/clang/19/include/stddef.h:
 
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryOp.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryOp.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__fwd/tuple.h:
 
@@ -1541,6 +1572,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/strict_weak_ordering_check.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/sanitizers.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/add_lvalue_reference.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/randomize_range.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__configuration/language.h:
 
@@ -1904,20 +1939,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/equal.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__format/format_arg.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/replace_copy_if.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__std_mbstate_t.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__charconv/traits.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/ReturnStmt.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryExp.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/count_if.h:
-
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/compoundstmt.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__math/hypot.h:
@@ -1956,13 +1977,35 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/adjacent_find.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__memory/allocate_at_least.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/arm/_endian.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Type/FunctionType.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_int16_t.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__ranges/view_interface.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/ASTnode.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__exception/terminate.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/APIOfSyntax.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/ratio:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/sort.h:
+
+/Users/atri/CLionProjects/Compiler/Semantic/header/SymbolTable.h:
+
+/Users/atri/CLionProjects/Compiler/Semantic/header/Scope.h:
+
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/RelExp.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/LOrExp.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/unwrap_range.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/LAndExp.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_standard_layout.h:
 
@@ -1978,9 +2021,17 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/EXP.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_pid_t.h:
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/pair.h:
 
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_ctermid.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_convertible.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__tuple/tuple_like_no_subrange.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/BreakStmt.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/machine/limits.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDef.h:
 
@@ -2000,37 +2051,15 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h:
 
-/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_symbol_aliasing.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/move_sentinel.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/ConstructAST.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__exception/terminate.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/APIOfSyntax.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/ratio:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/sort.h:
-
-/Users/atri/CLionProjects/Compiler/Semantic/header/SymbolTable.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_strings.h:
-
-/Users/atri/CLionProjects/Compiler/Semantic/header/Symbol.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/machine/endian.h:
-
-/Users/atri/CLionProjects/Compiler/Semantic/Analysis.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale/_wctype.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ContinueStmt.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/move_sentinel.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/ConstructAST.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/__xlocale.h:
 
@@ -2046,22 +2075,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/time.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/ranges_fill_n.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/in_place.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/wchar.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_types/_uintmax_t.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_constant_evaluated.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/steady_clock.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/can_extract_key.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/HelperFunction.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__bit/rotate.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/cwctype:
@@ -2075,6 +2088,22 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/minmax.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/iterator_traits.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_types/_uintmax_t.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_constant_evaluated.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/steady_clock.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/can_extract_key.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/HelperFunction.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/ranges_fill_n.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/in_place.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/wchar.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/projected.h:
 
@@ -2104,12 +2133,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/iter_swap.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_int16_t.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__ranges/view_interface.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/ASTnode.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/appleapiopts.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_pod.h:
@@ -2127,8 +2150,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/convert_to_timespec.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h:
-
-/Users/atri/CLionProjects/Compiler/Semantic/header/Scope.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_mach_port_t.h:
 
@@ -2180,6 +2201,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_sigaltstack.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/is_sorted.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/find_end.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__concepts/equality_comparable.h:
@@ -2211,6 +2236,12 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__fwd/subrange.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/make_unsigned.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/initializer_list:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/arm/_types.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/ForStmt.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/machine/_endian.h:
 
@@ -2250,12 +2281,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_caddr_t.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/initializer_list:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/arm/_types.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/ForStmt.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/integer_sequence.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__mbstate_t.h:
@@ -2272,13 +2297,15 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/file_clock.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdint.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/errno.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/stdio.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__memory/inout_ptr.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/count_if.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryExp.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdexcept:
 
@@ -2288,11 +2315,15 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/string.h:
 
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/ReturnStmt.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_types/_uint64_t.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/segmented_iterator.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__fwd/vector.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_symbol_aliasing.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__node_handle:
 
@@ -2324,15 +2355,9 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/AvailabilityVersions.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_convertible.h:
+/Users/atri/CLionProjects/Compiler/Semantic/Analysis.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__tuple/tuple_like_no_subrange.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/statement/BreakStmt.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/pair.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_ctermid.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/machine/endian.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
 
@@ -2380,10 +2405,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_useconds_t.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/add_lvalue_reference.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/randomize_range.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/partition.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_abort.h:
@@ -2393,12 +2414,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/ctype.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Type/IntegerLiteral.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__memory/allocate_at_least.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/arm/_endian.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/Type/FunctionType.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__format/format_string.h:
 
@@ -2412,9 +2427,17 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_nlink_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/machine/limits.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/arm/types.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__format/format_arg.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/replace_copy_if.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__std_mbstate_t.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__charconv/traits.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/ALLHEADER.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_scalar.h:
 
@@ -2452,6 +2475,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_nothrow_assignable.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/unwrap_range.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement/LAndExp.h:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_null_pointer.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__utility/rel_ops.h:
@@ -2488,10 +2515,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/pthread/qos.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/is_sorted.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/clamp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_types.h:
@@ -2502,9 +2525,17 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_time.h:
 
+/Users/atri/CLionProjects/Compiler/Semantic/header/Symbol.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_strings.h:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_nothrow_destructible.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__mutex/unique_lock.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/statement.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_pid_t.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/data.h:
 

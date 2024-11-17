@@ -175,7 +175,36 @@ CMakeFiles/Compiler.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale/_wctype.h
  /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.h
  /Users/atri/CLionProjects/Compiler/Syntax/VistorAST.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/ALLHEADER.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDef.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Type/IntegerLiteral.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/module.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/AddExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/AssignStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/BreakStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ContinueStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/EXP.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/EqExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/Expression.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ForStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/IFStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/LAndExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/LOrExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/MulExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/PrimaryExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/RelExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/ReturnStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryExp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryOp.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/WhileStmt.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/statement/compoundstmt.h
  /Users/atri/CLionProjects/Compiler/Semantic/APIOfSemantic.h
  /Users/atri/CLionProjects/Compiler/Semantic/Analysis.h
  /Users/atri/CLionProjects/Compiler/Semantic/header/Scope.h
