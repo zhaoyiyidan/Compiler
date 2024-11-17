@@ -374,7 +374,7 @@ void singleGetToken(string& absolutePath) {
 
 }
 
-vector<pair<string,string> > gettoken(const string& filename) {
+vector<pair<string,string> > gettoken(string filename) {
     string absolutePath = findFileInParentDirectory(filename);
     singleGetToken(absolutePath);
     return output;
