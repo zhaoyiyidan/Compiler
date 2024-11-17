@@ -171,7 +171,7 @@ std::unique_ptr<ASTnode> ConstructConstDecl(const std::vector<std::pair<std::str
     }
     // construct type
     auto type=ConstructFuncType(tokens[Lindex+1].second);
-    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    auto vector= FindAllExistedIgnoreBracket(tokens,Lindex,Rindex,",");
     if (vector.size()==0){
         return std::make_unique<ConstDecl>(std::move(type),std::move(ConstructConstDef(tokens,Lindex+2,Rindex-1)));
     }
@@ -188,40 +188,65 @@ std::unique_ptr<ASTnode> ConstructConstDecl(const std::vector<std::pair<std::str
     }
 }
 std::unique_ptr<ASTnode> ConstructConstDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
-    if (tokens[Lindex].first!="IDENT"){
-        LackOf("IDENT");
-    }
-    if (tokens[Lindex+1].second!="="){
-        LackOf("=");
+    if (tokens[Lindex].first=="IDEN"&& tokens[Lindex+1].second=="["){
+        auto pair= FindCorrsponding(tokens,Lindex,Rindex,"[","]");
+        auto ArraySize=ConstructExp(tokens,Lindex+2,pair.second-1);
+        std::vector<std::unique_ptr<ASTnode>> array;
+        if (pair.second<Rindex){
+            auto vector= FindAllExisted(tokens,pair.second+1,Rindex,",");
+            vector.push_back(Rindex);
+            vector.insert(vector.begin(),pair.second+2);
+            for (int i=0;i<vector.size()-1;i++){
+                auto exp=ConstructExp(tokens,vector[i]+1,vector[i+1]-1);
+                array.push_back(std::move(exp));
+            }
+        }
+        return std::make_unique<ConstDef>(tokens[Lindex].second, nullptr,std::move(ArraySize),std::move(array));
     }
     return std::make_unique<ConstDef>(tokens[Lindex].second,ConstructExp(tokens,Lindex+2,Rindex));
 }
 std::unique_ptr<ASTnode> ConstructVarDecl(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex, int Rindex) {
     auto type=ConstructFuncType(tokens[Lindex].second);
-    auto vector= FindAllExisted(tokens,Lindex,Rindex,",");
+    auto vector= FindAllExistedIgnoreBracket(tokens,Lindex,Rindex,",");
     if (vector.size()==0){
         return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,Lindex+1,Rindex-1)));
     }
     else{
         vector.push_back(Rindex);
+        vector.insert(vector.begin(),Lindex);
         std::vector<std::unique_ptr<ASTnode>> VarDefs;
-        VarDefs.push_back(ConstructVarDef(tokens,Lindex+1,vector[0]-1));
-        for (int i=0;i<vector.size()-2;i++){
+        for (int i=0;i<vector.size()-1;i++){
             auto VarDef=ConstructVarDef(tokens,vector[i]+1,vector[i+1]-1);
             VarDefs.push_back(std::move(VarDef));
         }
-        return std::make_unique<VarDecl>(std::move(type),std::move(ConstructVarDef(tokens,vector[vector.size()-1]+1,Rindex-1)),std::move(VarDefs));
+        return std::make_unique<VarDecl>(std::move(type), nullptr,std::move(VarDefs));
     }
 }
 std::unique_ptr<ASTnode> ConstructVarDef(const std::vector<std::pair<std::string, std::string>> &tokens,int Lindex, int Rindex) {
-    if (tokens[Lindex].first!="IDEN"){
-        LackOf("IDENT");
+        // rindex is not ;
+    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="["){
+        auto pair= FindCorrsponding(tokens,Lindex,Rindex,"[","]");
+        auto ArraySize=ConstructExp(tokens,Lindex+2,pair.second-1);
+        std::vector<std::unique_ptr<ASTnode>> array;
+        if (pair.second<Rindex){
+            auto vector= FindAllExisted(tokens,pair.second+1,Rindex,",");
+            vector.push_back(Rindex);
+            vector.insert(vector.begin(),pair.second+2);
+            for (int i=0;i<vector.size()-1;i++){
+                auto exp=ConstructExp(tokens,vector[i]+1,vector[i+1]-1);
+                array.push_back(std::move(exp));
+            }
+        }
+        return std::make_unique<VarDef>(tokens[Lindex].second, nullptr,std::move(ArraySize),std::move(array));
     }
-    auto exp=ConstructExp(tokens,Lindex+2,Rindex);
-    if (exp){
-    return std::make_unique<VarDef>(tokens[Lindex].second,std::move(exp));
+    else {
+        auto exp = ConstructExp(tokens, Lindex + 2, Rindex);
+        if (exp) {
+            return std::make_unique<VarDef>(tokens[Lindex].second, std::move(exp));
+        }
+        return std::make_unique<VarDef>(tokens[Lindex].second, nullptr);
+
     }
-    return std::make_unique<VarDef>(tokens[Lindex].second,nullptr);
 }
 
 std::unique_ptr<ASTnode> ConstructReturnStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
@@ -248,11 +273,7 @@ std::unique_ptr<ASTnode> ConstructExp(const std::vector<std::pair<std::string, s
     }
     auto token= infixToPostfixs(tokens,Lindex,Rindex);
     return ConstructEXP(token);
-    // to imporve time
-        if (Lindex==Rindex){
-            return ConstructPrimaryExp(tokens,Lindex,Rindex);
-        }
-    return ConstructLOrExp(tokens,Lindex,Rindex);
+
 }
 // here we need to consider recursion
 std::unique_ptr<ASTnode> ConstructLOrExp(const std::vector<std::pair<std::string, std::string>> &tokens, int LeftIndex,int RightIndex) {

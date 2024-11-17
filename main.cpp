@@ -6,6 +6,6 @@ int main(){
     // you need absolute path to use gettoken
     auto token=gettoken("/Users/atri/CLionProjects/Compiler/Test/source1.cpp");
     auto tree= buildASTTree(token);
-    auto sym=analysis(tree);
+    // auto sym=analysis(tree);
     tree.getNode();
         }

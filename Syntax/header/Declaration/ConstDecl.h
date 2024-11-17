@@ -18,10 +18,15 @@ public:
         type->getNode();
         std::cout << " ";
         ConstDef->getNode();
+        if (!ConstDefs.empty()) {
+           //  std::cout << ", ";
         for(auto &i: ConstDefs){
-            if (i)
+            if (i){
                 std::cout<<"";
             i->getNode();
+            std::cout << ", ";
+            }
+        }
         }
     }
     std::string GetNodeType() override{
