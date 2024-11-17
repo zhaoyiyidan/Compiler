@@ -324,7 +324,31 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row, vector<s
     }
 }
 
-void multipleGetToken(vector<std::string>& filenames);
+
+string findFileInParentDirectory(const std::string& fileName) {
+    try {
+        filesystem::path currentPath = filesystem::current_path();
+        filesystem::path parentPath = currentPath.parent_path();
+
+        filesystem::path targetFilePath = parentPath / fileName;
+        if (filesystem::exists(targetFilePath) && filesystem::is_regular_file(targetFilePath)) {
+            filesystem::current_path(parentPath);
+            return filesystem::absolute(targetFilePath).string();
+        }
+
+        filesystem::path targetFileInCurrent = currentPath / fileName;
+        if (filesystem::exists(targetFileInCurrent) && filesystem::is_regular_file(targetFileInCurrent)) {
+            filesystem::current_path(currentPath);
+            return filesystem::absolute(targetFileInCurrent).string();
+        }
+
+        throw std::runtime_error("File not found in both current and parent directories");
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return "";
+    }
+}
 
 void singleGetToken(const string& absolutePath) {
     string line;
@@ -341,43 +365,13 @@ void singleGetToken(const string& absolutePath) {
     }
     file.close();
 
-    multipleGetToken(filenames);
-}
-
-
-void multipleGetToken(vector<std::string>& filenames) {
     int size = filenames.size();
     for (int i = 0; i < size; i++) {
-        singleGetToken(filenames[i]);
+        string currentPath = findFileInParentDirectory(filenames[i]);
+        if (currentPath == absolutePath) {continue;}
+        singleGetToken(currentPath);
     }
 }
-
-
-string findFileInParentDirectory(const std::string& fileName) {
-    try {
-        filesystem::path currentPath = filesystem::current_path();
-        filesystem::path parentPath = currentPath.parent_path();
-        filesystem::current_path(parentPath);
-
-        filesystem::path targetFilePath = parentPath / fileName;
-
-        if (filesystem::exists(targetFilePath) && filesystem::is_regular_file(targetFilePath)) {
-            return filesystem::absolute(targetFilePath).string();
-        }
-
-        filesystem::path targetFileInCurrent = currentPath / fileName;
-        if (filesystem::exists(targetFileInCurrent) && filesystem::is_regular_file(targetFileInCurrent)) {
-            return filesystem::absolute(targetFileInCurrent).string();
-        }
-
-        throw std::runtime_error("File not found in both current and parent directories");
-
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return "";
-    }
-}
-
 
 vector<pair<string,string> > gettoken(const string& filename) {
     string absolutePath = findFileInParentDirectory(filename);
