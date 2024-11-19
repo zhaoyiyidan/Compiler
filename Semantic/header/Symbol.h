@@ -7,11 +7,12 @@
 
 #include <string>
 #include <vector>
+#include <limits>
 class Symbol {
     public:
     std::string name;// temporary not use
     std::string type;// the type of this IDEN
-    double value;// the value of this IDEN
+    double value=std::numeric_limits<double>::quiet_NaN();// the value of this IDEN
     int memoryLocation;
     std::vector<Symbol> ManySymbol;// it is used to store the symbol of the struct and array
 

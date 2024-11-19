@@ -458,7 +458,7 @@ std::unique_ptr<ASTnode> ConstructPrimaryExp(const std::vector<std::pair<std::st
 std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::pair<std::string,std::string> > &tokens) {
     std::stack<std::unique_ptr<ASTnode>> stack;
     if (tokens.size()==1){
-        if (tokens[0].first=="IDEN"){
+        if (tokens[0].first=="IDEN" || tokens[0].first=="FunctionCall"){
             return std::make_unique<EXP>(tokens[0].second,true);
         }
         else{
@@ -469,7 +469,7 @@ std::unique_ptr<ASTnode> ConstructEXP(const std::vector<std::pair<std::string,st
         if (isdigit(token.second[0])){
             stack.push(std::make_unique<EXP>(nullptr,token.second, nullptr));
         }
-        else if (token.first=="IDEN"){
+        else if (token.first=="IDEN" || token.first=="FunctionCall"){
             stack.push(std::make_unique<EXP>(token.second,true));
         }
         else if (token.second=="!"){

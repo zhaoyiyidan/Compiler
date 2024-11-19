@@ -175,9 +175,11 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
   /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.h \
   /Users/atri/CLionProjects/Compiler/Syntax/VistorAST.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/ALLHEADER.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h \
@@ -925,6 +927,8 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdint.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdexcept:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stack:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/ostream:
@@ -1577,6 +1581,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/randomize_range.h:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_union.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__configuration/platform.h:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__configuration/language.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_bounded_array.h:
@@ -1632,10 +1640,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__concepts/class_or_enum.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__math/rounding_functions.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__type_traits/is_union.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__configuration/platform.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/high_resolution_clock.h:
 
@@ -1983,8 +1987,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Type/FunctionType.h:
 
-/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_int16_t.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__ranges/view_interface.h:
@@ -2050,6 +2052,8 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__format/formatter_output.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/xlocale/_wctype.h:
 
@@ -2201,10 +2205,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_sigaltstack.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/is_sorted.h:
-
-/Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/find_end.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__concepts/equality_comparable.h:
@@ -2297,6 +2297,8 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/file_clock.h:
 
+/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/errno.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/stdio.h:
@@ -2306,8 +2308,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/count_if.h:
 
 /Users/atri/CLionProjects/Compiler/Syntax/header/statement/UnaryExp.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdexcept:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/move_backward.h:
 
@@ -2514,6 +2514,10 @@ CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__math/traits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/pthread/qos.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/is_sorted.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Type/LValue.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/clamp.h:
 

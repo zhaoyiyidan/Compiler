@@ -60,13 +60,14 @@ std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &t
     if (tokens[Lindex].second=="const"){
         return "ConstDecl";
     }
+    if(tokens[Lindex].second=="return"){
+        return "ReturnStmt";
+    }
     // temporary solution
     if (tokens[Lindex].first=="KeyWord"&&tokens[Lindex+1].first=="IDEN"){
         return "VarDecl";
     }
-    if(tokens[Lindex].second=="return"){
-        return "ReturnStmt";
-    }
+    
     if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="="){
         return "AssignStmt";
     }
@@ -212,16 +213,29 @@ std::vector<std::string> infixToPostfix(const std::vector<std::string>& tokens) 
 std::vector<std::pair<std::string,std::string> > infixToPostfixs(const std::vector<std::pair<std::string,std::string> >& tokens, int Lindex ,int Rindex) {
     std::stack<std::pair<std::string,std::string> > ops;
     std::vector<std::pair<std::string,std::string> > postfix;
-    for (int i=Lindex;i<Rindex+1;i++){
+    int i=Lindex;
+    while(i<Rindex+1){
         auto token=tokens[i];
-        if (token.first=="IDEN"){
+        if (token.first=="IDEN"&&tokens[i+1].second!="("){
             postfix.push_back({"IDEN",token.second});
+            i++;
+        }
+        else if (token.first=="IDEN"&&tokens[i+1].second=="("){
+            auto pair=FindCorrsponding(tokens,i,Rindex,"(",")");
+            std::string str;
+            for (int j=i;j<pair.second+1;j++){
+                str+=tokens[j].second;
+            }
+            postfix.push_back({"FunctionCall",str});
+            i=pair.second+1;
         }
         else if (isdigit(token.second[0]) || token.second == "true" || token.second == "false" || (token.second.size() == 1 && isalpha(token.second[0]))) {
             postfix.push_back({token.first,token.second});
+            i++;
         }
         else if (token.second == "(") {
             ops.push({token.first,token.second});
+            i++;
         }
         else if (token.second == ")") {
             while (!ops.empty() && ops.top().second != "(") {
@@ -229,6 +243,7 @@ std::vector<std::pair<std::string,std::string> > infixToPostfixs(const std::vect
                 ops.pop();
             }
             ops.pop();
+            i++;
         }
         else {
             while (!ops.empty() && precedence(ops.top().second) >= precedence(token.second)) {
@@ -236,8 +251,10 @@ std::vector<std::pair<std::string,std::string> > infixToPostfixs(const std::vect
                 ops.pop();
             }
             ops.push({token.first,token.second});
+            i++;
         }
     }
+
     while (!ops.empty()) {
         postfix.push_back(ops.top());
         ops.pop();
@@ -385,10 +402,10 @@ std::vector<int> FindAllExistedIgnoreBracket(const std::vector<std::pair<std::st
     std::vector<int> a;
     int bracket=0;
     for(int i=Lindex;i<Rindex+1;i++){
-        if(tokens[i].second=="{"){
+        if(tokens[i].second=="{" || tokens[i].second=="("){
             bracket++;
         }
-        if(tokens[i].second=="}"){
+        if(tokens[i].second=="}" || tokens[i].second==")"){
             bracket--;
         }
         if(tokens[i].second==str&&bracket==0){

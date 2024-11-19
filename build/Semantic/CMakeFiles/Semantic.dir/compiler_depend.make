@@ -184,6 +184,7 @@ Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o: /Users/atri/CLionProjects/
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h \
@@ -1023,6 +1024,7 @@ Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o: /Users/atri/CLionProjects/Compi
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h \
+  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h \
   /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h \
@@ -4831,6 +4833,10 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/string:
 
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/vector:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/streambuf:
+
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stack:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/ostream:
@@ -5605,9 +5611,9 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/ranges_upper_bound.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/bitset:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/_printf.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/bitset:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__atomic/kill_dependency.h:
 
@@ -6009,12 +6015,6 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/wchar.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/lib/clang/19/include/__stddef_nullptr_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_mode_t.h:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__exception/exception.h:
-
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__iterator/projected.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/prev_permutation.h:
@@ -6183,10 +6183,6 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/unistd.h:
 
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/vector:
-
-/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/streambuf:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sched.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/push_heap.h:
@@ -6218,6 +6214,8 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__chrono/file_clock.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/stdint.h:
+
+/Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/errno.h:
 
@@ -6404,6 +6402,12 @@ Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: /Users/atri/CLionProj
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__debug_utils/strict_weak_ordering_check.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__locale_dir/locale_base_api.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/lib/clang/19/include/__stddef_nullptr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/sys/_types/_mode_t.h:
+
+/opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__exception/exception.h:
 
 /opt/homebrew/Cellar/llvm/19.1.3/include/c++/v1/__algorithm/lexicographical_compare.h:
 

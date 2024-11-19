@@ -3,9 +3,14 @@
 //
 #include "Analysis.h"
 #include "../Syntax/header/ALLHEADER.h"
+#include <limits>
 void Analysis::visit(const FunctionDec &node) {
     auto type=node.type->GetNodeType();
     auto name=node.name;
+    symbolTable.EnterScope();
+    for (auto &parameter: node.parameters) {
+        parameter->accept(*this);
+    }
     if (!symbolTable.ExistSymbol(name)){
         symbolTable.InsertSymbol(name, type,1);
     }
@@ -23,10 +28,14 @@ void Analysis::visit(const compoundstmt &node) {
               stmt->accept(*this);
        }
     }
+    symbolTable.ExitScope();
 }
 //// /   node->accept(*this);  调用vsist方法，调用是那个根据node实际存储的类型
 void Analysis::visit(const VarDecl &node) {
+    // probelm here
     auto type=node.type->GetNodeType();
+    if (node.VarDef){
+    
     auto VarDef=dynamic_cast<class VarDef*>(node.VarDef.get());
    if (!symbolTable.ExistSymbol(VarDef->identifier)){
        if (!VarDef->expression){
@@ -41,6 +50,8 @@ void Analysis::visit(const VarDecl &node) {
    else{
        std::cerr<<"Error: Variable "<<VarDef->identifier<<" has been declared before"<<std::endl;
    }
+   
+    }
     for (auto &VarDef: node.VarDefs) {
         auto VarDef_=dynamic_cast<class VarDef*>(VarDef.get());
         if (!symbolTable.ExistSymbol(VarDef_->identifier)){
@@ -215,6 +226,7 @@ void Analysis::visit(const StructBody &node) {
    symbolTable.ExitScope();
 }
 double Analysis::calculate(const class EXP &node) {
+    // probelm here
     auto Left=dynamic_cast<class EXP*>(node.Left.get());
     auto Right=dynamic_cast<class EXP*>(node.Right.get());
     double left_value=0,right_value=0;
@@ -224,10 +236,13 @@ double Analysis::calculate(const class EXP &node) {
     if (Right){
         right_value= calculate(*Right);
     }
+    if (left_value==std::numeric_limits<double>::quiet_NaN()||right_value==std::numeric_limits<double>::quiet_NaN()){
+        return std::numeric_limits<double>::quiet_NaN();
+    }
     if (Left&&Right)
     return applyOp(node.value,left_value,right_value);
-
-    if (symbolTable.ExistSymbol(node.value)||node.IDEN){
+        // if it is IDEN
+    if (symbolTable.ExistSymbol(node.value)&&node.IDEN){
         return symbolTable.GetSymbol(node.value).second;
     }
     else{
@@ -238,8 +253,6 @@ double Analysis::calculate(const class EXP &node) {
             return ch;
         }
     }
-
-
 }
 double Analysis::applyOp(const std::string& op, double a, double b) {
     if (op == "+") return a + b;
@@ -260,6 +273,11 @@ double Analysis::applyOp(const std::string& op, double a, double b) {
 
 }
 void Analysis::visit(const FunctionParameters &node) {
-    // Implementation
-    int a=1;
+   auto type=node.type->GetNodeType();
+    if (!symbolTable.ExistSymbol(node.IDEN)){
+         symbolTable.InsertSymbol(node.IDEN, type,1);
+    }
+    else{
+       throw std::runtime_error("Error: Variable "+node.IDEN+" has been declared before");
+    }
 }

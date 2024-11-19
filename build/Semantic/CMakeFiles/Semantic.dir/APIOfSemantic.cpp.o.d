@@ -834,6 +834,7 @@ Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o: \
   /opt/homebrew/Cellar/llvm/19.1.3/bin/../include/c++/v1/forward_list \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/StructDecl.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/StructBody.h \
+  /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/FunctionParameters.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/module.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/statement.h \
