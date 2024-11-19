@@ -40,12 +40,11 @@ void getpair(string first, string second) {
     output.push_back(answer);
 }
 
-string keyWord[28]= {"void", "int", "char", "float", "double", "bool", "string" \
+string keyWord[27]= {"void", "int", "char", "float", "double", "bool", "string" \
                    "long", "short", "signed", "unsigned",\
                    "const", "inline",\
                    "for", "while", "if", "else",\
                    "switch", "case", "default", "break", "continue", "return",\
-                   "main",\
                    "struct",\
                    "std", \
                    "using", "namespace", "std"};
@@ -332,29 +331,42 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row, string& 
     }
 }
 
+std::string searchFile(const filesystem::path& directory, const std::string& targetFile) {
+    for (const auto& entry : filesystem::directory_iterator(directory)) {
+        if (entry.is_directory()) {
+            std::string result = searchFile(entry.path(), targetFile);
+            if (!result.empty()) {
+                return result; 
+            }
+        } else if (entry.is_regular_file() && entry.path().filename() == targetFile) {
+            return filesystem::absolute(entry.path()).string();
+        }
+    }
+    return ""; 
+}
 
-string findFileInParentDirectory(const std::string& fileName) {
+
+
+string findFileInParentDirectory(const std::string& targetFile) {
     try {
         filesystem::path currentPath = filesystem::current_path();
         filesystem::path parentPath = currentPath.parent_path();
+        filesystem::current_path(parentPath);
 
-        filesystem::path targetFilePath = parentPath / fileName;
-        if (filesystem::exists(targetFilePath) && filesystem::is_regular_file(targetFilePath)) {
-            filesystem::current_path(parentPath);
-            return filesystem::absolute(targetFilePath).string();
+        std::string filePath = searchFile(filesystem::current_path(), targetFile);
+
+        if (!filePath.empty()) {
+            filesystem::path foundPath(filePath);
+            filesystem::current_path(foundPath.parent_path());
         }
 
-        filesystem::path targetFileInCurrent = currentPath / fileName;
-        if (filesystem::exists(targetFileInCurrent) && filesystem::is_regular_file(targetFileInCurrent)) {
-            filesystem::current_path(currentPath);
-            return filesystem::absolute(targetFileInCurrent).string();
-        }
-
-        throw std::runtime_error("File not found in both current and parent directories");
-
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return "";
+        return filePath;
+    } catch (const filesystem::filesystem_error& ex) {
+        std::cerr << "Filesystem error: " << ex.what() << std::endl;
+        return ""; 
+    } catch (const std::exception& ex) {
+        std::cerr << "Error: " << ex.what() << std::endl;
+        return ""; 
     }
 }
 
@@ -374,7 +386,7 @@ void singleGetToken(string& absolutePath) {
 
 }
 
-vector<pair<string,string> > gettoken(string filename) {
+vector<pair<string,string> > gettoken(const string& filename) {
     string absolutePath = findFileInParentDirectory(filename);
     singleGetToken(absolutePath);
     return output;
