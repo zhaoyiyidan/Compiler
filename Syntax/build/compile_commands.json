@@ -1,0 +1,536 @@
+[
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/tem.o -c /Users/atri/CLionProjects/Compiler/Syntax/tem.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/tem.cpp",
+  "output": "CMakeFiles/Tem.dir/tem.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/ASTnode.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/ASTnode.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/BreakStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/BreakStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/ConstructAST.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/ConstructAST.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/ContinueStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/ContinueStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/ConstDef.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/ConstDef.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/Decl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/Decl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/VarDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/VarDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Declaration/VarDef.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Declaration/VarDef.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/ForStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/ForStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/HelperFunction.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/HelperFunction.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/IFStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/IFStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/LValue.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/LValue.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/BoolLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/BoolLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/CharLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/CharLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/FloatLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/FloatLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/FunctionType.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/FunctionType.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/TypedefDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/TypedefDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/Type/Valueliteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/Type/Valueliteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/WhileStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/WhileStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/module.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/module.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/AddExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/AddExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/AssignStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/AssignStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/BinaryOperator.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/BinaryOperator.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/EXP.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/EXP.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/EqExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/EqExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/Expression.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/Expression.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/LAndExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/LAndExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/LOrExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/LOrExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/MulExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/MulExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/Number.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/Number.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/PrimaryExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/PrimaryExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/RelExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/RelExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/ReturnStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/ReturnStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/UnaryExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/UnaryExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/UnaryOp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/UnaryOp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/Tem.dir/Source/statement/compoundstmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp",
+  "output": "CMakeFiles/Tem.dir/Source/statement/compoundstmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/ASTnode.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/ASTnode.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/BreakStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/BreakStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/ConstructAST.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/ConstructAST.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/ContinueStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/ContinueStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/Decl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/Decl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/ForStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/ForStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/HelperFunction.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/HelperFunction.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/IFStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/IFStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/LValue.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/LValue.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/FunctionType.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/FunctionType.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/WhileStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/WhileStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/module.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/module.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/AddExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/AddExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/EXP.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/EXP.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/EqExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/EqExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/Expression.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/Expression.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/LAndExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/LAndExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/LOrExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/LOrExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/MulExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/MulExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/Number.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/Number.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/RelExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/RelExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp",
+  "output": "CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/APIOfSyntax.o -c /Users/atri/CLionProjects/Compiler/Syntax/APIOfSyntax.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/APIOfSyntax.cpp",
+  "output": "CMakeFiles/ASTNode.dir/APIOfSyntax.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build",
+  "command": "/usr/bin/clang++  -I/Users/atri/CLionProjects/Compiler/Syntax/header -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/ASTNode.dir/VistorAST.o -c /Users/atri/CLionProjects/Compiler/Syntax/VistorAST.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/VistorAST.cpp",
+  "output": "CMakeFiles/ASTNode.dir/VistorAST.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build/Test",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/TestForSyntax.dir/a.o -c /Users/atri/CLionProjects/Compiler/Syntax/Test/a.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Test/a.cpp",
+  "output": "Test/CMakeFiles/TestForSyntax.dir/a.o"
+},
+{
+  "directory": "/Users/atri/CLionProjects/Compiler/Syntax/build/Test",
+  "command": "/usr/bin/clang++   -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -o CMakeFiles/TestForSyntax.dir/TestHelper.o -c /Users/atri/CLionProjects/Compiler/Syntax/Test/TestHelper.cpp",
+  "file": "/Users/atri/CLionProjects/Compiler/Syntax/Test/TestHelper.cpp",
+  "output": "Test/CMakeFiles/TestForSyntax.dir/TestHelper.o"
+}
+]

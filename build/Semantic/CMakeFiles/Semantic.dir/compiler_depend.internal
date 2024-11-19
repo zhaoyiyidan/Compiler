@@ -185,6 +185,7 @@ Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h
@@ -1025,6 +1026,7 @@ Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h

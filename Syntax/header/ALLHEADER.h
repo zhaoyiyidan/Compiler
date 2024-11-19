@@ -32,4 +32,5 @@
 #include "statement/EXP.h"
 #include "Declaration/StructDecl.h"
 #include "Declaration/StructBody.h"
+#include "Declaration/FunctionParameters.h"
 #endif //COMPILER_ALLHEADER_H

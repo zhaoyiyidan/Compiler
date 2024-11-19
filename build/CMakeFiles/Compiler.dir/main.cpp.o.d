@@ -868,4 +868,6 @@ CMakeFiles/Compiler.dir/main.cpp.o: \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/statement/EXP.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/StructDecl.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/StructBody.h \
+  /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/FunctionParameters.h \
+  /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/Declaration/../Declaration.h \
   /Users/atri/CLionProjects/Compiler/Semantic/../Syntax/header/module.h

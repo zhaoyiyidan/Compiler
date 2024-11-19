@@ -176,9 +176,11 @@ CMakeFiles/Compiler.dir/main.cpp.o
  /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.h
  /Users/atri/CLionProjects/Compiler/Syntax/VistorAST.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/ALLHEADER.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/ConstDef.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionDec.h
+ /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/FunctionParameters.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructBody.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/StructDecl.h
  /Users/atri/CLionProjects/Compiler/Syntax/header/Declaration/VarDecl.h

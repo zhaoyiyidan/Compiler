@@ -1,0 +1,7 @@
+/Users/atri/CLionProjects/Compiler/Syntax/build/CMakeFiles/Tem.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/CMakeFiles/ASTNode.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/CMakeFiles/edit_cache.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/CMakeFiles/rebuild_cache.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/Test/CMakeFiles/TestForSyntax.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/Test/CMakeFiles/edit_cache.dir
+/Users/atri/CLionProjects/Compiler/Syntax/build/Test/CMakeFiles/rebuild_cache.dir

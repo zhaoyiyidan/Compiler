@@ -40,7 +40,7 @@ public:
     std::pair<std::string ,double> GetSymbol(const std::string &name){
         if (ExistSymbol(name)){
             return std::make_pair(symbols.at(name).getType(),symbols.at(name).getValue());
-        }
+        } 
         throw std::runtime_error("No such symbol");
     }
     Scope(){}
