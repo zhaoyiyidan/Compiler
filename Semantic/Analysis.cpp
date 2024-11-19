@@ -245,6 +245,10 @@ double Analysis::calculate(const class EXP &node) {
     if (symbolTable.ExistSymbol(node.value)&&node.IDEN){
         return symbolTable.GetSymbol(node.value).second;
     }
+    // if it is a funciton call 
+    if (!symbolTable.ExistSymbol(node.value)&&node.IDEN){
+        return std::numeric_limits<double>::quiet_NaN();
+    }
     else{
         try{
         return std::stod(node.value);}
