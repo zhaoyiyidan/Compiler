@@ -156,9 +156,8 @@ bool isChar(char ch) {
 }
 
 void singleGetToken(string& absolutePath);
-string findFileInParentDirectory(const std::string& fileName);
 
-void dealWithInclude(string& input, int& pos, string& absolutePath) {
+void dealWithInclude(string& input, int& pos, string& filename) {
     char peek = input[pos];
     while (peek != '\"') {
         pos++;
@@ -181,14 +180,13 @@ void dealWithInclude(string& input, int& pos, string& absolutePath) {
     }
 
     str += ".cpp";
-    string curr = findFileInParentDirectory(str);
-    if (curr != absolutePath) {
-        singleGetToken(curr);
+    if (str != filename) {
+        singleGetToken(str);
     }
 
 }
 
-void dealWithLetter(string& input, int& pos, char peek, bool& isInclude, string& absolutePath) {
+void dealWithLetter(string& input, int& pos, char peek, bool& isInclude, string& filename) {
     string str;
     while (isLetter(peek) || isDigit(peek)) {
         if (pos >= input.length()) {
@@ -202,7 +200,7 @@ void dealWithLetter(string& input, int& pos, char peek, bool& isInclude, string&
 
     if (str == "include") {
         isInclude = true;
-        dealWithInclude(input, pos, absolutePath);
+        dealWithInclude(input, pos, filename);
         return;
     }
 
@@ -300,7 +298,7 @@ void dealWithChar(string&input, int&pos, char peek) {
 }
 
 
-void words(string input, bool& hasBeenComment, bool& hasError, int row, string& absolutePath) {
+void words(string input, bool& hasBeenComment, bool& hasError, int row, string& filename) {
     if (input.length() == 0) {
         return;
     }
@@ -313,7 +311,7 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row, string& 
         else if (isComment(input, pos, peek, hasBeenComment)) {
             return;
         } else if (isLetter(peek)) {
-            dealWithLetter(input, pos, peek, isInclude, absolutePath);
+            dealWithLetter(input, pos, peek, isInclude, filename);
         } else if (isDigit(peek)) {
             dealWithDigit(input, pos, peek);
         } else if (isOperator(peek)) {
@@ -331,63 +329,28 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row, string& 
     }
 }
 
-std::string searchFile(const filesystem::path& directory, const std::string& targetFile) {
-    for (const auto& entry : filesystem::directory_iterator(directory)) {
-        if (entry.is_directory()) {
-            std::string result = searchFile(entry.path(), targetFile);
-            if (!result.empty()) {
-                return result; 
-            }
-        } else if (entry.is_regular_file() && entry.path().filename() == targetFile) {
-            return filesystem::absolute(entry.path()).string();
-        }
-    }
-    return ""; 
-}
-
-
-
-string findFileInParentDirectory(const std::string& targetFile) {
-    try {
-        filesystem::path currentPath = filesystem::current_path();
-        filesystem::path parentPath = currentPath.parent_path();
-        filesystem::current_path(parentPath);
-
-        std::string filePath = searchFile(filesystem::current_path(), targetFile);
-
-        if (!filePath.empty()) {
-            filesystem::path foundPath(filePath);
-            filesystem::current_path(foundPath.parent_path());
-        }
-
-        return filePath;
-    } catch (const filesystem::filesystem_error& ex) {
-        std::cerr << "Filesystem error: " << ex.what() << std::endl;
-        return ""; 
-    } catch (const std::exception& ex) {
-        std::cerr << "Error: " << ex.what() << std::endl;
-        return ""; 
-    }
-}
-
-void singleGetToken(string& absolutePath) {
+void singleGetToken(string& filename) {
     string line;
-    ifstream file(absolutePath);
+    ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Have error opening:  " << absolutePath << std::endl;
+        std::cerr << "Have error opening:  " << filename << std::endl;
         return;
     }
     while (getline(file, line)) {
-        words(line, hasBeenComment, hasError, row, absolutePath);
+        words(line, hasBeenComment, hasError, row, filename);
         if (hasError) {break;}
         row++;
     }
     file.close();
-
 }
 
-vector<pair<string,string> > gettoken(const string& filename) {
-    string absolutePath = findFileInParentDirectory(filename);
-    singleGetToken(absolutePath);
+vector<pair<string,string> > gettoken(string filename) {
+    string originalDir = std::filesystem::current_path().string();
+    filesystem::path newDir = std::filesystem::path(filename).parent_path();
+    filesystem::current_path(newDir);
+    filesystem::path path(filename);
+    filename = path.filename().string();
+    singleGetToken(filename);
+    filesystem::current_path(originalDir);
     return output;
 }
