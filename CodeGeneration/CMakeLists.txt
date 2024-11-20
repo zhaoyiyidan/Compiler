@@ -1,7 +1,9 @@
 add_subdirectory(Test)
 add_library(CodeGeneration APIOfcodegeneration.cpp APIOfcodegeneration.h
         A.cpp
-        A.h)
+        A.h
+        IR_Transform.cpp
+        IR_Transform.h)
 ##
 cmake_minimum_required(VERSION 3.10)
 project(Code)

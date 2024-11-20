@@ -1,4 +1,4 @@
-# Install script for directory: /Users/atri/CLionProjects/Compiler
+# Install script for directory: /Users/zhaokunxiang/clion/compiler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,16 +34,16 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Library/googletest-main/cmake_install.cmake")
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/CodeGeneration/cmake_install.cmake")
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Lexical/cmake_install.cmake")
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Syntax/cmake_install.cmake")
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Semantic/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Library/googletest-main/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/cmake_install.cmake")
 
 endif()
 
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/atri/CLionProjects/Compiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
