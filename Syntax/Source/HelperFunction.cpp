@@ -67,8 +67,10 @@ std::string DeclOrStmt(const std::vector<std::pair<std::string, std::string>> &t
     if (tokens[Lindex].first=="KeyWord"&&tokens[Lindex+1].first=="IDEN"){
         return "VarDecl";
     }
-    
-    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="="){
+    if (tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].first=="IDEN"){
+        return "VarDecl";
+    }
+    if ((tokens[Lindex].first=="IDEN"&&tokens[Lindex+1].second=="=")){
         return "AssignStmt";
     }
     if (tokens[Lindex].first=="NUM"){
