@@ -6,8 +6,15 @@
 #define COMPILER_IR_TRANSFORM_H
 
 #include "../Syntax/VistorAST.h"
+#include "../Syntax/header/ALLHEADER.h"
+#include "header/LLVM_Part.h"
+#include <string>
+#include "../Semantic/APIOfSemantic.h"
 class IR_Transform : public VistorAST {
 public:
+     LLVM_Part llvm_part=LLVM_Part("test_module");
+     SymbolTable symbolTable;
+     bool ExistSymbolTable= false;
     // override all the virtual functions in VistorAST
      void visit(const class ConstDecl &node) override;
      void visit(const class ConstDef &node) override;
@@ -45,7 +52,9 @@ public:
      void visit(const class FunctionParameters &node) override;
      void visit(const class StructDecl &node) override;
      void visit(const class StructBody &node) override;
-
+     IR_Transform(std::string name):llvm_part(name){};
+     //
+     void CreateBasicBlock(const std::string &name);
 };
 
 

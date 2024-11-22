@@ -18,7 +18,7 @@ public:
         std::cout<<" "<<IDEN;
     }
     std::string GetNodeType() override{
-        return "FunctionParameters";
+        return type->GetNodeType()+","+IDEN;
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);

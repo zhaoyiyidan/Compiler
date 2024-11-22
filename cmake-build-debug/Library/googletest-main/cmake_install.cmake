@@ -1,4 +1,4 @@
-# Install script for directory: /Users/atri/CLionProjects/Compiler/Library/googletest-main
+# Install script for directory: /Users/zhaokunxiang/clion/compiler/Library/googletest-main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/atri/CLionProjects/Compiler/cmake-build-debug/Library/googletest-main/googlemock/cmake_install.cmake")
+  include("/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Library/googletest-main/googlemock/cmake_install.cmake")
 
 endif()
 

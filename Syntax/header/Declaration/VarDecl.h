@@ -17,7 +17,6 @@ public:
     VarDecl(std::unique_ptr<ASTnode> type, std::unique_ptr<ASTnode> VarDef, std::vector<std::unique_ptr<ASTnode> > VarDefs): type(std::move(type)), VarDef(std::move(VarDef)), VarDefs(std::move(VarDefs)){}
     void getNode() override{
         type->getNode();
-
         std::cout << " ";
         if (VarDef)
         VarDef->getNode();
@@ -34,7 +33,7 @@ public:
         std::cout << ";" << std::endl;
     }
     std::string GetNodeType() override{
-        return NodeType;
+        return type->GetNodeType()+","+VarDef->GetNodeType();
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);

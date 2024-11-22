@@ -15,7 +15,12 @@ SymbolTable analysis(const module &node){
     }
     return analysis.symbolTable;
 }
-
+SymbolTable analysis(ASTnode *node){
+    Analysis analysis;
+    analysis.symbolTable.EnterScope();
+    node->accept(analysis);
+    return analysis.symbolTable;
+}
 
 
 

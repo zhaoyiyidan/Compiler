@@ -15,6 +15,7 @@ public:
     }
     std::string GetNodeType() override{
         return type;
+
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);// vistor class

@@ -3,7 +3,11 @@ add_library(CodeGeneration APIOfcodegeneration.cpp APIOfcodegeneration.h
         A.cpp
         A.h
         IR_Transform.cpp
-        IR_Transform.h)
+        IR_Transform.h
+        Source/LLVM_Part.cpp
+        header/LLVM_Part.h
+        HelperFunction.cpp
+        HelperFunction.h)
 ##
 cmake_minimum_required(VERSION 3.10)
 project(Code)
@@ -20,6 +24,11 @@ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 
 # 添加LLVM头文件路径
 include_directories(${LLVM_INCLUDE_DIRS})
+add_definitions(${LLVM_DEFINITIONS})
+
+find_package(LLVM REQUIRED CONFIG)
+include_directories(${LLVM_INCLUDE_DIRS})
+link_directories(${LLVM_LIBRARY_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
 # 设置要链接的LLVM库组件
