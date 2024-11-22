@@ -18,6 +18,7 @@ public:
         std::cout << "continue;" << std::endl;
     }
     ContinueStmt() = default;
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

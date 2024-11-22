@@ -16,6 +16,7 @@ public:
     std::string GetNodeType() {
         return "FloatLiteral";
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 
 };
 

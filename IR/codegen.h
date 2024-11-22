@@ -1,5 +1,3 @@
-#include "Syntax/VistorAST.h"
-#include "Syntax/header/ALLHEADER.h"
 #include <llvm/IR/LLVMContext.h>
 #include <llvm/IR/Module.h>
 #include <llvm/IR/IRBuilder.h>
@@ -32,29 +30,34 @@
 #include <vector>
 #include <memory>
 #include <stack>
-
-using namespace llvm;
-
-class NBlock;
-
-class CodeGenBlock {
-public:
-    BasicBlock *block;
-    std::map<std::string, Value*> locals;
-};
+#include <iostream>
 
 class CodeGenContext {
-    std::stack<CodeGenBlock *> blocks;
-    Function *mainFunction;
-
 public:
-    Module *module;
-    CodeGenContext() { module = new Module("main", getGlobalContext()); }
-    
-    void generateCode(NBlock& root);
-    GenericValue runCode();
-    std::map<std::string, Value*>& locals() { return blocks.top()->locals; }
-    BasicBlock *currentBlock() { return blocks.top()->block; }
-    void pushBlock(BasicBlock *block) { blocks.push(new CodeGenBlock()); blocks.top()->block = block; }
-    void popBlock() { CodeGenBlock *top = blocks.top(); blocks.pop(); delete top; }
+    llvm::LLVMContext context;
+    llvm::Module* module;
+    std::stack<llvm::BasicBlock*> blocks;
+    std::map<std::string, llvm::Value*> locals;
+
+    CodeGenContext() {
+        module = new llvm::Module("main", context);
+    }
+
+    ~CodeGenContext() {
+        delete module;
+    }
+
+    llvm::BasicBlock* currentBlock() {
+        return blocks.top();
+    }
+
+    void pushBlock(llvm::BasicBlock* block) {
+        blocks.push(block);
+    }
+
+    void popBlock() {
+        blocks.pop();
+    }
 };
+
+#endif // COMPILER_CODEGENCONTEXT_H

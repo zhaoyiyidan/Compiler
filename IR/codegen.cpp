@@ -1,30 +1,23 @@
-#include "IRGeneration.h"
+#include "codegen.h"
+#include "Syntax/header/ALLHEADER.h"
 
 llvm::Value* BoolLiteral::codeGen(CodeGenContext& context){
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
     return llvm::ConstantInt::get(llvm::Type::getInt1Ty(context.llvmContext), value ? 1 : 0);
     //1位整数1或0
 }
 
 llvm::Value* CharLiteral::codeGen(CodeGenContext& context){
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
     return llvm::ConstantInt::get(llvm::Type::getInt8Ty(context.llvmContext), static_cast<unsigned char>(value));
     //8位整数存储ASCII码
 }
 
 llvm::Value* IntegerLiteral::codeGen(CodeGenContext& context){
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
     return llvm::ConstantInt::get(llvm::Type::getInt32Ty(context.context), value);
 }
 
 
 
 llvm::Value* FunctionDec::codeGen(CodeGenContext& context){
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
 
     //返回类型type->returnType
     llvm:Type* returnType = type ? type -> codeGen(context) -> getType() : llvm::Type::getVoidTy(context.context);
@@ -80,8 +73,6 @@ llvm::Value* FunctionDec::codeGen(CodeGenContext& context){
 }
 
 llvm::Value* compoundstmt::codeGen(CodeGenContext& context){
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
 
     llvm::Value* lastValue = nullptr;
     //遍历生成stmtIR
@@ -294,8 +285,6 @@ llvm::Value* EqExp::codeGen(CodeGenContext& context) {
 
 
 llvm::Value* RelExp::codeGen(CodeGenContext& context) {
-    llvm::IRBuilder<> builder(context.currentBlock());
-    llvm::Module* module = context.module;
     
     llvm::Value* LHS = expression->codeGen(context);
     llvm::Value* RHS = AddExp->codeGen(context);

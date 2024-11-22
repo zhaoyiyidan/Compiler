@@ -23,6 +23,7 @@ public:
     std::string GetNodeType() override {
         return "structDecl";
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

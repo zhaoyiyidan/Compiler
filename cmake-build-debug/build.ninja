@@ -545,14 +545,43 @@ build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/
 
 build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
   DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
+<<<<<<< HEAD
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+=======
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+>>>>>>> 889468f (try to build LLVM IR)
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
 
 build CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_CodeGeneration
   DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o.d
+<<<<<<< HEAD
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+=======
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o.d
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o.d
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o.d
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+>>>>>>> 889468f (try to build LLVM IR)
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
@@ -565,9 +594,15 @@ build CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CXX_COMPILER__CodeGe
 #############################################
 # Link the static library CodeGeneration/libCodeGeneration.a
 
+<<<<<<< HEAD
 build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o || /usr/local/lib/libzstd.dylib
   ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LANGUAGE_COMPILE_FLAGS = -g
+=======
+build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o || /usr/local/lib/libzstd.dylib
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  LANGUAGE_COMPILE_FLAGS = -m64 -g
+>>>>>>> 889468f (try to build LLVM IR)
   OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -621,7 +656,11 @@ build cmake_object_order_depends_target_my_project: phony || CodeGeneration/CMak
 
 build CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o: CXX_COMPILER__my_project_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_my_project
   DEP_FILE = CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o.d
+<<<<<<< HEAD
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+=======
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+>>>>>>> 889468f (try to build LLVM IR)
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
   OBJECT_DIR = CodeGeneration/CMakeFiles/my_project.dir
   OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/my_project.dir

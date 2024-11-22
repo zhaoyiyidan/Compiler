@@ -30,6 +30,7 @@ public:
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

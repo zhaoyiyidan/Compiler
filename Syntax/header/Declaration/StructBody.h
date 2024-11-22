@@ -21,6 +21,7 @@ public:
     std::string GetNodeType() override {
         return "structBody";
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

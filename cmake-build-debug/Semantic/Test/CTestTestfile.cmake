@@ -1,8 +1,8 @@
 # CMake generated Testfile for 
-# Source directory: /Users/atri/CLionProjects/Compiler/Semantic/Test
-# Build directory: /Users/atri/CLionProjects/Compiler/cmake-build-debug/Semantic/Test
+# Source directory: /Users/zhaokunxiang/clion/compiler/Semantic/Test
+# Build directory: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Semantic/Test
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(TestForSemantic "/Users/atri/CLionProjects/Compiler/cmake-build-debug/Syntax/Test/TestForSyntax")
-set_tests_properties(TestForSemantic PROPERTIES  _BACKTRACE_TRIPLES "/Users/atri/CLionProjects/Compiler/Semantic/Test/CMakeLists.txt;3;add_test;/Users/atri/CLionProjects/Compiler/Semantic/Test/CMakeLists.txt;0;")
+add_test(TestForSemantic "/Users/zhaokunxiang/clion/compiler/cmake-build-debug/Syntax/Test/TestForSyntax")
+set_tests_properties(TestForSemantic PROPERTIES  _BACKTRACE_TRIPLES "/Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt;3;add_test;/Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt;0;")

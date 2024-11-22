@@ -19,6 +19,7 @@ public:
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);// vistor class
     }// vist class Fucntinon
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 //
 

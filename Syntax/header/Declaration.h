@@ -20,6 +20,7 @@ void getNode() override{
     void accept(VistorAST &vistor) override {
 
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

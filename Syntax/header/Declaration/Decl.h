@@ -19,6 +19,7 @@ public:
     void accept(VistorAST &vistor) override {
 
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 

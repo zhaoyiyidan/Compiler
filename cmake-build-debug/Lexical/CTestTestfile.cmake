@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Users/atri/CLionProjects/Compiler/Lexical
-# Build directory: /Users/atri/CLionProjects/Compiler/cmake-build-debug/Lexical
+# Source directory: /Users/zhaokunxiang/clion/compiler/Lexical
+# Build directory: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/Lexical
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

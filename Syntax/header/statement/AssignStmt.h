@@ -23,6 +23,7 @@ AssignStmt(std::string variable, std::unique_ptr<ASTnode> expression):identifier
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);
     }
+    virtual llvm::Value* codeGen(CodeGenContext& context) override;
 };
 
 
