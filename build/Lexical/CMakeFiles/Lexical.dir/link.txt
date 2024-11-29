@@ -1,2 +1,2 @@
-/usr/bin/ar qc libLexical.a CMakeFiles/Lexical.dir/APIOfLexical.cpp.o CMakeFiles/Lexical.dir/tem.cpp.o CMakeFiles/Lexical.dir/Test/a.cpp.o
-/opt/homebrew/opt/llvm/bin/llvm-ranlib libLexical.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libLexical.a CMakeFiles/Lexical.dir/APIOfLexical.cpp.o CMakeFiles/Lexical.dir/tem.cpp.o CMakeFiles/Lexical.dir/Test/a.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libLexical.a

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Compiler.dir/depend.make
@@ -73,47 +73,51 @@ CMakeFiles/Compiler.dir/codegen:
 .PHONY : CMakeFiles/Compiler.dir/codegen
 
 CMakeFiles/Compiler.dir/main.cpp.o: CMakeFiles/Compiler.dir/flags.make
-CMakeFiles/Compiler.dir/main.cpp.o: /Users/atri/CLionProjects/Compiler/main.cpp
+CMakeFiles/Compiler.dir/main.cpp.o: /Users/zhaokunxiang/clion/compiler/main.cpp
 CMakeFiles/Compiler.dir/main.cpp.o: CMakeFiles/Compiler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Compiler.dir/main.cpp.o"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Compiler.dir/main.cpp.o -MF CMakeFiles/Compiler.dir/main.cpp.o.d -o CMakeFiles/Compiler.dir/main.cpp.o -c /Users/atri/CLionProjects/Compiler/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Compiler.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Compiler.dir/main.cpp.o -MF CMakeFiles/Compiler.dir/main.cpp.o.d -o CMakeFiles/Compiler.dir/main.cpp.o -c /Users/zhaokunxiang/clion/compiler/main.cpp
 
 CMakeFiles/Compiler.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Compiler.dir/main.cpp.i"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/main.cpp > CMakeFiles/Compiler.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/main.cpp > CMakeFiles/Compiler.dir/main.cpp.i
 
 CMakeFiles/Compiler.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Compiler.dir/main.cpp.s"
-	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/main.cpp -o CMakeFiles/Compiler.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/main.cpp -o CMakeFiles/Compiler.dir/main.cpp.s
+
+CMakeFiles/Compiler.dir/Compile.cpp.o: CMakeFiles/Compiler.dir/flags.make
+CMakeFiles/Compiler.dir/Compile.cpp.o: /Users/zhaokunxiang/clion/compiler/Compile.cpp
+CMakeFiles/Compiler.dir/Compile.cpp.o: CMakeFiles/Compiler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Compiler.dir/Compile.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Compiler.dir/Compile.cpp.o -MF CMakeFiles/Compiler.dir/Compile.cpp.o.d -o CMakeFiles/Compiler.dir/Compile.cpp.o -c /Users/zhaokunxiang/clion/compiler/Compile.cpp
+
+CMakeFiles/Compiler.dir/Compile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Compiler.dir/Compile.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Compile.cpp > CMakeFiles/Compiler.dir/Compile.cpp.i
+
+CMakeFiles/Compiler.dir/Compile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Compiler.dir/Compile.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Compile.cpp -o CMakeFiles/Compiler.dir/Compile.cpp.s
 
 # Object files for target Compiler
 Compiler_OBJECTS = \
-"CMakeFiles/Compiler.dir/main.cpp.o"
+"CMakeFiles/Compiler.dir/main.cpp.o" \
+"CMakeFiles/Compiler.dir/Compile.cpp.o"
 
 # External object files for target Compiler
 Compiler_EXTERNAL_OBJECTS =
 
 Compiler: CMakeFiles/Compiler.dir/main.cpp.o
+Compiler: CMakeFiles/Compiler.dir/Compile.cpp.o
 Compiler: CMakeFiles/Compiler.dir/build.make
 Compiler: Syntax/libASTNode.a
 Compiler: CodeGeneration/libCodeGeneration.a
 Compiler: Lexical/libLexical.a
 Compiler: Semantic/libSemantic.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMIRReader.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMAsmParser.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMBitReader.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMCore.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMBinaryFormat.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMRemarks.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMTargetParser.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMBitstreamReader.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMSupport.a
-Compiler: /opt/homebrew/opt/llvm/lib/libLLVMDemangle.a
-Compiler: /opt/homebrew/lib/libz3.dylib
-Compiler: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/lib/libz.tbd
-Compiler: /opt/homebrew/lib/libzstd.dylib
+Compiler: /usr/local/opt/llvm/lib/libLLVM.dylib
 Compiler: CMakeFiles/Compiler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Compiler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Compiler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Compiler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -125,6 +129,6 @@ CMakeFiles/Compiler.dir/clean:
 .PHONY : CMakeFiles/Compiler.dir/clean
 
 CMakeFiles/Compiler.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/CMakeFiles/Compiler.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/CMakeFiles/Compiler.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Compiler.dir/depend
 

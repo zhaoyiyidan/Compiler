@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Include any dependencies generated for this target.
 include Lexical/Test/CMakeFiles/TestForLexical.dir/depend.make
@@ -73,46 +73,46 @@ Lexical/Test/CMakeFiles/TestForLexical.dir/codegen:
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/codegen
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/flags.make
-Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: /Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp
+Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp
 Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o -MF CMakeFiles/TestForLexical.dir/a.cpp.o.d -o CMakeFiles/TestForLexical.dir/a.cpp.o -c /Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o -MF CMakeFiles/TestForLexical.dir/a.cpp.o.d -o CMakeFiles/TestForLexical.dir/a.cpp.o -c /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TestForLexical.dir/a.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp > CMakeFiles/TestForLexical.dir/a.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp > CMakeFiles/TestForLexical.dir/a.cpp.i
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TestForLexical.dir/a.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp -o CMakeFiles/TestForLexical.dir/a.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp -o CMakeFiles/TestForLexical.dir/a.cpp.s
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/flags.make
-Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: /Users/atri/CLionProjects/Compiler/Lexical/Test/TestForGetTokens.cpp
+Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp
 Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o -MF CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d -o CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o -c /Users/atri/CLionProjects/Compiler/Lexical/Test/TestForGetTokens.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o -MF CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d -o CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o -c /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Lexical/Test/TestForGetTokens.cpp > CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp > CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.i
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Lexical/Test/TestForGetTokens.cpp -o CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp -o CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.s
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/flags.make
-Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp
+Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp
 Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: Lexical/Test/CMakeFiles/TestForLexical.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o -MF CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d -o CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o -c /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o -MF CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d -o CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o -c /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp > CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp > CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.i
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp -o CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp -o CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.s
 
 # Object files for target TestForLexical
 TestForLexical_OBJECTS = \
@@ -131,18 +131,18 @@ Lexical/Test/TestForLexical: lib/libgtest.a
 Lexical/Test/TestForLexical: lib/libgtest_main.a
 Lexical/Test/TestForLexical: lib/libgtest.a
 Lexical/Test/TestForLexical: Lexical/Test/CMakeFiles/TestForLexical.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TestForLexical"
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TestForLexical.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TestForLexical"
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TestForLexical.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Lexical/Test/CMakeFiles/TestForLexical.dir/build: Lexical/Test/TestForLexical
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/build
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/clean:
-	cd /Users/atri/CLionProjects/Compiler/build/Lexical/Test && $(CMAKE_COMMAND) -P CMakeFiles/TestForLexical.dir/cmake_clean.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/Lexical/Test && $(CMAKE_COMMAND) -P CMakeFiles/TestForLexical.dir/cmake_clean.cmake
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/clean
 
 Lexical/Test/CMakeFiles/TestForLexical.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/Lexical/Test /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/Lexical/Test /Users/atri/CLionProjects/Compiler/build/Lexical/Test/CMakeFiles/TestForLexical.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/Lexical/Test /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/Lexical/Test /Users/zhaokunxiang/clion/compiler/build/Lexical/Test/CMakeFiles/TestForLexical.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/depend
 

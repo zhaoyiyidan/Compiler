@@ -3,9 +3,9 @@
 //
 
 #include "IR_Transform.h"
-void visit(const class ConstDecl &node){}
-void visit(const class ConstDef &node) {}
-void visit(const class Decl &node) {}
+void IR_Transform::visit(const class ConstDecl &node){}
+void IR_Transform::visit(const class ConstDef &node) {}
+void IR_Transform::visit(const class Decl &node) {}
 void IR_Transform::visit(const class FunctionDec &node){
 
     // lvm::Function *func = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, node.name, &llvm_part.module);
@@ -119,9 +119,9 @@ void IR_Transform::visit(const class VarDef &node) {
 
     }
 }
-void visit(const class AddExp &node)   {}
-void visit(const class AssignStmt &node) {}
-void visit(const class BinaryOperator &node){}
+void IR_Transform::visit(const class AddExp &node)   {}
+void IR_Transform::visit(const class AssignStmt &node) {}
+void IR_Transform::visit(const class BinaryOperator &node){}
 void IR_Transform::visit(const class compoundstmt &node){
     // if we only have basic block in the function
     this->CreateBasicBlock("CompoundStmt");
@@ -131,32 +131,32 @@ void IR_Transform::visit(const class compoundstmt &node){
     }
     // there is something we need to do here
 }
-void visit(const class EqExp &node) {}
-void visit(const class Expression &node) {}
-void visit(const class LAndExp &node) {}
-void visit(const class LOrExp &node) {}
-void visit(const class MulExp &node) {}
-void visit(const class PrimaryExp &node) {}
-void visit(const class RelExp &node) {}
-void visit(const class ReturnStmt &node) {}
-void visit(const class UnaryExp &node) {}
-void visit(const class UnaryOp &node) {}
-void visit(const class IntegerLiteral &node) {}
-void visit(const class Number &node) {}
-void visit(const class BoolLiteral &node) {}
-void visit(const class CharLiteral &node) {}
-void visit(const class FloatLiteral &node) {}
-void visit(const class FunctionType &node)     {}
-void visit(const class IFStmt &node) {}
-void visit(const class WhileStmt &node) {}
-void visit(const class ForStmt &node) {}
-void visit(const class LValue &node) {}
-void visit(const class BreakStmt &node)   {}
-void visit(const class ContinueStmt &node) {}
-void visit(const class EXP &node){}
-void visit(const class FunctionParameters &node){}
-void visit(const class StructDecl &node) {}
-void visit(const class StructBody &node){}
+void IR_Transform::visit(const class EqExp &node) {}
+void IR_Transform::visit(const class Expression &node) {}
+void IR_Transform::visit(const class LAndExp &node) {}
+void IR_Transform::visit(const class LOrExp &node) {}
+void IR_Transform::visit(const class MulExp &node) {}
+void IR_Transform::visit(const class PrimaryExp &node) {}
+void IR_Transform::visit(const class RelExp &node) {}
+void IR_Transform::visit(const class ReturnStmt &node) {}
+void IR_Transform::visit(const class UnaryExp &node) {}
+void IR_Transform::visit(const class UnaryOp &node) {}
+void IR_Transform::visit(const class IntegerLiteral &node) {}
+void IR_Transform::visit(const class Number &node) {}
+void IR_Transform::visit(const class BoolLiteral &node) {}
+void IR_Transform::visit(const class CharLiteral &node) {}
+void IR_Transform::visit(const class FloatLiteral &node) {}
+void IR_Transform::visit(const class FunctionType &node)     {}
+void IR_Transform::visit(const class IFStmt &node) {}
+void IR_Transform::visit(const class WhileStmt &node) {}
+void IR_Transform::visit(const class ForStmt &node) {}
+void IR_Transform::visit(const class LValue &node) {}
+void IR_Transform::visit(const class BreakStmt &node)   {}
+void IR_Transform::visit(const class ContinueStmt &node) {}
+void IR_Transform::visit(const class EXP &node){}
+void IR_Transform::visit(const class FunctionParameters &node){}
+void IR_Transform::visit(const class StructDecl &node) {}
+void IR_Transform::visit(const class StructBody &node){}
 // it is used to create a new basic block
 void IR_Transform::CreateBasicBlock(const std::string &name){
     llvm_part.CreateNewBlock(name);

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/Syntax/Test/TestHelper.cpp" "Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o" "gcc" "Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Syntax/Test/a.cpp" "Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o" "gcc" "Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp" "Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o" "gcc" "Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp" "Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o" "gcc" "Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

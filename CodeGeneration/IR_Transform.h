@@ -5,8 +5,7 @@
 #ifndef COMPILER_IR_TRANSFORM_H
 #define COMPILER_IR_TRANSFORM_H
 
-#include "../Syntax/VistorAST.h"
-#include "../Syntax/header/ALLHEADER.h"
+
 #include "header/LLVM_Part.h"
 #include <string>
 #include "../Semantic/APIOfSemantic.h"

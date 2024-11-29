@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Users/atri/CLionProjects/Compiler
-# Build directory: /Users/atri/CLionProjects/Compiler/build
+# Source directory: /Users/zhaokunxiang/clion/compiler
+# Build directory: /Users/zhaokunxiang/clion/compiler/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

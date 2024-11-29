@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp" "Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp" "Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Lexical/tem.cpp" "Lexical/CMakeFiles/Lexical.dir/tem.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/tem.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp" "Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp" "Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/tem.cpp" "Lexical/CMakeFiles/Lexical.dir/tem.cpp.o" "gcc" "Lexical/CMakeFiles/Lexical.dir/tem.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

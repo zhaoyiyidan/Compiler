@@ -1,5 +1,21 @@
-add_subdirectory(Test)
-add_library(CodeGeneration APIOfcodegeneration.cpp APIOfcodegeneration.h
+cmake_minimum_required(VERSION 3.10)
+project(Code)
+
+# 设置C++标准
+set(CMAKE_CXX_STANDARD 17)
+
+# 查找LLVM
+find_package(LLVM REQUIRED CONFIG)
+
+# 打印调试信息，查看CMake是否找到了LLVM
+message(STATUS "LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
+message(STATUS "LLVM_LIBRARY_DIRS: ${LLVM_LIBRARY_DIRS}")
+message(STATUS "LLVM_VERSION: ${LLVM_VERSION_STRING}")
+
+# 添加LLVM头文件路径到目标
+add_library(CodeGeneration
+        APIOfcodegeneration.cpp
+        APIOfcodegeneration.h
         A.cpp
         A.h
         IR_Transform.cpp
@@ -7,38 +23,11 @@ add_library(CodeGeneration APIOfcodegeneration.cpp APIOfcodegeneration.h
         Source/LLVM_Part.cpp
         header/LLVM_Part.h
         HelperFunction.cpp
-        HelperFunction.h)
-##
-cmake_minimum_required(VERSION 3.10)
-project(Code)
-
-# 设置C++标准
-set(CMAKE_CXX_STANDARD 17)
-
-# 查找LLVM包
-find_package(LLVM REQUIRED CONFIG)
-
-# 输出LLVM的版本信息
-message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
-message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
-
-# 添加LLVM头文件路径
-include_directories(${LLVM_INCLUDE_DIRS})
-add_definitions(${LLVM_DEFINITIONS})
-
-find_package(LLVM REQUIRED CONFIG)
-include_directories(${LLVM_INCLUDE_DIRS})
-link_directories(${LLVM_LIBRARY_DIRS})
-add_definitions(${LLVM_DEFINITIONS})
-
-# 设置要链接的LLVM库组件
-llvm_map_components_to_libnames(llvm_libs core support irreader)
-
-# 添加项目源文件
-add_executable(my_project
-        A.cpp
+        HelperFunction.h
 )
 
-# 链接LLVM库
-target_link_libraries(my_project ${llvm_libs})
-target_link_libraries(CodeGeneration ${llvm_libs})
+target_link_libraries(CodeGeneration PRIVATE LLVM)
+target_include_directories(CodeGeneration PRIVATE ${LLVM_INCLUDE_DIRS})
+
+
+

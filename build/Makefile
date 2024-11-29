@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,44 +107,44 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles /Users/atri/CLionProjects/Compiler/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles /Users/zhaokunxiang/clion/compiler/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -237,19 +237,6 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named CodeGeneration
-
-# Build rule for target.
-CodeGeneration: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration
-.PHONY : CodeGeneration
-
-# fast build rule for target.
-CodeGeneration/fast:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
-.PHONY : CodeGeneration/fast
-
-#=============================================================================
 # Target rules for targets named intrinsics_gen
 
 # Build rule for target.
@@ -328,30 +315,17 @@ RISCVTargetParserTableGen/fast:
 .PHONY : RISCVTargetParserTableGen/fast
 
 #=============================================================================
-# Target rules for targets named my_project
+# Target rules for targets named CodeGeneration
 
 # Build rule for target.
-my_project: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_project
-.PHONY : my_project
+CodeGeneration: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration
+.PHONY : CodeGeneration
 
 # fast build rule for target.
-my_project/fast:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/build
-.PHONY : my_project/fast
-
-#=============================================================================
-# Target rules for targets named TestForCodeGeneration
-
-# Build rule for target.
-TestForCodeGeneration: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestForCodeGeneration
-.PHONY : TestForCodeGeneration
-
-# fast build rule for target.
-TestForCodeGeneration/fast:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build.make CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build
-.PHONY : TestForCodeGeneration/fast
+CodeGeneration/fast:
+	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
+.PHONY : CodeGeneration/fast
 
 #=============================================================================
 # Target rules for targets named Lexical
@@ -444,6 +418,30 @@ TestForSemantic/fast:
 	$(MAKE) $(MAKESILENT) -f Semantic/Test/CMakeFiles/TestForSemantic.dir/build.make Semantic/Test/CMakeFiles/TestForSemantic.dir/build
 .PHONY : TestForSemantic/fast
 
+Compile.o: Compile.cpp.o
+.PHONY : Compile.o
+
+# target to build an object file
+Compile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/Compile.cpp.o
+.PHONY : Compile.cpp.o
+
+Compile.i: Compile.cpp.i
+.PHONY : Compile.i
+
+# target to preprocess a source file
+Compile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/Compile.cpp.i
+.PHONY : Compile.cpp.i
+
+Compile.s: Compile.cpp.s
+.PHONY : Compile.s
+
+# target to generate assembly for a file
+Compile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/Compile.cpp.s
+.PHONY : Compile.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -493,7 +491,6 @@ help:
 	@echo "... Lexical"
 	@echo "... Semantic"
 	@echo "... Tem"
-	@echo "... TestForCodeGeneration"
 	@echo "... TestForLexical"
 	@echo "... TestForSemantic"
 	@echo "... TestForSyntax"
@@ -501,7 +498,9 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... my_project"
+	@echo "... Compile.o"
+	@echo "... Compile.i"
+	@echo "... Compile.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

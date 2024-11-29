@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Include any dependencies generated for this target.
 include Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/depend.make
@@ -73,18 +73,18 @@ Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/codegen:
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/codegen
 
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/flags.make
-Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: /Users/atri/CLionProjects/Compiler/Library/googletest-main/googletest/src/gtest_main.cc
+Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -MF CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/atri/CLionProjects/Compiler/Library/googletest-main/googletest/src/gtest_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -MF CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc
 
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Library/googletest-main/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Library/googletest-main/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 
 # Object files for target gtest_main
 gtest_main_OBJECTS = \
@@ -96,19 +96,19 @@ gtest_main_EXTERNAL_OBJECTS =
 lib/libgtest_main.a: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 lib/libgtest_main.a: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make
 lib/libgtest_main.a: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtest_main.a"
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgtest_main.a"
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build: lib/libgtest_main.a
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build
 
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean:
-	cd /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean.cmake
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean
 
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/Library/googletest-main/googletest /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest /Users/atri/CLionProjects/Compiler/build/Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest /Users/zhaokunxiang/clion/compiler/build/Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/depend
 

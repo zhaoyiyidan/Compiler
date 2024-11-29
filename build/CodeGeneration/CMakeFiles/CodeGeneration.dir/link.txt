@@ -1,2 +1,2 @@
-/usr/bin/ar qc libCodeGeneration.a CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CMakeFiles/CodeGeneration.dir/A.cpp.o
-/opt/homebrew/opt/llvm/bin/llvm-ranlib libCodeGeneration.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libCodeGeneration.a CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CMakeFiles/CodeGeneration.dir/A.cpp.o CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libCodeGeneration.a

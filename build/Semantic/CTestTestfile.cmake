@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Users/atri/CLionProjects/Compiler/Semantic
-# Build directory: /Users/atri/CLionProjects/Compiler/build/Semantic
+# Source directory: /Users/zhaokunxiang/clion/compiler/Semantic
+# Build directory: /Users/zhaokunxiang/clion/compiler/build/Semantic
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

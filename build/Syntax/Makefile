@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,49 +107,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles /Users/atri/CLionProjects/Compiler/build/Syntax//CMakeFiles/progress.marks
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles /Users/zhaokunxiang/clion/compiler/build/Syntax//CMakeFiles/progress.marks
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/clean
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Syntax/CMakeFiles/Tem.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/Tem.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/Tem.dir/rule
 .PHONY : Syntax/CMakeFiles/Tem.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ Tem: Syntax/CMakeFiles/Tem.dir/rule
 
 # fast build rule for target.
 Tem/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/build
 .PHONY : Tem/fast
 
 # Convenience name for target.
 Syntax/CMakeFiles/ASTNode.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/ASTNode.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/ASTNode.dir/rule
 .PHONY : Syntax/CMakeFiles/ASTNode.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ ASTNode: Syntax/CMakeFiles/ASTNode.dir/rule
 
 # fast build rule for target.
 ASTNode/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/build
 .PHONY : ASTNode/fast
 
 APIOfSyntax.o: APIOfSyntax.cpp.o
@@ -204,7 +204,7 @@ APIOfSyntax.o: APIOfSyntax.cpp.o
 
 # target to build an object file
 APIOfSyntax.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o
 .PHONY : APIOfSyntax.cpp.o
 
 APIOfSyntax.i: APIOfSyntax.cpp.i
@@ -212,7 +212,7 @@ APIOfSyntax.i: APIOfSyntax.cpp.i
 
 # target to preprocess a source file
 APIOfSyntax.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.i
 .PHONY : APIOfSyntax.cpp.i
 
 APIOfSyntax.s: APIOfSyntax.cpp.s
@@ -220,7 +220,7 @@ APIOfSyntax.s: APIOfSyntax.cpp.s
 
 # target to generate assembly for a file
 APIOfSyntax.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.s
 .PHONY : APIOfSyntax.cpp.s
 
 Source/ASTnode.o: Source/ASTnode.cpp.o
@@ -228,8 +228,8 @@ Source/ASTnode.o: Source/ASTnode.cpp.o
 
 # target to build an object file
 Source/ASTnode.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o
 .PHONY : Source/ASTnode.cpp.o
 
 Source/ASTnode.i: Source/ASTnode.cpp.i
@@ -237,8 +237,8 @@ Source/ASTnode.i: Source/ASTnode.cpp.i
 
 # target to preprocess a source file
 Source/ASTnode.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.i
 .PHONY : Source/ASTnode.cpp.i
 
 Source/ASTnode.s: Source/ASTnode.cpp.s
@@ -246,8 +246,8 @@ Source/ASTnode.s: Source/ASTnode.cpp.s
 
 # target to generate assembly for a file
 Source/ASTnode.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.s
 .PHONY : Source/ASTnode.cpp.s
 
 Source/BreakStmt.o: Source/BreakStmt.cpp.o
@@ -255,8 +255,8 @@ Source/BreakStmt.o: Source/BreakStmt.cpp.o
 
 # target to build an object file
 Source/BreakStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o
 .PHONY : Source/BreakStmt.cpp.o
 
 Source/BreakStmt.i: Source/BreakStmt.cpp.i
@@ -264,8 +264,8 @@ Source/BreakStmt.i: Source/BreakStmt.cpp.i
 
 # target to preprocess a source file
 Source/BreakStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.i
 .PHONY : Source/BreakStmt.cpp.i
 
 Source/BreakStmt.s: Source/BreakStmt.cpp.s
@@ -273,8 +273,8 @@ Source/BreakStmt.s: Source/BreakStmt.cpp.s
 
 # target to generate assembly for a file
 Source/BreakStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.s
 .PHONY : Source/BreakStmt.cpp.s
 
 Source/ConstructAST.o: Source/ConstructAST.cpp.o
@@ -282,8 +282,8 @@ Source/ConstructAST.o: Source/ConstructAST.cpp.o
 
 # target to build an object file
 Source/ConstructAST.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o
 .PHONY : Source/ConstructAST.cpp.o
 
 Source/ConstructAST.i: Source/ConstructAST.cpp.i
@@ -291,8 +291,8 @@ Source/ConstructAST.i: Source/ConstructAST.cpp.i
 
 # target to preprocess a source file
 Source/ConstructAST.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.i
 .PHONY : Source/ConstructAST.cpp.i
 
 Source/ConstructAST.s: Source/ConstructAST.cpp.s
@@ -300,8 +300,8 @@ Source/ConstructAST.s: Source/ConstructAST.cpp.s
 
 # target to generate assembly for a file
 Source/ConstructAST.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.s
 .PHONY : Source/ConstructAST.cpp.s
 
 Source/ContinueStmt.o: Source/ContinueStmt.cpp.o
@@ -309,8 +309,8 @@ Source/ContinueStmt.o: Source/ContinueStmt.cpp.o
 
 # target to build an object file
 Source/ContinueStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o
 .PHONY : Source/ContinueStmt.cpp.o
 
 Source/ContinueStmt.i: Source/ContinueStmt.cpp.i
@@ -318,8 +318,8 @@ Source/ContinueStmt.i: Source/ContinueStmt.cpp.i
 
 # target to preprocess a source file
 Source/ContinueStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.i
 .PHONY : Source/ContinueStmt.cpp.i
 
 Source/ContinueStmt.s: Source/ContinueStmt.cpp.s
@@ -327,8 +327,8 @@ Source/ContinueStmt.s: Source/ContinueStmt.cpp.s
 
 # target to generate assembly for a file
 Source/ContinueStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.s
 .PHONY : Source/ContinueStmt.cpp.s
 
 Source/Declaration.o: Source/Declaration.cpp.o
@@ -336,8 +336,8 @@ Source/Declaration.o: Source/Declaration.cpp.o
 
 # target to build an object file
 Source/Declaration.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o
 .PHONY : Source/Declaration.cpp.o
 
 Source/Declaration.i: Source/Declaration.cpp.i
@@ -345,8 +345,8 @@ Source/Declaration.i: Source/Declaration.cpp.i
 
 # target to preprocess a source file
 Source/Declaration.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.i
 .PHONY : Source/Declaration.cpp.i
 
 Source/Declaration.s: Source/Declaration.cpp.s
@@ -354,8 +354,8 @@ Source/Declaration.s: Source/Declaration.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.s
 .PHONY : Source/Declaration.cpp.s
 
 Source/Declaration/ConstDecl.o: Source/Declaration/ConstDecl.cpp.o
@@ -363,8 +363,8 @@ Source/Declaration/ConstDecl.o: Source/Declaration/ConstDecl.cpp.o
 
 # target to build an object file
 Source/Declaration/ConstDecl.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o
 .PHONY : Source/Declaration/ConstDecl.cpp.o
 
 Source/Declaration/ConstDecl.i: Source/Declaration/ConstDecl.cpp.i
@@ -372,8 +372,8 @@ Source/Declaration/ConstDecl.i: Source/Declaration/ConstDecl.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/ConstDecl.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.i
 .PHONY : Source/Declaration/ConstDecl.cpp.i
 
 Source/Declaration/ConstDecl.s: Source/Declaration/ConstDecl.cpp.s
@@ -381,8 +381,8 @@ Source/Declaration/ConstDecl.s: Source/Declaration/ConstDecl.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/ConstDecl.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.s
 .PHONY : Source/Declaration/ConstDecl.cpp.s
 
 Source/Declaration/ConstDef.o: Source/Declaration/ConstDef.cpp.o
@@ -390,8 +390,8 @@ Source/Declaration/ConstDef.o: Source/Declaration/ConstDef.cpp.o
 
 # target to build an object file
 Source/Declaration/ConstDef.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o
 .PHONY : Source/Declaration/ConstDef.cpp.o
 
 Source/Declaration/ConstDef.i: Source/Declaration/ConstDef.cpp.i
@@ -399,8 +399,8 @@ Source/Declaration/ConstDef.i: Source/Declaration/ConstDef.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/ConstDef.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.i
 .PHONY : Source/Declaration/ConstDef.cpp.i
 
 Source/Declaration/ConstDef.s: Source/Declaration/ConstDef.cpp.s
@@ -408,8 +408,8 @@ Source/Declaration/ConstDef.s: Source/Declaration/ConstDef.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/ConstDef.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.s
 .PHONY : Source/Declaration/ConstDef.cpp.s
 
 Source/Declaration/Decl.o: Source/Declaration/Decl.cpp.o
@@ -417,8 +417,8 @@ Source/Declaration/Decl.o: Source/Declaration/Decl.cpp.o
 
 # target to build an object file
 Source/Declaration/Decl.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o
 .PHONY : Source/Declaration/Decl.cpp.o
 
 Source/Declaration/Decl.i: Source/Declaration/Decl.cpp.i
@@ -426,8 +426,8 @@ Source/Declaration/Decl.i: Source/Declaration/Decl.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/Decl.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.i
 .PHONY : Source/Declaration/Decl.cpp.i
 
 Source/Declaration/Decl.s: Source/Declaration/Decl.cpp.s
@@ -435,8 +435,8 @@ Source/Declaration/Decl.s: Source/Declaration/Decl.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/Decl.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.s
 .PHONY : Source/Declaration/Decl.cpp.s
 
 Source/Declaration/FunctionDec.o: Source/Declaration/FunctionDec.cpp.o
@@ -444,8 +444,8 @@ Source/Declaration/FunctionDec.o: Source/Declaration/FunctionDec.cpp.o
 
 # target to build an object file
 Source/Declaration/FunctionDec.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o
 .PHONY : Source/Declaration/FunctionDec.cpp.o
 
 Source/Declaration/FunctionDec.i: Source/Declaration/FunctionDec.cpp.i
@@ -453,8 +453,8 @@ Source/Declaration/FunctionDec.i: Source/Declaration/FunctionDec.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/FunctionDec.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.i
 .PHONY : Source/Declaration/FunctionDec.cpp.i
 
 Source/Declaration/FunctionDec.s: Source/Declaration/FunctionDec.cpp.s
@@ -462,8 +462,8 @@ Source/Declaration/FunctionDec.s: Source/Declaration/FunctionDec.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/FunctionDec.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.s
 .PHONY : Source/Declaration/FunctionDec.cpp.s
 
 Source/Declaration/VarDecl.o: Source/Declaration/VarDecl.cpp.o
@@ -471,8 +471,8 @@ Source/Declaration/VarDecl.o: Source/Declaration/VarDecl.cpp.o
 
 # target to build an object file
 Source/Declaration/VarDecl.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o
 .PHONY : Source/Declaration/VarDecl.cpp.o
 
 Source/Declaration/VarDecl.i: Source/Declaration/VarDecl.cpp.i
@@ -480,8 +480,8 @@ Source/Declaration/VarDecl.i: Source/Declaration/VarDecl.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/VarDecl.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.i
 .PHONY : Source/Declaration/VarDecl.cpp.i
 
 Source/Declaration/VarDecl.s: Source/Declaration/VarDecl.cpp.s
@@ -489,8 +489,8 @@ Source/Declaration/VarDecl.s: Source/Declaration/VarDecl.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/VarDecl.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.s
 .PHONY : Source/Declaration/VarDecl.cpp.s
 
 Source/Declaration/VarDef.o: Source/Declaration/VarDef.cpp.o
@@ -498,8 +498,8 @@ Source/Declaration/VarDef.o: Source/Declaration/VarDef.cpp.o
 
 # target to build an object file
 Source/Declaration/VarDef.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o
 .PHONY : Source/Declaration/VarDef.cpp.o
 
 Source/Declaration/VarDef.i: Source/Declaration/VarDef.cpp.i
@@ -507,8 +507,8 @@ Source/Declaration/VarDef.i: Source/Declaration/VarDef.cpp.i
 
 # target to preprocess a source file
 Source/Declaration/VarDef.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.i
 .PHONY : Source/Declaration/VarDef.cpp.i
 
 Source/Declaration/VarDef.s: Source/Declaration/VarDef.cpp.s
@@ -516,8 +516,8 @@ Source/Declaration/VarDef.s: Source/Declaration/VarDef.cpp.s
 
 # target to generate assembly for a file
 Source/Declaration/VarDef.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.s
 .PHONY : Source/Declaration/VarDef.cpp.s
 
 Source/ForStmt.o: Source/ForStmt.cpp.o
@@ -525,8 +525,8 @@ Source/ForStmt.o: Source/ForStmt.cpp.o
 
 # target to build an object file
 Source/ForStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o
 .PHONY : Source/ForStmt.cpp.o
 
 Source/ForStmt.i: Source/ForStmt.cpp.i
@@ -534,8 +534,8 @@ Source/ForStmt.i: Source/ForStmt.cpp.i
 
 # target to preprocess a source file
 Source/ForStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.i
 .PHONY : Source/ForStmt.cpp.i
 
 Source/ForStmt.s: Source/ForStmt.cpp.s
@@ -543,8 +543,8 @@ Source/ForStmt.s: Source/ForStmt.cpp.s
 
 # target to generate assembly for a file
 Source/ForStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.s
 .PHONY : Source/ForStmt.cpp.s
 
 Source/HelperFunction.o: Source/HelperFunction.cpp.o
@@ -552,8 +552,8 @@ Source/HelperFunction.o: Source/HelperFunction.cpp.o
 
 # target to build an object file
 Source/HelperFunction.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o
 .PHONY : Source/HelperFunction.cpp.o
 
 Source/HelperFunction.i: Source/HelperFunction.cpp.i
@@ -561,8 +561,8 @@ Source/HelperFunction.i: Source/HelperFunction.cpp.i
 
 # target to preprocess a source file
 Source/HelperFunction.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.i
 .PHONY : Source/HelperFunction.cpp.i
 
 Source/HelperFunction.s: Source/HelperFunction.cpp.s
@@ -570,8 +570,8 @@ Source/HelperFunction.s: Source/HelperFunction.cpp.s
 
 # target to generate assembly for a file
 Source/HelperFunction.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.s
 .PHONY : Source/HelperFunction.cpp.s
 
 Source/IFStmt.o: Source/IFStmt.cpp.o
@@ -579,8 +579,8 @@ Source/IFStmt.o: Source/IFStmt.cpp.o
 
 # target to build an object file
 Source/IFStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o
 .PHONY : Source/IFStmt.cpp.o
 
 Source/IFStmt.i: Source/IFStmt.cpp.i
@@ -588,8 +588,8 @@ Source/IFStmt.i: Source/IFStmt.cpp.i
 
 # target to preprocess a source file
 Source/IFStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.i
 .PHONY : Source/IFStmt.cpp.i
 
 Source/IFStmt.s: Source/IFStmt.cpp.s
@@ -597,8 +597,8 @@ Source/IFStmt.s: Source/IFStmt.cpp.s
 
 # target to generate assembly for a file
 Source/IFStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.s
 .PHONY : Source/IFStmt.cpp.s
 
 Source/LValue.o: Source/LValue.cpp.o
@@ -606,8 +606,8 @@ Source/LValue.o: Source/LValue.cpp.o
 
 # target to build an object file
 Source/LValue.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o
 .PHONY : Source/LValue.cpp.o
 
 Source/LValue.i: Source/LValue.cpp.i
@@ -615,8 +615,8 @@ Source/LValue.i: Source/LValue.cpp.i
 
 # target to preprocess a source file
 Source/LValue.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.i
 .PHONY : Source/LValue.cpp.i
 
 Source/LValue.s: Source/LValue.cpp.s
@@ -624,8 +624,8 @@ Source/LValue.s: Source/LValue.cpp.s
 
 # target to generate assembly for a file
 Source/LValue.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.s
 .PHONY : Source/LValue.cpp.s
 
 Source/Type.o: Source/Type.cpp.o
@@ -633,8 +633,8 @@ Source/Type.o: Source/Type.cpp.o
 
 # target to build an object file
 Source/Type.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o
 .PHONY : Source/Type.cpp.o
 
 Source/Type.i: Source/Type.cpp.i
@@ -642,8 +642,8 @@ Source/Type.i: Source/Type.cpp.i
 
 # target to preprocess a source file
 Source/Type.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.i
 .PHONY : Source/Type.cpp.i
 
 Source/Type.s: Source/Type.cpp.s
@@ -651,8 +651,8 @@ Source/Type.s: Source/Type.cpp.s
 
 # target to generate assembly for a file
 Source/Type.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.s
 .PHONY : Source/Type.cpp.s
 
 Source/Type/BoolLiteral.o: Source/Type/BoolLiteral.cpp.o
@@ -660,8 +660,8 @@ Source/Type/BoolLiteral.o: Source/Type/BoolLiteral.cpp.o
 
 # target to build an object file
 Source/Type/BoolLiteral.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o
 .PHONY : Source/Type/BoolLiteral.cpp.o
 
 Source/Type/BoolLiteral.i: Source/Type/BoolLiteral.cpp.i
@@ -669,8 +669,8 @@ Source/Type/BoolLiteral.i: Source/Type/BoolLiteral.cpp.i
 
 # target to preprocess a source file
 Source/Type/BoolLiteral.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.i
 .PHONY : Source/Type/BoolLiteral.cpp.i
 
 Source/Type/BoolLiteral.s: Source/Type/BoolLiteral.cpp.s
@@ -678,8 +678,8 @@ Source/Type/BoolLiteral.s: Source/Type/BoolLiteral.cpp.s
 
 # target to generate assembly for a file
 Source/Type/BoolLiteral.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.s
 .PHONY : Source/Type/BoolLiteral.cpp.s
 
 Source/Type/CharLiteral.o: Source/Type/CharLiteral.cpp.o
@@ -687,8 +687,8 @@ Source/Type/CharLiteral.o: Source/Type/CharLiteral.cpp.o
 
 # target to build an object file
 Source/Type/CharLiteral.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o
 .PHONY : Source/Type/CharLiteral.cpp.o
 
 Source/Type/CharLiteral.i: Source/Type/CharLiteral.cpp.i
@@ -696,8 +696,8 @@ Source/Type/CharLiteral.i: Source/Type/CharLiteral.cpp.i
 
 # target to preprocess a source file
 Source/Type/CharLiteral.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.i
 .PHONY : Source/Type/CharLiteral.cpp.i
 
 Source/Type/CharLiteral.s: Source/Type/CharLiteral.cpp.s
@@ -705,8 +705,8 @@ Source/Type/CharLiteral.s: Source/Type/CharLiteral.cpp.s
 
 # target to generate assembly for a file
 Source/Type/CharLiteral.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.s
 .PHONY : Source/Type/CharLiteral.cpp.s
 
 Source/Type/FloatLiteral.o: Source/Type/FloatLiteral.cpp.o
@@ -714,8 +714,8 @@ Source/Type/FloatLiteral.o: Source/Type/FloatLiteral.cpp.o
 
 # target to build an object file
 Source/Type/FloatLiteral.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o
 .PHONY : Source/Type/FloatLiteral.cpp.o
 
 Source/Type/FloatLiteral.i: Source/Type/FloatLiteral.cpp.i
@@ -723,8 +723,8 @@ Source/Type/FloatLiteral.i: Source/Type/FloatLiteral.cpp.i
 
 # target to preprocess a source file
 Source/Type/FloatLiteral.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.i
 .PHONY : Source/Type/FloatLiteral.cpp.i
 
 Source/Type/FloatLiteral.s: Source/Type/FloatLiteral.cpp.s
@@ -732,8 +732,8 @@ Source/Type/FloatLiteral.s: Source/Type/FloatLiteral.cpp.s
 
 # target to generate assembly for a file
 Source/Type/FloatLiteral.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.s
 .PHONY : Source/Type/FloatLiteral.cpp.s
 
 Source/Type/FunctionType.o: Source/Type/FunctionType.cpp.o
@@ -741,8 +741,8 @@ Source/Type/FunctionType.o: Source/Type/FunctionType.cpp.o
 
 # target to build an object file
 Source/Type/FunctionType.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o
 .PHONY : Source/Type/FunctionType.cpp.o
 
 Source/Type/FunctionType.i: Source/Type/FunctionType.cpp.i
@@ -750,8 +750,8 @@ Source/Type/FunctionType.i: Source/Type/FunctionType.cpp.i
 
 # target to preprocess a source file
 Source/Type/FunctionType.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.i
 .PHONY : Source/Type/FunctionType.cpp.i
 
 Source/Type/FunctionType.s: Source/Type/FunctionType.cpp.s
@@ -759,8 +759,8 @@ Source/Type/FunctionType.s: Source/Type/FunctionType.cpp.s
 
 # target to generate assembly for a file
 Source/Type/FunctionType.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.s
 .PHONY : Source/Type/FunctionType.cpp.s
 
 Source/Type/IntegerLiteral.o: Source/Type/IntegerLiteral.cpp.o
@@ -768,8 +768,8 @@ Source/Type/IntegerLiteral.o: Source/Type/IntegerLiteral.cpp.o
 
 # target to build an object file
 Source/Type/IntegerLiteral.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o
 .PHONY : Source/Type/IntegerLiteral.cpp.o
 
 Source/Type/IntegerLiteral.i: Source/Type/IntegerLiteral.cpp.i
@@ -777,8 +777,8 @@ Source/Type/IntegerLiteral.i: Source/Type/IntegerLiteral.cpp.i
 
 # target to preprocess a source file
 Source/Type/IntegerLiteral.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.i
 .PHONY : Source/Type/IntegerLiteral.cpp.i
 
 Source/Type/IntegerLiteral.s: Source/Type/IntegerLiteral.cpp.s
@@ -786,8 +786,8 @@ Source/Type/IntegerLiteral.s: Source/Type/IntegerLiteral.cpp.s
 
 # target to generate assembly for a file
 Source/Type/IntegerLiteral.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.s
 .PHONY : Source/Type/IntegerLiteral.cpp.s
 
 Source/Type/TypedefDecl.o: Source/Type/TypedefDecl.cpp.o
@@ -795,8 +795,8 @@ Source/Type/TypedefDecl.o: Source/Type/TypedefDecl.cpp.o
 
 # target to build an object file
 Source/Type/TypedefDecl.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o
 .PHONY : Source/Type/TypedefDecl.cpp.o
 
 Source/Type/TypedefDecl.i: Source/Type/TypedefDecl.cpp.i
@@ -804,8 +804,8 @@ Source/Type/TypedefDecl.i: Source/Type/TypedefDecl.cpp.i
 
 # target to preprocess a source file
 Source/Type/TypedefDecl.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.i
 .PHONY : Source/Type/TypedefDecl.cpp.i
 
 Source/Type/TypedefDecl.s: Source/Type/TypedefDecl.cpp.s
@@ -813,8 +813,8 @@ Source/Type/TypedefDecl.s: Source/Type/TypedefDecl.cpp.s
 
 # target to generate assembly for a file
 Source/Type/TypedefDecl.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.s
 .PHONY : Source/Type/TypedefDecl.cpp.s
 
 Source/Type/Valueliteral.o: Source/Type/Valueliteral.cpp.o
@@ -822,8 +822,8 @@ Source/Type/Valueliteral.o: Source/Type/Valueliteral.cpp.o
 
 # target to build an object file
 Source/Type/Valueliteral.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o
 .PHONY : Source/Type/Valueliteral.cpp.o
 
 Source/Type/Valueliteral.i: Source/Type/Valueliteral.cpp.i
@@ -831,8 +831,8 @@ Source/Type/Valueliteral.i: Source/Type/Valueliteral.cpp.i
 
 # target to preprocess a source file
 Source/Type/Valueliteral.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.i
 .PHONY : Source/Type/Valueliteral.cpp.i
 
 Source/Type/Valueliteral.s: Source/Type/Valueliteral.cpp.s
@@ -840,8 +840,8 @@ Source/Type/Valueliteral.s: Source/Type/Valueliteral.cpp.s
 
 # target to generate assembly for a file
 Source/Type/Valueliteral.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.s
 .PHONY : Source/Type/Valueliteral.cpp.s
 
 Source/WhileStmt.o: Source/WhileStmt.cpp.o
@@ -849,8 +849,8 @@ Source/WhileStmt.o: Source/WhileStmt.cpp.o
 
 # target to build an object file
 Source/WhileStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o
 .PHONY : Source/WhileStmt.cpp.o
 
 Source/WhileStmt.i: Source/WhileStmt.cpp.i
@@ -858,8 +858,8 @@ Source/WhileStmt.i: Source/WhileStmt.cpp.i
 
 # target to preprocess a source file
 Source/WhileStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.i
 .PHONY : Source/WhileStmt.cpp.i
 
 Source/WhileStmt.s: Source/WhileStmt.cpp.s
@@ -867,8 +867,8 @@ Source/WhileStmt.s: Source/WhileStmt.cpp.s
 
 # target to generate assembly for a file
 Source/WhileStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.s
 .PHONY : Source/WhileStmt.cpp.s
 
 Source/module.o: Source/module.cpp.o
@@ -876,8 +876,8 @@ Source/module.o: Source/module.cpp.o
 
 # target to build an object file
 Source/module.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o
 .PHONY : Source/module.cpp.o
 
 Source/module.i: Source/module.cpp.i
@@ -885,8 +885,8 @@ Source/module.i: Source/module.cpp.i
 
 # target to preprocess a source file
 Source/module.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.i
 .PHONY : Source/module.cpp.i
 
 Source/module.s: Source/module.cpp.s
@@ -894,8 +894,8 @@ Source/module.s: Source/module.cpp.s
 
 # target to generate assembly for a file
 Source/module.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/module.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.s
 .PHONY : Source/module.cpp.s
 
 Source/statement.o: Source/statement.cpp.o
@@ -903,8 +903,8 @@ Source/statement.o: Source/statement.cpp.o
 
 # target to build an object file
 Source/statement.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o
 .PHONY : Source/statement.cpp.o
 
 Source/statement.i: Source/statement.cpp.i
@@ -912,8 +912,8 @@ Source/statement.i: Source/statement.cpp.i
 
 # target to preprocess a source file
 Source/statement.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.i
 .PHONY : Source/statement.cpp.i
 
 Source/statement.s: Source/statement.cpp.s
@@ -921,8 +921,8 @@ Source/statement.s: Source/statement.cpp.s
 
 # target to generate assembly for a file
 Source/statement.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.s
 .PHONY : Source/statement.cpp.s
 
 Source/statement/AddExp.o: Source/statement/AddExp.cpp.o
@@ -930,8 +930,8 @@ Source/statement/AddExp.o: Source/statement/AddExp.cpp.o
 
 # target to build an object file
 Source/statement/AddExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o
 .PHONY : Source/statement/AddExp.cpp.o
 
 Source/statement/AddExp.i: Source/statement/AddExp.cpp.i
@@ -939,8 +939,8 @@ Source/statement/AddExp.i: Source/statement/AddExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/AddExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.i
 .PHONY : Source/statement/AddExp.cpp.i
 
 Source/statement/AddExp.s: Source/statement/AddExp.cpp.s
@@ -948,8 +948,8 @@ Source/statement/AddExp.s: Source/statement/AddExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/AddExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.s
 .PHONY : Source/statement/AddExp.cpp.s
 
 Source/statement/AssignStmt.o: Source/statement/AssignStmt.cpp.o
@@ -957,8 +957,8 @@ Source/statement/AssignStmt.o: Source/statement/AssignStmt.cpp.o
 
 # target to build an object file
 Source/statement/AssignStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o
 .PHONY : Source/statement/AssignStmt.cpp.o
 
 Source/statement/AssignStmt.i: Source/statement/AssignStmt.cpp.i
@@ -966,8 +966,8 @@ Source/statement/AssignStmt.i: Source/statement/AssignStmt.cpp.i
 
 # target to preprocess a source file
 Source/statement/AssignStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.i
 .PHONY : Source/statement/AssignStmt.cpp.i
 
 Source/statement/AssignStmt.s: Source/statement/AssignStmt.cpp.s
@@ -975,8 +975,8 @@ Source/statement/AssignStmt.s: Source/statement/AssignStmt.cpp.s
 
 # target to generate assembly for a file
 Source/statement/AssignStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.s
 .PHONY : Source/statement/AssignStmt.cpp.s
 
 Source/statement/BinaryOperator.o: Source/statement/BinaryOperator.cpp.o
@@ -984,8 +984,8 @@ Source/statement/BinaryOperator.o: Source/statement/BinaryOperator.cpp.o
 
 # target to build an object file
 Source/statement/BinaryOperator.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o
 .PHONY : Source/statement/BinaryOperator.cpp.o
 
 Source/statement/BinaryOperator.i: Source/statement/BinaryOperator.cpp.i
@@ -993,8 +993,8 @@ Source/statement/BinaryOperator.i: Source/statement/BinaryOperator.cpp.i
 
 # target to preprocess a source file
 Source/statement/BinaryOperator.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.i
 .PHONY : Source/statement/BinaryOperator.cpp.i
 
 Source/statement/BinaryOperator.s: Source/statement/BinaryOperator.cpp.s
@@ -1002,8 +1002,8 @@ Source/statement/BinaryOperator.s: Source/statement/BinaryOperator.cpp.s
 
 # target to generate assembly for a file
 Source/statement/BinaryOperator.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.s
 .PHONY : Source/statement/BinaryOperator.cpp.s
 
 Source/statement/EXP.o: Source/statement/EXP.cpp.o
@@ -1011,8 +1011,8 @@ Source/statement/EXP.o: Source/statement/EXP.cpp.o
 
 # target to build an object file
 Source/statement/EXP.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o
 .PHONY : Source/statement/EXP.cpp.o
 
 Source/statement/EXP.i: Source/statement/EXP.cpp.i
@@ -1020,8 +1020,8 @@ Source/statement/EXP.i: Source/statement/EXP.cpp.i
 
 # target to preprocess a source file
 Source/statement/EXP.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.i
 .PHONY : Source/statement/EXP.cpp.i
 
 Source/statement/EXP.s: Source/statement/EXP.cpp.s
@@ -1029,8 +1029,8 @@ Source/statement/EXP.s: Source/statement/EXP.cpp.s
 
 # target to generate assembly for a file
 Source/statement/EXP.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.s
 .PHONY : Source/statement/EXP.cpp.s
 
 Source/statement/EqExp.o: Source/statement/EqExp.cpp.o
@@ -1038,8 +1038,8 @@ Source/statement/EqExp.o: Source/statement/EqExp.cpp.o
 
 # target to build an object file
 Source/statement/EqExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o
 .PHONY : Source/statement/EqExp.cpp.o
 
 Source/statement/EqExp.i: Source/statement/EqExp.cpp.i
@@ -1047,8 +1047,8 @@ Source/statement/EqExp.i: Source/statement/EqExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/EqExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.i
 .PHONY : Source/statement/EqExp.cpp.i
 
 Source/statement/EqExp.s: Source/statement/EqExp.cpp.s
@@ -1056,8 +1056,8 @@ Source/statement/EqExp.s: Source/statement/EqExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/EqExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.s
 .PHONY : Source/statement/EqExp.cpp.s
 
 Source/statement/Expression.o: Source/statement/Expression.cpp.o
@@ -1065,8 +1065,8 @@ Source/statement/Expression.o: Source/statement/Expression.cpp.o
 
 # target to build an object file
 Source/statement/Expression.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o
 .PHONY : Source/statement/Expression.cpp.o
 
 Source/statement/Expression.i: Source/statement/Expression.cpp.i
@@ -1074,8 +1074,8 @@ Source/statement/Expression.i: Source/statement/Expression.cpp.i
 
 # target to preprocess a source file
 Source/statement/Expression.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.i
 .PHONY : Source/statement/Expression.cpp.i
 
 Source/statement/Expression.s: Source/statement/Expression.cpp.s
@@ -1083,8 +1083,8 @@ Source/statement/Expression.s: Source/statement/Expression.cpp.s
 
 # target to generate assembly for a file
 Source/statement/Expression.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.s
 .PHONY : Source/statement/Expression.cpp.s
 
 Source/statement/LAndExp.o: Source/statement/LAndExp.cpp.o
@@ -1092,8 +1092,8 @@ Source/statement/LAndExp.o: Source/statement/LAndExp.cpp.o
 
 # target to build an object file
 Source/statement/LAndExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o
 .PHONY : Source/statement/LAndExp.cpp.o
 
 Source/statement/LAndExp.i: Source/statement/LAndExp.cpp.i
@@ -1101,8 +1101,8 @@ Source/statement/LAndExp.i: Source/statement/LAndExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/LAndExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.i
 .PHONY : Source/statement/LAndExp.cpp.i
 
 Source/statement/LAndExp.s: Source/statement/LAndExp.cpp.s
@@ -1110,8 +1110,8 @@ Source/statement/LAndExp.s: Source/statement/LAndExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/LAndExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.s
 .PHONY : Source/statement/LAndExp.cpp.s
 
 Source/statement/LOrExp.o: Source/statement/LOrExp.cpp.o
@@ -1119,8 +1119,8 @@ Source/statement/LOrExp.o: Source/statement/LOrExp.cpp.o
 
 # target to build an object file
 Source/statement/LOrExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o
 .PHONY : Source/statement/LOrExp.cpp.o
 
 Source/statement/LOrExp.i: Source/statement/LOrExp.cpp.i
@@ -1128,8 +1128,8 @@ Source/statement/LOrExp.i: Source/statement/LOrExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/LOrExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.i
 .PHONY : Source/statement/LOrExp.cpp.i
 
 Source/statement/LOrExp.s: Source/statement/LOrExp.cpp.s
@@ -1137,8 +1137,8 @@ Source/statement/LOrExp.s: Source/statement/LOrExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/LOrExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.s
 .PHONY : Source/statement/LOrExp.cpp.s
 
 Source/statement/MulExp.o: Source/statement/MulExp.cpp.o
@@ -1146,8 +1146,8 @@ Source/statement/MulExp.o: Source/statement/MulExp.cpp.o
 
 # target to build an object file
 Source/statement/MulExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o
 .PHONY : Source/statement/MulExp.cpp.o
 
 Source/statement/MulExp.i: Source/statement/MulExp.cpp.i
@@ -1155,8 +1155,8 @@ Source/statement/MulExp.i: Source/statement/MulExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/MulExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.i
 .PHONY : Source/statement/MulExp.cpp.i
 
 Source/statement/MulExp.s: Source/statement/MulExp.cpp.s
@@ -1164,8 +1164,8 @@ Source/statement/MulExp.s: Source/statement/MulExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/MulExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.s
 .PHONY : Source/statement/MulExp.cpp.s
 
 Source/statement/Number.o: Source/statement/Number.cpp.o
@@ -1173,8 +1173,8 @@ Source/statement/Number.o: Source/statement/Number.cpp.o
 
 # target to build an object file
 Source/statement/Number.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o
 .PHONY : Source/statement/Number.cpp.o
 
 Source/statement/Number.i: Source/statement/Number.cpp.i
@@ -1182,8 +1182,8 @@ Source/statement/Number.i: Source/statement/Number.cpp.i
 
 # target to preprocess a source file
 Source/statement/Number.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.i
 .PHONY : Source/statement/Number.cpp.i
 
 Source/statement/Number.s: Source/statement/Number.cpp.s
@@ -1191,8 +1191,8 @@ Source/statement/Number.s: Source/statement/Number.cpp.s
 
 # target to generate assembly for a file
 Source/statement/Number.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.s
 .PHONY : Source/statement/Number.cpp.s
 
 Source/statement/PrimaryExp.o: Source/statement/PrimaryExp.cpp.o
@@ -1200,8 +1200,8 @@ Source/statement/PrimaryExp.o: Source/statement/PrimaryExp.cpp.o
 
 # target to build an object file
 Source/statement/PrimaryExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o
 .PHONY : Source/statement/PrimaryExp.cpp.o
 
 Source/statement/PrimaryExp.i: Source/statement/PrimaryExp.cpp.i
@@ -1209,8 +1209,8 @@ Source/statement/PrimaryExp.i: Source/statement/PrimaryExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/PrimaryExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.i
 .PHONY : Source/statement/PrimaryExp.cpp.i
 
 Source/statement/PrimaryExp.s: Source/statement/PrimaryExp.cpp.s
@@ -1218,8 +1218,8 @@ Source/statement/PrimaryExp.s: Source/statement/PrimaryExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/PrimaryExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.s
 .PHONY : Source/statement/PrimaryExp.cpp.s
 
 Source/statement/RelExp.o: Source/statement/RelExp.cpp.o
@@ -1227,8 +1227,8 @@ Source/statement/RelExp.o: Source/statement/RelExp.cpp.o
 
 # target to build an object file
 Source/statement/RelExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o
 .PHONY : Source/statement/RelExp.cpp.o
 
 Source/statement/RelExp.i: Source/statement/RelExp.cpp.i
@@ -1236,8 +1236,8 @@ Source/statement/RelExp.i: Source/statement/RelExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/RelExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.i
 .PHONY : Source/statement/RelExp.cpp.i
 
 Source/statement/RelExp.s: Source/statement/RelExp.cpp.s
@@ -1245,8 +1245,8 @@ Source/statement/RelExp.s: Source/statement/RelExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/RelExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.s
 .PHONY : Source/statement/RelExp.cpp.s
 
 Source/statement/ReturnStmt.o: Source/statement/ReturnStmt.cpp.o
@@ -1254,8 +1254,8 @@ Source/statement/ReturnStmt.o: Source/statement/ReturnStmt.cpp.o
 
 # target to build an object file
 Source/statement/ReturnStmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o
 .PHONY : Source/statement/ReturnStmt.cpp.o
 
 Source/statement/ReturnStmt.i: Source/statement/ReturnStmt.cpp.i
@@ -1263,8 +1263,8 @@ Source/statement/ReturnStmt.i: Source/statement/ReturnStmt.cpp.i
 
 # target to preprocess a source file
 Source/statement/ReturnStmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.i
 .PHONY : Source/statement/ReturnStmt.cpp.i
 
 Source/statement/ReturnStmt.s: Source/statement/ReturnStmt.cpp.s
@@ -1272,8 +1272,8 @@ Source/statement/ReturnStmt.s: Source/statement/ReturnStmt.cpp.s
 
 # target to generate assembly for a file
 Source/statement/ReturnStmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.s
 .PHONY : Source/statement/ReturnStmt.cpp.s
 
 Source/statement/UnaryExp.o: Source/statement/UnaryExp.cpp.o
@@ -1281,8 +1281,8 @@ Source/statement/UnaryExp.o: Source/statement/UnaryExp.cpp.o
 
 # target to build an object file
 Source/statement/UnaryExp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o
 .PHONY : Source/statement/UnaryExp.cpp.o
 
 Source/statement/UnaryExp.i: Source/statement/UnaryExp.cpp.i
@@ -1290,8 +1290,8 @@ Source/statement/UnaryExp.i: Source/statement/UnaryExp.cpp.i
 
 # target to preprocess a source file
 Source/statement/UnaryExp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.i
 .PHONY : Source/statement/UnaryExp.cpp.i
 
 Source/statement/UnaryExp.s: Source/statement/UnaryExp.cpp.s
@@ -1299,8 +1299,8 @@ Source/statement/UnaryExp.s: Source/statement/UnaryExp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/UnaryExp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.s
 .PHONY : Source/statement/UnaryExp.cpp.s
 
 Source/statement/UnaryOp.o: Source/statement/UnaryOp.cpp.o
@@ -1308,8 +1308,8 @@ Source/statement/UnaryOp.o: Source/statement/UnaryOp.cpp.o
 
 # target to build an object file
 Source/statement/UnaryOp.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o
 .PHONY : Source/statement/UnaryOp.cpp.o
 
 Source/statement/UnaryOp.i: Source/statement/UnaryOp.cpp.i
@@ -1317,8 +1317,8 @@ Source/statement/UnaryOp.i: Source/statement/UnaryOp.cpp.i
 
 # target to preprocess a source file
 Source/statement/UnaryOp.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.i
 .PHONY : Source/statement/UnaryOp.cpp.i
 
 Source/statement/UnaryOp.s: Source/statement/UnaryOp.cpp.s
@@ -1326,8 +1326,8 @@ Source/statement/UnaryOp.s: Source/statement/UnaryOp.cpp.s
 
 # target to generate assembly for a file
 Source/statement/UnaryOp.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.s
 .PHONY : Source/statement/UnaryOp.cpp.s
 
 Source/statement/compoundstmt.o: Source/statement/compoundstmt.cpp.o
@@ -1335,8 +1335,8 @@ Source/statement/compoundstmt.o: Source/statement/compoundstmt.cpp.o
 
 # target to build an object file
 Source/statement/compoundstmt.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o
 .PHONY : Source/statement/compoundstmt.cpp.o
 
 Source/statement/compoundstmt.i: Source/statement/compoundstmt.cpp.i
@@ -1344,8 +1344,8 @@ Source/statement/compoundstmt.i: Source/statement/compoundstmt.cpp.i
 
 # target to preprocess a source file
 Source/statement/compoundstmt.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.i
 .PHONY : Source/statement/compoundstmt.cpp.i
 
 Source/statement/compoundstmt.s: Source/statement/compoundstmt.cpp.s
@@ -1353,8 +1353,8 @@ Source/statement/compoundstmt.s: Source/statement/compoundstmt.cpp.s
 
 # target to generate assembly for a file
 Source/statement/compoundstmt.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.s
 .PHONY : Source/statement/compoundstmt.cpp.s
 
 VistorAST.o: VistorAST.cpp.o
@@ -1362,7 +1362,7 @@ VistorAST.o: VistorAST.cpp.o
 
 # target to build an object file
 VistorAST.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o
 .PHONY : VistorAST.cpp.o
 
 VistorAST.i: VistorAST.cpp.i
@@ -1370,7 +1370,7 @@ VistorAST.i: VistorAST.cpp.i
 
 # target to preprocess a source file
 VistorAST.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.i
 .PHONY : VistorAST.cpp.i
 
 VistorAST.s: VistorAST.cpp.s
@@ -1378,7 +1378,7 @@ VistorAST.s: VistorAST.cpp.s
 
 # target to generate assembly for a file
 VistorAST.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.s
 .PHONY : VistorAST.cpp.s
 
 tem.o: tem.cpp.o
@@ -1386,7 +1386,7 @@ tem.o: tem.cpp.o
 
 # target to build an object file
 tem.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.o
 .PHONY : tem.cpp.o
 
 tem.i: tem.cpp.i
@@ -1394,7 +1394,7 @@ tem.i: tem.cpp.i
 
 # target to preprocess a source file
 tem.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.i
 .PHONY : tem.cpp.i
 
 tem.s: tem.cpp.s
@@ -1402,7 +1402,7 @@ tem.s: tem.cpp.s
 
 # target to generate assembly for a file
 tem.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/tem.cpp.s
 .PHONY : tem.cpp.s
 
 # Help Target
@@ -1566,6 +1566,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

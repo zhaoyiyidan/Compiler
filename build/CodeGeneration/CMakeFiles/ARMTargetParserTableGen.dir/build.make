@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Utility rule file for ARMTargetParserTableGen.
 
@@ -77,10 +77,10 @@ CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build: ARMTargetParserTabl
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build
 
 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/clean:
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/ARMTargetParserTableGen.dir/cmake_clean.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/ARMTargetParserTableGen.dir/cmake_clean.cmake
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/clean
 
 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/CodeGeneration /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/CodeGeneration /Users/atri/CLionProjects/Compiler/build/CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/CodeGeneration /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/CodeGeneration /Users/zhaokunxiang/clion/compiler/build/CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/depend
 

@@ -1,7 +1,3 @@
-#include "iostream"
-#include "Syntax/APIOfSyntax.h"
-#include "Lexical/APIOfLexical.h"
- #include "Semantic/APIOfSemantic.h"
 
 #include "Compile.h"
 int main(){

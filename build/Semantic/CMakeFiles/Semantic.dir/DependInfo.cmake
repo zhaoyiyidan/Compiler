@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/Semantic/APIOfSemantic.cpp" "Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Semantic/Analysis.cpp" "Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Semantic/Source/AnalysisAST.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Semantic/Source/Scope.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Semantic/Source/Symbol.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Semantic/Source/SymbolTable.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/APIOfSemantic.cpp" "Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Analysis.cpp" "Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Source/AnalysisAST.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Source/Scope.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Source/Symbol.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Source/SymbolTable.cpp" "Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o" "gcc" "Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

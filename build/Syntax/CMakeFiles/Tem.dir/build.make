@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Include any dependencies generated for this target.
 include Syntax/CMakeFiles/Tem.dir/depend.make
@@ -73,606 +73,606 @@ Syntax/CMakeFiles/Tem.dir/codegen:
 .PHONY : Syntax/CMakeFiles/Tem.dir/codegen
 
 Syntax/CMakeFiles/Tem.dir/tem.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/tem.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/tem.cpp
+Syntax/CMakeFiles/Tem.dir/tem.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/tem.cpp
 Syntax/CMakeFiles/Tem.dir/tem.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Syntax/CMakeFiles/Tem.dir/tem.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/tem.cpp.o -MF CMakeFiles/Tem.dir/tem.cpp.o.d -o CMakeFiles/Tem.dir/tem.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/tem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Syntax/CMakeFiles/Tem.dir/tem.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/tem.cpp.o -MF CMakeFiles/Tem.dir/tem.cpp.o.d -o CMakeFiles/Tem.dir/tem.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/tem.cpp
 
 Syntax/CMakeFiles/Tem.dir/tem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/tem.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/tem.cpp > CMakeFiles/Tem.dir/tem.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/tem.cpp > CMakeFiles/Tem.dir/tem.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/tem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/tem.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/tem.cpp -o CMakeFiles/Tem.dir/tem.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/tem.cpp -o CMakeFiles/Tem.dir/tem.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp
+Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp
 Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o -MF CMakeFiles/Tem.dir/Source/ASTnode.cpp.o.d -o CMakeFiles/Tem.dir/Source/ASTnode.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o -MF CMakeFiles/Tem.dir/Source/ASTnode.cpp.o.d -o CMakeFiles/Tem.dir/Source/ASTnode.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/ASTnode.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp > CMakeFiles/Tem.dir/Source/ASTnode.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp > CMakeFiles/Tem.dir/Source/ASTnode.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/ASTnode.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/ASTnode.cpp -o CMakeFiles/Tem.dir/Source/ASTnode.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp -o CMakeFiles/Tem.dir/Source/ASTnode.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp > CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp > CMakeFiles/Tem.dir/Source/BreakStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/BreakStmt.cpp -o CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp -o CMakeFiles/Tem.dir/Source/BreakStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp
+Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp
 Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o -MF CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o.d -o CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o -MF CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o.d -o CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp > CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp > CMakeFiles/Tem.dir/Source/ConstructAST.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/ConstructAST.cpp -o CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp -o CMakeFiles/Tem.dir/Source/ConstructAST.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp > CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp > CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/ContinueStmt.cpp -o CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp -o CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp > CMakeFiles/Tem.dir/Source/Declaration.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp > CMakeFiles/Tem.dir/Source/Declaration.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration.cpp -o CMakeFiles/Tem.dir/Source/Declaration.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp -o CMakeFiles/Tem.dir/Source/Declaration.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp > CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp > CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDecl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp > CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp > CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/ConstDef.cpp -o CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp -o CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp > CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp > CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/Decl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp > CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp > CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/FunctionDec.cpp -o CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp -o CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp > CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp > CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDecl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp -o CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o -MF CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o.d -o CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp > CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp > CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Declaration/VarDef.cpp -o CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp -o CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/ForStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/ForStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/ForStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/ForStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/ForStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp > CMakeFiles/Tem.dir/Source/ForStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp > CMakeFiles/Tem.dir/Source/ForStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/ForStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/ForStmt.cpp -o CMakeFiles/Tem.dir/Source/ForStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp -o CMakeFiles/Tem.dir/Source/ForStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp
+Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp
 Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o -MF CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o.d -o CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o -MF CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o.d -o CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp > CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp > CMakeFiles/Tem.dir/Source/HelperFunction.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/HelperFunction.cpp -o CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp -o CMakeFiles/Tem.dir/Source/HelperFunction.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/IFStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/IFStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/IFStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/IFStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/IFStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp > CMakeFiles/Tem.dir/Source/IFStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp > CMakeFiles/Tem.dir/Source/IFStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/IFStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/IFStmt.cpp -o CMakeFiles/Tem.dir/Source/IFStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp -o CMakeFiles/Tem.dir/Source/IFStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp
+Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp
 Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o -MF CMakeFiles/Tem.dir/Source/LValue.cpp.o.d -o CMakeFiles/Tem.dir/Source/LValue.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o -MF CMakeFiles/Tem.dir/Source/LValue.cpp.o.d -o CMakeFiles/Tem.dir/Source/LValue.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/LValue.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp > CMakeFiles/Tem.dir/Source/LValue.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp > CMakeFiles/Tem.dir/Source/LValue.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/LValue.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/LValue.cpp -o CMakeFiles/Tem.dir/Source/LValue.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp -o CMakeFiles/Tem.dir/Source/LValue.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o -MF CMakeFiles/Tem.dir/Source/Type.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o -MF CMakeFiles/Tem.dir/Source/Type.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp > CMakeFiles/Tem.dir/Source/Type.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp > CMakeFiles/Tem.dir/Source/Type.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type.cpp -o CMakeFiles/Tem.dir/Source/Type.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp -o CMakeFiles/Tem.dir/Source/Type.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/BoolLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/CharLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FloatLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp > CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp > CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/FunctionType.cpp -o CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp -o CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp > CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/IntegerLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp -o CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp > CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp > CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/TypedefDecl.cpp -o CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp -o CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp
+Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp
 Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o -MF CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o.d -o CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp > CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp > CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/Type/Valueliteral.cpp -o CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp -o CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp > CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp > CMakeFiles/Tem.dir/Source/WhileStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/WhileStmt.cpp -o CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp -o CMakeFiles/Tem.dir/Source/WhileStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp
+Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp
 Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o -MF CMakeFiles/Tem.dir/Source/module.cpp.o.d -o CMakeFiles/Tem.dir/Source/module.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o -MF CMakeFiles/Tem.dir/Source/module.cpp.o.d -o CMakeFiles/Tem.dir/Source/module.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/module.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/module.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp > CMakeFiles/Tem.dir/Source/module.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp > CMakeFiles/Tem.dir/Source/module.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/module.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/module.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/module.cpp -o CMakeFiles/Tem.dir/Source/module.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp -o CMakeFiles/Tem.dir/Source/module.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o -MF CMakeFiles/Tem.dir/Source/statement.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o -MF CMakeFiles/Tem.dir/Source/statement.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp > CMakeFiles/Tem.dir/Source/statement.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp > CMakeFiles/Tem.dir/Source/statement.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement.cpp -o CMakeFiles/Tem.dir/Source/statement.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp -o CMakeFiles/Tem.dir/Source/statement.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp > CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp > CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AddExp.cpp -o CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp -o CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp > CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp > CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/AssignStmt.cpp -o CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp -o CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp > CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp > CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/BinaryOperator.cpp -o CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp -o CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp > CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp > CMakeFiles/Tem.dir/Source/statement/EXP.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp -o CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp -o CMakeFiles/Tem.dir/Source/statement/EXP.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp > CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp > CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EqExp.cpp -o CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp -o CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp > CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp > CMakeFiles/Tem.dir/Source/statement/Expression.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Expression.cpp -o CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp -o CMakeFiles/Tem.dir/Source/statement/Expression.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp > CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp > CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LAndExp.cpp -o CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp -o CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp > CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp > CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/LOrExp.cpp -o CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp -o CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp > CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp > CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/MulExp.cpp -o CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp -o CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/Number.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/Number.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/Number.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/Number.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/Number.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp > CMakeFiles/Tem.dir/Source/statement/Number.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp > CMakeFiles/Tem.dir/Source/statement/Number.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/Number.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/Number.cpp -o CMakeFiles/Tem.dir/Source/statement/Number.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp -o CMakeFiles/Tem.dir/Source/statement/Number.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp > CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp > CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/PrimaryExp.cpp -o CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp -o CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp > CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp > CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/RelExp.cpp -o CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp -o CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp > CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp > CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/ReturnStmt.cpp -o CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp -o CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp > CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp > CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryExp.cpp -o CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp -o CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp > CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp > CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/UnaryOp.cpp -o CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp -o CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.s
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: Syntax/CMakeFiles/Tem.dir/flags.make
-Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp
+Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp
 Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: Syntax/CMakeFiles/Tem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o -c /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o -MF CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o.d -o CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o -c /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp > CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp > CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.i
 
 Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/compoundstmt.cpp -o CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp -o CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.s
 
 # Object files for target Tem
 Tem_OBJECTS = \
@@ -768,18 +768,18 @@ Syntax/Tem: Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o
 Syntax/Tem: Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
 Syntax/Tem: Syntax/CMakeFiles/Tem.dir/build.make
 Syntax/Tem: Syntax/CMakeFiles/Tem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable Tem"
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tem.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable Tem"
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tem.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Syntax/CMakeFiles/Tem.dir/build: Syntax/Tem
 .PHONY : Syntax/CMakeFiles/Tem.dir/build
 
 Syntax/CMakeFiles/Tem.dir/clean:
-	cd /Users/atri/CLionProjects/Compiler/build/Syntax && $(CMAKE_COMMAND) -P CMakeFiles/Tem.dir/cmake_clean.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/Syntax && $(CMAKE_COMMAND) -P CMakeFiles/Tem.dir/cmake_clean.cmake
 .PHONY : Syntax/CMakeFiles/Tem.dir/clean
 
 Syntax/CMakeFiles/Tem.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/Syntax /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/Syntax /Users/atri/CLionProjects/Compiler/build/Syntax/CMakeFiles/Tem.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/Syntax /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/Syntax /Users/zhaokunxiang/clion/compiler/build/Syntax/CMakeFiles/Tem.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : Syntax/CMakeFiles/Tem.dir/depend
 

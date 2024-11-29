@@ -51,15 +51,15 @@ build cmake_object_order_depends_target_Compiler: phony || cmake_object_order_de
 
 build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug /Users/zhaokunxiang/clion/compiler/main.cpp || cmake_object_order_depends_target_Compiler
   DEP_FILE = CMakeFiles/Compiler.dir/main.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header -isystem /usr/local/include
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = CMakeFiles/Compiler.dir
   OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
 
 build CMakeFiles/Compiler.dir/Compile.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Compile.cpp || cmake_object_order_depends_target_Compiler
   DEP_FILE = CMakeFiles/Compiler.dir/Compile.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header -isystem /usr/local/include
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = CMakeFiles/Compiler.dir
   OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
 
@@ -71,10 +71,10 @@ build CMakeFiles/Compiler.dir/Compile.cpp.o: CXX_COMPILER__Compiler_unscanned_De
 #############################################
 # Link the executable Compiler
 
-build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o CMakeFiles/Compiler.dir/Compile.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o CMakeFiles/Compiler.dir/Compile.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a /usr/local/opt/llvm/lib/libLLVM.dylib /usr/local/opt/llvm/lib/libLLVM.dylib || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
-  LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a  /usr/local/opt/llvm/lib/libLLVMIRReader.a  /usr/local/opt/llvm/lib/libLLVMAsmParser.a  /usr/local/opt/llvm/lib/libLLVMBitReader.a  /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a  /usr/local/opt/llvm/lib/libLLVMRemarks.a  /usr/local/opt/llvm/lib/libLLVMTargetParser.a  /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMDemangle.a  -lm  /usr/local/lib/libz3.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd  /usr/local/lib/libzstd.dylib
+  LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a  /usr/local/opt/llvm/lib/libLLVM.dylib  /usr/local/opt/llvm/lib/libLLVM.dylib
   OBJECT_DIR = CMakeFiles/Compiler.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -256,7 +256,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 
 build Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -m64 -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src
@@ -271,7 +271,7 @@ build Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 
 build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Library/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtest.a
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -289,7 +289,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 
 build Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -m64 -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src
@@ -304,7 +304,7 @@ build Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_mai
 
 build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmock.a lib/libgtest.a
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -404,7 +404,7 @@ build cmake_object_order_depends_target_gtest: phony || Library/googletest-main/
 
 build Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -m64 -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = Library/googletest-main/googletest/CMakeFiles/gtest.dir/src
@@ -419,7 +419,7 @@ build Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 
 build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Library/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -437,7 +437,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 
 build Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -m64 -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
+  FLAGS = -g -std=c++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src
@@ -452,7 +452,7 @@ build Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_mai
 
 build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtest.a
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Library/googletest-main/googletest/CMakeFiles/gtest_main.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -541,67 +541,6 @@ build Library/googletest-main/googletest/install/strip: phony Library/googletest
 # /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
 # =============================================================================
 
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target CodeGeneration
-
-
-#############################################
-# Order-only phony target for CodeGeneration
-
-build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
-  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-build CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_CodeGeneration
-  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-build CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp || cmake_object_order_depends_target_CodeGeneration
-  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-build CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp || cmake_object_order_depends_target_CodeGeneration
-  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source
-
-build CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp || cmake_object_order_depends_target_CodeGeneration
-  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target CodeGeneration
-
-
-#############################################
-# Link the static library CodeGeneration/libCodeGeneration.a
-
-build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o || /usr/local/lib/libzstd.dylib
-  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
-  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = CodeGeneration/libCodeGeneration.a
-  TARGET_PDB = CodeGeneration.a.dbg
-
 
 #############################################
 # Utility command for intrinsics_gen
@@ -639,38 +578,65 @@ build CodeGeneration/AArch64TargetParserTableGen: phony
 build CodeGeneration/RISCVTargetParserTableGen: phony
 
 # =============================================================================
-# Object build statements for EXECUTABLE target my_project
+# Object build statements for STATIC_LIBRARY target CodeGeneration
 
 
 #############################################
-# Order-only phony target for my_project
+# Order-only phony target for CodeGeneration
 
-build cmake_object_order_depends_target_my_project: phony || CodeGeneration/CMakeFiles/my_project.dir
+build cmake_object_order_depends_target_CodeGeneration: phony || CodeGeneration/CMakeFiles/CodeGeneration.dir
 
-build CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o: CXX_COMPILER__my_project_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_my_project
-  DEP_FILE = CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics   -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
-  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include -isystem /usr/local/include
-  OBJECT_DIR = CodeGeneration/CMakeFiles/my_project.dir
-  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/my_project.dir
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir/Source
+
+build CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: CXX_COMPILER__CodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp || cmake_object_order_depends_target_CodeGeneration
+  DEP_FILE = CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/usr/local/opt/llvm/include
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
+  OBJECT_FILE_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target my_project
+# Link build statements for STATIC_LIBRARY target CodeGeneration
 
 
 #############################################
-# Link the executable CodeGeneration/my_project
+# Link the static library CodeGeneration/libCodeGeneration.a
 
-build CodeGeneration/my_project: CXX_EXECUTABLE_LINKER__my_project_Debug CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o | /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LINK_FLAGS = -L/usr/local/opt/llvm/lib
-  LINK_LIBRARIES = /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMIRReader.a  /usr/local/opt/llvm/lib/libLLVMAsmParser.a  /usr/local/opt/llvm/lib/libLLVMBitReader.a  /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a  /usr/local/opt/llvm/lib/libLLVMRemarks.a  /usr/local/opt/llvm/lib/libLLVMTargetParser.a  /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMDemangle.a  -lm  /usr/local/lib/libz3.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd  /usr/local/lib/libzstd.dylib
-  OBJECT_DIR = CodeGeneration/CMakeFiles/my_project.dir
+build CodeGeneration/libCodeGeneration.a: CXX_STATIC_LIBRARY_LINKER__CodeGeneration_Debug CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o || /usr/local/opt/llvm/lib/libLLVM.dylib
+  ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CodeGeneration/CMakeFiles/CodeGeneration.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = CodeGeneration/my_project
-  TARGET_PDB = my_project.dbg
+  TARGET_FILE = CodeGeneration/libCodeGeneration.a
+  TARGET_PDB = CodeGeneration.a.dbg
 
 
 #############################################
@@ -751,122 +717,6 @@ build CodeGeneration/install/strip: phony CodeGeneration/CMakeFiles/install/stri
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for EXECUTABLE target TestForCodeGeneration
-
-
-#############################################
-# Order-only phony target for TestForCodeGeneration
-
-build cmake_object_order_depends_target_TestForCodeGeneration: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
-
-build CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o: CXX_COMPILER__TestForCodeGeneration_unscanned_Debug /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/a.cpp || cmake_object_order_depends_target_TestForCodeGeneration
-  DEP_FILE = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
-  INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
-  OBJECT_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
-  OBJECT_FILE_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target TestForCodeGeneration
-
-
-#############################################
-# Link the executable CodeGeneration/Test/TestForCodeGeneration
-
-build CodeGeneration/Test/TestForCodeGeneration: CXX_EXECUTABLE_LINKER__TestForCodeGeneration_Debug CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LINK_FLAGS = -L/usr/local/opt/llvm/lib
-  LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = CodeGeneration/Test/TestForCodeGeneration
-  TARGET_PDB = TestForCodeGeneration.dbg
-
-
-#############################################
-# Utility command for test
-
-build CodeGeneration/Test/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/ctest --force-new-ctest-process
-  DESC = Running tests...
-  pool = console
-  restat = 1
-
-build CodeGeneration/Test/test: phony CodeGeneration/Test/CMakeFiles/test.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build CodeGeneration/Test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build CodeGeneration/Test/edit_cache: phony CodeGeneration/Test/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build CodeGeneration/Test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake --regenerate-during-build -S/Users/zhaokunxiang/clion/compiler -B/Users/zhaokunxiang/clion/compiler/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build CodeGeneration/Test/rebuild_cache: phony CodeGeneration/Test/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build CodeGeneration/Test/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build CodeGeneration/Test/CMakeFiles/install.util: CUSTOM_COMMAND CodeGeneration/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build CodeGeneration/Test/install: phony CodeGeneration/Test/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build CodeGeneration/Test/CMakeFiles/install/local.util: CUSTOM_COMMAND CodeGeneration/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build CodeGeneration/Test/install/local: phony CodeGeneration/Test/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build CodeGeneration/Test/CMakeFiles/install/strip.util: CUSTOM_COMMAND CodeGeneration/Test/all
-  COMMAND = cd /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test && /Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build CodeGeneration/Test/install/strip: phony CodeGeneration/Test/CMakeFiles/install/strip.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
 # /Users/zhaokunxiang/clion/compiler/CMakeLists.txt
 # =============================================================================
 
@@ -881,21 +731,21 @@ build cmake_object_order_depends_target_Lexical: phony || Lexical/CMakeFiles/Lex
 
 build Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp || cmake_object_order_depends_target_Lexical
   DEP_FILE = Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
 
 build Lexical/CMakeFiles/Lexical.dir/tem.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/tem.cpp || cmake_object_order_depends_target_Lexical
   DEP_FILE = Lexical/CMakeFiles/Lexical.dir/tem.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir
 
 build Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o: CXX_COMPILER__Lexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp || cmake_object_order_depends_target_Lexical
   DEP_FILE = Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   OBJECT_FILE_DIR = Lexical/CMakeFiles/Lexical.dir/Test
@@ -910,7 +760,7 @@ build Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o: CXX_COMPILER__Lexical_unscann
 
 build Lexical/libLexical.a: CXX_STATIC_LIBRARY_LINKER__Lexical_Debug Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o Lexical/CMakeFiles/Lexical.dir/tem.cpp.o Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Lexical/CMakeFiles/Lexical.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -1010,21 +860,21 @@ build cmake_object_order_depends_target_TestForLexical: phony || cmake_object_or
 
 build Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp || cmake_object_order_depends_target_TestForLexical
   DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
 
 build Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp || cmake_object_order_depends_target_TestForLexical
   DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
 
 build Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: CXX_COMPILER__TestForLexical_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp || cmake_object_order_depends_target_TestForLexical
   DEP_FILE = Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
   OBJECT_FILE_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir/__
@@ -1038,7 +888,7 @@ build Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o: CXX_COMP
 # Link the executable Lexical/Test/TestForLexical
 
 build Lexical/Test/TestForLexical: CXX_EXECUTABLE_LINKER__TestForLexical_Debug Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Lexical/Test/CMakeFiles/TestForLexical.dir
@@ -1140,301 +990,301 @@ build cmake_object_order_depends_target_Tem: phony || Syntax/CMakeFiles/Tem.dir
 
 build Syntax/CMakeFiles/Tem.dir/tem.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/tem.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/tem.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir
 
 build Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Declaration
 
 build Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/Type
 
 build Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
 
 build Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILER__Tem_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp || cmake_object_order_depends_target_Tem
   DEP_FILE = Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/Tem.dir/Source/statement
@@ -1448,7 +1298,7 @@ build Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILE
 # Link the executable Syntax/Tem
 
 build Syntax/Tem: CXX_EXECUTABLE_LINKER__Tem_Debug Syntax/CMakeFiles/Tem.dir/tem.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/Tem.dir/Source/BreakStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ContinueStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/Tem.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/Tem.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/LValue.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/Tem.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/Tem.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/module.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/EXP.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/Tem.dir/Source/statement/compoundstmt.cpp.o
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   OBJECT_DIR = Syntax/CMakeFiles/Tem.dir
   POST_BUILD = :
@@ -1467,308 +1317,308 @@ build cmake_object_order_depends_target_ASTNode: phony || Syntax/CMakeFiles/ASTN
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ASTnode.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/BreakStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ConstructAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ContinueStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/ConstDef.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/Decl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/FunctionDec.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Declaration/VarDef.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Declaration
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/ForStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/HelperFunction.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/IFStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/LValue.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/BoolLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/CharLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FloatLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/FunctionType.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/IntegerLiteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/TypedefDecl.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/Type/Valueliteral.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/Type
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/WhileStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/module.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AddExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/AssignStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/BinaryOperator.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EqExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Expression.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LAndExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/LOrExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/MulExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/Number.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/PrimaryExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/RelExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/ReturnStmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryExp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/UnaryOp.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/compoundstmt.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir/Source/statement
 
 build Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/APIOfSyntax.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
 
 build Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o: CXX_COMPILER__ASTNode_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/VistorAST.cpp || cmake_object_order_depends_target_ASTNode
   DEP_FILE = Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   OBJECT_FILE_DIR = Syntax/CMakeFiles/ASTNode.dir
@@ -1783,7 +1633,7 @@ build Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o: CXX_COMPILER__ASTNode_unsca
 
 build Syntax/libASTNode.a: CXX_STATIC_LIBRARY_LINKER__ASTNode_Debug Syntax/CMakeFiles/ASTNode.dir/Source/ASTnode.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/BreakStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ConstructAST.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ContinueStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/ConstDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/Decl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/FunctionDec.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Declaration/VarDef.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/ForStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/HelperFunction.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/IFStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/LValue.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/BoolLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/CharLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FloatLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/FunctionType.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/IntegerLiteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/TypedefDecl.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/Type/Valueliteral.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/WhileStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/module.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AddExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/AssignStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/BinaryOperator.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/EqExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Expression.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LAndExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/LOrExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/MulExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/Number.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/PrimaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/RelExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/ReturnStmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryExp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/UnaryOp.cpp.o Syntax/CMakeFiles/ASTNode.dir/Source/statement/compoundstmt.cpp.o Syntax/CMakeFiles/ASTNode.dir/APIOfSyntax.cpp.o Syntax/CMakeFiles/ASTNode.dir/VistorAST.cpp.o
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Syntax/CMakeFiles/ASTNode.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -1883,14 +1733,14 @@ build cmake_object_order_depends_target_TestForSyntax: phony || cmake_object_ord
 
 build Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/a.cpp || cmake_object_order_depends_target_TestForSyntax
   DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
   OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
 
 build Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o: CXX_COMPILER__TestForSyntax_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Syntax/Test/TestHelper.cpp || cmake_object_order_depends_target_TestForSyntax
   DEP_FILE = Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
   OBJECT_FILE_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
@@ -1904,7 +1754,7 @@ build Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o: CXX_COMPILER__T
 # Link the executable Syntax/Test/TestForSyntax
 
 build Syntax/Test/TestForSyntax: CXX_EXECUTABLE_LINKER__TestForSyntax_Debug Syntax/Test/CMakeFiles/TestForSyntax.dir/a.cpp.o Syntax/Test/CMakeFiles/TestForSyntax.dir/TestHelper.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Syntax/Test/CMakeFiles/TestForSyntax.dir
@@ -2006,42 +1856,42 @@ build cmake_object_order_depends_target_Semantic: phony || Semantic/CMakeFiles/S
 
 build Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/AnalysisAST.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
 
 build Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/SymbolTable.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
 
 build Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/Symbol.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
 
 build Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Source/Scope.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir/Source
 
 build Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Analysis.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir
 
 build Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o: CXX_COMPILER__Semantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/APIOfSemantic.cpp || cmake_object_order_depends_target_Semantic
   DEP_FILE = Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   OBJECT_FILE_DIR = Semantic/CMakeFiles/Semantic.dir
@@ -2056,7 +1906,7 @@ build Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o: CXX_COMPILER__Semant
 
 build Semantic/libSemantic.a: CXX_STATIC_LIBRARY_LINKER__Semantic_Debug Semantic/CMakeFiles/Semantic.dir/Source/AnalysisAST.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/SymbolTable.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/Symbol.cpp.o Semantic/CMakeFiles/Semantic.dir/Source/Scope.cpp.o Semantic/CMakeFiles/Semantic.dir/Analysis.cpp.o Semantic/CMakeFiles/Semantic.dir/APIOfSemantic.cpp.o
   ARCH_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
-  LANGUAGE_COMPILE_FLAGS = -m64 -g
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Semantic/CMakeFiles/Semantic.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -2156,7 +2006,7 @@ build cmake_object_order_depends_target_TestForSemantic: phony || cmake_object_o
 
 build Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestForSemantic_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp || cmake_object_order_depends_target_TestForSemantic
   DEP_FILE = Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d
-  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -isystem /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest
   OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
   OBJECT_FILE_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
@@ -2170,7 +2020,7 @@ build Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o: CXX_COMPILER__TestFo
 # Link the executable Semantic/Test/TestForSemantic
 
 build Semantic/Test/TestForSemantic: CXX_EXECUTABLE_LINKER__TestForSemantic_Debug Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
   OBJECT_DIR = Semantic/Test/CMakeFiles/TestForSemantic.dir
@@ -2275,8 +2125,6 @@ build Semantic: phony Semantic/libSemantic.a
 
 build Tem: phony Syntax/Tem
 
-build TestForCodeGeneration: phony CodeGeneration/Test/TestForCodeGeneration
-
 build TestForLexical: phony Lexical/Test/TestForLexical
 
 build TestForSemantic: phony Semantic/Test/TestForSemantic
@@ -2311,8 +2159,6 @@ build libgtest.a: phony lib/libgtest.a
 
 build libgtest_main.a: phony lib/libgtest_main.a
 
-build my_project: phony CodeGeneration/my_project
-
 build omp_gen: phony CodeGeneration/omp_gen
 
 # =============================================================================
@@ -2330,14 +2176,7 @@ build all: phony Compiler Library/googletest-main/all CodeGeneration/all Lexical
 #############################################
 # Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration
 
-build CodeGeneration/all: phony CodeGeneration/libCodeGeneration.a CodeGeneration/my_project CodeGeneration/Test/all
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration/Test
-
-build CodeGeneration/Test/all: phony CodeGeneration/Test/TestForCodeGeneration
+build CodeGeneration/all: phony CodeGeneration/libCodeGeneration.a
 
 # =============================================================================
 
@@ -2409,14 +2248,14 @@ build Syntax/Test/all: phony Syntax/Test/TestForSyntax
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakePushCheckState.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindLibXml2.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindPkgConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/FindZLIB.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/SelectLibraryConfigurations.cmake /Applications/CLion.app/Contents/bin/cmake/mac/x64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/zhaokunxiang/clion/compiler/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/CodeGeneration/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Lexical/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googlemock/cmake/gmock_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/Config.cmake.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/gtest_main.pc.in /Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/cmake/internal_utils.cmake /Users/zhaokunxiang/clion/compiler/Semantic/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Semantic/Test/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/CMakeLists.txt /Users/zhaokunxiang/clion/compiler/Syntax/Test/CMakeLists.txt /usr/local/opt/llvm/lib/cmake/llvm/FindFFI.cmake /usr/local/opt/llvm/lib/cmake/llvm/FindLibEdit.cmake /usr/local/opt/llvm/lib/cmake/llvm/Findzstd.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVM-Config.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfig.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports-release.cmake /usr/local/opt/llvm/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/main.cpp" "CMakeFiles/Compiler.dir/main.cpp.o" "gcc" "CMakeFiles/Compiler.dir/main.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Compile.cpp" "CMakeFiles/Compiler.dir/Compile.cpp.o" "gcc" "CMakeFiles/Compiler.dir/Compile.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/main.cpp" "CMakeFiles/Compiler.dir/main.cpp.o" "gcc" "CMakeFiles/Compiler.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

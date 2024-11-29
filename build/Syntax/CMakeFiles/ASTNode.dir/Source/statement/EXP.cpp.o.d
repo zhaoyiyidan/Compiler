@@ -1,2 +1,2 @@
 Syntax/CMakeFiles/ASTNode.dir/Source/statement/EXP.cpp.o: \
-  /Users/atri/CLionProjects/Compiler/Syntax/Source/statement/EXP.cpp
+  /Users/zhaokunxiang/clion/compiler/Syntax/Source/statement/EXP.cpp

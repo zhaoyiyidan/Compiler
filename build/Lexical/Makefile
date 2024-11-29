@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,49 +107,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles /Users/atri/CLionProjects/Compiler/build/Lexical//CMakeFiles/progress.marks
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles /Users/zhaokunxiang/clion/compiler/build/Lexical//CMakeFiles/progress.marks
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/clean
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,22 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Lexical/CMakeFiles/Lexical.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/CMakeFiles/Lexical.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/CMakeFiles/Lexical.dir/rule
 .PHONY : Lexical/CMakeFiles/Lexical.dir/rule
 
 # Convenience name for target.
@@ -182,7 +182,7 @@ Lexical: Lexical/CMakeFiles/Lexical.dir/rule
 
 # fast build rule for target.
 Lexical/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/build
 .PHONY : Lexical/fast
 
 APIOfLexical.o: APIOfLexical.cpp.o
@@ -190,7 +190,7 @@ APIOfLexical.o: APIOfLexical.cpp.o
 
 # target to build an object file
 APIOfLexical.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.o
 .PHONY : APIOfLexical.cpp.o
 
 APIOfLexical.i: APIOfLexical.cpp.i
@@ -198,7 +198,7 @@ APIOfLexical.i: APIOfLexical.cpp.i
 
 # target to preprocess a source file
 APIOfLexical.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.i
 .PHONY : APIOfLexical.cpp.i
 
 APIOfLexical.s: APIOfLexical.cpp.s
@@ -206,7 +206,7 @@ APIOfLexical.s: APIOfLexical.cpp.s
 
 # target to generate assembly for a file
 APIOfLexical.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/APIOfLexical.cpp.s
 .PHONY : APIOfLexical.cpp.s
 
 Test/a.o: Test/a.cpp.o
@@ -214,7 +214,7 @@ Test/a.o: Test/a.cpp.o
 
 # target to build an object file
 Test/a.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.o
 .PHONY : Test/a.cpp.o
 
 Test/a.i: Test/a.cpp.i
@@ -222,7 +222,7 @@ Test/a.i: Test/a.cpp.i
 
 # target to preprocess a source file
 Test/a.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.i
 .PHONY : Test/a.cpp.i
 
 Test/a.s: Test/a.cpp.s
@@ -230,7 +230,7 @@ Test/a.s: Test/a.cpp.s
 
 # target to generate assembly for a file
 Test/a.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/Test/a.cpp.s
 .PHONY : Test/a.cpp.s
 
 tem.o: tem.cpp.o
@@ -238,7 +238,7 @@ tem.o: tem.cpp.o
 
 # target to build an object file
 tem.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.o
 .PHONY : tem.cpp.o
 
 tem.i: tem.cpp.i
@@ -246,7 +246,7 @@ tem.i: tem.cpp.i
 
 # target to preprocess a source file
 tem.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.i
 .PHONY : tem.cpp.i
 
 tem.s: tem.cpp.s
@@ -254,7 +254,7 @@ tem.s: tem.cpp.s
 
 # target to generate assembly for a file
 tem.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/tem.cpp.s
 .PHONY : tem.cpp.s
 
 # Help Target
@@ -291,6 +291,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

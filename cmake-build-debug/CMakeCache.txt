@@ -280,7 +280,7 @@ CMAKE_TAPI:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeD
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Dependencies for the target
-CodeGeneration_LIB_DEPENDS:STATIC=general;LLVMCore;general;LLVMSupport;general;LLVMIRReader;
+CodeGeneration_LIB_DEPENDS:STATIC=general;LLVM;
 
 //Value Computed by CMake
 Code_BINARY_DIR:STATIC=/Users/zhaokunxiang/clion/compiler/cmake-build-debug/CodeGeneration
@@ -532,7 +532,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

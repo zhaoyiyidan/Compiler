@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/Lexical/Test/TestForGetTokens.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Lexical/APIOfLexical.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d"
-  "/Users/atri/CLionProjects/Compiler/Lexical/Test/a.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/Test/TestForGetTokens.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/TestForGetTokens.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/APIOfLexical.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/__/APIOfLexical.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Lexical/Test/a.cpp" "Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o" "gcc" "Lexical/Test/CMakeFiles/TestForLexical.dir/a.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

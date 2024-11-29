@@ -7,21 +7,8 @@
 #include "header/SymbolTable.h"
 #include "Analysis.h"
 #include "../Syntax/header/module.h"
-SymbolTable analysis(const module &node){
-    Analysis analysis;
-    analysis.symbolTable.EnterScope();
-    for (auto &node:node.Node){
-        node->accept(analysis);
-    }
-    return analysis.symbolTable;
-}
-SymbolTable analysis(ASTnode *node){
-    Analysis analysis;
-    analysis.symbolTable.EnterScope();
-    node->accept(analysis);
-    return analysis.symbolTable;
-}
-
+SymbolTable analysis(const module &node);
+SymbolTable analysis(ASTnode *node);
 
 
 #endif //COMPILER_APIOFSEMANTIC_H

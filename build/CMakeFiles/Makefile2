@@ -45,19 +45,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -102,50 +102,25 @@ clean: Semantic/clean
 
 # Recursive "all" directory target.
 CodeGeneration/all: CodeGeneration/CMakeFiles/CodeGeneration.dir/all
-CodeGeneration/all: CodeGeneration/CMakeFiles/my_project.dir/all
-CodeGeneration/all: CodeGeneration/Test/all
 .PHONY : CodeGeneration/all
 
 # Recursive "codegen" directory target.
 CodeGeneration/codegen: CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
-CodeGeneration/codegen: CodeGeneration/CMakeFiles/my_project.dir/codegen
-CodeGeneration/codegen: CodeGeneration/Test/codegen
 .PHONY : CodeGeneration/codegen
 
 # Recursive "preinstall" directory target.
-CodeGeneration/preinstall: CodeGeneration/Test/preinstall
+CodeGeneration/preinstall:
 .PHONY : CodeGeneration/preinstall
 
 # Recursive "clean" directory target.
-CodeGeneration/clean: CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/intrinsics_gen.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/omp_gen.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/acc_gen.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/clean
 CodeGeneration/clean: CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/clean
-CodeGeneration/clean: CodeGeneration/CMakeFiles/my_project.dir/clean
-CodeGeneration/clean: CodeGeneration/Test/clean
+CodeGeneration/clean: CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
 .PHONY : CodeGeneration/clean
-
-#=============================================================================
-# Directory level rules for directory CodeGeneration/Test
-
-# Recursive "all" directory target.
-CodeGeneration/Test/all: CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/all
-.PHONY : CodeGeneration/Test/all
-
-# Recursive "codegen" directory target.
-CodeGeneration/Test/codegen: CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/codegen
-.PHONY : CodeGeneration/Test/codegen
-
-# Recursive "preinstall" directory target.
-CodeGeneration/Test/preinstall:
-.PHONY : CodeGeneration/Test/preinstall
-
-# Recursive "clean" directory target.
-CodeGeneration/Test/clean: CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/clean
-.PHONY : CodeGeneration/Test/clean
 
 #=============================================================================
 # Directory level rules for directory Lexical
@@ -349,14 +324,14 @@ CMakeFiles/Compiler.dir/all: Syntax/CMakeFiles/ASTNode.dir/all
 CMakeFiles/Compiler.dir/all: Semantic/CMakeFiles/Semantic.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=39 "Built target Compiler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=41,42 "Built target Compiler"
 .PHONY : CMakeFiles/Compiler.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Compiler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 48
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 51
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Compiler.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CMakeFiles/Compiler.dir/rule
 
 # Convenience name for target.
@@ -380,14 +355,14 @@ CMakeFiles/Compiler.dir/clean:
 Library/googletest-main/googlemock/CMakeFiles/gmock.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googlemock/CMakeFiles/gmock.dir/build.make Library/googletest-main/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googlemock/CMakeFiles/gmock.dir/build.make Library/googletest-main/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=93 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=94,95 "Built target gmock"
 .PHONY : Library/googletest-main/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 Library/googletest-main/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library/googletest-main/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Library/googletest-main/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -412,14 +387,14 @@ Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all: Library/google
 Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build.make Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build.make Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=94,95 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=96 "Built target gmock_main"
 .PHONY : Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -443,14 +418,14 @@ Library/googletest-main/googlemock/CMakeFiles/gmock_main.dir/clean:
 Library/googletest-main/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googletest/CMakeFiles/gtest.dir/build.make Library/googletest-main/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googletest/CMakeFiles/gtest.dir/build.make Library/googletest-main/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=96 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=97,98 "Built target gtest"
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 Library/googletest-main/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -474,14 +449,14 @@ Library/googletest-main/googletest/CMakeFiles/gtest.dir/clean:
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build.make Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=97,98 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=99,100 "Built target gtest_main"
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.
@@ -499,51 +474,20 @@ Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean:
 .PHONY : Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
-# Target rules for target CodeGeneration/CMakeFiles/CodeGeneration.dir
-
-# All Build rule for target.
-CodeGeneration/CMakeFiles/CodeGeneration.dir/all:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/depend
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=36,37,38 "Built target CodeGeneration"
-.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/all
-
-# Build rule for subdir invocation for target.
-CodeGeneration/CMakeFiles/CodeGeneration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/CodeGeneration.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
-.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
-
-# Convenience name for target.
-CodeGeneration: CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
-.PHONY : CodeGeneration
-
-# codegen rule for target.
-CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
-.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
-
-# clean rule for target.
-CodeGeneration/CMakeFiles/CodeGeneration.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
-.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
-
-#=============================================================================
 # Target rules for target CodeGeneration/CMakeFiles/intrinsics_gen.dir
 
 # All Build rule for target.
 CodeGeneration/CMakeFiles/intrinsics_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/intrinsics_gen.dir/build.make CodeGeneration/CMakeFiles/intrinsics_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/intrinsics_gen.dir/build.make CodeGeneration/CMakeFiles/intrinsics_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target intrinsics_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target intrinsics_gen"
 .PHONY : CodeGeneration/CMakeFiles/intrinsics_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/intrinsics_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule
 
 # Convenience name for target.
@@ -567,14 +511,14 @@ CodeGeneration/CMakeFiles/intrinsics_gen.dir/clean:
 CodeGeneration/CMakeFiles/omp_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/omp_gen.dir/build.make CodeGeneration/CMakeFiles/omp_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/omp_gen.dir/build.make CodeGeneration/CMakeFiles/omp_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target omp_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target omp_gen"
 .PHONY : CodeGeneration/CMakeFiles/omp_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/omp_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/omp_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/omp_gen.dir/rule
 
 # Convenience name for target.
@@ -598,14 +542,14 @@ CodeGeneration/CMakeFiles/omp_gen.dir/clean:
 CodeGeneration/CMakeFiles/acc_gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/acc_gen.dir/build.make CodeGeneration/CMakeFiles/acc_gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/acc_gen.dir/build.make CodeGeneration/CMakeFiles/acc_gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target acc_gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target acc_gen"
 .PHONY : CodeGeneration/CMakeFiles/acc_gen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/acc_gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/acc_gen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/acc_gen.dir/rule
 
 # Convenience name for target.
@@ -629,14 +573,14 @@ CodeGeneration/CMakeFiles/acc_gen.dir/clean:
 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target ARMTargetParserTableGen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target ARMTargetParserTableGen"
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -660,14 +604,14 @@ CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/clean:
 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target AArch64TargetParserTableGen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target AArch64TargetParserTableGen"
 .PHONY : CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -691,14 +635,14 @@ CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/clean:
 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num= "Built target RISCVTargetParserTableGen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num= "Built target RISCVTargetParserTableGen"
 .PHONY : CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/all
 
 # Build rule for subdir invocation for target.
 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -716,67 +660,35 @@ CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/clean:
 .PHONY : CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/clean
 
 #=============================================================================
-# Target rules for target CodeGeneration/CMakeFiles/my_project.dir
+# Target rules for target CodeGeneration/CMakeFiles/CodeGeneration.dir
 
 # All Build rule for target.
-CodeGeneration/CMakeFiles/my_project.dir/all:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/depend
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=99,100 "Built target my_project"
-.PHONY : CodeGeneration/CMakeFiles/my_project.dir/all
+CodeGeneration/CMakeFiles/CodeGeneration.dir/all:
+	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/depend
+	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=36,37,38,39,40 "Built target CodeGeneration"
+.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/all
 
 # Build rule for subdir invocation for target.
-CodeGeneration/CMakeFiles/my_project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/my_project.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
-.PHONY : CodeGeneration/CMakeFiles/my_project.dir/rule
+CodeGeneration/CMakeFiles/CodeGeneration.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/CodeGeneration.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
+.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
 
 # Convenience name for target.
-my_project: CodeGeneration/CMakeFiles/my_project.dir/rule
-.PHONY : my_project
+CodeGeneration: CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
+.PHONY : CodeGeneration
 
 # codegen rule for target.
-CodeGeneration/CMakeFiles/my_project.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/codegen
-.PHONY : CodeGeneration/CMakeFiles/my_project.dir/codegen
+CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
+.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
 
 # clean rule for target.
-CodeGeneration/CMakeFiles/my_project.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/clean
-.PHONY : CodeGeneration/CMakeFiles/my_project.dir/clean
-
-#=============================================================================
-# Target rules for target CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir
-
-# All Build rule for target.
-CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest.dir/all
-CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build.make CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/depend
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build.make CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=84 "Built target TestForCodeGeneration"
-.PHONY : CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/all
-
-# Build rule for subdir invocation for target.
-CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
-.PHONY : CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/rule
-
-# Convenience name for target.
-TestForCodeGeneration: CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/rule
-.PHONY : TestForCodeGeneration
-
-# codegen rule for target.
-CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build.make CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/codegen
-.PHONY : CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/codegen
-
-# clean rule for target.
-CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/build.make CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/clean
-.PHONY : CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/clean
+CodeGeneration/CMakeFiles/CodeGeneration.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
+.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
 
 #=============================================================================
 # Target rules for target Lexical/CMakeFiles/Lexical.dir
@@ -785,14 +697,14 @@ CodeGeneration/Test/CMakeFiles/TestForCodeGeneration.dir/clean:
 Lexical/CMakeFiles/Lexical.dir/all:
 	$(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/depend
 	$(MAKE) $(MAKESILENT) -f Lexical/CMakeFiles/Lexical.dir/build.make Lexical/CMakeFiles/Lexical.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=40,41,42 "Built target Lexical"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=43,44,45,46 "Built target Lexical"
 .PHONY : Lexical/CMakeFiles/Lexical.dir/all
 
 # Build rule for subdir invocation for target.
 Lexical/CMakeFiles/Lexical.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/CMakeFiles/Lexical.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Lexical/CMakeFiles/Lexical.dir/rule
 
 # Convenience name for target.
@@ -817,14 +729,14 @@ Lexical/Test/CMakeFiles/TestForLexical.dir/all: Library/googletest-main/googlete
 Lexical/Test/CMakeFiles/TestForLexical.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f Lexical/Test/CMakeFiles/TestForLexical.dir/build.make Lexical/Test/CMakeFiles/TestForLexical.dir/depend
 	$(MAKE) $(MAKESILENT) -f Lexical/Test/CMakeFiles/TestForLexical.dir/build.make Lexical/Test/CMakeFiles/TestForLexical.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=85,86,87,88 "Built target TestForLexical"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=87,88,89 "Built target TestForLexical"
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/all
 
 # Build rule for subdir invocation for target.
 Lexical/Test/CMakeFiles/TestForLexical.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lexical/Test/CMakeFiles/TestForLexical.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Lexical/Test/CMakeFiles/TestForLexical.dir/rule
 
 # Convenience name for target.
@@ -848,14 +760,14 @@ Lexical/Test/CMakeFiles/TestForLexical.dir/clean:
 Syntax/CMakeFiles/Tem.dir/all:
 	$(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/depend
 	$(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/Tem.dir/build.make Syntax/CMakeFiles/Tem.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83 "Built target Tem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86 "Built target Tem"
 .PHONY : Syntax/CMakeFiles/Tem.dir/all
 
 # Build rule for subdir invocation for target.
 Syntax/CMakeFiles/Tem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/Tem.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Syntax/CMakeFiles/Tem.dir/rule
 
 # Convenience name for target.
@@ -879,14 +791,14 @@ Syntax/CMakeFiles/Tem.dir/clean:
 Syntax/CMakeFiles/ASTNode.dir/all:
 	$(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/depend
 	$(MAKE) $(MAKESILENT) -f Syntax/CMakeFiles/ASTNode.dir/build.make Syntax/CMakeFiles/ASTNode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target ASTNode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target ASTNode"
 .PHONY : Syntax/CMakeFiles/ASTNode.dir/all
 
 # Build rule for subdir invocation for target.
 Syntax/CMakeFiles/ASTNode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/CMakeFiles/ASTNode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Syntax/CMakeFiles/ASTNode.dir/rule
 
 # Convenience name for target.
@@ -911,14 +823,14 @@ Syntax/Test/CMakeFiles/TestForSyntax.dir/all: Library/googletest-main/googletest
 Syntax/Test/CMakeFiles/TestForSyntax.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f Syntax/Test/CMakeFiles/TestForSyntax.dir/build.make Syntax/Test/CMakeFiles/TestForSyntax.dir/depend
 	$(MAKE) $(MAKESILENT) -f Syntax/Test/CMakeFiles/TestForSyntax.dir/build.make Syntax/Test/CMakeFiles/TestForSyntax.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=90,91,92 "Built target TestForSyntax"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=92,93 "Built target TestForSyntax"
 .PHONY : Syntax/Test/CMakeFiles/TestForSyntax.dir/all
 
 # Build rule for subdir invocation for target.
 Syntax/Test/CMakeFiles/TestForSyntax.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Syntax/Test/CMakeFiles/TestForSyntax.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Syntax/Test/CMakeFiles/TestForSyntax.dir/rule
 
 # Convenience name for target.
@@ -942,14 +854,14 @@ Syntax/Test/CMakeFiles/TestForSyntax.dir/clean:
 Semantic/CMakeFiles/Semantic.dir/all:
 	$(MAKE) $(MAKESILENT) -f Semantic/CMakeFiles/Semantic.dir/build.make Semantic/CMakeFiles/Semantic.dir/depend
 	$(MAKE) $(MAKESILENT) -f Semantic/CMakeFiles/Semantic.dir/build.make Semantic/CMakeFiles/Semantic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=43,44,45,46,47,48 "Built target Semantic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=47,48,49,50,51 "Built target Semantic"
 .PHONY : Semantic/CMakeFiles/Semantic.dir/all
 
 # Build rule for subdir invocation for target.
 Semantic/CMakeFiles/Semantic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Semantic/CMakeFiles/Semantic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Semantic/CMakeFiles/Semantic.dir/rule
 
 # Convenience name for target.
@@ -974,14 +886,14 @@ Semantic/Test/CMakeFiles/TestForSemantic.dir/all: Library/googletest-main/google
 Semantic/Test/CMakeFiles/TestForSemantic.dir/all: Library/googletest-main/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f Semantic/Test/CMakeFiles/TestForSemantic.dir/build.make Semantic/Test/CMakeFiles/TestForSemantic.dir/depend
 	$(MAKE) $(MAKESILENT) -f Semantic/Test/CMakeFiles/TestForSemantic.dir/build.make Semantic/Test/CMakeFiles/TestForSemantic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=89 "Built target TestForSemantic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=90,91 "Built target TestForSemantic"
 .PHONY : Semantic/Test/CMakeFiles/TestForSemantic.dir/all
 
 # Build rule for subdir invocation for target.
 Semantic/Test/CMakeFiles/TestForSemantic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Semantic/Test/CMakeFiles/TestForSemantic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : Semantic/Test/CMakeFiles/TestForSemantic.dir/rule
 
 # Convenience name for target.

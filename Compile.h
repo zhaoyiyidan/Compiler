@@ -8,12 +8,11 @@
 #include "iostream"
 #include "Syntax/APIOfSyntax.h"
 #include "Lexical/APIOfLexical.h"
-#include "Semantic/APIOfSemantic.h"
-#include "CodeGeneration/APIOfcodegeneration.h"
+ #include "CodeGeneration/APIOfcodegeneration.h"
 void compile(std::string name){
     auto tokens= gettoken(name);
     auto tree= buildASTTree(tokens);//
-    auto sym=analysis(tree);
+    // auto sym=analysis(tree);
     tree.getNode();
 }
 

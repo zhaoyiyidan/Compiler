@@ -5,8 +5,7 @@
 #ifndef COMPILER_LLVM_PART_H
 #define COMPILER_LLVM_PART_H
 
-#include <llvm/IRBuilder.h>
-
+#include <llvm/IR/IRBuilder.h>
 #include <llvm/IR/LLVMContext.h>
 #include <llvm/IR/Module.h>
 #include <llvm/IR/Verifier.h>

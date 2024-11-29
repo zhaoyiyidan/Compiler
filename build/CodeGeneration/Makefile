@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/opt/homebrew/bin/ctest --force-new-ctest-process $(ARGS)
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/opt/homebrew/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,49 +107,49 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/opt/homebrew/bin/cmake -P cmake_install.cmake
+	/usr/local/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles /Users/atri/CLionProjects/Compiler/build/CodeGeneration//CMakeFiles/progress.marks
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/atri/CLionProjects/Compiler/build/CMakeFiles 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles /Users/zhaokunxiang/clion/compiler/build/CodeGeneration//CMakeFiles/progress.marks
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zhaokunxiang/clion/compiler/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/clean
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,36 +158,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/preinstall
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-CodeGeneration/CMakeFiles/CodeGeneration.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
-.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
-
-# Convenience name for target.
-CodeGeneration: CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
-.PHONY : CodeGeneration
-
-# fast build rule for target.
-CodeGeneration/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
-.PHONY : CodeGeneration/fast
-
-# Convenience name for target.
 CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule
 
 # Convenience name for target.
@@ -196,12 +182,12 @@ intrinsics_gen: CodeGeneration/CMakeFiles/intrinsics_gen.dir/rule
 
 # fast build rule for target.
 intrinsics_gen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/intrinsics_gen.dir/build.make CodeGeneration/CMakeFiles/intrinsics_gen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/intrinsics_gen.dir/build.make CodeGeneration/CMakeFiles/intrinsics_gen.dir/build
 .PHONY : intrinsics_gen/fast
 
 # Convenience name for target.
 CodeGeneration/CMakeFiles/omp_gen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/omp_gen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/omp_gen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/omp_gen.dir/rule
 
 # Convenience name for target.
@@ -210,12 +196,12 @@ omp_gen: CodeGeneration/CMakeFiles/omp_gen.dir/rule
 
 # fast build rule for target.
 omp_gen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/omp_gen.dir/build.make CodeGeneration/CMakeFiles/omp_gen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/omp_gen.dir/build.make CodeGeneration/CMakeFiles/omp_gen.dir/build
 .PHONY : omp_gen/fast
 
 # Convenience name for target.
 CodeGeneration/CMakeFiles/acc_gen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/acc_gen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/acc_gen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/acc_gen.dir/rule
 
 # Convenience name for target.
@@ -224,12 +210,12 @@ acc_gen: CodeGeneration/CMakeFiles/acc_gen.dir/rule
 
 # fast build rule for target.
 acc_gen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/acc_gen.dir/build.make CodeGeneration/CMakeFiles/acc_gen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/acc_gen.dir/build.make CodeGeneration/CMakeFiles/acc_gen.dir/build
 .PHONY : acc_gen/fast
 
 # Convenience name for target.
 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -238,12 +224,12 @@ ARMTargetParserTableGen: CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/r
 
 # fast build rule for target.
 ARMTargetParserTableGen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/ARMTargetParserTableGen.dir/build
 .PHONY : ARMTargetParserTableGen/fast
 
 # Convenience name for target.
 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -252,12 +238,12 @@ AArch64TargetParserTableGen: CodeGeneration/CMakeFiles/AArch64TargetParserTableG
 
 # fast build rule for target.
 AArch64TargetParserTableGen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/AArch64TargetParserTableGen.dir/build
 .PHONY : AArch64TargetParserTableGen/fast
 
 # Convenience name for target.
 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule
 .PHONY : CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/rule
 
 # Convenience name for target.
@@ -266,30 +252,29 @@ RISCVTargetParserTableGen: CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.d
 
 # fast build rule for target.
 RISCVTargetParserTableGen/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build.make CodeGeneration/CMakeFiles/RISCVTargetParserTableGen.dir/build
 .PHONY : RISCVTargetParserTableGen/fast
 
 # Convenience name for target.
-CodeGeneration/CMakeFiles/my_project.dir/rule:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/my_project.dir/rule
-.PHONY : CodeGeneration/CMakeFiles/my_project.dir/rule
+CodeGeneration/CMakeFiles/CodeGeneration.dir/rule:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
+.PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
 
 # Convenience name for target.
-my_project: CodeGeneration/CMakeFiles/my_project.dir/rule
-.PHONY : my_project
+CodeGeneration: CodeGeneration/CMakeFiles/CodeGeneration.dir/rule
+.PHONY : CodeGeneration
 
 # fast build rule for target.
-my_project/fast:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/build
-.PHONY : my_project/fast
+CodeGeneration/fast:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/build
+.PHONY : CodeGeneration/fast
 
 A.o: A.cpp.o
 .PHONY : A.o
 
 # target to build an object file
 A.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/A.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o
 .PHONY : A.cpp.o
 
 A.i: A.cpp.i
@@ -297,8 +282,7 @@ A.i: A.cpp.i
 
 # target to preprocess a source file
 A.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.i
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/A.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.i
 .PHONY : A.cpp.i
 
 A.s: A.cpp.s
@@ -306,8 +290,7 @@ A.s: A.cpp.s
 
 # target to generate assembly for a file
 A.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.s
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/my_project.dir/build.make CodeGeneration/CMakeFiles/my_project.dir/A.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.s
 .PHONY : A.cpp.s
 
 APIOfcodegeneration.o: APIOfcodegeneration.cpp.o
@@ -315,7 +298,7 @@ APIOfcodegeneration.o: APIOfcodegeneration.cpp.o
 
 # target to build an object file
 APIOfcodegeneration.cpp.o:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o
 .PHONY : APIOfcodegeneration.cpp.o
 
 APIOfcodegeneration.i: APIOfcodegeneration.cpp.i
@@ -323,7 +306,7 @@ APIOfcodegeneration.i: APIOfcodegeneration.cpp.i
 
 # target to preprocess a source file
 APIOfcodegeneration.cpp.i:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i
 .PHONY : APIOfcodegeneration.cpp.i
 
 APIOfcodegeneration.s: APIOfcodegeneration.cpp.s
@@ -331,8 +314,80 @@ APIOfcodegeneration.s: APIOfcodegeneration.cpp.s
 
 # target to generate assembly for a file
 APIOfcodegeneration.cpp.s:
-	cd /Users/atri/CLionProjects/Compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s
 .PHONY : APIOfcodegeneration.cpp.s
+
+HelperFunction.o: HelperFunction.cpp.o
+.PHONY : HelperFunction.o
+
+# target to build an object file
+HelperFunction.cpp.o:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o
+.PHONY : HelperFunction.cpp.o
+
+HelperFunction.i: HelperFunction.cpp.i
+.PHONY : HelperFunction.i
+
+# target to preprocess a source file
+HelperFunction.cpp.i:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.i
+.PHONY : HelperFunction.cpp.i
+
+HelperFunction.s: HelperFunction.cpp.s
+.PHONY : HelperFunction.s
+
+# target to generate assembly for a file
+HelperFunction.cpp.s:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.s
+.PHONY : HelperFunction.cpp.s
+
+IR_Transform.o: IR_Transform.cpp.o
+.PHONY : IR_Transform.o
+
+# target to build an object file
+IR_Transform.cpp.o:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o
+.PHONY : IR_Transform.cpp.o
+
+IR_Transform.i: IR_Transform.cpp.i
+.PHONY : IR_Transform.i
+
+# target to preprocess a source file
+IR_Transform.cpp.i:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.i
+.PHONY : IR_Transform.cpp.i
+
+IR_Transform.s: IR_Transform.cpp.s
+.PHONY : IR_Transform.s
+
+# target to generate assembly for a file
+IR_Transform.cpp.s:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.s
+.PHONY : IR_Transform.cpp.s
+
+Source/LLVM_Part.o: Source/LLVM_Part.cpp.o
+.PHONY : Source/LLVM_Part.o
+
+# target to build an object file
+Source/LLVM_Part.cpp.o:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o
+.PHONY : Source/LLVM_Part.cpp.o
+
+Source/LLVM_Part.i: Source/LLVM_Part.cpp.i
+.PHONY : Source/LLVM_Part.i
+
+# target to preprocess a source file
+Source/LLVM_Part.cpp.i:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.i
+.PHONY : Source/LLVM_Part.cpp.i
+
+Source/LLVM_Part.s: Source/LLVM_Part.cpp.s
+.PHONY : Source/LLVM_Part.s
+
+# target to generate assembly for a file
+Source/LLVM_Part.cpp.s:
+	cd /Users/zhaokunxiang/clion/compiler/build && $(MAKE) $(MAKESILENT) -f CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.s
+.PHONY : Source/LLVM_Part.cpp.s
 
 # Help Target
 help:
@@ -354,13 +409,21 @@ help:
 	@echo "... intrinsics_gen"
 	@echo "... omp_gen"
 	@echo "... CodeGeneration"
-	@echo "... my_project"
 	@echo "... A.o"
 	@echo "... A.i"
 	@echo "... A.s"
 	@echo "... APIOfcodegeneration.o"
 	@echo "... APIOfcodegeneration.i"
 	@echo "... APIOfcodegeneration.s"
+	@echo "... HelperFunction.o"
+	@echo "... HelperFunction.i"
+	@echo "... HelperFunction.s"
+	@echo "... IR_Transform.o"
+	@echo "... IR_Transform.i"
+	@echo "... IR_Transform.s"
+	@echo "... Source/LLVM_Part.o"
+	@echo "... Source/LLVM_Part.i"
+	@echo "... Source/LLVM_Part.s"
 .PHONY : help
 
 
@@ -372,6 +435,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/homebrew/bin/cmake
+CMAKE_COMMAND = /usr/local/bin/cmake
 
 # The command to remove a file.
-RM = /opt/homebrew/bin/cmake -E rm -f
+RM = /usr/local/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/atri/CLionProjects/Compiler
+CMAKE_SOURCE_DIR = /Users/zhaokunxiang/clion/compiler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/atri/CLionProjects/Compiler/build
+CMAKE_BINARY_DIR = /Users/zhaokunxiang/clion/compiler/build
 
 # Include any dependencies generated for this target.
 include CodeGeneration/CMakeFiles/CodeGeneration.dir/depend.make
@@ -73,58 +73,106 @@ CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen:
 .PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/codegen
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/flags.make
-CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: /Users/atri/CLionProjects/Compiler/CodeGeneration/APIOfcodegeneration.cpp
+CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp
 CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o -MF CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d -o CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o -c /Users/atri/CLionProjects/Compiler/CodeGeneration/APIOfcodegeneration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o -MF CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o.d -o CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o -c /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/CodeGeneration/APIOfcodegeneration.cpp > CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp > CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.i
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/CodeGeneration/APIOfcodegeneration.cpp -o CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/CodeGeneration/APIOfcodegeneration.cpp -o CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.s
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/flags.make
-CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: /Users/atri/CLionProjects/Compiler/CodeGeneration/A.cpp
+CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp
 CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o -MF CMakeFiles/CodeGeneration.dir/A.cpp.o.d -o CMakeFiles/CodeGeneration.dir/A.cpp.o -c /Users/atri/CLionProjects/Compiler/CodeGeneration/A.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o -MF CMakeFiles/CodeGeneration.dir/A.cpp.o.d -o CMakeFiles/CodeGeneration.dir/A.cpp.o -c /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CodeGeneration.dir/A.cpp.i"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/atri/CLionProjects/Compiler/CodeGeneration/A.cpp > CMakeFiles/CodeGeneration.dir/A.cpp.i
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp > CMakeFiles/CodeGeneration.dir/A.cpp.i
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CodeGeneration.dir/A.cpp.s"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && /opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/atri/CLionProjects/Compiler/CodeGeneration/A.cpp -o CMakeFiles/CodeGeneration.dir/A.cpp.s
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/CodeGeneration/A.cpp -o CMakeFiles/CodeGeneration.dir/A.cpp.s
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/flags.make
+CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp
+CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o -MF CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o.d -o CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o -c /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.i"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp > CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.i
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.s"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/CodeGeneration/IR_Transform.cpp -o CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.s
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/flags.make
+CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp
+CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o -MF CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o.d -o CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o -c /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.i"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp > CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.i
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.s"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/CodeGeneration/Source/LLVM_Part.cpp -o CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.s
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/flags.make
+CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp
+CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o: CodeGeneration/CMakeFiles/CodeGeneration.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o -MF CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o.d -o CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o -c /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.i"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp > CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.i
+
+CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.s"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/zhaokunxiang/clion/compiler/CodeGeneration/HelperFunction.cpp -o CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.s
 
 # Object files for target CodeGeneration
 CodeGeneration_OBJECTS = \
 "CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o" \
-"CMakeFiles/CodeGeneration.dir/A.cpp.o"
+"CMakeFiles/CodeGeneration.dir/A.cpp.o" \
+"CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o" \
+"CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o" \
+"CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o"
 
 # External object files for target CodeGeneration
 CodeGeneration_EXTERNAL_OBJECTS =
 
 CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/APIOfcodegeneration.cpp.o
 CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/A.cpp.o
+CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/IR_Transform.cpp.o
+CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/Source/LLVM_Part.cpp.o
+CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/HelperFunction.cpp.o
 CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/build.make
 CodeGeneration/libCodeGeneration.a: CodeGeneration/CMakeFiles/CodeGeneration.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/atri/CLionProjects/Compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libCodeGeneration.a"
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/CodeGeneration.dir/cmake_clean_target.cmake
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CodeGeneration.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/zhaokunxiang/clion/compiler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libCodeGeneration.a"
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/CodeGeneration.dir/cmake_clean_target.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CodeGeneration.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 CodeGeneration/CMakeFiles/CodeGeneration.dir/build: CodeGeneration/libCodeGeneration.a
 .PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/build
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/clean:
-	cd /Users/atri/CLionProjects/Compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/CodeGeneration.dir/cmake_clean.cmake
+	cd /Users/zhaokunxiang/clion/compiler/build/CodeGeneration && $(CMAKE_COMMAND) -P CMakeFiles/CodeGeneration.dir/cmake_clean.cmake
 .PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/clean
 
 CodeGeneration/CMakeFiles/CodeGeneration.dir/depend:
-	cd /Users/atri/CLionProjects/Compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/atri/CLionProjects/Compiler /Users/atri/CLionProjects/Compiler/CodeGeneration /Users/atri/CLionProjects/Compiler/build /Users/atri/CLionProjects/Compiler/build/CodeGeneration /Users/atri/CLionProjects/Compiler/build/CodeGeneration/CMakeFiles/CodeGeneration.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/zhaokunxiang/clion/compiler/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/zhaokunxiang/clion/compiler /Users/zhaokunxiang/clion/compiler/CodeGeneration /Users/zhaokunxiang/clion/compiler/build /Users/zhaokunxiang/clion/compiler/build/CodeGeneration /Users/zhaokunxiang/clion/compiler/build/CodeGeneration/CMakeFiles/CodeGeneration.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CodeGeneration/CMakeFiles/CodeGeneration.dir/depend
 

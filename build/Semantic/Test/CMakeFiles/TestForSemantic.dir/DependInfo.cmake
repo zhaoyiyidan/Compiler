@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/atri/CLionProjects/Compiler/Semantic/Test/a.cpp" "Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o" "gcc" "Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d"
+  "/Users/zhaokunxiang/clion/compiler/Semantic/Test/a.cpp" "Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o" "gcc" "Semantic/Test/CMakeFiles/TestForSemantic.dir/a.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
