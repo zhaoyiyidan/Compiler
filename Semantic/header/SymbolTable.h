@@ -80,6 +80,7 @@ public:
         }
         return false;
     }
+    // it return the symbol reference
     Symbol& GetTheSymbol(std::string name){
         for (auto it=scopeStack.rbegin();it!=scopeStack.rend();it++){
             if (it->ExistSymbol(name)){

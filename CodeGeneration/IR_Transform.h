@@ -13,8 +13,8 @@
 class IR_Transform : public VistorAST {
 public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
-     SymbolTable symbolTable;
-     bool ExistSymbolTable= false;
+     std::vector<SymbolTable> symbolTableVector;
+     double ExistSymbol=false;// to distinguish whether the symbol table is empty
     // override all the virtual functions in VistorAST
      void visit(const class ConstDecl &node) override;
      void visit(const class ConstDef &node) override;
@@ -55,6 +55,8 @@ public:
      IR_Transform(std::string name):llvm_part(name){};
      //
      void CreateBasicBlock(const std::string &name);
+     void CreateNewSymbolTable(ASTnode *node);
+     void DeleteSymbolTable();
 };
 
 

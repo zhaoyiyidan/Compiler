@@ -20,7 +20,10 @@ add_subdirectory(Syntax)
 add_subdirectory(Semantic)
 #添加执行文件
 add_executable(Compiler main.cpp
-        )
+        Compile.cpp
+        Compile.h
+        Compile.h
+)
 # 添加链接库
 target_link_libraries(Compiler ASTNode CodeGeneration Lexical  Semantic)
 

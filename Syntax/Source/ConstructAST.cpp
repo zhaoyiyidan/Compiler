@@ -99,11 +99,28 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
         }
         else if (a=="if"){
             auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
+            if (tokens[tem.second].second=="else" && tokens[tem.second+1].second!="if" ){
+                auto pair= FindCorrsponding(tokens,tem.second,Rindex,"{","}");
+                stmts.push_back(ConstructIFStmt(tokens,index,pair.second));
+                index=pair.second+1;
+            }
+            else{
             stmts.push_back(ConstructIFStmt(tokens,index,tem.second));
             index=tem.second+1;
+            }
         }
-        else if (a=="else"){
-
+        // else if as a new if statement
+        else if (a=="else" && tokens[index+1].second=="if"){
+            auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
+            if (tokens[tem.second].second=="else" && tokens[tem.second+1].second!="if" ){
+                auto pair= FindCorrsponding(tokens,tem.second,Rindex,"{","}");
+                stmts.push_back(ConstructIFStmt(tokens,index,pair.second));
+                index=pair.second+1;
+            }
+            else{
+                stmts.push_back(ConstructIFStmt(tokens,index,tem.second));
+                index=tem.second+1;
+            }
         }
         else if (a=="{"){
             auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
@@ -518,8 +535,18 @@ std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string
     }
     auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
     auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);// the condition
-    auto body=ConstructCompoundStmt(tokens,pair.second+1,Rindex);
-    return std::make_unique<IFStmt>(std::move(condition),std::move(body), nullptr);
+    auto pair2= FindCorrsponding(tokens,pair.second+1,Rindex,"{","}");
+    auto body=ConstructCompoundStmt(tokens,pair.second+1,pair2.second);
+    if (pair2.second==Rindex) {
+        return std::make_unique<IFStmt>(std::move(condition), std::move(body), nullptr);
+    }
+    else {
+        if (tokens[pair2.second].second=="else"){
+            auto body2=ConstructCompoundStmt(tokens,pair2.second+1,Rindex);
+            return std::make_unique<IFStmt>(std::move(condition), std::move(body), std::move(body2));
+        }
+    }
+    // if (){} else{}
 }
 
 std::unique_ptr<ASTnode> ConstructBreakStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){

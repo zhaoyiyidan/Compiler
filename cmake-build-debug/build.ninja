@@ -56,6 +56,13 @@ build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug
   OBJECT_DIR = CMakeFiles/Compiler.dir
   OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
 
+build CMakeFiles/Compiler.dir/Compile.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug /Users/zhaokunxiang/clion/compiler/Compile.cpp || cmake_object_order_depends_target_Compiler
+  DEP_FILE = CMakeFiles/Compiler.dir/Compile.cpp.o.d
+  FLAGS = -m64 -g -std=gnu++17 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest/include -I/Users/zhaokunxiang/clion/compiler/Library/googletest-main/googletest -I/Users/zhaokunxiang/clion/compiler/Syntax/header -isystem /usr/local/include
+  OBJECT_DIR = CMakeFiles/Compiler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Compiler.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Compiler
@@ -64,7 +71,7 @@ build CMakeFiles/Compiler.dir/main.cpp.o: CXX_COMPILER__Compiler_unscanned_Debug
 #############################################
 # Link the executable Compiler
 
-build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
+build Compiler: CXX_EXECUTABLE_LINKER__Compiler_Debug CMakeFiles/Compiler.dir/main.cpp.o CMakeFiles/Compiler.dir/Compile.cpp.o | Syntax/libASTNode.a CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a /usr/local/opt/llvm/lib/libLLVMIRReader.a /usr/local/opt/llvm/lib/libLLVMAsmParser.a /usr/local/opt/llvm/lib/libLLVMBitReader.a /usr/local/opt/llvm/lib/libLLVMCore.a /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a /usr/local/opt/llvm/lib/libLLVMRemarks.a /usr/local/opt/llvm/lib/libLLVMTargetParser.a /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a /usr/local/opt/llvm/lib/libLLVMSupport.a /usr/local/opt/llvm/lib/libLLVMDemangle.a /usr/local/lib/libz3.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd /usr/local/lib/libzstd.dylib || CodeGeneration/libCodeGeneration.a Lexical/libLexical.a Semantic/libSemantic.a Syntax/libASTNode.a
   FLAGS = -m64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_FLAGS = -L/usr/local/opt/llvm/lib
   LINK_LIBRARIES = Syntax/libASTNode.a  CodeGeneration/libCodeGeneration.a  Lexical/libLexical.a  Semantic/libSemantic.a  /usr/local/opt/llvm/lib/libLLVMIRReader.a  /usr/local/opt/llvm/lib/libLLVMAsmParser.a  /usr/local/opt/llvm/lib/libLLVMBitReader.a  /usr/local/opt/llvm/lib/libLLVMCore.a  /usr/local/opt/llvm/lib/libLLVMBinaryFormat.a  /usr/local/opt/llvm/lib/libLLVMRemarks.a  /usr/local/opt/llvm/lib/libLLVMTargetParser.a  /usr/local/opt/llvm/lib/libLLVMBitstreamReader.a  /usr/local/opt/llvm/lib/libLLVMSupport.a  /usr/local/opt/llvm/lib/libLLVMDemangle.a  -lm  /usr/local/lib/libz3.dylib  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libz.tbd  /usr/local/lib/libzstd.dylib

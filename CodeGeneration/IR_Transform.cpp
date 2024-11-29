@@ -12,9 +12,12 @@ void IR_Transform::visit(const class FunctionDec &node){
     // llvm::BasicBlock *entry = llvm::BasicBlock::Create(llvm_part.context, "entry", func);
     // llvm_part.builder.SetInsertPoint(entry);
     // llvm::Function::arg_iterator argsValues = func->arg_begin();
-    //
-    symbolTable=analysis(node.body.get());
+
+    //when you create a new function, you need to create a new symbol table and when you finish the function, you need to delete the symbol table
+    this->CreateNewSymbolTable(node.body.get());
+
     std::vector<llvm::Type*> paramTypes;
+    // create the parameters of the function
     for(auto &arg : node.parameters){
         if (!arg){
             continue;
@@ -67,7 +70,11 @@ void IR_Transform::visit(const class FunctionDec &node){
     }
     llvm_part.currentFunction = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, node.name, &llvm_part.module);
     node.body->accept(*this);
+
+    // set it nullptr
     llvm_part.currentFunction= nullptr;
+    // delete the symbol table
+    this->DeleteSymbolTable();
 }
 void IR_Transform::visit(const class VarDecl &node) {
     node.VarDef->accept(*this);
@@ -76,31 +83,40 @@ void IR_Transform::visit(const class VarDecl &node) {
     }
 }
 void IR_Transform::visit(const class VarDef &node) {
-    if (ExistSymbolTable&&symbolTable.ExistSymbol(node.identifier)){
-        auto symbol=symbolTable.GetTheSymbol(node.identifier);
+    // handle the case no global variable
+    llvm_part.builder.SetInsertPoint(llvm_part.blockStack.back());
+    if (!symbolTableVector.empty()&&symbolTableVector.back().ExistSymbol(node.identifier)){
+        Symbol& symbol=symbolTableVector.back().GetTheSymbol(node.identifier);
+        double value=symbol.value;
         // construct the type of the variable
         llvm::Type *llvm_type;
+        llvm::Value *llvm_value;
         if (symbol.type=="int"){
             llvm_type=llvm::Type::getInt32Ty(llvm_part.context);
+            llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="void"){
             llvm_type=llvm::Type::getVoidTy(llvm_part.context);
         }
         else if (symbol.type=="float"){
             llvm_type=llvm::Type::getFloatTy(llvm_part.context);
+            llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="double"){
             llvm_type=llvm::Type::getDoubleTy(llvm_part.context);
+            llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="char"){
             llvm_type=llvm::Type::getInt8Ty(llvm_part.context);
+            llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="bool"){
             llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
         // create the variable
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
-        
+        llvm_part.builder.CreateStore(llvm_value, allocaInst);
+
     }
 }
 void visit(const class AddExp &node)   {}
@@ -109,6 +125,7 @@ void visit(const class BinaryOperator &node){}
 void IR_Transform::visit(const class compoundstmt &node){
     // if we only have basic block in the function
     this->CreateBasicBlock("CompoundStmt");
+
     for(auto &stmt : node.stmts){
         stmt->accept(*this);
     }
@@ -140,6 +157,13 @@ void visit(const class EXP &node){}
 void visit(const class FunctionParameters &node){}
 void visit(const class StructDecl &node) {}
 void visit(const class StructBody &node){}
+// it is used to create a new basic block
 void IR_Transform::CreateBasicBlock(const std::string &name){
     llvm_part.CreateNewBlock(name);
+}
+void IR_Transform::CreateNewSymbolTable(ASTnode *node){
+    symbolTableVector.push_back(analysis(node));
+}
+void IR_Transform::DeleteSymbolTable(){
+    symbolTableVector.pop_back();
 }
