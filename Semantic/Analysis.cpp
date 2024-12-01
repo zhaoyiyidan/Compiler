@@ -15,20 +15,21 @@ void Analysis::visit(const FunctionDec &node) {
         symbolTable.InsertSymbol(name, type,1);
     }
      node.body->accept(*this);// it is equaivalent to visit(const compoundstmt &node)
+     symbolTable.ExitScope();;
 } //
 void Analysis::visit(const compoundstmt &node) {
     symbolTable.EnterScope();
     for (auto &stmt: node.stmts) {
        if (stmt->GetNodeType()=="compoundstmt"){
-        symbolTable.EnterScope();
-        stmt->accept(*this);
-        symbolTable.ExitScope();
+        // symbolTable.EnterScope();
+           continue;
+        // stmt->accept(*this);
+        // symbolTable.ExitScope();
        }
        else{
               stmt->accept(*this);
        }
     }
-    symbolTable.ExitScope();
 }
 //// /   node->accept(*this);  调用vsist方法，调用是那个根据node实际存储的类型
 void Analysis::visit(const VarDecl &node) {

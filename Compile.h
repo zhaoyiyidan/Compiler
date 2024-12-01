@@ -13,7 +13,8 @@ void compile(std::string name){
     auto tokens= gettoken(name);
     auto tree= buildASTTree(tokens);//
     // auto sym=analysis(tree);
-    tree.getNode();
+    // tree.getNode();
+    generateCode(tree);
 }
 
 
