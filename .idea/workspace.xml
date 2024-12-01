@@ -47,21 +47,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="Now it can transonfrom signgle scope and single function">
-      <change afterPath="$PROJECT_DIR$/Test/scope.cpp" afterDir="false" />
+    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="Now it can transonfrom signgle scope and single function. fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/APIOfSemantic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/APIOfSemantic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/APIOfSemantic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/APIOfSemantic.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/header/SymbolTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/header/SymbolTable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Syntax/header/statement/compoundstmt.h" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/header/statement/compoundstmt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/scope.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/scope.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +278,7 @@
       <workItem from="1732881095581" duration="473000" />
       <workItem from="1732890363287" duration="5063000" />
       <workItem from="1732901307214" duration="651000" />
-      <workItem from="1733018775057" duration="6105000" />
+      <workItem from="1733018775057" duration="8258000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -318,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733020196972</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Now it can transonfrom signgle scope and single function. fix bug">
+      <option name="closed" value="true" />
+      <created>1733029883241</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733029883241</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +359,18 @@
     <MESSAGE value="save" />
     <MESSAGE value="no bug now" />
     <MESSAGE value="Now it can transonfrom signgle scope and single function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now it can transonfrom signgle scope and single function" />
+    <MESSAGE value="Now it can transonfrom signgle scope and single function. fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now it can transonfrom signgle scope and single function. fix bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
+          <line>159</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

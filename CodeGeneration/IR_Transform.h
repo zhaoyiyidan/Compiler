@@ -14,7 +14,7 @@ public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
      SymbolTable symbolTable;// the whole symbol table of the program
      double ExistSymbol=false;// to distinguish whether the symbol table is empty
-
+     int pos=-1;// the position of the current scope
     // override all the virtual functions in VistorAST
      void visit(const class ConstDecl &node) override;
      void visit(const class ConstDef &node) override;

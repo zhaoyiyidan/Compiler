@@ -4,9 +4,13 @@
 
 int main(){
     int a = 1;
-    int d;
     {
         int b=2;
-        int c=a+33;
+        int d=3;
+        {
+         int c=3;
+        }
+        int e=2;
     }
+    int f=3;
 }
