@@ -13,9 +13,6 @@ void IR_Transform::visit(const class FunctionDec &node){
     // llvm_part.builder.SetInsertPoint(entry);
     // llvm::Function::arg_iterator argsValues = func->arg_begin();
 
-    //when you create a new function, you need to create a new symbol table and when you finish the function, you need to delete the symbol table
-    this->CreateNewSymbolTable(node.body.get());
-
     std::vector<llvm::Type*> paramTypes;
     // create the parameters of the function
     for(auto &arg : node.parameters){
@@ -73,8 +70,7 @@ void IR_Transform::visit(const class FunctionDec &node){
 
     // set it nullptr
     llvm_part.currentFunction= nullptr;
-    // delete the symbol table
-    this->DeleteSymbolTable();
+    // delete the last symbol table
 }
 void IR_Transform::visit(const class VarDecl &node) {
     node.VarDef->accept(*this);
@@ -85,8 +81,8 @@ void IR_Transform::visit(const class VarDecl &node) {
 void IR_Transform::visit(const class VarDef &node) {
     // handle the case no global variable
     llvm_part.builder.SetInsertPoint(llvm_part.blockStack.back());
-    if (!symbolTableVector.empty()&&symbolTableVector.back().ExistSymbol(node.identifier)){
-        Symbol& symbol=symbolTableVector.back().GetTheSymbol(node.identifier);
+    if (!symbolTable.scopeStack.empty()&&symbolTable.ExistSymbol(node.identifier)){
+        Symbol& symbol=symbolTable.GetTheSymbol(node.identifier);
         double value=symbol.value;
         // construct the type of the variable
         llvm::Type *llvm_type;
@@ -124,12 +120,26 @@ void IR_Transform::visit(const class AssignStmt &node) {}
 void IR_Transform::visit(const class BinaryOperator &node){}
 void IR_Transform::visit(const class compoundstmt &node){
     // if we only have basic block in the function
-    this->CreateBasicBlock("CompoundStmt");
-
+    // this->CreateBasicBlock("compoundStmt");
+//
+   // get the non-const pointer of node
+    compoundstmt *node_=const_cast<compoundstmt*>(&node);
+    this->CreateNewScope(node_);
+    // if we have mutiple scope in the function
+    this->CreateBasicBlock("compoundStmt");
+    if (llvm_part.blockStack.size()>1){
+        if (llvm_part.blockStack[llvm_part.blockStack.size()-2]->getName().str()=="compoundStmt"){
+            llvm_part.builder.SetInsertPoint(llvm_part.blockStack[llvm_part.blockStack.size()-2]);
+            llvm_part.builder.CreateBr(llvm_part.blockStack.back());
+        }
+    }
     for(auto &stmt : node.stmts){
+        // this->CreateNewSymbolTable(stmt.get());
         stmt->accept(*this);
+        // this->DeleteSymbolTable();
     }
     // there is something we need to do here
+    this->ExitScope();
 }
 void IR_Transform::visit(const class EqExp &node) {}
 void IR_Transform::visit(const class Expression &node) {}
@@ -161,9 +171,13 @@ void IR_Transform::visit(const class StructBody &node){}
 void IR_Transform::CreateBasicBlock(const std::string &name){
     llvm_part.CreateNewBlock(name);
 }
-void IR_Transform::CreateNewSymbolTable(ASTnode *node){
-    symbolTableVector.push_back(analysis(node));
+
+
+void IR_Transform::CreateNewScope(ASTnode *node){
+    // auto sym=symbolTable;
+    analysis(node,symbolTable);
+    // symbolTable=sym;
 }
-void IR_Transform::DeleteSymbolTable(){
-    symbolTableVector.pop_back();
+void IR_Transform::ExitScope(){
+    symbolTable.ExitScope();
 }

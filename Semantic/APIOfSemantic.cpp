@@ -17,3 +17,10 @@ SymbolTable analysis(ASTnode *node){
     node->accept(analysis);
     return analysis.symbolTable;
 }
+void analysis(ASTnode *node, SymbolTable& sym){
+    Analysis analysis;
+    analysis.symbolTable=sym;
+    analysis.symbolTable.EnterScope();
+    node->accept(analysis);
+    sym=analysis.symbolTable;
+}

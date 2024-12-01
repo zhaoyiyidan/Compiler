@@ -25,6 +25,9 @@ public:
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);
     }
+    compoundstmt* get(){
+        return this;
+    }
 };
 
 

@@ -9,9 +9,8 @@
 #include  <vector>
 
 class SymbolTable {
-    std::vector<Scope> scopeStack;
-   
 public:
+    std::vector<Scope> scopeStack;
     bool structFlag=false;
     std::string structName="null";
     void EnterScope(){

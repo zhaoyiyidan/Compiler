@@ -8,6 +8,6 @@ int main(){
     auto sym=analysis(tree);
     tree.getNode();
     */
-    compile("/Users/zhaokunxiang/clion/compiler/Test/source5.cpp");
+    compile("/Users/zhaokunxiang/clion/compiler/Test/scope.cpp");
 
         }

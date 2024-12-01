@@ -37,7 +37,11 @@ public:
     LLVM_Part(const std::string& name) : module(name, context), builder(context) {}// 创建LLVM上下文和模块
     //  创建一个新的基本块在blockStack的末尾
     void CreateNewBlock(const std::string &name){
-        blockStack.push_back(llvm::BasicBlock::Create(context, name, currentFunction));
+        if (currentFunction){
+        blockStack.push_back(llvm::BasicBlock::Create(context, name, currentFunction));}
+        else{
+            throw std::runtime_error("No function to create block");
+        }
     }
 
 };
