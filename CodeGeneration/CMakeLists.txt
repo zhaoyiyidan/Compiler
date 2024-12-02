@@ -24,10 +24,12 @@ add_library(CodeGeneration
         header/LLVM_Part.h
         HelperFunction.cpp
         HelperFunction.h
+        header/BlockTree.h
+        INT.h
 )
 
 target_link_libraries(CodeGeneration PRIVATE LLVM)
-target_include_directories(CodeGeneration PRIVATE ${LLVM_INCLUDE_DIRS})
+target_include_directories(CodeGeneration PRIVATE ${LLVM_INCLUDE_DIRS}) #
 
 
 
