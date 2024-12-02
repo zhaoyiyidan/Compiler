@@ -48,12 +48,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="Now it can transonfrom signgle scope and single function. fix bug">
+      <change afterPath="$PROJECT_DIR$/CodeGeneration/INT.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/HelperFunction.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/HelperFunction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Syntax/header/statement/EXP.h" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/header/statement/EXP.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/scope.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/scope.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
@@ -76,6 +82,12 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-CodeGeneration" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -278,7 +290,13 @@
       <workItem from="1732881095581" duration="473000" />
       <workItem from="1732890363287" duration="5063000" />
       <workItem from="1732901307214" duration="651000" />
-      <workItem from="1733018775057" duration="8258000" />
+      <workItem from="1733018775057" duration="10057000" />
+      <workItem from="1733035164396" duration="4954000" />
+      <workItem from="1733041866624" duration="15610000" />
+      <workItem from="1733073366432" duration="506000" />
+      <workItem from="1733115464775" duration="2884000" />
+      <workItem from="1733134556851" duration="1156000" />
+      <workItem from="1733141557622" duration="3560000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -320,7 +338,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733029883241</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Now it can transonfrom signgle scope and single function. fix bug">
+      <option name="closed" value="true" />
+      <created>1733032061288</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733032061288</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Now it can transonfrom signgle scope and single function. fix bug">
+      <option name="closed" value="true" />
+      <created>1733134981315</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733134981315</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,10 +401,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
-          <line>159</line>
-          <option name="timeStamp" value="9" />
+          <line>103</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

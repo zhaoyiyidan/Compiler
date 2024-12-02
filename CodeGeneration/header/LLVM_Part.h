@@ -25,25 +25,46 @@
 #include <llvm/Support/CommandLine.h>   // 用于处理命令行参数
 #include <llvm/Support/FormattedStream.h> // 用于格式化输出
 //
-#include "vector"
+#include <vector>
+#include <deque>
+#include "BlockTree.h"
 class LLVM_Part {
 public:
     llvm::LLVMContext context;
     llvm::Module module;
     llvm::IRBuilder<> builder;
     llvm::Function *currentFunction;// when not used in the code, set it to nullptr
-    std::vector<llvm::BasicBlock*> blockStack;// when not use ,delet all elements
-    int pos=-1;
-    LLVM_Part(const std::string& name) : module(name, context), builder(context) {}// 创建LLVM上下文和模块
-    //  创建一个新的基本块在blockStack的末尾
+
+    std::shared_ptr<BlockTree> root;
+    std::shared_ptr<BlockTree> current;// 每次更改current 时，tem也要更改
+    // use smart pointer to manage the memory
+    llvm::BasicBlock* tem;//
+    LLVM_Part(const std::string& name) : module(name, context), builder(context) {
+
+    }// 创建LLVM上下文和模块
+
+    // create a new basic block,it  will change current block
     void CreateNewBlock(const std::string &name){
         if (currentFunction){
-        blockStack.push_back(llvm::BasicBlock::Create(context, name, currentFunction));}
-        else{
-            throw std::runtime_error("No function to create block");
+            auto block=llvm::BasicBlock::Create(context,name,currentFunction);
+            auto tree=std::make_shared<BlockTree>("Leaves",block);
+            if (root){
+            auto mid=std::make_shared<BlockTree>(name);
+            mid->SetTree(tree);
+            current->child.push_back(mid);
+            current=mid;
+            }
+            else{
+                root=std::make_shared<BlockTree>(name);
+                current=root;
+                current->SetTree(tree);
+            }
         }
     }
-
+    void SetCurrentRoot(std::shared_ptr<BlockTree> tree){
+        current=tree;
+        tem=current->block;
+    }
 };
 
 

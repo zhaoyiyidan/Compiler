@@ -6,10 +6,11 @@
 #define COMPILER_EXP_H
 #include <any>
 #include "../statement.h"
+#include "../HelperFunction.h"
 class EXP: public statement {
 public:
     std::unique_ptr<ASTnode> Left;
-    std::string value;
+    std::string value="null";
     std::unique_ptr<ASTnode> Right;
     bool IDEN=false;
     EXP(std::unique_ptr<ASTnode> Left,std::string value,std::unique_ptr<ASTnode> Right):Left(std::move(Left)),value(value),Right(std::move(Right)){}
@@ -28,11 +29,25 @@ public:
         }
     }
     std::string GetNodeType() override{
-        return "EXP";
+       std::string tem;
+       if (Left)
+       {
+           tem+=Left->GetNodeType();
+       }
+       if (value!="null")
+       {
+           tem += value;
+       }
+         if (Right)
+         {
+             tem += Right->GetNodeType();
+         }
+            return tem;
     }
     void accept(VistorAST &vistor) override{
         vistor.visit(*this);
     }
+
 };
 
 

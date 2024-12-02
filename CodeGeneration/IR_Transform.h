@@ -9,12 +9,16 @@
 #include "header/LLVM_Part.h"
 #include <string>
 #include "../Semantic/APIOfSemantic.h"
+#include "INT.h"
 class IR_Transform : public VistorAST {
+double condition;
+std::string BodyName="compoundStmt";
 public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
      SymbolTable symbolTable;// the whole symbol table of the program
      double ExistSymbol=false;// to distinguish whether the symbol table is empty
      int pos=-1;// the position of the current scope
+
     // override all the virtual functions in VistorAST
      void visit(const class ConstDecl &node) override;
      void visit(const class ConstDef &node) override;
@@ -53,12 +57,15 @@ public:
      void visit(const class StructDecl &node) override;
      void visit(const class StructBody &node) override;
      IR_Transform(std::string name):llvm_part(name){};
-     //
-     void CreateBasicBlock(const std::string &name);
+
 
      void CreateNewScope(ASTnode *node);
      void ExitScope();
-
+     double CalculateCondition(const class EXP &node);
+     std::string BlockToDo(int pos);
+     void DoBasicBlock(int position);
+     void BlockBr(std::shared_ptr<BlockTree> tree);
+     bool CombineTwoBranch(std::shared_ptr<BlockTree> ParaentTree,std::shared_ptr<BlockTree> LeftTree,std::shared_ptr<BlockTree> RightTree,int position);
 };
 
 

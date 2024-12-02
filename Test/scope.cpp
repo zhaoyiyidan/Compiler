@@ -5,12 +5,14 @@
 int main(){
     int a = 1;
     {
-        int b=2;
-        int d=3;
+        int b = 2;
         {
-         int c=3;
+            int d=2;
         }
-        int e=2;
+        int k=1;
+        {
+            int zzz=1;
+        }
     }
-    int f=3;
+     int c=3;
 }

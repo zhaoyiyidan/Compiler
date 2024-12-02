@@ -10,7 +10,7 @@ void IR_Transform::visit(const class ConstDecl &node){
     }
 }
 void IR_Transform::visit(const class ConstDef &node) {
-    llvm_part.builder.SetInsertPoint(llvm_part.blockStack.back());
+    llvm_part.builder.SetInsertPoint(llvm_part.current->block);
     if (!symbolTable.scopeStack.empty()&&symbolTable.ExistSymbol(node.identifier)){
         Symbol& symbol=symbolTable.GetTheSymbol(node.identifier);
         double value=symbol.value;
@@ -46,11 +46,6 @@ void IR_Transform::visit(const class ConstDef &node) {
 }
 void IR_Transform::visit(const class Decl &node) {}
 void IR_Transform::visit(const class FunctionDec &node){
-
-    // lvm::Function *func = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, node.name, &llvm_part.module);
-    // llvm::BasicBlock *entry = llvm::BasicBlock::Create(llvm_part.context, "entry", func);
-    // llvm_part.builder.SetInsertPoint(entry);
-    // llvm::Function::arg_iterator argsValues = func->arg_begin();
 
     std::vector<llvm::Type*> paramTypes;
     // create the parameters of the function
@@ -106,9 +101,12 @@ void IR_Transform::visit(const class FunctionDec &node){
     }
     llvm_part.currentFunction = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, node.name, &llvm_part.module);
     node.body->accept(*this);
+     this->BlockBr(llvm_part.root);
 
     // set it nullptr
     llvm_part.currentFunction= nullptr;
+    llvm_part.current= nullptr;
+    llvm_part.root= nullptr;
     // delete the last symbol table
 }
 void IR_Transform::visit(const class VarDecl &node) {
@@ -119,7 +117,12 @@ void IR_Transform::visit(const class VarDecl &node) {
 }
 void IR_Transform::visit(const class VarDef &node) {
     // handle the case no global variable
-    llvm_part.builder.SetInsertPoint(llvm_part.blockStack[pos]);
+    /*
+    if (llvm_part.current->block!=llvm_part.tem)// 两个不一样
+        std::runtime_error("1");
+    llvm_part.builder.SetInsertPoint(llvm_part.current->block);// here is the problem
+     */
+    llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);// no current block,but the last block of child
     if (!symbolTable.scopeStack.empty()&&symbolTable.ExistSymbol(node.identifier)){
         Symbol& symbol=symbolTable.GetTheSymbol(node.identifier);
         double value=symbol.value;
@@ -148,10 +151,13 @@ void IR_Transform::visit(const class VarDef &node) {
         else if (symbol.type=="bool"){
             llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
-        // create the variable
+
+        // basic block 有问题
+        // auto a=llvm::BasicBlock::Create(llvm_part.context,"2",llvm_part.currentFunction);
+        // llvm_part.builder.SetInsertPoint(a);
+
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
         llvm_part.builder.CreateStore(llvm_value, allocaInst);
-
     }
 }
 void IR_Transform::visit(const class AddExp &node)   {}
@@ -162,22 +168,27 @@ void IR_Transform::visit(const class compoundstmt &node){
    // get the non-const pointer of node
     compoundstmt *node_=const_cast<compoundstmt*>(&node);
     this->CreateNewScope(node_);
-    // if we have mutiple scope in the function
-    this->CreateBasicBlock("compoundStmt");
-    // record pos now
-    int pos_=pos;
+
+    // create a new block, and reset the current
+    llvm_part.CreateNewBlock(BodyName);
+    auto Whether=INT(0);
+    auto temRoot=llvm_part.current;
     for(auto &stmt : node.stmts){
-        // this->CreateNewSymbolTable(stmt.get());
-        stmt->accept(*this);
-        // this->DeleteSymbolTable();
-    }
-    // there is something we need to do here
-    if (llvm_part.blockStack.size()-1>pos_){
-        if (llvm_part.blockStack[pos_+1]->getName().str().substr(0,12)=="compoundStmt"){
-            llvm_part.builder.SetInsertPoint(llvm_part.blockStack[pos_]);
-            llvm_part.builder.CreateBr(llvm_part.blockStack[pos_+1]);
+        llvm_part.current=temRoot;
+        if (Whether.number==1){
+            BodyName="compoundstmt";
+            temRoot->condition.push_back(1);
+            llvm_part.CreateNewBlock("compoundstmt");
+            Whether.number=0;
         }
+        if (stmt->GetNodeType()=="compoundstmt"){
+            BodyName="compoundstmt";
+            temRoot->condition.push_back(1);
+            Whether.number=1;
+        }
+        stmt->accept(*this);
     }
+    // this->BlockBr(llvm_part.root);
     this->ExitScope();
 }
 void IR_Transform::visit(const class EqExp &node) {}
@@ -196,7 +207,12 @@ void IR_Transform::visit(const class BoolLiteral &node) {}
 void IR_Transform::visit(const class CharLiteral &node) {}
 void IR_Transform::visit(const class FloatLiteral &node) {}
 void IR_Transform::visit(const class FunctionType &node)     {}
-void IR_Transform::visit(const class IFStmt &node) {}
+void IR_Transform::visit(const class IFStmt &node) {
+    condition= evaluateExpression(node.condition->GetNodeType()).first;
+    BodyName="IfStmt";
+    node.body->accept(*this);
+    BodyName="compoundStmt";
+}
 void IR_Transform::visit(const class WhileStmt &node) {}
 void IR_Transform::visit(const class ForStmt &node) {}
 void IR_Transform::visit(const class LValue &node) {}
@@ -206,10 +222,7 @@ void IR_Transform::visit(const class EXP &node){}
 void IR_Transform::visit(const class FunctionParameters &node){}
 void IR_Transform::visit(const class StructDecl &node) {}
 void IR_Transform::visit(const class StructBody &node){}
-// it is used to create a new basic block
-void IR_Transform::CreateBasicBlock(const std::string &name){
-    llvm_part.CreateNewBlock(name);
-}
+
 
 
 void IR_Transform::CreateNewScope(ASTnode *node){
@@ -222,3 +235,69 @@ void IR_Transform::ExitScope(){
     symbolTable.ExitScope();
     pos--;
 }
+double IR_Transform::CalculateCondition( const class EXP &node){
+   // get the non-const pointer of node
+    EXP *node_=const_cast<EXP*>(&node);
+    return evaluateExpression(node_->GetNodeType()).first;
+}
+
+
+// given a block tree, we need to do br for each branch， it will creat Br for whole tree
+void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
+    if (tree->child.empty()){
+        return;
+    }
+
+    int a=0;
+    int b=1;
+    int Br[tree->child.size()];// to distinguish whether the branch is done
+    for(auto &i:Br){
+        i=0;
+    }
+    while (b<tree->child.size()){
+        if (tree->condition[b-1]==0){
+            continue;
+        }
+
+        if (Br[a]==0){
+        BlockBr(tree->child[a]);
+        Br[a]=1;
+        }
+        if (Br[b]==0){
+        BlockBr(tree->child[b]);
+        Br[b]=1;
+        }
+        if(CombineTwoBranch(tree,tree->child[a],tree->child[b],b)){
+            a++;
+            b++;
+        }
+        else{
+            b++;
+        }
+    }
+}
+bool IR_Transform::CombineTwoBranch(std::shared_ptr<BlockTree > ParaentTree,std::shared_ptr<BlockTree> LeftTree,std::shared_ptr<BlockTree> RightTree,int position){
+
+    if (position>ParaentTree->condition.size() || ParaentTree->condition[position-1]==0){
+        return false;
+    }
+    llvm::BasicBlock *left;
+    llvm::BasicBlock *right;
+    if (LeftTree->child.empty()){
+        left=LeftTree->block;
+    }
+    else{
+        left=LeftTree->FindRightMostLeaf(LeftTree)->block;
+    }
+    // same as above
+    if (RightTree->child.empty()){
+        right=RightTree->block;
+    }
+    else{
+        right=RightTree->FindLeftMostLeaf(RightTree)->block;
+    }
+    llvm_part.builder.SetInsertPoint(left);
+    llvm_part.builder.CreateBr(right);
+    return true;
+}
+

@@ -9,5 +9,4 @@
 
 std::pair<std::string, std::string> split(std::string str, std::string delimiter) ;
 
-
 #endif //COMPILER_HELPERFUNCTION_H
