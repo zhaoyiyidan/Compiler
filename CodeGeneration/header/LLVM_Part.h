@@ -47,8 +47,8 @@ public:
     void CreateNewBlock(const std::string &name){
         if (currentFunction){
             auto block=llvm::BasicBlock::Create(context,name,currentFunction);
-            auto tree=std::make_shared<BlockTree>("Leaves",block);
-            if (root){
+            auto tree=std::make_shared<BlockTree>(name,block);
+            if (root){ // if it is initailized
             auto mid=std::make_shared<BlockTree>(name);
             mid->SetTree(tree);
             current->child.push_back(mid);

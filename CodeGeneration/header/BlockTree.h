@@ -37,7 +37,6 @@ public:
     std::string name;
     std::shared_ptr<BlockTree> FindLeftMostLeaf(std::shared_ptr<BlockTree> node) {
         if (node == nullptr) return nullptr; // 如果节点为空，返回空
-
         // 如果当前节点没有子节点，说明它是叶节点
         if (node->child.empty()) {
             return node; // 返回当前节点（叶节点）
@@ -48,12 +47,10 @@ public:
 
     std::shared_ptr<BlockTree> FindRightMostLeaf(std::shared_ptr<BlockTree> node) {
         if (node == nullptr) return nullptr; // 如果节点为空，返回空
-
         // 如果当前节点没有子节点，说明它是叶节点
         if (node->child.empty()) {
             return node; // 返回当前节点（叶节点）
         }
-
         // 递归查找最右子节点
         return FindRightMostLeaf(node->child.back()); // 总是优先遍历最后一个子节点
     }

@@ -8,8 +8,10 @@
 #include "../statement.h"
 // use this to represent the set of a statement,view it as a body of a function
 class compoundstmt: public statement {
+
 public:
     std::vector<std::unique_ptr<ASTnode> >  stmts;//the stmt can be a Decl or a statement
+    std::string ASTNodeType="compoundstmt";
     compoundstmt(std::vector<std::unique_ptr<ASTnode> > stmts):stmts(std::move(stmts)){}
     void getNode() override{
         std::cout<<"{"<<" "<<std::endl;
@@ -20,7 +22,7 @@ public:
         std::cout<<"}"<<std::endl;
     }
     std::string GetNodeType() override{
-        return "compoundstmt";
+        return ASTNodeType;
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);

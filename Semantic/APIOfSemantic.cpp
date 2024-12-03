@@ -17,10 +17,11 @@ SymbolTable analysis(ASTnode *node){
     node->accept(analysis);
     return analysis.symbolTable;
 }
-void analysis(ASTnode *node, SymbolTable& sym){
-    Analysis analysis;
-    analysis.symbolTable=sym;
-    analysis.symbolTable.EnterScope();
-    node->accept(analysis);
-    sym=analysis.symbolTable;
+// change the symbol table and the analysis
+void TheAnalysis(ASTnode *node, Analysis &Theanalysis){
+    if (Theanalysis.symbolTable.scopeStack.empty()){
+    Theanalysis.symbolTable.EnterScope();// intialize the symbol table
+    }
+    node->accept(Theanalysis);
 }
+

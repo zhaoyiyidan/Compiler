@@ -9,7 +9,7 @@
 #include "../Syntax/header/module.h"
 SymbolTable analysis(const module &node);
 SymbolTable analysis(ASTnode *node);
-void analysis(ASTnode *node, SymbolTable& sym);
+void TheAnalysis(ASTnode *node,Analysis& Theanalysis);
 
 
 #endif //COMPILER_APIOFSEMANTIC_H

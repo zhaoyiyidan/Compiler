@@ -49,40 +49,7 @@ std::unique_ptr<ASTnode> ConstructFuncType(std:: string type) {
     return std::make_unique<FunctionType>(type);
 }
 std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-    /*
-    if (Lindex==Rindex) return nullptr;
-    auto vector= FindPrimary(tokens,Lindex+1,Rindex-1,"{","}");
-    if (vector.size()==0){
-        auto vector2= FindAllExisted(tokens,Lindex,Rindex,";");
-        vector2.insert(vector2.begin(),Lindex);
-        std::vector<std::unique_ptr<ASTnode> > stmts;
-        // problem here
-        for (int i=0;i<vector2.size()-1;i++){
-            auto stmt= ConstructItem(tokens,vector2[i]+1,vector2[i+1]);
-            stmts.push_back(std::move(stmt));
-        }
-        return std::make_unique<compoundstmt>(std::move(stmts));
-    }
-    else{
-        vector.insert(vector.begin(),Lindex);
-        vector.push_back(Rindex);
-        std::vector<std::unique_ptr<ASTnode> > stmts;
-        for (int i=0;i<vector.size()-1;i++){
-            if (i%2==1){
-                stmts.push_back(std::move(ConstructCompoundStmt(tokens,vector[i],vector[i+1])));
-            }
-            else{
-                auto vector2= FindAllExisted(tokens,vector[i],vector[i+1],";");
-                vector2.insert(vector2.begin(),Lindex);
-                for (int j=0;j<vector2.size()-2;j++){
-                    stmts.push_back(ConstructItem(tokens,vector2[j]+1,vector2[j+1]));
-                }
-            }
-        }
-        return std::make_unique<compoundstmt>(std::move(stmts));
-    }
-    */
-    // Lindex should be {
+
     std::vector<std::unique_ptr<ASTnode> > stmts;
     int index=Lindex+1;
     while (index<Rindex){
@@ -99,8 +66,8 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
         }
         else if (a=="if"){
             auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
-            if (tokens[tem.second].second=="else" && tokens[tem.second+1].second!="if" ){
-                auto pair= FindCorrsponding(tokens,tem.second,Rindex,"{","}");
+            if (tokens[tem.second+1].second=="else" && tokens[tem.second+2].second!="if" ){
+                auto pair= FindCorrsponding(tokens,tem.second+1,Rindex,"{","}");
                 stmts.push_back(ConstructIFStmt(tokens,index,pair.second));
                 index=pair.second+1;
             }
@@ -112,8 +79,8 @@ std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::
         // else if as a new if statement
         else if (a=="else" && tokens[index+1].second=="if"){
             auto tem= FindCorrsponding(tokens,index,Rindex,"{","}");
-            if (tokens[tem.second].second=="else" && tokens[tem.second+1].second!="if" ){
-                auto pair= FindCorrsponding(tokens,tem.second,Rindex,"{","}");
+            if (tokens[tem.second+1].second=="else" && tokens[tem.second+2].second!="if" ){
+                auto pair= FindCorrsponding(tokens,tem.second+1,Rindex,"{","}");
                 stmts.push_back(ConstructIFStmt(tokens,index,pair.second));
                 index=pair.second+1;
             }
@@ -530,21 +497,24 @@ std::unique_ptr<ASTnode> ConstructForStmt(const std::vector<std::pair<std::strin
 // do not consider the else part now
 std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex){
     // Lindex should be if
-    if (tokens[Lindex].second!="if"){
-        LackOf("if");
-    }
     auto pair= FindCorrsponding(tokens,Lindex,Rindex,"(",")");
-    auto condition=ConstructExp(tokens,Lindex+2,pair.second-1);// the condition
+    auto pair3= FindLeftExisted(tokens,Lindex,Rindex,"(");
+    auto condition=ConstructExp(tokens,pair3.second+1,pair.second-1);// the condition
     auto pair2= FindCorrsponding(tokens,pair.second+1,Rindex,"{","}");
     auto body=ConstructCompoundStmt(tokens,pair.second+1,pair2.second);
+
     if (pair2.second==Rindex) {
         return std::make_unique<IFStmt>(std::move(condition), std::move(body), nullptr);
     }
     else {
-        if (tokens[pair2.second].second=="else"){
+        if (tokens[pair2.second+1].second=="else"){
             auto body2=ConstructCompoundStmt(tokens,pair2.second+1,Rindex);
+            // do a dynmaic cast
+            auto elsebody=dynamic_cast<compoundstmt*>(body2.get());
+            elsebody->ASTNodeType="ELseStmt";
             return std::make_unique<IFStmt>(std::move(condition), std::move(body), std::move(body2));
         }
+        std::runtime_error("error in ConstructIFStmt");
     }
     // if (){} else{}
 }

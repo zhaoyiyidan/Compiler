@@ -226,6 +226,7 @@ void Analysis::visit(const StructBody &node) {
    }
    symbolTable.ExitScope();
 }
+// given a EXO node, it will calculate its value
 double Analysis::calculate(const class EXP &node) {
     // probelm here
     auto Left=dynamic_cast<class EXP*>(node.Left.get());
