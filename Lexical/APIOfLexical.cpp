@@ -21,6 +21,9 @@ bool hasBeenComment = false;
 bool hasError = false;
 int row = 1;
 
+// Global variable for one line analysis
+bool oneLine = false;
+
 struct Error {
     int row;       //The row of the error
     string message;     //Report what is the kind of the error
@@ -239,8 +242,16 @@ void dealWithComment(string& input, int& pos, char peek) {
     char next = input[pos + 1];
     input.pop_back();
     if (peek == '/' && next == '/') {
-        pos = input.length() + 2;
-        return;
+        if (!oneLine) {
+            pos = input.length() + 2;
+            return;
+        } else {
+            while (peek != '\n') {
+                peek = input[pos];
+                pos ++;
+            }
+            return;
+        }
     }
 
     hasBeenComment = true;;
@@ -344,7 +355,7 @@ void dealWithChar(string&input, int&pos, char peek) {
         }
     }
 
-    if (pos == input.size() || input[pos + 2] != '\'' || pos + 2 < input.length()) {
+    if (pos == input.size() || input[pos + 2] != '\'' || pos + 2 > input.length()) {
         string message = "There cannot be two characters in a char. ";
         error(hasError, message, row);
         return;
@@ -412,5 +423,12 @@ vector<pair<string,string> > gettoken(string filename) {
     filename = path.filename().string();
     singleGetToken(filename);
     filesystem::current_path(originalDir);
+    return output;
+}
+
+vector<pair<string,string> > gettoken(string source, string filename) {
+    source += '\n';
+    oneLine = true;
+    words(source, hasBeenComment, hasError, row, filename);
     return output;
 }
