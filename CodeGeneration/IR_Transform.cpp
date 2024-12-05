@@ -49,13 +49,18 @@ void IR_Transform::visit(const class FunctionDec &node){
 
     std::vector<llvm::Type*> paramTypes;
     // create the parameters of the function
+    std::vector<std::string> parametersTodelet;
     for(auto &arg : node.parameters){
         if (!arg){
             continue;
         }
-        auto pair=std::make_pair(arg->GetNodeType(),"," );
-        std::string type=pair.first;
-        std::string name=pair.second;
+        auto pair=(arg->GetNodeType());
+        int position_=pair.find(",");
+        std::string type=pair.substr(0,position_);
+        std::string name=pair.substr(position_+1,pair.size()-1);
+        parametersTodelet.push_back(name);
+        // insert the parameter into the symbol table
+        analysis1.symbolTable.InsertSymbol(name, type,666);
         llvm::Type *llvm_type;
         // depending on the type of the function
         if (type=="int"){
@@ -76,7 +81,7 @@ void IR_Transform::visit(const class FunctionDec &node){
         else if (type=="bool"){
             llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
-        paramTypes.push_back(llvm_type);
+        paramTypes.push_back(llvm_type);// 没有正确声明
     }
     llvm::FunctionType *funcType;
     // depending on the type of the function, we need to create the function with the correct type
@@ -100,15 +105,27 @@ void IR_Transform::visit(const class FunctionDec &node){
         funcType = llvm::FunctionType::get(llvm::Type::getInt1Ty(llvm_part.context), paramTypes,false);
     }
     llvm_part.currentFunction = llvm::Function::Create(funcType, llvm::Function::ExternalLinkage, node.name, &llvm_part.module);
+    // 参数命名
+    int i=0;
+    for (auto &arg : llvm_part.currentFunction->args()) {
+        arg.setName(parametersTodelet[i]);
+        i++;
+    }
+
     node.body->accept(*this);
     this->BlockBr(llvm_part.root);
+
     // set it nullptr
+    for (auto &parameter:parametersTodelet){
+        analysis1.symbolTable.deleteSymbol(parameter);
+    }
     llvm_part.currentFunction= nullptr;
     llvm_part.current= nullptr;
     llvm_part.root= nullptr;
     // delete the last symbol table
 }
 void IR_Transform::visit(const class VarDecl &node) {
+    if (node.VarDef)
     node.VarDef->accept(*this);
     for(auto &varDef : node.VarDefs){
         varDef->accept(*this);
@@ -125,32 +142,50 @@ void IR_Transform::visit(const class VarDef &node) {
     if (!analysis1.symbolTable.scopeStack.empty()&&analysis1.symbolTable.ExistSymbol(node.identifier)){
         Symbol& symbol=analysis1.symbolTable.GetTheSymbol(node.identifier);
         double value=symbol.value;
+        // funciton call or use function parameters
+        if (value==std::numeric_limits<double>::quiet_NaN()){
+
+        }
+        node.expression->accept(*this);
         // construct the type of the variable
         llvm::Type *llvm_type;
         llvm::Value *llvm_value;
+        llvm_value=returnValue;
         if (symbol.type=="int"){
             llvm_type=llvm::Type::getInt32Ty(llvm_part.context);
-            llvm_value=llvm::ConstantInt::get(llvm_type, value);
+            //llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="void"){
             llvm_type=llvm::Type::getVoidTy(llvm_part.context);
         }
         else if (symbol.type=="float"){
             llvm_type=llvm::Type::getFloatTy(llvm_part.context);
-            llvm_value=llvm::ConstantFP::get(llvm_type, value);
+            // llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="double"){
             llvm_type=llvm::Type::getDoubleTy(llvm_part.context);
-            llvm_value=llvm::ConstantFP::get(llvm_type, value);
+            // llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="char"){
             llvm_type=llvm::Type::getInt8Ty(llvm_part.context);
-            llvm_value=llvm::ConstantInt::get(llvm_type, value);
+            // llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="bool"){
             llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
+        if (llvm_value == nullptr) {
+            throw std::runtime_error("llvm_value is a null pointer.");
+        }
+        if (allocaInst == nullptr) {
+            throw std::runtime_error("allocaInst is a null pointer.");
+        }
+        llvm::Type* valueType = llvm_value->getType();
+        llvm::Type* allocaType = allocaInst->getAllocatedType();
+
+        if (valueType != allocaType) {
+            throw std::runtime_error("Type mismatch: llvm_value type does not match allocaInst type.");
+        }
         llvm_part.builder.CreateStore(llvm_value, allocaInst);
     }
 }
@@ -158,7 +193,6 @@ void IR_Transform::visit(const class AddExp &node)   {}
 void IR_Transform::visit(const class AssignStmt &node) {}
 void IR_Transform::visit(const class BinaryOperator &node){}
 void IR_Transform::visit(const class compoundstmt &node){
-
    // get the non-const pointer of node
     compoundstmt *node_=const_cast<compoundstmt*>(&node);
     this->CreateNewScope(node_);
@@ -233,12 +267,13 @@ void IR_Transform::visit(const class BreakStmt &node)   {}
 void IR_Transform::visit(const class ContinueStmt &node) {}
 void IR_Transform::visit(const class EXP &node){
     condition=analysis1.calculate(node);
+    if (std::isnan(condition)){
+        returnValue=calculateEXP(node);
+    }
 }
 void IR_Transform::visit(const class FunctionParameters &node){}
 void IR_Transform::visit(const class StructDecl &node) {}
 void IR_Transform::visit(const class StructBody &node){}
-
-
 
 void IR_Transform::CreateNewScope(ASTnode *node){
     TheAnalysis(node,analysis1);
@@ -248,7 +283,6 @@ void IR_Transform::ExitScope(){
     analysis1.symbolTable.ExitScope();
     pos--;
 }
-
 // given a block tree, we need to do br for each branch， it will creat Br for whole tree
 void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
     if (tree->child.empty()){
@@ -357,4 +391,144 @@ bool IR_Transform::CombineTwoBranch(std::shared_ptr<BlockTree> &LeftTree,std::sh
     llvm_part.builder.SetInsertPoint(left);
     llvm_part.builder.CreateBr(right);
     return true;
+}
+
+llvm::Value* IR_Transform::ApplyOp(const std::string& op, llvm::Value* a, llvm::Value* b) {
+    if (op == "!") return llvm_part.builder.CreateNot(a, "not");
+    else if (!b) return nullptr;
+    else if (op == "+") return llvm_part.builder.CreateAdd(a,b,"sum");
+    else if (op == "-") return llvm_part.builder.CreateSub(a, b, "sub");
+    else if (op == "*") return llvm_part.builder.CreateMul(a, b, "mul");
+    else if (op == "/") return llvm_part.builder.CreateSDiv(a, b, "div");
+    else if (op == "%") return llvm_part.builder.CreateSRem(a, b, "mod");
+    else if (op == "&&") return llvm_part.builder.CreateAnd(a,b,"bool");
+    else if (op == "||") return llvm_part.builder.CreateOr(a,b,"bool");
+    else if (op == ">") return llvm_part.builder.CreateICmpSGT(a, b, "gt");
+    else if (op == "<") return llvm_part.builder.CreateICmpSLT(a, b, "lt");
+    else if (op == ">=") return llvm_part.builder.CreateICmpSGE(a, b, "ge");
+    else if (op == "<=") return llvm_part.builder.CreateICmpSLE(a, b, "le");
+    else if (op == "==") return llvm_part.builder.CreateICmpEQ(a, b, "eq");
+    else if (op == "!=") return llvm_part.builder.CreateICmpNE(a, b, "ne");
+
+    throw std::runtime_error("Unknown operator");
+}
+
+std::string IR_Transform::getTypeString(llvm::Type *type) {
+    if (type->isIntegerTy()) {
+        unsigned bitWidth = type->getIntegerBitWidth();
+        if (bitWidth == 8) {
+            return "char";  // 8位整数表示 char
+        } else {
+            return "int";
+        }
+    } else if (type->isFloatTy()) {
+        return "float";
+    } else if (type->isDoubleTy()) {
+        return "double";
+    } else if (type->isPointerTy()) {
+        return nullptr;
+    } else if (type->isVoidTy()) {
+        return "void";
+    } else if (type->isFunctionTy()) {
+        return "function";
+    } else if (type->isArrayTy()) {
+        return "array of " + getTypeString(type->getArrayElementType());
+    } else if (type->isStructTy()) {
+        return "struct";
+    } else {
+        return "unknown type";
+    }
+}
+llvm::Value* IR_Transform::calculateEXP(const class EXP &node) {
+    auto Left=dynamic_cast<class EXP*>(node.Left.get());
+    auto Right=dynamic_cast<class EXP*>(node.Right.get());
+    llvm::Value* left_value= nullptr;
+    llvm::Value* right_value= nullptr;
+    if (Left){
+        left_value= calculateEXP(*Left);
+    }
+    if (Right){
+        right_value= calculateEXP(*Right);
+    }
+    // 1
+    /*
+    if (left_value==std::numeric_limits<double>::quiet_NaN()||right_value==std::numeric_limits<double>::quiet_NaN()){
+        // return std::numeric_limits<double>::quiet_NaN();
+    }
+     */
+    if (Left)
+        return ApplyOp(node.value,left_value,right_value);
+
+    // if it use function paramenters
+    if (analysis1.symbolTable.ExistSymbol(node.value)&&node.IDEN){
+        auto value= analysis1.symbolTable.GetSymbol(node.value).second;
+        if (std::isnan(value)){// it uses function parameters
+            // return std::numeric_limits<double>::quiet_NaN();
+            for (auto &arg:llvm_part.currentFunction->args()){
+                if (arg.getName().str()==node.value){
+                    return &arg;
+                }
+            }
+        }
+        else {
+            std::runtime_error("function para in calcaEXP");
+            // return value;
+        }
+    }
+    // if it is a funciton call
+    if (!analysis1.symbolTable.ExistSymbol(node.value)&&node.IDEN){
+        // return std::numeric_limits<double>::quiet_NaN();
+        std::string funcionName=node.value.substr(0,node.value.find("("));
+        auto function=llvm_part.module.getFunction(funcionName);
+        if (!function){
+            std::runtime_error("Function not found");
+        }
+        std::string parameters=node.value.substr(node.value.find("(")+1,node.value.size()-1);
+        std::vector<std::string> parameter;
+        // spilt the parameters
+        for (int i=0;i<parameters.size();i++){
+            if (parameters[i]==','){
+                continue;
+            }
+            std::string tem;
+            while (parameters[i]!=','&&i<parameters.size()){
+                tem+=parameters[i];
+                i++;
+            }
+            parameter.push_back(tem);
+        }
+        // create the parameters
+        std::vector<llvm::Value*> args;
+        int i=0;
+        for (auto &arg : function->args()) {
+            if (getTypeString(arg.getType())=="bool"){
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), std::stoi(parameter[i])));
+            }
+            else if(getTypeString(arg.getType())=="int"){
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt32Ty(llvm_part.context), std::stoi(parameter[i])));
+            }
+            else if(getTypeString(arg.getType())=="float"){
+                args.push_back(llvm::ConstantFP::get(llvm::Type::getFloatTy(llvm_part.context), std::stof(parameter[i])));
+            }
+            else if(getTypeString(arg.getType())=="double"){
+                args.push_back(llvm::ConstantFP::get(llvm::Type::getDoubleTy(llvm_part.context), std::stod(parameter[i])));
+            }
+            else if(getTypeString(arg.getType())=="char"){
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(llvm_part.context), parameter[i][0]));
+            }
+            i++;
+        }
+        return llvm_part.builder.CreateCall(function, args);
+    }
+    else{
+        try {
+            auto value = std::stod(node.value);
+            return llvm::ConstantFP::get(llvm_part.context, llvm::APFloat(value));
+        }
+        catch (std::exception &e){
+            char ch=node.value[1];
+            double value=ch;
+            return llvm::ConstantFP::get(llvm_part.context, llvm::APFloat(value));
+        }
+    }
 }

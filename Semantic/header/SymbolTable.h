@@ -97,6 +97,15 @@ public:
         }
         throw std::runtime_error("No such symbol");
     }
+    void deleteSymbol(const std::string &name){
+        for (auto it=scopeStack.rbegin();it!=scopeStack.rend();it++){
+            if (it->ExistSymbol(name)){
+                it->DeleteSymbol(name);
+                return;
+            }
+        }
+        throw std::runtime_error("No such symbol");
+    }
 
 };
 

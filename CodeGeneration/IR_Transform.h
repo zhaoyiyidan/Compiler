@@ -4,7 +4,7 @@
 
 #ifndef COMPILER_IR_TRANSFORM_H
 #define COMPILER_IR_TRANSFORM_H
-
+#include <cmath>
 
 #include "header/LLVM_Part.h"
 #include <string>
@@ -17,6 +17,7 @@ public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
      double ExistSymbol=false;// to distinguish whether the symbol table is empty
      Analysis analysis1;
+     llvm::Value* returnValue;
      int pos=-1;// the position of the current scope
     // override all the virtual functions in VistorAST
      void visit(const class ConstDecl &node) override;
@@ -55,7 +56,9 @@ public:
      void visit(const class FunctionParameters &node) override;
      void visit(const class StructDecl &node) override;
      void visit(const class StructBody &node) override;
-     IR_Transform(std::string name):llvm_part(name){};
+     IR_Transform(std::string name):llvm_part(name){
+            analysis1.symbolTable.EnterScope();
+     }
 
      void CreateNewScope(ASTnode *node);
      void ExitScope();
@@ -64,6 +67,9 @@ public:
      void BlockBr(std::shared_ptr<BlockTree> tree);
      bool CombineTwoBranch(std::shared_ptr<BlockTree> &ParaentTree,std::shared_ptr<BlockTree> &LeftTree,std::shared_ptr<BlockTree> &RightTree,int position);
      bool CombineTwoBranch(std::shared_ptr<BlockTree> &LeftTree,std::shared_ptr<BlockTree> &RightTree,bool condition);
+     llvm::Value* ApplyOp(const std::string& op, llvm::Value* a, llvm::Value* b);
+     std::string getTypeString(llvm::Type *type);
+     llvm::Value* calculateEXP(const class EXP &node);
 };
 
 

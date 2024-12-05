@@ -43,6 +43,15 @@ public:
         } 
         throw std::runtime_error("No such symbol");
     }
+    // delet a symbol
+    void DeleteSymbol(const std::string &name){
+        if (ExistSymbol(name)){
+            symbols.erase(name);
+        }
+        else{
+            throw std::runtime_error("No such symbol");
+        }
+    }
     Scope(){}
 };
 

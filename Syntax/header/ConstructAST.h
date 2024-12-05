@@ -88,6 +88,7 @@
     std::unique_ptr<ASTnode> ConstructStructDecl(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     std::unique_ptr<ASTnode> ConstructStructBody(const std::vector<std::pair<std::string,std::string> > &tokens,int Lindex,int Rindex);
     // here is some helper function
+    EXP ConstructEXP(const std::string str);
 
 
 

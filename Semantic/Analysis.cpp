@@ -276,7 +276,6 @@ double Analysis::applyOp(const std::string& op, double a, double b) {
     else if (op == "!=") return a != b;
     else if (op == "!") return !static_cast<bool>(a);
     throw std::runtime_error("Unknown operator");
-
 }
 void Analysis::visit(const FunctionParameters &node) {
    auto type=node.type->GetNodeType();

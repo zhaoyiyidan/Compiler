@@ -47,18 +47,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="use a BlockTree.h .Now it can support mutiple scope">
-      <change afterPath="$PROJECT_DIR$/Test/Var.cpp" afterDir="false" />
+    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support if else now ,but do not support else if">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/APIOfSemantic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/APIOfSemantic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/APIOfSemantic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/APIOfSemantic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lexical/APIOfLexical.h" beforeDir="false" afterPath="$PROJECT_DIR$/Lexical/APIOfLexical.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semantic/Analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/Analysis.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semantic/header/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/header/Scope.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semantic/header/SymbolTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/header/SymbolTable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Syntax/header/statement/compoundstmt.h" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/header/statement/compoundstmt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Syntax/header/ConstructAST.h" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/header/ConstructAST.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Syntax/header/Declaration/VarDecl.h" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/header/Declaration/VarDecl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Functioncall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Functioncall.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
@@ -109,28 +109,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ File.source5.cpp.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.Compiler.executor&quot;: &quot;Run&quot;,
-    &quot;CMake Application.my_project.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;code&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.source5.cpp.executor": "Run",
+    "CMake Application.Compiler.executor": "Run",
+    "CMake Application.my_project.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "ctest.advertisement.all.test.configuration.is.created": "true",
+    "git-widget-placeholder": "code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CodeGeneration/Source" />
@@ -300,7 +300,8 @@
       <workItem from="1733134556851" duration="1156000" />
       <workItem from="1733141557622" duration="3635000" />
       <workItem from="1733209735279" duration="10545000" />
-      <workItem from="1733233805664" duration="712000" />
+      <workItem from="1733233805664" duration="4543000" />
+      <workItem from="1733289947652" duration="11537000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -366,7 +367,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733145552009</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="support if else now ,but do not support else if">
+      <option name="closed" value="true" />
+      <created>1733234554381</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733234554381</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,16 +416,12 @@
     <MESSAGE value="Now it can transonfrom signgle scope and single function" />
     <MESSAGE value="Now it can transonfrom signgle scope and single function. fix bug" />
     <MESSAGE value="use a BlockTree.h .Now it can support mutiple scope" />
-    <option name="LAST_COMMIT_MESSAGE" value="use a BlockTree.h .Now it can support mutiple scope" />
+    <MESSAGE value="support if else now ,but do not support else if" />
+    <option name="LAST_COMMIT_MESSAGE" value="support if else now ,but do not support else if" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
-          <line>103</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
         <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp</url>
           <line>50</line>
@@ -434,8 +439,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
-          <line>102</line>
-          <option name="timeStamp" value="52" />
+          <line>441</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
+          <line>462</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

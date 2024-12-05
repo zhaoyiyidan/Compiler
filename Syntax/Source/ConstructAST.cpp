@@ -583,3 +583,4 @@ std::unique_ptr<ASTnode> ConstructStructBody(const std::vector<std::pair<std::st
     }
     return std::make_unique<StructBody>(std::move(members));
 }
+

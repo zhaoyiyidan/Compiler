@@ -1,13 +1,10 @@
+int mul(double a,double c){
+    double k=a+c;
+}
 int add(int a, int b) {
-    int d=a+b;
-    return d;
+    int c=a+b;
+    int h=mul(1,2);
 }
-int mul(int a, int b) {
-    int d=a*b;
-    return d;
-}
-int mains() {
-    int e = 1, f = 2;
-    int c = add(e, f);
-    int g = mul(e, f);
+int main() {
+    int d=add(1,2);
 }

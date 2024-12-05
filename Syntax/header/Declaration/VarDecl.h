@@ -33,7 +33,12 @@ public:
         std::cout << ";" << std::endl;
     }
     std::string GetNodeType() override{
-        return type->GetNodeType()+","+VarDef->GetNodeType();
+        std::string str;
+        if (type)
+        str+=type->GetNodeType();
+        if (VarDef)
+        str+=","+VarDef->GetNodeType();
+        return str;
     }
     void accept(VistorAST &vistor) override {
         vistor.visit(*this);
