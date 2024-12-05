@@ -10,38 +10,58 @@ void IR_Transform::visit(const class ConstDecl &node){
     }
 }
 void IR_Transform::visit(const class ConstDef &node) {
+    // now it is same as VarDef
     llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);
     if (!analysis1.symbolTable.scopeStack.empty()&&analysis1.symbolTable.ExistSymbol(node.identifier)){
         Symbol& symbol=analysis1.symbolTable.GetTheSymbol(node.identifier);
-        double value=symbol.value;
         // construct the type of the variable
         llvm::Type *llvm_type;
         llvm::Value *llvm_value;
+        // 计算前，先规定type
+        TypeUsedTem=symbol.type;
+        node.expression->accept(*this);// calculate the llvm value of the variable
+        llvm_value=returnValue;
         if (symbol.type=="int"){
             llvm_type=llvm::Type::getInt32Ty(llvm_part.context);
-            llvm_value=llvm::ConstantInt::get(llvm_type, value);
+            // llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="void"){
             llvm_type=llvm::Type::getVoidTy(llvm_part.context);
         }
         else if (symbol.type=="float"){
             llvm_type=llvm::Type::getFloatTy(llvm_part.context);
-            llvm_value=llvm::ConstantFP::get(llvm_type, value);
+            // llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="double"){
             llvm_type=llvm::Type::getDoubleTy(llvm_part.context);
-            llvm_value=llvm::ConstantFP::get(llvm_type, value);
+            // llvm_value=llvm::ConstantFP::get(llvm_type, value);
         }
         else if (symbol.type=="char"){
             llvm_type=llvm::Type::getInt8Ty(llvm_part.context);
-            llvm_value=llvm::ConstantInt::get(llvm_type, value);
+            // llvm_value=llvm::ConstantInt::get(llvm_type, value);
         }
         else if (symbol.type=="bool"){
-            llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
+            // llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
-        // create the variable
+
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
+        llvm::Type* valueType = llvm_value->getType();
+        llvm::Type* allocaType = allocaInst->getAllocatedType();
+        // 错误检查
+        if (llvm_value == nullptr) {
+            throw std::runtime_error("llvm_value is a null pointer.");
+        }
+        if (allocaInst == nullptr) {
+            throw std::runtime_error("allocaInst is a null pointer.");
+        }
+        if (valueType != allocaType) {
+            throw std::runtime_error("Type mismatch: llvm_value type does not match allocaInst type.");
+        }
+
         llvm_part.builder.CreateStore(llvm_value, allocaInst);
+        // set the allocaInst of the symbol
+        symbol.allocaInst=allocaInst;
+        symbol.llvmValue=llvm_value;
     }
 }
 void IR_Transform::visit(const class Decl &node) {}
@@ -141,15 +161,12 @@ void IR_Transform::visit(const class VarDef &node) {
     llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);// no current block,but the last block of child
     if (!analysis1.symbolTable.scopeStack.empty()&&analysis1.symbolTable.ExistSymbol(node.identifier)){
         Symbol& symbol=analysis1.symbolTable.GetTheSymbol(node.identifier);
-        double value=symbol.value;
-        // funciton call or use function parameters
-        if (value==std::numeric_limits<double>::quiet_NaN()){
-
-        }
-        node.expression->accept(*this);
         // construct the type of the variable
         llvm::Type *llvm_type;
         llvm::Value *llvm_value;
+        //
+        TypeUsedTem=symbol.type;
+        node.expression->accept(*this);// calculate the llvm value of the variable
         llvm_value=returnValue;
         if (symbol.type=="int"){
             llvm_type=llvm::Type::getInt32Ty(llvm_part.context);
@@ -174,23 +191,48 @@ void IR_Transform::visit(const class VarDef &node) {
             llvm_type=llvm::Type::getInt1Ty(llvm_part.context);
         }
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
+
+        llvm::Type* valueType = llvm_value->getType();
+        llvm::Type* allocaType = allocaInst->getAllocatedType();
+        // 错误检查
         if (llvm_value == nullptr) {
             throw std::runtime_error("llvm_value is a null pointer.");
         }
         if (allocaInst == nullptr) {
             throw std::runtime_error("allocaInst is a null pointer.");
         }
-        llvm::Type* valueType = llvm_value->getType();
-        llvm::Type* allocaType = allocaInst->getAllocatedType();
-
         if (valueType != allocaType) {
             throw std::runtime_error("Type mismatch: llvm_value type does not match allocaInst type.");
         }
         llvm_part.builder.CreateStore(llvm_value, allocaInst);
+        // set the allocaInst of the symbol
+        symbol.allocaInst=allocaInst;
+        symbol.llvmValue=llvm_value;
+    }
+    else {
+        throw std::runtime_error("Symbol not found");
     }
 }
 void IR_Transform::visit(const class AddExp &node)   {}
-void IR_Transform::visit(const class AssignStmt &node) {}
+void IR_Transform::visit(const class AssignStmt &node) {
+    llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);
+    if (!analysis1.symbolTable.scopeStack.empty()&&analysis1.symbolTable.ExistSymbol(node.identifier)){
+        Symbol& symbol=analysis1.symbolTable.GetTheSymbol(node.identifier);
+        llvm::Value *llvm_value;
+        TypeUsedTem=symbol.type;
+        node.expression->accept(*this);
+        llvm_value=returnValue;
+        if (symbol.allocaInst){
+        llvm_part.builder.CreateStore(llvm_value, symbol.allocaInst);
+        }
+        else{
+            throw std::runtime_error("Symbol not found");
+        }
+    }
+    else {
+        throw std::runtime_error("Symbol not found");
+    }
+}
 void IR_Transform::visit(const class BinaryOperator &node){}
 void IR_Transform::visit(const class compoundstmt &node){
    // get the non-const pointer of node
@@ -267,9 +309,7 @@ void IR_Transform::visit(const class BreakStmt &node)   {}
 void IR_Transform::visit(const class ContinueStmt &node) {}
 void IR_Transform::visit(const class EXP &node){
     condition=analysis1.calculate(node);
-    if (std::isnan(condition)){
-        returnValue=calculateEXP(node);
-    }
+    returnValue=calculateEXP(node,TypeUsedTem);
 }
 void IR_Transform::visit(const class FunctionParameters &node){}
 void IR_Transform::visit(const class StructDecl &node) {}
@@ -439,27 +479,20 @@ std::string IR_Transform::getTypeString(llvm::Type *type) {
         return "unknown type";
     }
 }
-llvm::Value* IR_Transform::calculateEXP(const class EXP &node) {
+llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
     auto Left=dynamic_cast<class EXP*>(node.Left.get());
     auto Right=dynamic_cast<class EXP*>(node.Right.get());
     llvm::Value* left_value= nullptr;
     llvm::Value* right_value= nullptr;
     if (Left){
-        left_value= calculateEXP(*Left);
+        left_value= calculateEXP(*Left,type);
     }
     if (Right){
-        right_value= calculateEXP(*Right);
+        right_value= calculateEXP(*Right,type);
     }
-    // 1
-    /*
-    if (left_value==std::numeric_limits<double>::quiet_NaN()||right_value==std::numeric_limits<double>::quiet_NaN()){
-        // return std::numeric_limits<double>::quiet_NaN();
-    }
-     */
     if (Left)
         return ApplyOp(node.value,left_value,right_value);
 
-    // if it use function paramenters
     if (analysis1.symbolTable.ExistSymbol(node.value)&&node.IDEN){
         auto value= analysis1.symbolTable.GetSymbol(node.value).second;
         if (std::isnan(value)){// it uses function parameters
@@ -471,8 +504,8 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node) {
             }
         }
         else {
-            std::runtime_error("function para in calcaEXP");
-            // return value;
+            //
+            return analysis1.symbolTable.GetTheSymbol(node.value).llvmValue;
         }
     }
     // if it is a funciton call
@@ -522,8 +555,22 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node) {
     }
     else{
         try {
-            auto value = std::stod(node.value);
-            return llvm::ConstantFP::get(llvm_part.context, llvm::APFloat(value));
+            // acoording to type ,generate different llvm::value
+            if (type == "int") {
+        return llvm::ConstantInt::get(llvm::Type::getInt32Ty(llvm_part.context), std::stoi(node.value));
+}
+            else if (type == "float") {
+    return llvm::ConstantFP::get(llvm::Type::getFloatTy(llvm_part.context), std::stof(node.value));
+}
+            else if (type == "double") {
+    return llvm::ConstantFP::get(llvm::Type::getDoubleTy(llvm_part.context), std::stod(node.value));
+}
+            else if (type == "char") {
+    return llvm::ConstantInt::get(llvm::Type::getInt8Ty(llvm_part.context), node.value[0]);
+}
+            else if (type == "bool") {
+    return llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), node.value == "true" ? 1 : 0);
+}
         }
         catch (std::exception &e){
             char ch=node.value[1];

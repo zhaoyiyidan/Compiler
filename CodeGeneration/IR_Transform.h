@@ -13,6 +13,7 @@
 class IR_Transform : public VistorAST {
 double condition;
 std::string BodyName="compoundStmt";
+std::string TypeUsedTem;
 public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
      double ExistSymbol=false;// to distinguish whether the symbol table is empty
@@ -69,7 +70,7 @@ public:
      bool CombineTwoBranch(std::shared_ptr<BlockTree> &LeftTree,std::shared_ptr<BlockTree> &RightTree,bool condition);
      llvm::Value* ApplyOp(const std::string& op, llvm::Value* a, llvm::Value* b);
      std::string getTypeString(llvm::Type *type);
-     llvm::Value* calculateEXP(const class EXP &node);
+     llvm::Value* calculateEXP(const class EXP &node,std::string type);
 };
 
 

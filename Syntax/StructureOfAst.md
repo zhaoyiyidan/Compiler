@@ -11,13 +11,13 @@
 ## this is the structure of AST ,may be changed in the future
 对照这个和header文件中的class定义，可以理解AST的结构
 
-CompUnit      ::= {Decl | FuncDef |Strcut};
+CompUnit      ::= {Decl | FuncDef |Strcut}; // 
 Struct        ::= "struct" IDENT "{" {Decl | FuncDef} "}";
-Decl          ::= ConstDecl | VarDecl;
-ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";
-BType         ::= "int" | "char" | "float" | "double" | "void";
-ConstDef      ::= IDENT [" [" constEXP "]" ] "=" ConstInitVal;
-ConstInitVal  ::= ConstExp | "{" [ConstInitVal {"," ConstInitVal}] "}";
+Decl          ::= ConstDecl | VarDecl; // 
+ConstDecl     ::= "const" BType ConstDef {"," ConstDef} ";";// 
+BType         ::= "int" | "char" | "float" | "double" | "void";// 
+ConstDef      ::= IDENT [" [" constEXP "]" ] "=" ConstInitVal;// 
+ConstInitVal  ::= ConstExp | "{" [ConstInitVal {"," ConstInitVal}] "}";// 
 
 constEXP      ::= EXP;
 VarDecl       ::= BType VarDef {"," VarDef} ";";
