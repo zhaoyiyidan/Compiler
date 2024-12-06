@@ -14,6 +14,7 @@ class IR_Transform : public VistorAST {
 double condition;
 std::string BodyName="compoundStmt";
 std::string TypeUsedTem;
+std::string TypeForReturn;
 public:
      LLVM_Part llvm_part=LLVM_Part("test_module");
      double ExistSymbol=false;// to distinguish whether the symbol table is empty

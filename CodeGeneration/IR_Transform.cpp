@@ -106,6 +106,8 @@ void IR_Transform::visit(const class FunctionDec &node){
     llvm::FunctionType *funcType;
     // depending on the type of the function, we need to create the function with the correct type
     std::string type=node.type->GetNodeType();
+    //
+    TypeForReturn=type;
     if (type=="int"){
         funcType = llvm::FunctionType::get(llvm::Type::getInt32Ty(llvm_part.context), paramTypes,false);
     }
@@ -277,7 +279,17 @@ void IR_Transform::visit(const class LOrExp &node) {}
 void IR_Transform::visit(const class MulExp &node) {}
 void IR_Transform::visit(const class PrimaryExp &node) {}
 void IR_Transform::visit(const class RelExp &node) {}
-void IR_Transform::visit(const class ReturnStmt &node) {}
+void IR_Transform::visit(const class ReturnStmt &node) {
+    llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);
+    if (node.Expression){
+        TypeUsedTem=TypeForReturn;
+        node.Expression->accept(*this);
+        llvm_part.builder.CreateRet(returnValue);
+    }
+    else{
+        llvm_part.builder.CreateRetVoid();
+    }
+}
 void IR_Transform::visit(const class UnaryExp &node) {}
 void IR_Transform::visit(const class UnaryOp &node) {}
 void IR_Transform::visit(const class IntegerLiteral &node) {}
