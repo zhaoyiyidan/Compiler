@@ -47,19 +47,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support function call now">
+    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support return stmt">
+      <change afterPath="$PROJECT_DIR$/Test/ForStmt.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semantic/header/Symbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/header/Symbol.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Syntax/StructureOfAst.md" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/StructureOfAst.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Functioncall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Functioncall.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semantic/Analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Semantic/Analysis.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +301,7 @@
       <workItem from="1733209735279" duration="10545000" />
       <workItem from="1733233805664" duration="4543000" />
       <workItem from="1733289947652" duration="11558000" />
-      <workItem from="1733404352611" duration="3112000" />
+      <workItem from="1733404352611" duration="14931000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -385,7 +383,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733386427470</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="support assign">
+      <option name="closed" value="true" />
+      <created>1733407603707</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733407603708</updated>
+    </task>
+    <task id="LOCAL-00012" summary="support return stmt">
+      <option name="closed" value="true" />
+      <created>1733472954976</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733472954976</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +442,9 @@
     <MESSAGE value="use a BlockTree.h .Now it can support mutiple scope" />
     <MESSAGE value="support if else now ,but do not support else if" />
     <MESSAGE value="support function call now" />
-    <option name="LAST_COMMIT_MESSAGE" value="support function call now" />
+    <MESSAGE value="support assign" />
+    <MESSAGE value="support return stmt" />
+    <option name="LAST_COMMIT_MESSAGE" value="support return stmt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -447,6 +463,11 @@
           <url>file://$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp</url>
           <line>36</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
+          <line>237</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

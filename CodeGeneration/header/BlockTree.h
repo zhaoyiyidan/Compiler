@@ -34,6 +34,8 @@ public:
     llvm::BasicBlock* block;
     std::vector<std::shared_ptr<BlockTree> > child;
     std::vector<double> condition;
+    llvm::Value* ValueCondition= nullptr;
+
     std::string name;
     std::shared_ptr<BlockTree> FindLeftMostLeaf(std::shared_ptr<BlockTree> node) {
         if (node == nullptr) return nullptr; // 如果节点为空，返回空

@@ -133,7 +133,6 @@ void IR_Transform::visit(const class FunctionDec &node){
         arg.setName(parametersTodelet[i]);
         i++;
     }
-
     node.body->accept(*this);
     this->BlockBr(llvm_part.root);
 
@@ -240,22 +239,19 @@ void IR_Transform::visit(const class compoundstmt &node){
    // get the non-const pointer of node
     compoundstmt *node_=const_cast<compoundstmt*>(&node);
     this->CreateNewScope(node_);
-
     // create a new block, and reset the current
     llvm_part.CreateNewBlock(BodyName);
-    bool flagcombine=true;
-    if (BodyName=="IFStmt"){
-        flagcombine=false;
-    }
     auto Whether=INT(0);
     auto temRoot=llvm_part.current;
     for(auto &stmt : node.stmts){
         llvm_part.current=temRoot;
-        if (Whether.number==1&&BodyName=="compoundstmt"){
+        // when get out ,create a new compoundstmt
+        if (Whether.number==1){
             temRoot->condition.push_back(1);
             llvm_part.CreateNewBlock("compoundstmt");
             Whether.number=0;
         }
+        // for {}
         if (stmt->GetNodeType()=="compoundstmt"&&BodyName!="ElseStmt"){
             BodyName="compoundstmt";
             temRoot->condition.push_back(1);
@@ -267,6 +263,10 @@ void IR_Transform::visit(const class compoundstmt &node){
         }
         if (BodyName=="ElseStmt"){
             Whether.number=1;
+        }
+        if (stmt->GetNodeType()=="ForStmt"){
+            Whether.number=1;
+            temRoot->condition.push_back(1);
         }
         stmt->accept(*this);
     }
@@ -315,7 +315,47 @@ void IR_Transform::visit(const class IFStmt &node) {
     }
 }
 void IR_Transform::visit(const class WhileStmt &node) {}
-void IR_Transform::visit(const class ForStmt &node) {}
+void IR_Transform::visit(const class ForStmt &node) {
+    // creat a blovk
+    llvm_part.CreateNewBlock("ForStmt");
+    llvm_part.current->child.pop_back();
+   // create entry block
+    llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
+    auto entrytree=std::make_shared<BlockTree>("entry",entry);
+    llvm_part.current->SetTree(entrytree);
+    // intilaize i
+    auto initialzie=dynamic_cast<VarDecl*>(node.init.get());
+    TheAnalysis(initialzie,analysis1);
+    // define i in  block
+    node.init->accept(*this);
+    // create the loop block
+    llvm::BasicBlock* brcond=llvm::BasicBlock::Create(llvm_part.context,"loop",llvm_part.currentFunction);
+    auto brcondtree=std::make_shared<BlockTree>("loop",brcond);
+    llvm_part.current->SetTree(brcondtree);
+    // create br
+    llvm_part.builder.SetInsertPoint(entry);
+    llvm_part.builder.CreateBr(brcond);
+    llvm_part.builder.SetInsertPoint(brcond);
+    // 如何处理跳转
+    TypeUsedTem="int";
+    node.condition->accept(*this);
+    // create the body part
+    BodyName="ForStmtBody";
+    node.body->accept(*this);
+    // increase i
+    node.increment->accept(*this);
+    llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);
+    llvm_part.builder.CreateBr(brcond);
+    auto body=llvm_part.current->child.back();
+    auto exit=llvm::BasicBlock::Create(llvm_part.context,"exit",llvm_part.currentFunction);
+    auto exittree=std::make_shared<BlockTree>("exit",exit);
+    llvm_part.current->SetTree(exittree);
+    // 条件跳转
+    TypeUsedTem="int";
+    llvm_part.builder.SetInsertPoint(brcond);
+    node.condition->accept(*this);
+    llvm_part.builder.CreateCondBr(returnValue,body->block,exit);
+}
 void IR_Transform::visit(const class LValue &node) {}
 void IR_Transform::visit(const class BreakStmt &node)   {}
 void IR_Transform::visit(const class ContinueStmt &node) {}
@@ -338,6 +378,9 @@ void IR_Transform::ExitScope(){
 // given a block tree, we need to do br for each branch， it will creat Br for whole tree
 void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
     if (tree->child.empty()){
+        return;
+    }
+    if (tree->name=="ForStmt"){
         return;
     }
     int a=0;
@@ -516,8 +559,11 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
             }
         }
         else {
-            //
-            return analysis1.symbolTable.GetTheSymbol(node.value).llvmValue;
+            // 从内存中加载IDEN的值
+            auto IDEN=analysis1.symbolTable.GetTheSymbol(node.value);
+            auto address=IDEN.allocaInst;
+            auto value=llvm_part.builder.CreateLoad(llvm::Type::getInt32Ty(llvm_part.context),address,"iLoad");
+            return value;
         }
     }
     // if it is a funciton call

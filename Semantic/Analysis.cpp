@@ -17,6 +17,7 @@ void Analysis::visit(const FunctionDec &node) {
      node.body->accept(*this);// it is equaivalent to visit(const compoundstmt &node)
      symbolTable.ExitScope();;
 } //
+// do not exit the scope here , when you use the function, you should exit the scope
 void Analysis::visit(const compoundstmt &node) {
     symbolTable.EnterScope();
     for (auto &stmt: node.stmts) {
