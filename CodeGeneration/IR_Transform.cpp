@@ -264,7 +264,7 @@ void IR_Transform::visit(const class compoundstmt &node){
         if (BodyName=="ElseStmt"){
             Whether.number=1;
         }
-        if (stmt->GetNodeType()=="ForStmt"){
+        if (stmt->GetNodeType()=="ForStmt"||stmt->GetNodeType()=="WhileStmt"){
             Whether.number=1;
             temRoot->condition.push_back(1);
         }
@@ -314,7 +314,34 @@ void IR_Transform::visit(const class IFStmt &node) {
         currentRoot->condition.push_back(0);
     }
 }
-void IR_Transform::visit(const class WhileStmt &node) {}
+void IR_Transform::visit(const class WhileStmt &node) {
+    llvm_part.CreateNewBlock("WhileStmt");
+    // 弹出第一个
+    llvm_part.current->child.pop_back();
+    // do a dynamic cast to get EXP node
+    auto EXPNode=dynamic_cast<EXP*>(node.condition.get());
+    auto IDEN=EXPNode->Left->GetNodeType();
+    // get the symbol of the variable
+    auto symbol=analysis1.symbolTable.GetTheSymbol(IDEN);
+    // create a loop condition block
+    llvm::BasicBlock* loopCond=llvm::BasicBlock::Create(llvm_part.context,"loopCond",llvm_part.currentFunction);
+    auto loopCondTree=std::make_shared<BlockTree>("loopCond",loopCond);
+    llvm_part.current->SetTree(loopCondTree);
+    llvm_part.builder.SetInsertPoint(loopCond);
+    TypeUsedTem=symbol.type;
+    node.condition->accept(*this);
+    // create the body block
+    BodyName="WhileStmtBody";
+    node.body->accept(*this);
+    auto body=llvm_part.current->child.back();
+    // create the exit block
+    auto exit=llvm::BasicBlock::Create(llvm_part.context,"exit",llvm_part.currentFunction);
+    auto exitTree=std::make_shared<BlockTree>("exit",exit);
+    llvm_part.current->SetTree(exitTree);
+    // create br
+    llvm_part.builder.SetInsertPoint(loopCond);
+    llvm_part.builder.CreateCondBr(returnValue,body->block,exit);
+}
 void IR_Transform::visit(const class ForStmt &node) {
     // creat a blovk
     llvm_part.CreateNewBlock("ForStmt");
@@ -326,6 +353,8 @@ void IR_Transform::visit(const class ForStmt &node) {
     // intilaize i
     auto initialzie=dynamic_cast<VarDecl*>(node.init.get());
     TheAnalysis(initialzie,analysis1);
+    auto b=dynamic_cast<VarDef*>(initialzie->VarDef.get());
+    std::string i=b->identifier;
     // define i in  block
     node.init->accept(*this);
     // create the loop block
@@ -355,6 +384,8 @@ void IR_Transform::visit(const class ForStmt &node) {
     llvm_part.builder.SetInsertPoint(brcond);
     node.condition->accept(*this);
     llvm_part.builder.CreateCondBr(returnValue,body->block,exit);
+    // delet i
+    analysis1.symbolTable.deleteSymbol(i);
 }
 void IR_Transform::visit(const class LValue &node) {}
 void IR_Transform::visit(const class BreakStmt &node)   {}
@@ -380,7 +411,7 @@ void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
     if (tree->child.empty()){
         return;
     }
-    if (tree->name=="ForStmt"){
+    if (tree->name=="ForStmt"||tree->name=="WhileStmt"){
         return;
     }
     int a=0;
@@ -628,7 +659,44 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
 }
             else if (type == "bool") {
     return llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), node.value == "true" ? 1 : 0);
-}
+}            else {
+                std::string str=node.value;
+                try {
+                    int intValue = std::stoi(str); // Convert string to int
+                    return llvm::ConstantInt::get(llvm::Type::getInt32Ty(llvm_part.context), intValue);  // Return an LLVM int32 value
+                } catch (const std::invalid_argument&) {
+                    // Not an int
+                }
+
+                // Try to convert to float
+                try {
+                    float floatValue = std::stof(str); // Convert string to float
+                    return llvm::ConstantFP::get(llvm::Type::getFloatTy(llvm_part.context), floatValue);  // Return an LLVM float value
+                } catch (const std::invalid_argument&) {
+                    // Not a float
+                }
+                // Try to convert to double
+                try {
+                    double doubleValue = std::stod(str); // Convert string to double
+                    return llvm::ConstantFP::get(llvm::Type::getDoubleTy(llvm_part.context), doubleValue);  // Return an LLVM double value
+                } catch (const std::invalid_argument&) {
+                    // Not a double
+                }
+                // Try to convert to bool
+                if (str == "true") {
+                    return llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), 1); // Return an LLVM bool (true)
+                } else if (str == "false") {
+                    return llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), 0); // Return an LLVM bool (false)
+                }
+
+                // Try to convert to char (single character)
+                if (str.size() == 1) {
+                    char charValue = str[0]; // Single character
+                    return llvm::ConstantInt::get(llvm::Type::getInt8Ty(llvm_part.context), static_cast<int>(charValue)); // Return an LLVM char value
+                }
+                // If none of the conversions work, throw an exception or return nullptr
+                throw std::runtime_error("Unsupported string format or type");
+            }
         }
         catch (std::exception &e){
             char ch=node.value[1];
