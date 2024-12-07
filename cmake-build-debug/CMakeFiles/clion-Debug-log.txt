@@ -2,6 +2,6 @@
 -- LLVM_INCLUDE_DIRS: /usr/local/opt/llvm/include
 -- LLVM_LIBRARY_DIRS: /usr/local/opt/llvm/lib
 -- LLVM_VERSION: 
--- Configuring done (0.9s)
--- Generating done (0.1s)
+-- Configuring done (1.8s)
+-- Generating done (0.3s)
 -- Build files have been written to: /Users/zhaokunxiang/clion/compiler/cmake-build-debug

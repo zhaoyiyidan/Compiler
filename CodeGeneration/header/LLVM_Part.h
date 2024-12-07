@@ -61,6 +61,19 @@ public:
             }
         }
     }
+    void CreateNewBlockWi(const std::string &name){
+        if (currentFunction){
+            if (root){ // if it is initailized
+                auto mid=std::make_shared<BlockTree>(name);
+                current->child.push_back(mid);
+                current=mid;
+            }
+            else{
+                root=std::make_shared<BlockTree>(name);
+                current=root;
+            }
+        }
+    }
     void SetCurrentRoot(std::shared_ptr<BlockTree> tree){
         current=tree;
         tem=current->block;

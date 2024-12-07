@@ -250,6 +250,7 @@ void IR_Transform::visit(const class compoundstmt &node){
             else{
             temRoot->condition.push_back(1);
             llvm_part.CreateNewBlock("compoundstmt");
+            temRoot=llvm_part.current;// 更新temRoot
             Whether.number=0;
             }
         }
@@ -295,9 +296,7 @@ void IR_Transform::visit(const class CharLiteral &node) {}
 void IR_Transform::visit(const class FloatLiteral &node) {}
 void IR_Transform::visit(const class FunctionType &node)     {}
 void IR_Transform::visit(const class IFStmt &node) {
-    llvm_part.CreateNewBlock("IFStmt");
-    // 弹出第一个
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("IFStmt");
     // create entry block
     llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
     auto entrytree=std::make_shared<BlockTree>("entry",entry);
@@ -343,9 +342,7 @@ void IR_Transform::visit(const class IFStmt &node) {
     }
 }
 void IR_Transform::visit(const class WhileStmt &node) {
-    llvm_part.CreateNewBlock("WhileStmt");
-    // 弹出第一个
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("WhileStmt");
     // do a dynamic cast to get EXP node
     auto EXPNode=dynamic_cast<EXP*>(node.condition.get());
     auto IDEN=EXPNode->Left->GetNodeType();
@@ -378,8 +375,7 @@ void IR_Transform::visit(const class WhileStmt &node) {
 }
 void IR_Transform::visit(const class ForStmt &node) {
     // creat a blovk
-    llvm_part.CreateNewBlock("ForStmt");
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("ForStmt");
    // create entry block
     llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
     auto entrytree=std::make_shared<BlockTree>("entry",entry);
