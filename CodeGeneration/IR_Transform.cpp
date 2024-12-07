@@ -167,8 +167,13 @@ void IR_Transform::visit(const class VarDef &node) {
         llvm::Value *llvm_value;
         //
         TypeUsedTem=symbol.type;
+        if (node.expression){
         node.expression->accept(*this);// calculate the llvm value of the variable
         llvm_value=returnValue;
+        }
+        else{
+        llvm_value= nullptr;
+        }
         if (symbol.type=="int"){
             llvm_type=llvm::Type::getInt32Ty(llvm_part.context);
             //llvm_value=llvm::ConstantInt::get(llvm_type, value);
@@ -193,19 +198,9 @@ void IR_Transform::visit(const class VarDef &node) {
         }
         llvm::AllocaInst *allocaInst = llvm_part.builder.CreateAlloca(llvm_type, nullptr, node.identifier);
 
-        llvm::Type* valueType = llvm_value->getType();
-        llvm::Type* allocaType = allocaInst->getAllocatedType();
-        // 错误检查
-        if (llvm_value == nullptr) {
-            throw std::runtime_error("llvm_value is a null pointer.");
-        }
-        if (allocaInst == nullptr) {
-            throw std::runtime_error("allocaInst is a null pointer.");
-        }
-        if (valueType != allocaType) {
-            throw std::runtime_error("Type mismatch: llvm_value type does not match allocaInst type.");
-        }
+        if (llvm_value){
         llvm_part.builder.CreateStore(llvm_value, allocaInst);
+        }
         // set the allocaInst of the symbol
         symbol.allocaInst=allocaInst;
         symbol.llvmValue=llvm_value;
@@ -246,30 +241,31 @@ void IR_Transform::visit(const class compoundstmt &node){
     for(auto &stmt : node.stmts){
         llvm_part.current=temRoot;
         // when get out ,create a new compoundstmt
+        // 如果if 出去 马上就是一个while 或者for 错误
         if (Whether.number==1){
+            std::string type=stmt->GetNodeType();
+            if (type=="ForStmt"||type=="WhileStmt"||type=="IFStmt"){
+                temRoot->condition.push_back(1);
+            }
+            else{
             temRoot->condition.push_back(1);
             llvm_part.CreateNewBlock("compoundstmt");
             Whether.number=0;
+            }
         }
         // for {}
-        if (stmt->GetNodeType()=="compoundstmt"&&BodyName!="ElseStmt"){
-            BodyName="compoundstmt";
+        if (stmt->GetNodeType()=="compoundstmt"&&BodyName=="compoundstmt"){
             temRoot->condition.push_back(1);
             Whether.number=1;
         }
-        // creat a new block when getting out of the if statement else
-        if (stmt->GetNodeType()=="IFStmt"){
-            Whether.number=1;
-        }
-        if (BodyName=="ElseStmt"){
-            Whether.number=1;
-        }
-        if (stmt->GetNodeType()=="ForStmt"||stmt->GetNodeType()=="WhileStmt"){
+        // for if,for,while stmt
+        if (stmt->GetNodeType()=="ForStmt"||stmt->GetNodeType()=="WhileStmt"||stmt->GetNodeType()=="IFStmt"){
             Whether.number=1;
             temRoot->condition.push_back(1);
         }
         stmt->accept(*this);
     }
+    llvm_part.current=temRoot;
     this->ExitScope();
 }
 void IR_Transform::visit(const class EqExp &node) {}
@@ -299,19 +295,51 @@ void IR_Transform::visit(const class CharLiteral &node) {}
 void IR_Transform::visit(const class FloatLiteral &node) {}
 void IR_Transform::visit(const class FunctionType &node)     {}
 void IR_Transform::visit(const class IFStmt &node) {
-    // do a dyanmic cast to get the condition of the if statement
-    node.condition->accept(*this);
-    BodyName="IFStmt";
-    auto currentRoot=llvm_part.current;
-    currentRoot->condition.push_back(condition);
+    llvm_part.CreateNewBlock("IFStmt");
+    // 弹出第一个
+    llvm_part.current->child.pop_back();
+    // create entry block
+    llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
+    auto entrytree=std::make_shared<BlockTree>("entry",entry);
+    llvm_part.current->SetTree(entrytree);
+    auto a=llvm_part.current;
+    BodyName="IFStmtBody";
     node.body->accept(*this);
     BodyName="compoundstmt";
+    auto Leftbody=llvm_part.current->FindLeftMostLeaf(llvm_part.current)->block;
+    auto RightBody=llvm_part.current->FindRightMostLeaf(llvm_part.current)->block;
+    // else if body exist ?
+    llvm::BasicBlock* Leftelsebody=nullptr;
+    llvm::BasicBlock* Rightelsebody=nullptr;
     if (node.else_body){
-        BodyName="ElseStmt";
-        llvm_part.current=currentRoot;
+        llvm_part.current=a;
+        BodyName="IFStmtElseBody";
         node.else_body->accept(*this);
         BodyName="compoundstmt";
-        currentRoot->condition.push_back(0);
+        Leftelsebody=llvm_part.current->FindLeftMostLeaf(llvm_part.current)->block;
+        Rightelsebody=llvm_part.current->FindRightMostLeaf(llvm_part.current)->block;
+    }
+    // create the exit block
+    auto exit=llvm::BasicBlock::Create(llvm_part.context,"exit",llvm_part.currentFunction);
+    auto exittree=std::make_shared<BlockTree>("exit",exit);
+    a->SetTree(exittree);
+    // create Condbr
+    llvm_part.builder.SetInsertPoint(entry);
+    node.condition->accept(*this);
+    if (node.else_body)
+    {
+        llvm_part.builder.SetInsertPoint(entry);
+        llvm_part.builder.CreateCondBr(returnValue,Leftbody,Leftelsebody);
+    // create br
+    llvm_part.builder.SetInsertPoint(RightBody);
+    llvm_part.builder.CreateBr(exit);
+    llvm_part.builder.SetInsertPoint(Rightelsebody);
+    llvm_part.builder.CreateBr(exit);
+    }
+    else {
+        llvm_part.builder.CreateCondBr(returnValue,Leftbody,exit);
+        llvm_part.builder.SetInsertPoint(RightBody);
+        llvm_part.builder.CreateBr(exit);
     }
 }
 void IR_Transform::visit(const class WhileStmt &node) {
@@ -327,20 +355,26 @@ void IR_Transform::visit(const class WhileStmt &node) {
     llvm::BasicBlock* loopCond=llvm::BasicBlock::Create(llvm_part.context,"loopCond",llvm_part.currentFunction);
     auto loopCondTree=std::make_shared<BlockTree>("loopCond",loopCond);
     llvm_part.current->SetTree(loopCondTree);
-    llvm_part.builder.SetInsertPoint(loopCond);
-    TypeUsedTem=symbol.type;
-    node.condition->accept(*this);
+    auto a=llvm_part.current;
     // create the body block
     BodyName="WhileStmtBody";
     node.body->accept(*this);
-    auto body=llvm_part.current->child.back();
+    BodyName="compoundstmt";
+    // find the left most leaf and right most leaf in body
+    auto LeftLeaves=llvm_part.current->FindLeftMostLeaf(llvm_part.current);
+    auto RightLeaves=llvm_part.current->FindRightMostLeaf(llvm_part.current);
     // create the exit block
     auto exit=llvm::BasicBlock::Create(llvm_part.context,"exit",llvm_part.currentFunction);
     auto exitTree=std::make_shared<BlockTree>("exit",exit);
-    llvm_part.current->SetTree(exitTree);
-    // create br
+    a->SetTree(exitTree);
+    // create condbr
     llvm_part.builder.SetInsertPoint(loopCond);
-    llvm_part.builder.CreateCondBr(returnValue,body->block,exit);
+    node.condition->accept(*this);
+    llvm_part.builder.CreateCondBr(returnValue,LeftLeaves->block,exit);
+    // create br
+    llvm_part.builder.SetInsertPoint(RightLeaves->block);
+    llvm_part.builder.CreateBr(loopCond);
+
 }
 void IR_Transform::visit(const class ForStmt &node) {
     // creat a blovk
@@ -355,35 +389,37 @@ void IR_Transform::visit(const class ForStmt &node) {
     TheAnalysis(initialzie,analysis1);
     auto b=dynamic_cast<VarDef*>(initialzie->VarDef.get());
     std::string i=b->identifier;
-    // define i in  block
     node.init->accept(*this);
     // create the loop block
     llvm::BasicBlock* brcond=llvm::BasicBlock::Create(llvm_part.context,"loop",llvm_part.currentFunction);
     auto brcondtree=std::make_shared<BlockTree>("loop",brcond);
     llvm_part.current->SetTree(brcondtree);
-    // create br
+    // create br in entry block
     llvm_part.builder.SetInsertPoint(entry);
     llvm_part.builder.CreateBr(brcond);
-    llvm_part.builder.SetInsertPoint(brcond);
-    // 如何处理跳转
-    TypeUsedTem="int";
-    node.condition->accept(*this);
+    auto a=llvm_part.current;
     // create the body part
     BodyName="ForStmtBody";
     node.body->accept(*this);
-    // increase i
+    BodyName="compoundstmt";
+    // find the left most leaf and right most leaf
+    auto LeftLeaves=llvm_part.current->FindLeftMostLeaf(llvm_part.current);
+    auto RightLeaves=llvm_part.current->FindRightMostLeaf(llvm_part.current);
+    // increase i in right most leaf
+    auto rightLeaf1=llvm_part.current->FindRightMostLeaf1(llvm_part.current);
+    llvm_part.current=rightLeaf1;
     node.increment->accept(*this);
-    llvm_part.builder.SetInsertPoint(llvm_part.current->child.back()->block);
+    // create br in right most leaf
+    llvm_part.builder.SetInsertPoint(RightLeaves->block);
     llvm_part.builder.CreateBr(brcond);
-    auto body=llvm_part.current->child.back();
+    // create the exit block
     auto exit=llvm::BasicBlock::Create(llvm_part.context,"exit",llvm_part.currentFunction);
     auto exittree=std::make_shared<BlockTree>("exit",exit);
-    llvm_part.current->SetTree(exittree);
-    // 条件跳转
-    TypeUsedTem="int";
+    a->SetTree(exittree);
+    // create condbr in left most leaf
     llvm_part.builder.SetInsertPoint(brcond);
     node.condition->accept(*this);
-    llvm_part.builder.CreateCondBr(returnValue,body->block,exit);
+    llvm_part.builder.CreateCondBr(returnValue,LeftLeaves->block,exit);
     // delet i
     analysis1.symbolTable.deleteSymbol(i);
 }
@@ -411,7 +447,11 @@ void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
     if (tree->child.empty()){
         return;
     }
-    if (tree->name=="ForStmt"||tree->name=="WhileStmt"){
+    if (tree->name=="ForStmt"||tree->name=="WhileStmt"||tree->name=="IFStmt"){
+        // do block for the child
+        for (auto &i:tree->child){
+            BlockBr(i);
+        }
         return;
     }
     int a=0;
@@ -433,43 +473,12 @@ void IR_Transform::BlockBr(std::shared_ptr<BlockTree> tree){
         BlockBr(tree->child[b]);
         Br[b]=1;
         }
-        if (tree->child[b]->name=="IFStmt"){
-            bool tem=tree->condition[b-1];
-            // first br
-            if (tem){
-                if (tree->child[b])
-                CombineTwoBranch(tree->child[a],tree->child[b],true);
-            }
-            else{
-                if (tree->child[b+1])
-                CombineTwoBranch(tree->child[a],tree->child[b+1],true);
-            }
-            // second br
-            if (b+1>=tree->child.size()){
-                break;
-            }
-            if ( tree->child[b+1]->name=="ElseStmt"){
-                if (tree->child[b+2]){
-                CombineTwoBranch(tree->child[b],tree->child[b+2],true);
-                CombineTwoBranch(tree->child[b+1],tree->child[b+2],true);
-                }
-                a=b+2;
-                b=b+3;
-            }
-            else if ( tree->child[b+1]->name!="ElseStmt"){
-                CombineTwoBranch(tree->child[b],tree->child[b+1],true);
-                a=b+1;
-                b=b+2;
-            }
-        }
-        else {
             if (CombineTwoBranch(tree, tree->child[a], tree->child[b], b)) {
                 a++;
                 b++;
             } else {
                 b++;
             }
-        }
     }
 }
 bool IR_Transform::CombineTwoBranch(std::shared_ptr<BlockTree > &ParaentTree,std::shared_ptr<BlockTree> &LeftTree,std::shared_ptr<BlockTree> &RightTree,int position){
@@ -643,6 +652,7 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
         return llvm_part.builder.CreateCall(function, args);
     }
     else{
+        /*
         try {
             // acoording to type ,generate different llvm::value
             if (type == "int") {
@@ -659,7 +669,9 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
 }
             else if (type == "bool") {
     return llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), node.value == "true" ? 1 : 0);
+
 }            else {
+         */
                 std::string str=node.value;
                 try {
                     int intValue = std::stoi(str); // Convert string to int
@@ -697,11 +709,13 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
                 // If none of the conversions work, throw an exception or return nullptr
                 throw std::runtime_error("Unsupported string format or type");
             }
-        }
+
+        /*
         catch (std::exception &e){
             char ch=node.value[1];
             double value=ch;
             return llvm::ConstantFP::get(llvm_part.context, llvm::APFloat(value));
         }
-    }
+         */
+
 }

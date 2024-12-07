@@ -49,7 +49,7 @@ std::unique_ptr<ASTnode> ConstructFuncType(std:: string type) {
     return std::make_unique<FunctionType>(type);
 }
 std::unique_ptr<ASTnode> ConstructCompoundStmt(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {
-
+    // Lindex should be {
     std::vector<std::unique_ptr<ASTnode> > stmts;
     int index=Lindex+1;
     while (index<Rindex){
@@ -508,10 +508,7 @@ std::unique_ptr<ASTnode> ConstructIFStmt(const std::vector<std::pair<std::string
     }
     else {
         if (tokens[pair2.second+1].second=="else"){
-            auto body2=ConstructCompoundStmt(tokens,pair2.second+1,Rindex);
-            // do a dynmaic cast
-            auto elsebody=dynamic_cast<compoundstmt*>(body2.get());
-            elsebody->ASTNodeType="ELseStmt";
+            auto body2=ConstructCompoundStmt(tokens,pair2.second+2,Rindex);
             return std::make_unique<IFStmt>(std::move(condition), std::move(body), std::move(body2));
         }
         std::runtime_error("error in ConstructIFStmt");

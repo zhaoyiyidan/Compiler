@@ -46,6 +46,15 @@ public:
         // 递归查找最左子节点
         return FindLeftMostLeaf(node->child[0]); // 总是优先遍历第一个子节点
     }
+    std::shared_ptr<BlockTree> FindLeftMostLeaf1(std::shared_ptr<BlockTree> node) {
+        if (node == nullptr) return nullptr; // 如果节点为空，返回空
+        // 如果当前节点没有子节点，说明它是叶节点
+        if (node->child[0]->child.empty()) {
+            return node;
+        }
+        // 递归查找最左子节点
+        return FindLeftMostLeaf(node->child[0]); // 总是优先遍历第一个子节点
+    }
 
     std::shared_ptr<BlockTree> FindRightMostLeaf(std::shared_ptr<BlockTree> node) {
         if (node == nullptr) return nullptr; // 如果节点为空，返回空
@@ -56,7 +65,15 @@ public:
         // 递归查找最右子节点
         return FindRightMostLeaf(node->child.back()); // 总是优先遍历最后一个子节点
     }
-
+    std::shared_ptr<BlockTree> FindRightMostLeaf1(std::shared_ptr<BlockTree> node) {
+        if (node == nullptr) return nullptr; // 如果节点为空，返回空
+        // 如果当前节点没有子节点，说明它是叶节点
+        if (node->child.back()->child.empty()) {
+            return node;
+        }
+        // 递归查找最右子节点
+        return FindRightMostLeaf(node->child.back()); // 总是优先遍历最后一个子节点
+    }
     BlockTree(const std::string  &str, llvm::BasicBlock* theblock){
         name=str;
         block=theblock;

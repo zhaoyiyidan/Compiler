@@ -2,15 +2,19 @@
 // Created by 赵鲲翔 on 2024/12/6.
 //
 
+
 int main(){
-    if(2>1)
-    {
-    for (int i=0;i<10;i++){
-        int a=0;
+    int a;
+    if (true){
+         a=1;
     }
-    int k=0;
-    while(k<3){
-        k++;
+    else{
+        a=2;
     }
+    while(a<2){
+        a=1;
+        if (a==1){
+            a=2;
+        }
     }
 }
