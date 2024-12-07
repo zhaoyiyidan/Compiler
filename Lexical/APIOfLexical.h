@@ -13,6 +13,7 @@
 std::vector<std::pair<std::string,std::string> > gettoken(std::string filename);
 // you can use this function to read the source code file.
 void readfile(std::string filename);
+std::vector<std::pair<std::string,std::string> > gettoken(std::string source,int a);// int a is usless, just to make the function different from the previous one
 
 
 

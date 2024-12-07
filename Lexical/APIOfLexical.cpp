@@ -21,6 +21,9 @@ bool hasBeenComment = false;
 bool hasError = false;
 int row = 1;
 
+// Global variable for one line analysis
+bool oneLine = false;
+
 struct Error {
     int row;       //The row of the error
     string message;     //Report what is the kind of the error
@@ -83,6 +86,8 @@ bool isComment(string& input, int pos, char peek,bool& hasBeenComment) {
     char last = input[length - 1];
     char ll = input[length - 2];
     if (peek == '/' && next == '/') {
+        input.pop_back();
+        getpair("comment", input);
         return true;
     } else if (peek == '/' && next == '*') {
 
@@ -233,7 +238,46 @@ void dealWithDigit(string& input, int& pos, char peek) {
     getpair("NUM", str);
 }
 
+void dealWithComment(string& input, int& pos, char peek) {
+    char next = input[pos + 1];
+    input.pop_back();
+    if (peek == '/' && next == '/') {
+        if (!oneLine) {
+            pos = input.length() + 2;
+            return;
+        } else {
+            while (peek != '\n') {
+                peek = input[pos];
+                pos ++;
+            }
+            return;
+        }
+    }
+
+    hasBeenComment = true;;
+    while (pos < input.length()) {
+        peek = input[pos];
+        if (peek == '*') {
+            next = input[pos + 1];
+            if (next == '/') {
+                hasBeenComment = false;
+                pos += 2;;
+                return;
+            }
+        }
+        pos++;
+    }
+}
+
 void dealWithOperator(string& input, int& pos, char peek) {
+    if (peek == '/') {
+        char next1 = input[pos + 1];
+        if (next1 == '*' || next1 == '/') {
+            dealWithComment(input, pos, peek);
+            return;
+        }
+    }
+
     string str;
     str += peek;
     if (peek == '~' || pos >= input.length()) {
@@ -276,10 +320,15 @@ void dealWithString(string&input, int&pos, char peek) {
     }
     pos++;
     peek = input[pos];
-    while (peek != '"') {
+    while (peek != '"' && pos < input.length()) {
         str += peek;
         pos += 1;
         peek = input[pos];
+    }
+
+    if (peek != '\"') {
+        string message = "There should be another \" for the string";
+        error(hasError, message, row);
     }
     pos += 1;
     getpair("STR", str);
@@ -288,7 +337,25 @@ void dealWithString(string&input, int&pos, char peek) {
 void dealWithChar(string&input, int&pos, char peek) {
     string str = "";
     str += input[pos + 1];
-    if (pos == input.size() || input[pos + 2] != '\'') {
+    if (str == "\\") {
+        char curr = input[pos + 2];
+        if (curr == 't' || curr == 'n' || curr == 'r' || curr == '\\' || curr == '"' || curr == '\'') {
+            str += curr;
+            getpair("CHAR", str);
+            if (input[pos + 3] != '\'') {
+                string message = "There should be another \' for the character";
+                error(hasError, message, row);
+            }
+            pos += 4;
+            return;
+        } else {
+            string message = "There cannot be two characters in a char. ";
+            error(hasError, message, row);
+            return;
+        }
+    }
+
+    if (pos == input.size() || input[pos + 2] != '\'' || pos + 2 > input.length()) {
         string message = "There cannot be two characters in a char. ";
         error(hasError, message, row);
         return;
@@ -307,9 +374,11 @@ void words(string input, bool& hasBeenComment, bool& hasError, int row, string& 
     char peek;
     while (pos <= input.length() - 1) {
         peek = input[pos];
-        if (isWhiteSpace(peek)) {pos += 1;}
-        else if (isComment(input, pos, peek, hasBeenComment)) {
-            return;
+        if (isWhiteSpace(peek)) {
+            pos += 1;
+        }
+        else if (hasBeenComment) {
+            dealWithComment(input, pos, peek);
         } else if (isLetter(peek)) {
             dealWithLetter(input, pos, peek, isInclude, filename);
         } else if (isDigit(peek)) {
@@ -337,6 +406,7 @@ void singleGetToken(string& filename) {
         return;
     }
     while (getline(file, line)) {
+        line += '\n';
         words(line, hasBeenComment, hasError, row, filename);
         if (hasError) {break;}
         row++;
@@ -345,6 +415,7 @@ void singleGetToken(string& filename) {
 }
 
 vector<pair<string,string> > gettoken(string filename) {
+    output.clear();
     string originalDir = std::filesystem::current_path().string();
     filesystem::path newDir = std::filesystem::path(filename).parent_path();
     filesystem::current_path(newDir);
@@ -352,5 +423,12 @@ vector<pair<string,string> > gettoken(string filename) {
     filename = path.filename().string();
     singleGetToken(filename);
     filesystem::current_path(originalDir);
+    return output;
+}
+
+vector<pair<string,string> > gettoken(string source, string filename) {
+    source += '\n';
+    oneLine = true;
+    words(source, hasBeenComment, hasError, row, filename);
     return output;
 }
