@@ -9,13 +9,10 @@
 #include "Syntax/APIOfSyntax.h"
 #include "Lexical/APIOfLexical.h"
  #include "CodeGeneration/APIOfcodegeneration.h"
-void compile(std::string name){
-    auto tokens= gettoken(name);
+void compile(std::string filename,std::string path){
+    auto tokens= gettoken(filename);
     auto tree= buildASTTree(tokens);//
-    // auto sym=analysis(tree);
-    // tree.getNode();
-    generateCode(tree);
+    generateCode(tree,path);
 }
-
 
 #endif //COMPILER_COMPILE_H

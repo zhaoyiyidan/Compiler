@@ -5,14 +5,23 @@
 #ifndef COMPILER_APIOFCODEGENERATION_H
 #define COMPILER_APIOFCODEGENERATION_H
 #include "IR_Transform.h"
+#include <llvm/IR/Module.h>
+#include <llvm/IR/LLVMContext.h>
+#include <llvm/Support/raw_ostream.h>
+#include <llvm/Support/FileSystem.h>
+#include <llvm/IR/Module.h>
+#include <llvm/Support/FileSystem.h>
+#include <llvm/Support/raw_ostream.h>
+#include <llvm/MC/TargetRegistry.h>
+#include <llvm/Target/TargetMachine.h>
+#include <llvm/Target/TargetOptions.h>
+#include <llvm/Support/TargetSelect.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 // you can use this function to generate executable file
-void generateCode(module &node){
-    IR_Transform ir_transform=IR_Transform("1");
-    for (auto &node:node.Node){
-        node->accept(ir_transform);
-    }
-    ir_transform.llvm_part.module.print(llvm::outs(), nullptr);
-}
-
-
+void generateCode(module &node,std::string path);
+void saveModuleToFile(llvm::Module &M, const std::string &outputFile);
+void GenerateObject(std::string llpath,std::string objpath);
+void GenerateExecutable(std::string objpath,std::string exepath);
 #endif //COMPILER_APIOFCODEGENERATION_H

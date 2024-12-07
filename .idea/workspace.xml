@@ -47,16 +47,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support while loop ,it needs to rewrite if-else">
+    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support for while if-else">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Compile.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/ForStmt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ForStmt.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +298,7 @@
       <workItem from="1733289947652" duration="11558000" />
       <workItem from="1733404352611" duration="17936000" />
       <workItem from="1733502273200" duration="1067000" />
-      <workItem from="1733540952307" duration="9757000" />
+      <workItem from="1733540952307" duration="15982000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -411,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733500700572</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="support for while if-else">
+      <option name="closed" value="true" />
+      <created>1733556798288</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733556798288</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +467,8 @@
     <MESSAGE value="support return stmt" />
     <MESSAGE value="support for loop" />
     <MESSAGE value="support while loop ,it needs to rewrite if-else" />
-    <option name="LAST_COMMIT_MESSAGE" value="support while loop ,it needs to rewrite if-else" />
+    <MESSAGE value="support for while if-else" />
+    <option name="LAST_COMMIT_MESSAGE" value="support for while if-else" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -483,11 +493,6 @@
           <line>135</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
-          <line>316</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="CMakeExceptionBreakpoint" />
@@ -498,11 +503,5 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="llvm_part.root" language="ObjectiveC" />
-        <watch expression="temRoot-&gt;child.size()" language="ObjectiveC" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
