@@ -88,7 +88,6 @@ public:
         else{
             std::runtime_error("the tree is nullptr");
         }
-
     }
 };
 

@@ -295,9 +295,7 @@ void IR_Transform::visit(const class CharLiteral &node) {}
 void IR_Transform::visit(const class FloatLiteral &node) {}
 void IR_Transform::visit(const class FunctionType &node)     {}
 void IR_Transform::visit(const class IFStmt &node) {
-    llvm_part.CreateNewBlock("IFStmt");
-    // 弹出第一个
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("IFStmt");
     // create entry block
     llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
     auto entrytree=std::make_shared<BlockTree>("entry",entry);
@@ -343,9 +341,7 @@ void IR_Transform::visit(const class IFStmt &node) {
     }
 }
 void IR_Transform::visit(const class WhileStmt &node) {
-    llvm_part.CreateNewBlock("WhileStmt");
-    // 弹出第一个
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("WhileStmt");
     // do a dynamic cast to get EXP node
     auto EXPNode=dynamic_cast<EXP*>(node.condition.get());
     auto IDEN=EXPNode->Left->GetNodeType();
@@ -378,8 +374,7 @@ void IR_Transform::visit(const class WhileStmt &node) {
 }
 void IR_Transform::visit(const class ForStmt &node) {
     // creat a blovk
-    llvm_part.CreateNewBlock("ForStmt");
-    llvm_part.current->child.pop_back();
+    llvm_part.CreateNewBlockWi("ForStmt");
    // create entry block
     llvm::BasicBlock* entry=llvm::BasicBlock::Create(llvm_part.context,"entry",llvm_part.currentFunction);
     auto entrytree=std::make_shared<BlockTree>("entry",entry);
@@ -609,12 +604,13 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
     // if it is a funciton call
     if (!analysis1.symbolTable.ExistSymbol(node.value)&&node.IDEN){
         // return std::numeric_limits<double>::quiet_NaN();
-        std::string funcionName=node.value.substr(0,node.value.find("("));
+        std::string funcionName=node.value.substr(0,node.value.find("(",0));
         auto function=llvm_part.module.getFunction(funcionName);
         if (!function){
             std::runtime_error("Function not found");
         }
-        std::string parameters=node.value.substr(node.value.find("(")+1,node.value.size()-1);
+        std::string parameters=node.value.substr(node.value.find("(",0)+1,node.value.size()-1);
+        parameters=parameters.substr(0,parameters.size()-1);
         std::vector<std::string> parameter;
         // spilt the parameters
         for (int i=0;i<parameters.size();i++){
@@ -633,19 +629,59 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
         int i=0;
         for (auto &arg : function->args()) {
             if (getTypeString(arg.getType())=="bool"){
-                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), std::stoi(parameter[i])));
+                try{
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt1Ty(llvm_part.context), std::stoi(parameter[i])));}
+                catch (std::exception &e){
+                    // 从符号表中查询
+                    auto IDEN=analysis1.symbolTable.GetTheSymbol(parameter[i]);
+                    auto address=IDEN.allocaInst;
+                    auto value=llvm_part.builder.CreateLoad(llvm::Type::getInt1Ty(llvm_part.context),address,"iLoad");
+                    args.push_back(value);
+                }
             }
             else if(getTypeString(arg.getType())=="int"){
-                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt32Ty(llvm_part.context), std::stoi(parameter[i])));
+                try{
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt32Ty(llvm_part.context), std::stoi(parameter[i])));}
+                catch (std::exception &e){
+                    // 从符号表中查询
+                    auto IDEN=analysis1.symbolTable.GetTheSymbol(parameter[i]);
+                    auto address=IDEN.allocaInst;
+                    auto value=llvm_part.builder.CreateLoad(llvm::Type::getInt32Ty(llvm_part.context),address,"iLoad");
+                    args.push_back(value);
+                }
             }
             else if(getTypeString(arg.getType())=="float"){
-                args.push_back(llvm::ConstantFP::get(llvm::Type::getFloatTy(llvm_part.context), std::stof(parameter[i])));
+                try{
+                args.push_back(llvm::ConstantFP::get(llvm::Type::getFloatTy(llvm_part.context), std::stof(parameter[i])));}
+                catch (std::exception &e){
+                    // 从符号表中查询
+                    auto IDEN=analysis1.symbolTable.GetTheSymbol(parameter[i]);
+                    auto address=IDEN.allocaInst;
+                    auto value=llvm_part.builder.CreateLoad(llvm::Type::getFloatTy(llvm_part.context),address,"iLoad");
+                    args.push_back(value);
+                }
             }
             else if(getTypeString(arg.getType())=="double"){
-                args.push_back(llvm::ConstantFP::get(llvm::Type::getDoubleTy(llvm_part.context), std::stod(parameter[i])));
+                try{
+                args.push_back(llvm::ConstantFP::get(llvm::Type::getDoubleTy(llvm_part.context), std::stod(parameter[i])));}
+                catch (std::exception &e){
+                    // 从符号表中查询
+                    auto IDEN=analysis1.symbolTable.GetTheSymbol(parameter[i]);
+                    auto address=IDEN.allocaInst;
+                    auto value=llvm_part.builder.CreateLoad(llvm::Type::getDoubleTy(llvm_part.context),address,"iLoad");
+                    args.push_back(value);
+                }
             }
             else if(getTypeString(arg.getType())=="char"){
-                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(llvm_part.context), parameter[i][0]));
+                try{
+                args.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(llvm_part.context), parameter[i][0]));}
+                catch (std::exception &e){
+                    // 从符号表中查询
+                    auto IDEN=analysis1.symbolTable.GetTheSymbol(parameter[i]);
+                    auto address=IDEN.allocaInst;
+                    auto value=llvm_part.builder.CreateLoad(llvm::Type::getInt8Ty(llvm_part.context),address,"iLoad");
+                    args.push_back(value);
+                }
             }
             i++;
         }

@@ -47,11 +47,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="support for while if-else">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Compile.h" afterDir="false" />
+    <list default="true" id="1ab689d7-c0f2-4e2e-8b7f-c117264d5e90" name="Changes" comment="fix bug">
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/BlockTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/header/LLVM_Part.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/ForStmt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ForStmt.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
@@ -103,34 +102,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C/C++ File.source5.cpp.executor": "Run",
-    "CMake Application.Compiler.executor": "Run",
-    "CMake Application.my_project.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "ctest.advertisement.all.test.configuration.is.created": "true",
-    "git-widget-placeholder": "code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C/C++ File.source5.cpp.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.Compiler.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Application.my_project.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CodeGeneration/Source" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.Compiler">
+  <component name="RunManager">
     <configuration name="TestForLexical" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Compiler" TARGET_NAME="TestForLexical" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Compiler" RUN_TARGET_NAME="TestForLexical" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -169,7 +168,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Compiler" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Compiler" TARGET_NAME="Compiler" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Compiler" RUN_TARGET_NAME="Compiler">
+    <configuration name="Compiler" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Compiler" TARGET_NAME="Compiler" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Compiler" RUN_TARGET_NAME="Compiler">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -241,32 +240,9 @@
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="C/C++ File.source5.cpp" />
-      <item itemvalue="CMake Application.Compiler" />
-      <item itemvalue="CMake Application.AArch64TargetParserTableGen" />
-      <item itemvalue="CMake Application.acc_gen" />
-      <item itemvalue="CMake Application.ARMTargetParserTableGen" />
-      <item itemvalue="CMake Application.CodeGeneration" />
-      <item itemvalue="CMake Application.intrinsics_gen" />
-      <item itemvalue="CMake Application.omp_gen" />
-      <item itemvalue="CMake Application.RISCVTargetParserTableGen" />
-      <item itemvalue="CMake Application.Lexical" />
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
-      <item itemvalue="CMake Application.Semantic" />
-      <item itemvalue="CMake Application.ASTNode" />
-      <item itemvalue="CMake Application.Tem" />
-      <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="Google Test.TestForLexical" />
-      <item itemvalue="Google Test.TestForSemantic" />
-      <item itemvalue="Google Test.TestForSyntax" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="C/C++ File.source5.cpp" />
+        <item itemvalue="CMake Application.Compiler" />
       </list>
     </recent_temporary>
   </component>
@@ -492,6 +468,16 @@
           <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
           <line>135</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
+          <line>374</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
+          <line>604</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
