@@ -51,12 +51,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/APIOfcodegeneration.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/HelperFunction.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/HelperFunction.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/INT.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/INT.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CodeGeneration/IR_Transform.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Compile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Syntax/Source/ConstructAST.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/ForStmt.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ForStmt.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compiler" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compiler" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +114,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "C/C++ File.source5.cpp.executor": "Run",
-    "CMake Application.Compiler.executor": "Run",
+    "CMake Application.Compiler.executor": "Debug",
     "CMake Application.my_project.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
@@ -116,12 +124,14 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "ctest.advertisement.all.test.configuration.is.created": "true",
-    "git-widget-placeholder": "code",
+    "git-widget-placeholder": "USE",
+    "last_opened_file_path": "/Users/zhaokunxiang/clion/compiler",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "editor.preferences.completion",
+    "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -243,22 +253,22 @@
     </configuration>
     <list>
       <item itemvalue="C/C++ File.source5.cpp" />
-      <item itemvalue="CMake Application.Compiler" />
       <item itemvalue="CMake Application.AArch64TargetParserTableGen" />
-      <item itemvalue="CMake Application.acc_gen" />
       <item itemvalue="CMake Application.ARMTargetParserTableGen" />
+      <item itemvalue="CMake Application.ASTNode" />
       <item itemvalue="CMake Application.CodeGeneration" />
-      <item itemvalue="CMake Application.intrinsics_gen" />
-      <item itemvalue="CMake Application.omp_gen" />
-      <item itemvalue="CMake Application.RISCVTargetParserTableGen" />
+      <item itemvalue="CMake Application.Compiler" />
       <item itemvalue="CMake Application.Lexical" />
+      <item itemvalue="CMake Application.RISCVTargetParserTableGen" />
+      <item itemvalue="CMake Application.Semantic" />
+      <item itemvalue="CMake Application.Tem" />
+      <item itemvalue="CMake Application.acc_gen" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
-      <item itemvalue="CMake Application.Semantic" />
-      <item itemvalue="CMake Application.ASTNode" />
-      <item itemvalue="CMake Application.Tem" />
+      <item itemvalue="CMake Application.intrinsics_gen" />
+      <item itemvalue="CMake Application.omp_gen" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="Google Test.TestForLexical" />
       <item itemvalue="Google Test.TestForSemantic" />
@@ -299,6 +309,10 @@
       <workItem from="1733404352611" duration="17936000" />
       <workItem from="1733502273200" duration="1067000" />
       <workItem from="1733540952307" duration="15982000" />
+      <workItem from="1733672951141" duration="2000" />
+      <workItem from="1733672967273" duration="439000" />
+      <workItem from="1733673423860" duration="17000" />
+      <workItem from="1733673491027" duration="545000" />
     </task>
     <task id="LOCAL-00001" summary="build vistor">
       <option name="closed" value="true" />
@@ -492,6 +506,11 @@
           <url>file://$PROJECT_DIR$/CodeGeneration/IR_Transform.cpp</url>
           <line>135</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Compile.h</url>
+          <line>12</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

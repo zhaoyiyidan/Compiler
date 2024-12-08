@@ -5,16 +5,24 @@
 #include "APIOfcodegeneration.h"
 
 void generateCode(module &node,std::string path){
-    IR_Transform ir_transform=IR_Transform("1");
-    for (auto &node:node.Node){
-        node->accept(ir_transform);
-    }
     std::string output = path.substr(0, path.find_last_of('.')) ;
+    std::string cpppath = output + ".cpp";
     std::string llpath = output + ".ll";
     std::string objectpath = output + ".o";
+    IR_Transform ir_transform=IR_Transform("1");
+    ir_transform.Precodition(cpppath,path);
+    try{
+    for(auto &stmt : node.Node){
+        stmt->accept(ir_transform);
+    }
     saveModuleToFile(ir_transform.llvm_part.module, llpath);
     GenerateObject(llpath,objectpath);
     GenerateExecutable(objectpath,path);
+    }
+    catch (std::exception &e){
+        ir_transform.ExcpetionHandle(cpppath,path);
+        std::cout<<"exe";
+    }
 }
 void saveModuleToFile(llvm::Module &M, const std::string &outputFile) {
     std::error_code EC;
@@ -45,4 +53,12 @@ void GenerateExecutable(std::string objpath,std::string exepath){
     } else{
         std::cout<<"Executable file generated failed"<<std::endl;
     }
+}
+void PreCodition(std::string path){
+    std::string output = path.substr(0, path.find_last_of('.')) ;
+    std::string cpppath = output + ".cpp";
+    std::string llpath = output + ".ll";
+    std::string objectpath = output + ".o";
+    IR_Transform ir_transform=IR_Transform("1");
+    ir_transform.Precodition(cpppath,path);
 }

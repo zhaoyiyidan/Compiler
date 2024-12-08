@@ -21,7 +21,9 @@
 #include <cstdlib>
 // you can use this function to generate executable file
 void generateCode(module &node,std::string path);
+void generatecode(module &node,std::string path);
 void saveModuleToFile(llvm::Module &M, const std::string &outputFile);
 void GenerateObject(std::string llpath,std::string objpath);
 void GenerateExecutable(std::string objpath,std::string exepath);
+void PreCodition(std::string path);
 #endif //COMPILER_APIOFCODEGENERATION_H

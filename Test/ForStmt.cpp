@@ -1,1 +1,1 @@
-int mul(int a,int b){    return a*b;}int main(){    int c=mul(1,2);    for(int i=0;i<10;i++){        i++;    }    if (true){        int a=1;    }    else{    int d=2;    double k=1.0;    return 0;    }    int a=2;    return 0;}
+#include <iostream>using namespace std;int main(){   std::cout<<"Hello World";}

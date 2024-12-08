@@ -10,6 +10,7 @@
 #include "Lexical/APIOfLexical.h"
  #include "CodeGeneration/APIOfcodegeneration.h"
 void compile(std::string filename,std::string path){
+    PreCodition(path);
     auto tokens= gettoken(filename);
     auto tree= buildASTTree(tokens);//
     generateCode(tree,path);

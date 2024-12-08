@@ -7,7 +7,8 @@
 
 // pair<"标注的信息",“token" >
 module ConstructMoule(const std::vector<std::pair<std::string, std::string>> &tokens) {
-   int index=0;
+   try{
+    int index=0;
    module the_module;
    while(index<tokens.size()-1){
        auto first=tokens[index].first;
@@ -32,6 +33,11 @@ module ConstructMoule(const std::vector<std::pair<std::string, std::string>> &to
        }
    }
     return the_module;
+   }
+   catch (const std::exception &e){
+       module a;
+       return a;
+   }
 }
 // to construct  module ,you need following fucntion
 std::unique_ptr<ASTnode> ConstructFuncDel(const std::vector<std::pair<std::string, std::string>> &tokens, int Lindex,int Rindex) {

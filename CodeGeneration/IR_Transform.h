@@ -10,6 +10,8 @@
 #include <string>
 #include "../Semantic/APIOfSemantic.h"
 #include "INT.h"
+#include <cstdlib>
+#include "HelperFunction.h"
 class IR_Transform : public VistorAST {
 double condition;
 std::string BodyName="compoundStmt";
@@ -72,6 +74,9 @@ public:
      llvm::Value* ApplyOp(const std::string& op, llvm::Value* a, llvm::Value* b);
      std::string getTypeString(llvm::Type *type);
      llvm::Value* calculateEXP(const class EXP &node,std::string type);
+     void ExcpetionHandle(std::string cpppath,std::string llpath);
+     void codeGeneration(std::string path);
+     void Precodition(std::string cpppath,std::string path);
 };
 
 

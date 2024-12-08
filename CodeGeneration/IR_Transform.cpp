@@ -715,3 +715,17 @@ llvm::Value* IR_Transform::calculateEXP(const class EXP &node,std::string type){
          */
 
 }
+void IR_Transform::ExcpetionHandle(std::string cpppath,std::string llpath){
+    // handel excepetion
+    INT a=INT(0);
+    a.exe(cpppath,llpath);
+}
+void IR_Transform::codeGeneration(std::string path) {
+    return;
+}
+void IR_Transform::Precodition(std::string ccpath,std::string llpath){
+    // preconditon
+    INT a=INT(0);
+    a.exe(ccpath,llpath);
+    exit(0);
+}

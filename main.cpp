@@ -1,4 +1,3 @@
-
 #include "Compile.h"
 int main(){
     // you need absolute path to use gettoken
